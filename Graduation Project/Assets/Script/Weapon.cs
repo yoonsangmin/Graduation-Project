@@ -11,8 +11,7 @@ public class Weapon : MonoBehaviour
 
     protected string weapon_name;
     protected float damage;
-    protected float range;
-    protected float accuracy; 
+    protected float range;    
 
     void Start()
     {

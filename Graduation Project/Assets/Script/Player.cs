@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    GameObject Main_Camera;   
+    GameObject Main_Camera;
 
     //컴포넌트
     Animator Animator;
@@ -17,6 +17,10 @@ public class Player : MonoBehaviour
     float walk_speed = 40.0f;
     float crouch_speed = 30.0f;
     bool is_run = false;
+    bool is_walk = false;
+    Vector3 last_pos;
+
+    //점프
     float jump_force = 10.0f;
     bool is_ground = true;
 
@@ -47,14 +51,16 @@ public class Player : MonoBehaviour
         if (player_stop) return;
 
         //플레이어 이동      
+        PlayerRotation();
+        PlayerMove();
+        PlayerMoveCheck();
         IsGround();
         PlayerJump();
         PlayerRun();
-        PlayerCrouch();
-        PlayerRotation();
-        PlayerMove();        
+        PlayerCrouch();               
     }
 
+    //이동
     void PlayerMove()
     {
         float x_dir = Input.GetAxisRaw("Horizontal");
@@ -67,7 +73,21 @@ public class Player : MonoBehaviour
 
         Rb.MovePosition(transform.position + velocity * Time.deltaTime);
     }
-    
+
+    void PlayerMoveCheck()
+    {
+        if (is_run == true)
+        {
+            is_walk = false;
+            return;
+        }
+
+        if (Vector3.Distance(last_pos, transform.position) >= 0.01f) is_walk = true;
+        else is_walk = false;
+
+        last_pos = transform.position;
+    }
+
     void PlayerRotation()
     {
         float y_rot = Input.GetAxisRaw("Mouse X");
@@ -89,7 +109,7 @@ public class Player : MonoBehaviour
     }
 
     void Running()
-    {
+    {        
         is_run = true;
         cur_speed = run_speed;
     }
@@ -100,6 +120,7 @@ public class Player : MonoBehaviour
         cur_speed = walk_speed;
     }
 
+    //점프
     void PlayerJump()
     {
         if (Input.GetKeyDown(KeyCode.Space) && is_ground == true)
@@ -119,9 +140,10 @@ public class Player : MonoBehaviour
         is_ground = Physics.Raycast(transform.position, Vector3.down, this_Col.bounds.extents.y + 0.1f);
     }
 
+    //앉기
     void PlayerCrouch()
     {
-        if(Input.GetKey(KeyCode.LeftControl))
+        if (Input.GetKey(KeyCode.LeftControl))
         {
             is_crouch = true;
             Crouch();
@@ -135,7 +157,7 @@ public class Player : MonoBehaviour
 
     void Crouch()
     {
-        if(is_crouch)
+        if (is_crouch)
         {
             cur_speed = crouch_speed;
             cur_crouch_pos_y = crouch_pos_y;
@@ -153,17 +175,23 @@ public class Player : MonoBehaviour
     {
         float pos_y = Main_Camera.transform.localPosition.y;
         int count = 0;
-        
-        while(pos_y != cur_crouch_pos_y)
+
+        while (pos_y != cur_crouch_pos_y)
         {
             count++;
             pos_y = Mathf.Lerp(pos_y, cur_crouch_pos_y, 0.4f);
             Main_Camera.transform.localPosition = new Vector3(Main_Camera.transform.localPosition.x, pos_y, Main_Camera.transform.localPosition.z);
-            //15번 실행 후 보간 끝내기
+            //20번 실행 후 보간 끝내기
             if (count > 20)
                 break;
             yield return null;
         }
+
         Main_Camera.transform.localPosition = new Vector3(Main_Camera.transform.localPosition.x, cur_crouch_pos_y, Main_Camera.transform.localPosition.z);
     }
+
+    //플레이어 상태 전하는 함수
+    public bool IsPlayerWalk() { return is_walk; }
+    public bool IsPlayerRun() { return is_run; }    
+    public bool IsPlayerCrouch() { return is_crouch; }
 }

@@ -63,10 +63,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Script\Bullet.cs" />
+    <Compile Include="Assets\Script\BulletController.cs" />
+    <Compile Include="Assets\Script\BulletHud.cs" />
+    <Compile Include="Assets\Script\CrossHair.cs" />
+    <Compile Include="Assets\Script\HPBar.cs" />
     <Compile Include="Assets\Script\MainCamera.cs" />
-    <Compile Include="Assets\Script\Melee_Weapon.cs" />
+    <Compile Include="Assets\Script\MeleeWeapon.cs" />
     <Compile Include="Assets\Script\Player.cs" />
-    <Compile Include="Assets\Script\Ranged_Weapon.cs" />
+    <Compile Include="Assets\Script\RangedWeapon.cs" />
+    <Compile Include="Assets\Script\UiController.cs" />
     <Compile Include="Assets\Script\Weapon.cs" />
     <Compile Include="Assets\Script\WeaponController.cs" />
     <None Include="Assets\Soldier Voice - Military Radio\license.txt" />
