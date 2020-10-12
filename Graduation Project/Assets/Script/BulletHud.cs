@@ -6,16 +6,16 @@ using UnityEngine.UI;
 public class BulletHud : MonoBehaviour
 {
     [SerializeField]
-    Text Loaded_Bullet;
+    Text loadedBullet;
     [SerializeField]
-    Text Remain_Bullet;
+    Text remainBullet;
     [SerializeField]
-    Image Weapon_Image;
+    Image weaponImage;
 
-    public void UpdateText(int loaded_bullet, int remain_bullet)
+    public void UpdateText(int loadedBulletNum, int remainBulletNum)
     {
-        Loaded_Bullet.text = loaded_bullet.ToString();
-        Remain_Bullet.text = remain_bullet.ToString();
+        loadedBullet.text = loadedBulletNum.ToString();
+        remainBullet.text = remainBulletNum.ToString();
     }
 
     public void ChangeWeapon()

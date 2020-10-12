@@ -5,38 +5,38 @@ using UnityEngine;
 public class RangedWeapon : Weapon
 {
     //반동
-    float recoil_action_force;
-    float recoil_action_zoom_force;
+    float recoilActionForce;
+    float recoilActionZoomForce;
 
     //정확도, 속도
     float accuracy;
     float speed;
 
     //사격 속도    
-    float fire_cooltime;
-    float cur_fire_cooltime;
+    float fireCooltime;
+    float curFireCooltime;
 
     //재장전
-    float reload_time;
-    bool is_reload = false;
+    float reloadTime;
+    bool isReload = false;
 
     //총알 관련 변수
     [SerializeField]
     BulletController Bullet;
-    int max_bullet_in_magazine;
-    int cur_bullet_in_magazine;
-    int max_bullet_in_bag;
-    int cur_bullet_in_bag;
+    int maxBulletInMagazine;
+    int curBulletInMagazine;
+    int maxBulletInBag;
+    int curBulletInBag;
 
     //줌모드
-    bool is_zoom_mode = false;
-    Vector3 weapon_origin_pos;
+    bool isZoomMode = false;
+    Vector3 weaponOriginPos;
     [SerializeField]
-    Vector3 zoom_origin_pos = new Vector3(0.1f, 0.05f, -0.1f);
+    Vector3 zoomOriginPos = new Vector3(0.1f, 0.05f, -0.1f);
 
     void Start()
     {
-        weapon_origin_pos = transform.localPosition;
+        weaponOriginPos = transform.localPosition;
     }
 
     void Update()
@@ -44,36 +44,36 @@ public class RangedWeapon : Weapon
         GunFireCooltimeCalc();
     }
 
-    public void SetWeaponStat(string name, float damage, float range, float speed, float accuracy, float fire_cooltime, float reload_time, float recoil_action_force, float recoil_action_zoom_force, int max_bullet_in_magazine, int max_bullet_in_bag)
+    public void SetWeaponStat(string name, float damage, float range, float speed, float accuracy, float fireCooltime, float reloadTime, float recoilActionForce, float recoilActionZoomForce, int maxBulletInMagazine, int maxBulletInBag)
     {
-        Bullet.SetBullet(max_bullet_in_magazine, accuracy, range, speed, damage);
+        Bullet.SetBullet(maxBulletInMagazine, accuracy, range, speed, damage);
 
-        weapon_name = name;
+        weaponName = name;
         this.damage = damage;
         this.range = range;
         this.speed = speed;
         this.accuracy = accuracy;
-        this.fire_cooltime = fire_cooltime;
-        this.reload_time = reload_time;
-        this.recoil_action_force = recoil_action_force;
-        this.recoil_action_zoom_force = recoil_action_zoom_force;
-        this.max_bullet_in_magazine = max_bullet_in_magazine;
-        this.cur_bullet_in_magazine = this.max_bullet_in_magazine;
-        this.max_bullet_in_bag = max_bullet_in_bag;
-        this.cur_bullet_in_bag = this.max_bullet_in_bag;        
+        this.fireCooltime = fireCooltime;
+        this.reloadTime = reloadTime;
+        this.recoilActionForce = recoilActionForce;
+        this.recoilActionZoomForce = recoilActionZoomForce;
+        this.maxBulletInMagazine = maxBulletInMagazine;
+        this.curBulletInMagazine = this.maxBulletInMagazine;
+        this.maxBulletInBag = maxBulletInBag;
+        this.curBulletInBag = this.maxBulletInBag;
     }
 
     //사격
     public void Fire()
     {
-        if (cur_fire_cooltime > 0 || is_reload == true) return;
+        if (curFireCooltime > 0 || isReload == true) return;
 
-        if (cur_bullet_in_magazine > 0)
+        if (curBulletInMagazine > 0)
         {
-            cur_bullet_in_magazine--;
-            cur_fire_cooltime = fire_cooltime;
+            curBulletInMagazine--;
+            curFireCooltime = fireCooltime;
 
-            Flash.Play();
+            flash.Play();
             Bullet.Fire();
 
             StopAllCoroutines();
@@ -88,14 +88,14 @@ public class RangedWeapon : Weapon
     //연사속도 재계산
     void GunFireCooltimeCalc()
     {
-        if (cur_fire_cooltime > 0)
-            cur_fire_cooltime -= Time.deltaTime;
+        if (curFireCooltime > 0)
+            curFireCooltime -= Time.deltaTime;
     }
 
     //재장전
     public void Reload()
     {
-        if (is_reload == true || cur_bullet_in_magazine >= max_bullet_in_magazine) return;
+        if (isReload == true || curBulletInMagazine >= maxBulletInMagazine) return;
 
         StopZoom();
         StartCoroutine(ReloadCoroutine());
@@ -104,27 +104,27 @@ public class RangedWeapon : Weapon
     //재장전 코루틴
     IEnumerator ReloadCoroutine()
     {
-        if (cur_bullet_in_magazine > 0)
+        if (curBulletInBag > 0)
         {
-            is_reload = true;
+            isReload = true;
 
             //총알이있을때 장전
-            cur_bullet_in_bag += cur_bullet_in_magazine;
+            curBulletInBag += curBulletInMagazine;
 
-            yield return new WaitForSeconds(reload_time);
+            yield return new WaitForSeconds(reloadTime);
 
-            if (cur_bullet_in_bag >= max_bullet_in_magazine)
+            if (curBulletInBag >= maxBulletInMagazine)
             {
-                cur_bullet_in_magazine = max_bullet_in_magazine;
-                cur_bullet_in_bag -= max_bullet_in_magazine;
+                curBulletInMagazine = maxBulletInMagazine;
+                curBulletInBag -= maxBulletInMagazine;
             }
             //현재 가지고 있는 총알의 개수가 탄창을 가득 채울수 없다면
             else
             {
-                cur_bullet_in_magazine = cur_bullet_in_bag;
-                cur_bullet_in_bag = 0;
+                curBulletInMagazine = curBulletInBag;
+                curBulletInBag = 0;
             }
-            is_reload = false;
+            isReload = false;
         }
         else
         {
@@ -135,31 +135,31 @@ public class RangedWeapon : Weapon
     //줌 모드
     public void Zoom()
     {
-        if (is_reload == true) return;
+        if (isReload == true) return;
 
-        is_zoom_mode = !is_zoom_mode;
+        isZoomMode = !isZoomMode;
 
         StopAllCoroutines();
 
-        if (is_zoom_mode == true)
-            StartCoroutine(ZoomCoroutine(zoom_origin_pos));
+        if (isZoomMode == true)
+            StartCoroutine(ZoomCoroutine(zoomOriginPos));
         else
-            StartCoroutine(ZoomCoroutine(weapon_origin_pos));
+            StartCoroutine(ZoomCoroutine(weaponOriginPos));
     }
 
     //줌모드 취소
     public void StopZoom()
     {
-        if (is_zoom_mode == true)
+        if (isZoomMode == true)
             Zoom();
     }
 
     //줌모드 코루틴
-    IEnumerator ZoomCoroutine(Vector3 goal_pos)
+    IEnumerator ZoomCoroutine(Vector3 goalPos)
     {
-        while (transform.localPosition != goal_pos)
+        while (transform.localPosition != goalPos)
         {
-            transform.localPosition = Vector3.Lerp(transform.localPosition, goal_pos, 0.2f);
+            transform.localPosition = Vector3.Lerp(transform.localPosition, goalPos, 0.2f);
             yield return null;
         }
     }
@@ -168,42 +168,42 @@ public class RangedWeapon : Weapon
     //velocity를 통해 반동 조절 해보기
     IEnumerator RecoilActionCoroutine()
     {
-        Vector3 recoil_back = new Vector3(weapon_origin_pos.x, weapon_origin_pos.y, recoil_action_force);
-        Vector3 retro_action_recoil_back = new Vector3(zoom_origin_pos.x, zoom_origin_pos.y, recoil_action_zoom_force);
+        Vector3 recoil_back = new Vector3(weaponOriginPos.x, weaponOriginPos.y, recoilActionForce);
+        Vector3 retro_action_recoil_back = new Vector3(zoomOriginPos.x, zoomOriginPos.y, recoilActionZoomForce);
 
-        if (is_zoom_mode == false)
+        if (isZoomMode == false)
         {
-            transform.localPosition = weapon_origin_pos;
+            transform.localPosition = weaponOriginPos;
 
             //반동시작
-            while (transform.localPosition.z <= recoil_action_force - 0.02f)
+            while (transform.localPosition.z <= recoilActionForce - 0.02f)
             {
                 transform.localPosition = Vector3.Lerp(transform.localPosition, recoil_back, 0.4f);
                 yield return null;
             }
 
             // 원위치
-            while (transform.localPosition != weapon_origin_pos)
+            while (transform.localPosition != weaponOriginPos)
             {
-                transform.localPosition = Vector3.Lerp(transform.localPosition, weapon_origin_pos, 0.1f);
+                transform.localPosition = Vector3.Lerp(transform.localPosition, weaponOriginPos, 0.1f);
                 yield return null;
             }
         }
         else
         {
-            transform.localPosition = zoom_origin_pos;
+            transform.localPosition = zoomOriginPos;
 
             //반동시작
-            while (transform.localPosition.z <= recoil_action_zoom_force - 0.02f)
+            while (transform.localPosition.z <= recoilActionForce - 0.02f)
             {
                 transform.localPosition = Vector3.Lerp(transform.localPosition, retro_action_recoil_back, 0.4f);
                 yield return null;
             }
 
             //원 위치
-            while (transform.localPosition != zoom_origin_pos)
+            while (transform.localPosition != zoomOriginPos)
             {
-                transform.localPosition = Vector3.Lerp(transform.localPosition, zoom_origin_pos, 0.1f);
+                transform.localPosition = Vector3.Lerp(transform.localPosition, zoomOriginPos, 0.1f);
                 yield return null;
             }
         }
@@ -211,6 +211,9 @@ public class RangedWeapon : Weapon
 
 
     //Bullet HUD를 위한 public 함수
-    public int GetCurMagazine() { return cur_bullet_in_magazine; }
-    public int GetCurBullet() { return cur_bullet_in_bag; }
+    public int GetCurMagazine() { return curBulletInMagazine; }
+    public int GetCurBullet() { return curBulletInBag; }
+
+
+    public bool IsReload() { return isReload; }
 }

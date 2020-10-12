@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    protected Animator Ani;
+    protected Animator ani;
     [SerializeField]
-    protected ParticleSystem Flash;
-    protected AudioClip Fire_Sound;
+    protected ParticleSystem flash;
+    protected AudioClip fireSound;
 
-    protected string weapon_name;
+    protected string weaponName;
     protected float damage;
     protected float range;    
 

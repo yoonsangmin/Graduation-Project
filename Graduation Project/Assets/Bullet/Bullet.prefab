@@ -47,8 +47,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 509648cdefe441e4aad3cfa28d84524d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Trace: {fileID: 5388666388577961583}
-  Shape: {fileID: 7795269510541007445}
+  trace: {fileID: 5388666388577961583}
+  shape: {fileID: 7795269510541007445}
 --- !u!54 &7184360094953141046
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -363,7 +363,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.2
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -4972,6 +4972,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Shape
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 73e223fa30864f648a87e6c33775c3b0,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73e223fa30864f648a87e6c33775c3b0, type: 3}

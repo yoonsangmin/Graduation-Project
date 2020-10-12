@@ -5,14 +5,14 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     [SerializeField]
-    ParticleSystem Trace;
+    ParticleSystem trace;
     [SerializeField]
-    GameObject Shape;
+    GameObject shape;
 
-    Rigidbody Rb;
-    Collider Col;
+    Rigidbody rb;
+    Collider col;
 
-    Vector3 Start_Pos;
+    Vector3 startPos;
 
     //총알의 변수
     float accuracy;
@@ -21,8 +21,8 @@ public class Bullet : MonoBehaviour
     float damage;
 
     //총알의 상태 변수
-    bool is_fired = false;
-    bool is_col = false;
+    bool isFired = false;
+    bool isCol = false;
 
     public void SetBullet(float accuracy, float range, float speed, float damage)
     {
@@ -34,14 +34,14 @@ public class Bullet : MonoBehaviour
 
     void Start()
     {
-        Rb = GetComponent<Rigidbody>();
-        Col = GetComponent<Collider>();        
+        rb = GetComponent<Rigidbody>();
+        col = GetComponent<Collider>();
         this.gameObject.SetActive(false);
     }
 
     void Update()
     {
-        if (Vector3.Distance(Start_Pos, transform.position) >= range)
+        if (Vector3.Distance(startPos, transform.position) >= range)
             Vanish();
     }
 
@@ -49,14 +49,18 @@ public class Bullet : MonoBehaviour
     {
         if (collision.gameObject.tag == "Bullet") return;
 
-        Invoke("Vanish", 2.0f);
-        Rb.velocity = new Vector3(0, 0, 0);
-        Col.enabled = false;
-        Shape.SetActive(false);
-        
+        if (collision.gameObject.tag != "Untagged") collision.gameObject.GetComponent<CharacterBase>().ReceiveDamage(damage);
+
+        transform.parent = collision.gameObject.transform;
+
+        Invoke("Vanish", 1.0f);
+        rb.velocity = new Vector3(0, 0, 0);
+        col.enabled = false;
+        shape.SetActive(false);
+
         //이펙트        
-        Trace.transform.position = collision.contacts[0].point;
-        Trace.Play();
+        trace.transform.position = collision.contacts[0].point;
+        trace.Play();
     }
 
     void Vanish()
@@ -71,9 +75,9 @@ public class Bullet : MonoBehaviour
 
     public void Fire()
     {
-        Shape.SetActive(true);
-        Col.enabled = true;
-        Start_Pos = transform.position;
-        Rb.velocity = (transform.forward + new Vector3(Random.Range(-accuracy, accuracy), Random.Range(-accuracy, accuracy), 0)) * speed;
+        shape.SetActive(true);
+        col.enabled = true;
+        startPos = transform.position;
+        rb.velocity = (transform.forward + new Vector3(Random.Range(-accuracy, accuracy), Random.Range(-accuracy, accuracy), 0)) * speed;
     }
 }

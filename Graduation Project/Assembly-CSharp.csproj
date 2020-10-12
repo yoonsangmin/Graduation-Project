@@ -65,7 +65,9 @@
     <Compile Include="Assets\Script\Bullet.cs" />
     <Compile Include="Assets\Script\BulletController.cs" />
     <Compile Include="Assets\Script\BulletHud.cs" />
+    <Compile Include="Assets\Script\CharacterBase.cs" />
     <Compile Include="Assets\Script\CrossHair.cs" />
+    <Compile Include="Assets\Script\Dummy.cs" />
     <Compile Include="Assets\Script\HPBar.cs" />
     <Compile Include="Assets\Script\MainCamera.cs" />
     <Compile Include="Assets\Script\MeleeWeapon.cs" />
@@ -74,7 +76,18 @@
     <Compile Include="Assets\Script\UiController.cs" />
     <Compile Include="Assets\Script\Weapon.cs" />
     <Compile Include="Assets\Script\WeaponController.cs" />
-    <None Include="Assets\Soldier Voice - Military Radio\license.txt" />
+    <Compile Include="Assets\Ui Resource\CamoUI Woodland\Standard Assets\CrossPlatformInput\Scripts\AxisTouchButton.cs" />
+    <Compile Include="Assets\Ui Resource\CamoUI Woodland\Standard Assets\CrossPlatformInput\Scripts\ButtonHandler.cs" />
+    <Compile Include="Assets\Ui Resource\CamoUI Woodland\Standard Assets\CrossPlatformInput\Scripts\CrossPlatformInputManager.cs" />
+    <Compile Include="Assets\Ui Resource\CamoUI Woodland\Standard Assets\CrossPlatformInput\Scripts\InputAxisScrollbar.cs" />
+    <Compile Include="Assets\Ui Resource\CamoUI Woodland\Standard Assets\CrossPlatformInput\Scripts\Joystick.cs" />
+    <Compile Include="Assets\Ui Resource\CamoUI Woodland\Standard Assets\CrossPlatformInput\Scripts\MobileControlRig.cs" />
+    <Compile Include="Assets\Ui Resource\CamoUI Woodland\Standard Assets\CrossPlatformInput\Scripts\PlatformSpecific\MobileInput.cs" />
+    <Compile Include="Assets\Ui Resource\CamoUI Woodland\Standard Assets\CrossPlatformInput\Scripts\PlatformSpecific\StandaloneInput.cs" />
+    <Compile Include="Assets\Ui Resource\CamoUI Woodland\Standard Assets\CrossPlatformInput\Scripts\TiltInput.cs" />
+    <Compile Include="Assets\Ui Resource\CamoUI Woodland\Standard Assets\CrossPlatformInput\Scripts\TouchPad.cs" />
+    <Compile Include="Assets\Ui Resource\CamoUI Woodland\Standard Assets\CrossPlatformInput\Scripts\VirtualInput.cs" />
+    <None Include="Assets\Ui Resource\CamoUI Woodland\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/조광형/Desktop/Git/Graduation-Project/Graduation Project/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

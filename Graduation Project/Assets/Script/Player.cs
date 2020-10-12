@@ -2,142 +2,127 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player : CharacterBase
 {
-    GameObject Main_Camera;
+    [SerializeField]
+    GameObject mainCamera;
+    [SerializeField]
+    GameObject arm;
 
     //컴포넌트
-    Animator Animator;
-    Rigidbody Rb;
-    CapsuleCollider this_Col;
+    Animator ani;
 
     //이동
-    float cur_speed;
-    float run_speed = 60.0f;
-    float walk_speed = 40.0f;
-    float crouch_speed = 30.0f;
-    bool is_run = false;
-    bool is_walk = false;
-    Vector3 last_pos;
+    float curSpeed;
+    float runSpeed;
+    float crouchSpeed;
+    bool isRun = false;
+    bool isWalk = false;
 
     //점프
-    float jump_force = 10.0f;
-    bool is_ground = true;
+    float jumpForce = 5.0f;
+    bool isGround = true;
 
     //앉기
-    float crouch_pos_y;
-    float origin_pos_y;
-    float cur_crouch_pos_y;
-    bool is_crouch = false;
+    float crouchPosY;
+    float originPosY;
+    float curCrouchPosY;
+    bool isCrouch = false;
 
-    bool player_stop = false;
+    bool playerStop = false;
 
     void Start()
     {
-        Animator = GetComponent<Animator>();
-        Rb = GetComponent<Rigidbody>();
-        this_Col = GetComponent<CapsuleCollider>();
-        Main_Camera = GameObject.Find("Main Camera");
+        ani = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody>();
+        col = GetComponent<CapsuleCollider>();
 
-        cur_speed = walk_speed;
+        SetCharacterStat(100.0f, 10.0f);
+        runSpeed = walkSpeed * 1.5f;
+        crouchSpeed = walkSpeed * 0.6f;
+        curSpeed = walkSpeed;
 
-        origin_pos_y = Main_Camera.transform.localPosition.y;
-        cur_crouch_pos_y = origin_pos_y;
-        crouch_pos_y = this_Col.bounds.extents.y;
+        originPosY = mainCamera.transform.localPosition.y;
+        curCrouchPosY = originPosY;
+        crouchPosY = col.bounds.extents.y;
     }
 
     void Update()
     {
-        if (player_stop) return;
+        if (playerStop) return;
 
         //플레이어 이동      
         PlayerRotation();
         PlayerMove();
-        PlayerMoveCheck();
         IsGround();
         PlayerJump();
         PlayerRun();
-        PlayerCrouch();               
+        PlayerCrouch();
     }
 
     //이동
     void PlayerMove()
     {
-        float x_dir = Input.GetAxisRaw("Horizontal");
-        float z_dir = Input.GetAxisRaw("Vertical");
+        float xDir = Input.GetAxisRaw("Horizontal");
+        float zDir = Input.GetAxisRaw("Vertical");
 
-        Vector3 horizontal = transform.right * x_dir;
-        Vector3 vertical = transform.forward * z_dir;
+        Vector3 horizontal = transform.right * xDir;
+        Vector3 vertical = transform.forward * zDir;
 
-        Vector3 velocity = (horizontal + vertical).normalized * cur_speed;
+        Vector3 velocity = (horizontal + vertical).normalized * curSpeed;
 
-        Rb.MovePosition(transform.position + velocity * Time.deltaTime);
-    }
+        rb.MovePosition(transform.position + velocity * Time.deltaTime);
 
-    void PlayerMoveCheck()
-    {
-        if (is_run == true)
-        {
-            is_walk = false;
-            return;
-        }
-
-        if (Vector3.Distance(last_pos, transform.position) >= 0.01f) is_walk = true;
-        else is_walk = false;
-
-        last_pos = transform.position;
+        if (velocity.magnitude == 0) isWalk = false;
+        else isWalk = true;
     }
 
     void PlayerRotation()
     {
-        float y_rot = Input.GetAxisRaw("Mouse X");
-        Vector3 player_rot_y = new Vector3(0.0f, y_rot, 0.0f) * Main_Camera.GetComponent<MainCamera>().GetCameraSensitivity();
+        float yRot = Input.GetAxisRaw("Mouse X");
+        Vector3 playerRot = new Vector3(0.0f, yRot, 0.0f) * mainCamera.GetComponent<MainCamera>().GetCameraSensitivity();
 
-        Rb.MoveRotation(Rb.rotation * Quaternion.Euler(player_rot_y));
+        float xRot = Input.GetAxisRaw("Mouse Y");
+        xRot = Mathf.Clamp(xRot, -45, 45);
+
+        arm.transform.rotation = arm.transform.rotation * Quaternion.Euler(new Vector3(-xRot, 0.0f, 0.0f) * mainCamera.GetComponent<MainCamera>().GetCameraSensitivity());
+
+        rb.MoveRotation(rb.rotation * Quaternion.Euler(playerRot));
     }
 
     void PlayerRun()
     {
-        if (Input.GetKey(KeyCode.LeftShift))
-        {
-            Running();
-        }
-        if (Input.GetKeyUp(KeyCode.LeftShift))
-        {
-            StopRunning();
-        }
+        if (Input.GetKey(KeyCode.LeftShift)) Running();
+        if (Input.GetKeyUp(KeyCode.LeftShift)) StopRunning();
     }
 
     void Running()
-    {        
-        is_run = true;
-        cur_speed = run_speed;
+    {
+        isRun = true;
+        curSpeed = runSpeed;
     }
 
     void StopRunning()
     {
-        is_run = false;
-        cur_speed = walk_speed;
+        isRun = false;
+        curSpeed = walkSpeed;
     }
 
     //점프
     void PlayerJump()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && is_ground == true)
-        {
-            Jump();
-        }
+        if (Input.GetKeyDown(KeyCode.Space) && isGround == true) Jump();
     }
 
     void Jump()
     {
-        Rb.velocity = transform.up * jump_force;
+        rb.velocity = transform.up * jumpForce;
     }
 
     void IsGround()
     {
         //capsule collider의 반 만큼 레이 쏘기
-        is_ground = Physics.Raycast(transform.position, Vector3.down, this_Col.bounds.extents.y + 0.1f);
+        isGround = Physics.Raycast(transform.position, Vector3.down, col.bounds.extents.y + 0.1f);
     }
 
     //앉기
@@ -145,27 +130,27 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.LeftControl))
         {
-            is_crouch = true;
+            isCrouch = true;
             Crouch();
         }
         if (Input.GetKeyUp(KeyCode.LeftControl))
         {
-            is_crouch = false;
+            isCrouch = false;
             Crouch();
         }
     }
 
     void Crouch()
     {
-        if (is_crouch)
+        if (isCrouch)
         {
-            cur_speed = crouch_speed;
-            cur_crouch_pos_y = crouch_pos_y;
+            curSpeed = crouchSpeed;
+            curCrouchPosY = crouchPosY;
         }
         else
         {
-            cur_speed = walk_speed;
-            cur_crouch_pos_y = origin_pos_y;
+            curSpeed = walkSpeed;
+            curCrouchPosY = originPosY;
         }
 
         StartCoroutine(CrouchCoroutine());
@@ -173,25 +158,25 @@ public class Player : MonoBehaviour
 
     IEnumerator CrouchCoroutine()
     {
-        float pos_y = Main_Camera.transform.localPosition.y;
+        float pos_y = mainCamera.transform.localPosition.y;
         int count = 0;
 
-        while (pos_y != cur_crouch_pos_y)
+        while (pos_y != curCrouchPosY)
         {
             count++;
-            pos_y = Mathf.Lerp(pos_y, cur_crouch_pos_y, 0.4f);
-            Main_Camera.transform.localPosition = new Vector3(Main_Camera.transform.localPosition.x, pos_y, Main_Camera.transform.localPosition.z);
+            pos_y = Mathf.Lerp(pos_y, curCrouchPosY, 0.4f);
+            mainCamera.transform.localPosition = new Vector3(mainCamera.transform.localPosition.x, pos_y, mainCamera.transform.localPosition.z);
             //20번 실행 후 보간 끝내기
             if (count > 20)
                 break;
             yield return null;
         }
 
-        Main_Camera.transform.localPosition = new Vector3(Main_Camera.transform.localPosition.x, cur_crouch_pos_y, Main_Camera.transform.localPosition.z);
+        mainCamera.transform.localPosition = new Vector3(mainCamera.transform.localPosition.x, curCrouchPosY, mainCamera.transform.localPosition.z);
     }
 
     //플레이어 상태 전하는 함수
-    public bool IsPlayerWalk() { return is_walk; }
-    public bool IsPlayerRun() { return is_run; }    
-    public bool IsPlayerCrouch() { return is_crouch; }
+    public bool IsPlayerWalk() { return isWalk; }
+    public bool IsPlayerRun() { return isRun; }
+    public bool IsPlayerCrouch() { return isCrouch; }
 }

@@ -4,20 +4,20 @@ using UnityEngine;
 
 public class CrossHair : MonoBehaviour
 {
-    Animator Ani;
+    Animator ani;
 
     void Start()
     {
-        Ani = GetComponent<Animator>();
+        ani = GetComponent<Animator>();
     }
 
-    public void SetAnimation(Player Player)
+    public void SetAnimation(Player player)
     {
-        Ani.SetBool("Crouch", Player.IsPlayerCrouch());
-        Ani.SetBool("Walk", Player.IsPlayerWalk());
-        Ani.SetBool("Run", Player.IsPlayerRun());
+        ani.SetBool("IsCrouch", player.IsPlayerCrouch());
+        ani.SetBool("IsWalk", player.IsPlayerWalk());
+        ani.SetBool("IsRun", player.IsPlayerRun());
     }
 
-    public void StartFireAnimation() { Ani.SetBool("Fire", true); }
-    public void StopFireAnimation() { Ani.SetBool("Fire", false); }
+    public void StartFireAnimation() { ani.SetBool("IsFire", true); }
+    public void StopFireAnimation() { ani.SetBool("IsFire", false); }
 }

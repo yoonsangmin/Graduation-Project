@@ -6,17 +6,17 @@ public class UiController : MonoBehaviour
 {
     //참조하기 위한 오브젝트
     [SerializeField]
-    WeaponController Weapon_Controller;
+    WeaponController weaponController;
     [SerializeField]
-    Player Player;
+    Player player;
 
     //Ui 관련
     [SerializeField]
-    BulletHud Bullet_Hud;
+    BulletHud bulletHud;
     [SerializeField]
-    CrossHair Cross_Hair;
+    CrossHair crossHair;
     [SerializeField]
-    HPBar Hp_Bar;
+    HPBar hpBar;
 
     void Start()
     {
@@ -31,12 +31,12 @@ public class UiController : MonoBehaviour
     
     void WeaponUi()
     {
-        Bullet_Hud.UpdateText(Weapon_Controller.GetCurMagazine(), Weapon_Controller.GetCurBullet());
+        bulletHud.UpdateText(weaponController.GetCurMagazine(), weaponController.GetCurBullet());
     }
 
     void PlayerUi()
     {
-        Cross_Hair.SetAnimation(Player);        
+        crossHair.SetAnimation(player);        
     }
 
 }

@@ -4,24 +4,24 @@ using UnityEngine;
 
 public class MainCamera : MonoBehaviour
 {
-    Transform player_pos;
+    Transform playerPos;
 
     //거리
-    float dist = 1.0f;
+    float dist = 0.0f;
 
     //민감도
     float sensitivity = 2.0f;
 
     //회전
-    float rot_limit = 45.0f;
-    float cur_rot_x = 0.0f;
-    float cur_rot_y = 0.0f;
+    float rotLimit = 45.0f;
+    float curRotX = 0.0f;
+    float curRotY = 0.0f;
 
-    bool camera_stop = false;
+    bool cameraStop = false;
 
     void Start()
     {
-        player_pos = GameObject.Find("Player").transform;
+        playerPos = GameObject.Find("Player").transform;
 
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked; //커서 고정
@@ -37,13 +37,13 @@ public class MainCamera : MonoBehaviour
         float x_rot = Input.GetAxisRaw("Mouse Y");
         float y_rot = Input.GetAxisRaw("Mouse X");
 
-        cur_rot_x -= x_rot * sensitivity;
-        cur_rot_y += y_rot * sensitivity;
+        curRotX -= x_rot * sensitivity;
+        curRotY += y_rot * sensitivity;
 
-        cur_rot_x = Mathf.Clamp(cur_rot_x, -rot_limit, rot_limit);
+        curRotX = Mathf.Clamp(curRotX, -rotLimit, rotLimit);
 
-        this.transform.localEulerAngles = new Vector3(cur_rot_x, cur_rot_y, 0.0f);
-        this.transform.position = Quaternion.Euler(cur_rot_x, cur_rot_y, 0) * new Vector3(0, player_pos.position.y + 2.5f, -dist) + player_pos.position;
+        this.transform.localEulerAngles = new Vector3(curRotX, curRotY, 0.0f);
+        this.transform.position = Quaternion.Euler(curRotX, curRotY, 0) * new Vector3(0, playerPos.position.y - 1.08f, -dist) + playerPos.position;
     }
 
     //public void CameraStop()

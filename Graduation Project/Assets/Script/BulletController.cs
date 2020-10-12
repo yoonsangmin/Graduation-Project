@@ -5,40 +5,44 @@ using UnityEngine;
 public class BulletController : MonoBehaviour
 {
     [SerializeField]
-    GameObject Bullet_Prefab;
-    List<GameObject> All_Bullet = new List<GameObject>();
+    GameObject gunEntry;
+    [SerializeField]
+    GameObject bullet;
+    List<GameObject> bullets = new List<GameObject>();
 
     [SerializeField]
-    GameObject Main_Camera;
+    GameObject mainCamera;
 
     //총알 설정
-    public void SetBullet(int bullet_num, float accuracy, float range, float speed, float damage)
+    public void SetBullet(int bulletNum, float accuracy, float range, float speed, float damage)
     {
-        for (int i = 0; i < bullet_num; i++)
+        for (int i = 0; i < bulletNum; i++)
         {
-            GameObject Obj = Instantiate(Bullet_Prefab) as GameObject;
-            Obj.transform.position = transform.position;
-            Obj.GetComponent<Bullet>().SetBullet(accuracy, range, speed, damage);
-            All_Bullet.Add(Obj);
+            GameObject obj = Instantiate(bullet) as GameObject;
+            obj.transform.position = transform.position;
+            obj.transform.parent = transform;
+            obj.GetComponent<Bullet>().SetBullet(accuracy, range, speed, damage);
+            bullets.Add(obj);
         }
     }
 
     //사격
     public void Fire()
     {
-        GameObject Obj = GetUnusedBullet();
-        Obj.SetActive(true);
-        Obj.transform.rotation = Main_Camera.transform.rotation;
-        Obj.transform.position = transform.position;
-        Obj.GetComponent<Bullet>().Fire();
+        GameObject obj = GetUnusedBullet();
+        obj.SetActive(true);
+        obj.transform.parent = transform;
+        obj.transform.rotation = mainCamera.transform.rotation;
+        obj.transform.position = gunEntry.transform.position;
+        obj.GetComponent<Bullet>().Fire();
     }
 
     //사용할 수 있는 총알 찾기
     GameObject GetUnusedBullet()
     {
-        foreach (var Obj in All_Bullet)
-            if (Obj.activeSelf == false)
-                return Obj;
+        foreach (var obj in bullets)
+            if (obj.activeSelf == false)
+                return obj;
 
         return null;
     }

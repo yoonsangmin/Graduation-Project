@@ -12,14 +12,13 @@ enum WeaponKind
 public class WeaponController : MonoBehaviour
 {
     [SerializeField]
-    CrossHair Cross_Hair;
+    CrossHair crossHair;
     [SerializeField]
     RangedWeapon AK;
 
     void Start()
     {
-        AK.SetWeaponStat("AK", 30, 100, 30.0f, 0.002f, 0.2f, 3, 0.3f, 0.7f, 30, 20);
-
+        AK.SetWeaponStat("AK", 30, 100, 60.0f, 0.002f, 0.2f, 3, 0.3f, 0.7f, 30, 20);
     }
 
     void Update()
@@ -31,14 +30,14 @@ public class WeaponController : MonoBehaviour
 
     void Fire()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) && AK.IsReload() == false)
         {
             AK.Fire();
-            Cross_Hair.StartFireAnimation();
+            crossHair.StartFireAnimation();
         }
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(0) || AK.IsReload() == true)
         {
-            Cross_Hair.StopFireAnimation();
+            crossHair.StopFireAnimation();
         }
     }
 
