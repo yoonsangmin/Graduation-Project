@@ -43,7 +43,7 @@ public class MainCamera : MonoBehaviour
         curRotX = Mathf.Clamp(curRotX, -rotLimit, rotLimit);
 
         this.transform.localEulerAngles = new Vector3(curRotX, curRotY, 0.0f);
-        this.transform.position = Quaternion.Euler(curRotX, curRotY, 0) * new Vector3(0, playerPos.position.y - 1.08f, -dist) + playerPos.position;
+        this.transform.position = Quaternion.Euler(curRotX, curRotY, 0) * new Vector3(0, playerPos.position.y - 3.2f, -dist) + playerPos.position;
     }
 
     //public void CameraStop()

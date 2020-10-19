@@ -5,8 +5,6 @@ using UnityEngine;
 public class Player : CharacterBase
 {
     [SerializeField]
-    GameObject mainCamera;
-    [SerializeField]
     GameObject arm;
 
     //컴포넌트

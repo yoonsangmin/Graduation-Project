@@ -49,7 +49,7 @@ public class Bullet : MonoBehaviour
     {
         if (collision.gameObject.tag == "Bullet") return;
 
-        if (collision.gameObject.tag != "Untagged") collision.gameObject.GetComponent<CharacterBase>().ReceiveDamage(damage);
+        if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "Player") collision.gameObject.GetComponent<CharacterBase>().ReceiveDamage(damage, collision.contacts[0].point);
 
         transform.parent = collision.gameObject.transform;
 

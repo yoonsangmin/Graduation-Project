@@ -1,0 +1,6236 @@
+fileFormatVersion: 2
+guid: 0bd96f6f4899f644ea1ffd9b4735a5e6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: OT Automatic rifle 6
+  - first:
+      213: 21300002
+    second: OT Automatic rifle 1
+  - first:
+      213: 21300004
+    second: OT Handgun 5
+  - first:
+      213: 21300006
+    second: OT Automatic rifle 5
+  - first:
+      213: 21300008
+    second: OT Semiautomatic rifle 1
+  - first:
+      213: 21300010
+    second: OT Handgun 4
+  - first:
+      213: 21300012
+    second: OT Shotgun 2
+  - first:
+      213: 21300014
+    second: OT Handgun 3
+  - first:
+      213: 21300016
+    second: OT Submachinegun 3
+  - first:
+      213: 21300018
+    second: OT Automatic rifle 2
+  - first:
+      213: 21300020
+    second: OT Sniper 3
+  - first:
+      213: 21300022
+    second: OT Handgun 2
+  - first:
+      213: 21300024
+    second: OT Submachinegun 1
+  - first:
+      213: 21300026
+    second: OT Shotgun 1
+  - first:
+      213: 21300028
+    second: OT Handgun 1
+  - first:
+      213: 21300030
+    second: OT Rifle 1
+  - first:
+      213: 21300032
+    second: OT Rocketlauncher 1
+  - first:
+      213: 21300034
+    second: OT Sniper 2
+  - first:
+      213: 21300036
+    second: OT Sniper 1
+  - first:
+      213: 21300038
+    second: OT Combat knife
+  - first:
+      213: 21300040
+    second: OT Automatic shotgun 1
+  - first:
+      213: 21300042
+    second: OT Submachinegun 2
+  - first:
+      213: 21300044
+    second: OT Automatic rifle 3
+  - first:
+      213: 21300046
+    second: OT Automatic rifle 4
+  - first:
+      213: -6097651112842030673
+    second: Orange theme spritesheet 2_0
+  - first:
+      213: 4228049363381178304
+    second: Orange theme spritesheet 2_1
+  - first:
+      213: -5858583713456590154
+    second: Orange theme spritesheet 2_2
+  - first:
+      213: 2974167874105548007
+    second: Orange theme spritesheet 2_3
+  - first:
+      213: 7548307608287161336
+    second: Orange theme spritesheet 2_4
+  - first:
+      213: -2721711500651772183
+    second: Orange theme spritesheet 2_5
+  - first:
+      213: 2250388524702947192
+    second: Orange theme spritesheet 2_6
+  - first:
+      213: -4669009824491577878
+    second: Orange theme spritesheet 2_7
+  - first:
+      213: 7681169094531665122
+    second: Orange theme spritesheet 2_8
+  - first:
+      213: 7751818847784653900
+    second: Orange theme spritesheet 2_9
+  - first:
+      213: -3347657745355332692
+    second: Orange theme spritesheet 2_10
+  - first:
+      213: -3768269153063180877
+    second: Orange theme spritesheet 2_11
+  - first:
+      213: -4346671573099420188
+    second: Orange theme spritesheet 2_12
+  - first:
+      213: -5543356589780327834
+    second: Orange theme spritesheet 2_13
+  - first:
+      213: 5180914702896597619
+    second: Orange theme spritesheet 2_14
+  - first:
+      213: 6102351463931731130
+    second: Orange theme spritesheet 2_15
+  - first:
+      213: 3920238749733446731
+    second: Orange theme spritesheet 2_16
+  - first:
+      213: -5521745964741096404
+    second: Orange theme spritesheet 2_17
+  - first:
+      213: 1969961443229225174
+    second: Orange theme spritesheet 2_18
+  - first:
+      213: -7345298663890792696
+    second: Orange theme spritesheet 2_19
+  - first:
+      213: 4146471580604035672
+    second: Orange theme spritesheet 2_20
+  - first:
+      213: -7421389583395073871
+    second: Orange theme spritesheet 2_21
+  - first:
+      213: -4207965778773321353
+    second: Orange theme spritesheet 2_22
+  - first:
+      213: -928812180181533708
+    second: Orange theme spritesheet 2_23
+  - first:
+      213: 3370995423892389089
+    second: Orange theme spritesheet 2_24
+  - first:
+      213: -3216908364912797870
+    second: Orange theme spritesheet 2_25
+  - first:
+      213: 1316931223658419291
+    second: Orange theme spritesheet 2_26
+  - first:
+      213: -7264861435465320828
+    second: Orange theme spritesheet 2_27
+  - first:
+      213: -7589567324223287079
+    second: Orange theme spritesheet 2_28
+  - first:
+      213: 475084548455600240
+    second: Orange theme spritesheet 2_29
+  - first:
+      213: 3397960561288338894
+    second: Orange theme spritesheet 2_30
+  - first:
+      213: 6750771939966417647
+    second: Orange theme spritesheet 2_31
+  - first:
+      213: -1148088638851102470
+    second: Orange theme spritesheet 2_32
+  - first:
+      213: -5439904861614630801
+    second: Orange theme spritesheet 2_33
+  - first:
+      213: 6613802050632551765
+    second: Orange theme spritesheet 2_34
+  - first:
+      213: -4570604924751141942
+    second: Orange theme spritesheet 2_35
+  - first:
+      213: 1212686916201342972
+    second: Orange theme spritesheet 2_36
+  - first:
+      213: 7723101293736962736
+    second: Orange theme spritesheet 2_37
+  - first:
+      213: -1244959614890132642
+    second: Orange theme spritesheet 2_38
+  - first:
+      213: 5058303647054785271
+    second: Orange theme spritesheet 2_39
+  - first:
+      213: -6110924447503273457
+    second: Orange theme spritesheet 2_40
+  - first:
+      213: -8221675453087199241
+    second: Orange theme spritesheet 2_41
+  - first:
+      213: 76813084204254982
+    second: Orange theme spritesheet 2_42
+  - first:
+      213: -7436229541326782730
+    second: Orange theme spritesheet 2_43
+  - first:
+      213: 3238008806079333302
+    second: Orange theme spritesheet 2_44
+  - first:
+      213: 3976143264109421317
+    second: Orange theme spritesheet 2_45
+  - first:
+      213: 5227463643529633384
+    second: Orange theme spritesheet 2_46
+  - first:
+      213: 4884708897235842991
+    second: Orange theme spritesheet 2_47
+  - first:
+      213: -3748831515066100460
+    second: Orange theme spritesheet 2_48
+  - first:
+      213: -2811412324191342680
+    second: Orange theme spritesheet 2_49
+  - first:
+      213: 6160205969537095390
+    second: Orange theme spritesheet 2_50
+  - first:
+      213: -1847166246321556308
+    second: Orange theme spritesheet 2_51
+  - first:
+      213: -7199296680592300997
+    second: Orange theme spritesheet 2_52
+  - first:
+      213: 6714215504225320729
+    second: Orange theme spritesheet 2_53
+  - first:
+      213: -3965232980817017475
+    second: Orange theme spritesheet 2_54
+  - first:
+      213: 8583763294042543303
+    second: Orange theme spritesheet 2_55
+  - first:
+      213: -3807560132681262591
+    second: Orange theme spritesheet 2_56
+  - first:
+      213: -8798198215284051048
+    second: Orange theme spritesheet 2_57
+  - first:
+      213: -848231542808247407
+    second: Orange theme spritesheet 2_58
+  - first:
+      213: 3946029267278628548
+    second: Orange theme spritesheet 2_59
+  - first:
+      213: -8625890537661748325
+    second: Orange theme spritesheet 2_60
+  - first:
+      213: 738015079267405810
+    second: Orange theme spritesheet 2_61
+  - first:
+      213: 3118583659086383119
+    second: Orange theme spritesheet 2_62
+  - first:
+      213: -3095665790915192435
+    second: Orange theme spritesheet 2_63
+  - first:
+      213: 3063802976660135267
+    second: Orange theme spritesheet 2_64
+  - first:
+      213: 1843701908103956426
+    second: Orange theme spritesheet 2_65
+  - first:
+      213: -3450003075092480426
+    second: Orange theme spritesheet 2_66
+  - first:
+      213: 4180779475544346588
+    second: Orange theme spritesheet 2_67
+  - first:
+      213: -2055724448751810557
+    second: Orange theme spritesheet 2_68
+  - first:
+      213: 4123630302884791909
+    second: Orange theme spritesheet 2_69
+  - first:
+      213: -2055086727751041731
+    second: Orange theme spritesheet 2_70
+  - first:
+      213: 7852513237305879537
+    second: Orange theme spritesheet 2_71
+  - first:
+      213: 1995312368926759982
+    second: Orange theme spritesheet 2_72
+  - first:
+      213: -8206530729395009857
+    second: Orange theme spritesheet 2_73
+  - first:
+      213: 3894638316484169198
+    second: Orange theme spritesheet 2_74
+  - first:
+      213: 3315726973536865295
+    second: Orange theme spritesheet 2_75
+  - first:
+      213: -6441852185445300627
+    second: Orange theme spritesheet 2_76
+  - first:
+      213: 434500239334242259
+    second: Orange theme spritesheet 2_77
+  - first:
+      213: -5358375251114048519
+    second: Orange theme spritesheet 2_78
+  - first:
+      213: -2166073281442631774
+    second: Orange theme spritesheet 2_79
+  - first:
+      213: 8453810839347330169
+    second: Orange theme spritesheet 2_80
+  - first:
+      213: -2062412934236194057
+    second: Orange theme spritesheet 2_81
+  - first:
+      213: 8086682333025493904
+    second: Orange theme spritesheet 2_82
+  - first:
+      213: 5044619485448231371
+    second: Orange theme spritesheet 2_83
+  - first:
+      213: 7317011332584012885
+    second: Orange theme spritesheet 2_84
+  - first:
+      213: 4651907717312497503
+    second: Orange theme spritesheet 2_85
+  - first:
+      213: -1315458002372614899
+    second: Orange theme spritesheet 2_86
+  - first:
+      213: -5734673727741279388
+    second: Orange theme spritesheet 2_87
+  - first:
+      213: 5898134862286309315
+    second: Orange theme spritesheet 2_88
+  - first:
+      213: 1440891055137942244
+    second: Orange theme spritesheet 2_89
+  - first:
+      213: 6042821634191451809
+    second: Orange theme spritesheet 2_90
+  - first:
+      213: 5214556348451168193
+    second: Orange theme spritesheet 2_91
+  - first:
+      213: -3218721307973469376
+    second: Orange theme spritesheet 2_92
+  - first:
+      213: 792045996838774731
+    second: Orange theme spritesheet 2_93
+  - first:
+      213: -5865057596846927735
+    second: Orange theme spritesheet 2_94
+  - first:
+      213: -2747766348720117325
+    second: Orange theme spritesheet 2_95
+  - first:
+      213: 257376406843320594
+    second: Orange theme spritesheet 2_96
+  - first:
+      213: -3075903746693120620
+    second: Orange theme spritesheet 2_97
+  - first:
+      213: 4399176555152298481
+    second: Orange theme spritesheet 2_98
+  - first:
+      213: -1810212854668959780
+    second: Orange theme spritesheet 2_99
+  - first:
+      213: -5062028046590762445
+    second: Orange theme spritesheet 2_100
+  - first:
+      213: -3469612239283449861
+    second: Orange theme spritesheet 2_101
+  - first:
+      213: -4448436103460657114
+    second: Orange theme spritesheet 2_102
+  - first:
+      213: 1455756724883130597
+    second: Orange theme spritesheet 2_103
+  - first:
+      213: 7090738855889597378
+    second: Orange theme spritesheet 2_104
+  - first:
+      213: 5997359852626173011
+    second: Orange theme spritesheet 2_105
+  - first:
+      213: 494769007937103787
+    second: Orange theme spritesheet 2_106
+  - first:
+      213: -3270868451757112192
+    second: Orange theme spritesheet 2_107
+  - first:
+      213: -1824586732619319994
+    second: Orange theme spritesheet 2_108
+  - first:
+      213: 3500165607597565718
+    second: Orange theme spritesheet 2_109
+  - first:
+      213: 2968665624671787978
+    second: Orange theme spritesheet 2_110
+  - first:
+      213: 2865411275200128890
+    second: Orange theme spritesheet 2_111
+  - first:
+      213: 6124581280393547378
+    second: Orange theme spritesheet 2_112
+  - first:
+      213: 4336070976523425511
+    second: Orange theme spritesheet 2_113
+  - first:
+      213: 4934752280860892004
+    second: Orange theme spritesheet 2_114
+  - first:
+      213: -6224739526938188966
+    second: Orange theme spritesheet 2_115
+  - first:
+      213: 5384540086019330687
+    second: Orange theme spritesheet 2_116
+  - first:
+      213: -1753390069531472160
+    second: Orange theme spritesheet 2_117
+  - first:
+      213: 8919350630048702537
+    second: Orange theme spritesheet 2_118
+  - first:
+      213: 5804901868756911975
+    second: Orange theme spritesheet 2_119
+  - first:
+      213: 4793637284427588194
+    second: Orange theme spritesheet 2_120
+  - first:
+      213: -656228616722709133
+    second: Orange theme spritesheet 2_121
+  - first:
+      213: -8919387045314960042
+    second: Orange theme spritesheet 2_122
+  - first:
+      213: 8653419143099114501
+    second: Orange theme spritesheet 2_123
+  - first:
+      213: 4903060799925474614
+    second: Orange theme spritesheet 2_124
+  - first:
+      213: -2409390592273508785
+    second: Orange theme spritesheet 2_125
+  - first:
+      213: 7306976890608764196
+    second: Orange theme spritesheet 2_126
+  - first:
+      213: -1686211084823009391
+    second: Orange theme spritesheet 2_127
+  - first:
+      213: 6208700451475795179
+    second: Orange theme spritesheet 2_128
+  - first:
+      213: -1056293406194278078
+    second: Orange theme spritesheet 2_129
+  - first:
+      213: 7453224341248526433
+    second: Orange theme spritesheet 2_130
+  - first:
+      213: -4454438100814652812
+    second: Orange theme spritesheet 2_131
+  - first:
+      213: 6056882019540990126
+    second: Orange theme spritesheet 2_132
+  - first:
+      213: -4108642358732919188
+    second: Orange theme spritesheet 2_133
+  - first:
+      213: 1549381039921431913
+    second: Orange theme spritesheet 2_134
+  - first:
+      213: 5386919779487176450
+    second: Orange theme spritesheet 2_135
+  - first:
+      213: -6067251285727460422
+    second: Orange theme spritesheet 2_136
+  - first:
+      213: -8509175478826589197
+    second: Orange theme spritesheet 2_137
+  - first:
+      213: -5924860784588814591
+    second: Orange theme spritesheet 2_138
+  - first:
+      213: -6668040968794282256
+    second: Orange theme spritesheet 2_139
+  - first:
+      213: -7058291006057289171
+    second: Orange theme spritesheet 2_140
+  - first:
+      213: -6423453556185817637
+    second: Orange theme spritesheet 2_141
+  - first:
+      213: -841765947186002461
+    second: Orange theme spritesheet 2_142
+  - first:
+      213: 498674495885322307
+    second: Orange theme spritesheet 2_143
+  - first:
+      213: 2747250129054859770
+    second: Orange theme spritesheet 2_144
+  - first:
+      213: -7384656287261712943
+    second: Orange theme spritesheet 2_145
+  - first:
+      213: -4087269357233555186
+    second: Orange theme spritesheet 2_146
+  - first:
+      213: 8410574319459529590
+    second: Orange theme spritesheet 2_147
+  - first:
+      213: 9138684143939660588
+    second: Orange theme spritesheet 2_148
+  - first:
+      213: 8206238440008829932
+    second: Orange theme spritesheet 2_149
+  - first:
+      213: -2380486323073839091
+    second: Orange theme spritesheet 2_150
+  - first:
+      213: -9157753944651313826
+    second: Orange theme spritesheet 2_151
+  - first:
+      213: -2939815612540171284
+    second: Orange theme spritesheet 2_152
+  - first:
+      213: -1540377996220186423
+    second: Orange theme spritesheet 2_153
+  - first:
+      213: 7502297178784880161
+    second: Orange theme spritesheet 2_154
+  - first:
+      213: -1609035458729864005
+    second: Orange theme spritesheet 2_155
+  - first:
+      213: -4477134335075491516
+    second: Orange theme spritesheet 2_156
+  - first:
+      213: 4785387932052019268
+    second: Orange theme spritesheet 2_157
+  - first:
+      213: -4540496573207030189
+    second: Orange theme spritesheet 2_158
+  - first:
+      213: 4812600652469828696
+    second: Orange theme spritesheet 2_159
+  - first:
+      213: -2862350284874466161
+    second: Orange theme spritesheet 2_160
+  - first:
+      213: -1539059823510170850
+    second: Orange theme spritesheet 2_161
+  - first:
+      213: -6099050104429626107
+    second: Orange theme spritesheet 2_162
+  - first:
+      213: -7393983810886217738
+    second: Orange theme spritesheet 2_163
+  - first:
+      213: -1882216731233262305
+    second: Orange theme spritesheet 2_164
+  - first:
+      213: 6452362504284609407
+    second: Orange theme spritesheet 2_165
+  - first:
+      213: -3597021194799793471
+    second: Orange theme spritesheet 2_166
+  - first:
+      213: -6509746209010492911
+    second: Orange theme spritesheet 2_167
+  - first:
+      213: -5456418358467239552
+    second: Orange theme spritesheet 2_168
+  - first:
+      213: 7365757906570900209
+    second: Orange theme spritesheet 2_169
+  - first:
+      213: -764438740336219681
+    second: Orange theme spritesheet 2_170
+  - first:
+      213: 1539122493141145806
+    second: Orange theme spritesheet 2_171
+  - first:
+      213: 5261630297009598236
+    second: Orange theme spritesheet 2_172
+  - first:
+      213: -883291748056281990
+    second: Orange theme spritesheet 2_173
+  - first:
+      213: -5958629406487225690
+    second: Orange theme spritesheet 2_174
+  - first:
+      213: 8404229821132193859
+    second: Orange theme spritesheet 2_175
+  - first:
+      213: -7854933844753355518
+    second: Orange theme spritesheet 2_176
+  - first:
+      213: 4134433837825196224
+    second: Orange theme spritesheet 2_177
+  - first:
+      213: 3939437154427016127
+    second: Orange theme spritesheet 2_178
+  - first:
+      213: -4058536546085488148
+    second: Orange theme spritesheet 2_179
+  - first:
+      213: 8764652781704722804
+    second: Orange theme spritesheet 2_180
+  - first:
+      213: -3700191853518103539
+    second: Orange theme spritesheet 2_181
+  - first:
+      213: 5436350383423040324
+    second: Orange theme spritesheet 2_182
+  - first:
+      213: 7803618316973877657
+    second: Orange theme spritesheet 2_183
+  - first:
+      213: 1020645717188301185
+    second: Orange theme spritesheet 2_184
+  - first:
+      213: -2037423600482215038
+    second: Orange theme spritesheet 2_185
+  - first:
+      213: 4275714235208544435
+    second: Orange theme spritesheet 2_186
+  - first:
+      213: 7865449835438381931
+    second: Orange theme spritesheet 2_187
+  - first:
+      213: -3596050276015120784
+    second: Orange theme spritesheet 2_188
+  - first:
+      213: 6130003808194806769
+    second: Orange theme spritesheet 2_189
+  - first:
+      213: -7391542715492106109
+    second: Orange theme spritesheet 2_190
+  - first:
+      213: -8434170303261999189
+    second: Orange theme spritesheet 2_191
+  - first:
+      213: -7143349342963862974
+    second: Orange theme spritesheet 2_192
+  - first:
+      213: 6116527693741277963
+    second: Orange theme spritesheet 2_193
+  - first:
+      213: 1010925404850243380
+    second: Orange theme spritesheet 2_194
+  - first:
+      213: 5504572933788798299
+    second: Orange theme spritesheet 2_195
+  - first:
+      213: -2014198938900583419
+    second: Orange theme spritesheet 2_196
+  - first:
+      213: -1693753647837406882
+    second: Orange theme spritesheet 2_197
+  - first:
+      213: -6679717898489803929
+    second: Orange theme spritesheet 2_198
+  - first:
+      213: -4884186527891549901
+    second: Orange theme spritesheet 2_199
+  - first:
+      213: -1486112428065526471
+    second: Orange theme spritesheet 2_200
+  - first:
+      213: 2217250980936285622
+    second: Orange theme spritesheet 2_201
+  - first:
+      213: 7739936828863486196
+    second: Orange theme spritesheet 2_202
+  - first:
+      213: 4140012270005563521
+    second: Orange theme spritesheet 2_203
+  - first:
+      213: -6313737941840709533
+    second: Orange theme spritesheet 2_204
+  - first:
+      213: 4712835031176954849
+    second: Orange theme spritesheet 2_205
+  - first:
+      213: -3855703600333371789
+    second: Orange theme spritesheet 2_206
+  - first:
+      213: 6804929842090137260
+    second: Orange theme spritesheet 2_207
+  - first:
+      213: 6385289915878010919
+    second: Orange theme spritesheet 2_208
+  - first:
+      213: 3729011850279013173
+    second: Orange theme spritesheet 2_209
+  - first:
+      213: -3276961255608556856
+    second: Orange theme spritesheet 2_210
+  - first:
+      213: 5661621338699195000
+    second: Orange theme spritesheet 2_211
+  - first:
+      213: 4483902692717970151
+    second: Orange theme spritesheet 2_212
+  - first:
+      213: 5190039990533468330
+    second: Orange theme spritesheet 2_213
+  - first:
+      213: 2788288012619166435
+    second: Orange theme spritesheet 2_214
+  - first:
+      213: -2014180770368846457
+    second: Orange theme spritesheet 2_215
+  - first:
+      213: 940945943337484916
+    second: Orange theme spritesheet 2_216
+  - first:
+      213: 7349263813574931524
+    second: Orange theme spritesheet 2_217
+  - first:
+      213: 7819144640491827748
+    second: Orange theme spritesheet 2_218
+  - first:
+      213: -5993724846112412777
+    second: Orange theme spritesheet 2_219
+  - first:
+      213: -6264981688351506736
+    second: Orange theme spritesheet 2_220
+  - first:
+      213: 1061120713494305386
+    second: Orange theme spritesheet 2_221
+  - first:
+      213: -2341177265232497013
+    second: Orange theme spritesheet 2_222
+  - first:
+      213: 397878235408931725
+    second: Orange theme spritesheet 2_223
+  - first:
+      213: 238378801385013570
+    second: Orange theme spritesheet 2_224
+  - first:
+      213: -2596772319773100865
+    second: Orange theme spritesheet 2_225
+  - first:
+      213: -2022480699323374687
+    second: Orange theme spritesheet 2_226
+  - first:
+      213: 6530363701895073871
+    second: Orange theme spritesheet 2_227
+  - first:
+      213: -2650151640214135580
+    second: Orange theme spritesheet 2_228
+  - first:
+      213: -6837315215751471827
+    second: Orange theme spritesheet 2_229
+  - first:
+      213: -7238472789129236885
+    second: Orange theme spritesheet 2_230
+  - first:
+      213: -8485773826004672436
+    second: Orange theme spritesheet 2_231
+  - first:
+      213: -3964113075715390237
+    second: Orange theme spritesheet 2_232
+  - first:
+      213: 1762079071846205993
+    second: Orange theme spritesheet 2_233
+  - first:
+      213: 743571516533809823
+    second: Orange theme spritesheet 2_234
+  - first:
+      213: 6634916398890058602
+    second: Orange theme spritesheet 2_235
+  - first:
+      213: -2990383088780870950
+    second: Orange theme spritesheet 2_236
+  - first:
+      213: 5053128898582369914
+    second: Orange theme spritesheet 2_237
+  - first:
+      213: -2920184343963146684
+    second: Orange theme spritesheet 2_238
+  - first:
+      213: 509823020811080558
+    second: Orange theme spritesheet 2_239
+  - first:
+      213: 2763545305848228220
+    second: Orange theme spritesheet 2_240
+  - first:
+      213: 7131041862748979868
+    second: Orange theme spritesheet 2_241
+  - first:
+      213: -6589379882741622995
+    second: Orange theme spritesheet 2_242
+  - first:
+      213: -2517929893414280059
+    second: Orange theme spritesheet 2_243
+  - first:
+      213: 5254380520056983152
+    second: Orange theme spritesheet 2_244
+  - first:
+      213: 5935426786196518208
+    second: Orange theme spritesheet 2_245
+  - first:
+      213: 146649627672893084
+    second: Orange theme spritesheet 2_246
+  - first:
+      213: -8610951989097415026
+    second: Orange theme spritesheet 2_247
+  - first:
+      213: -6606543723583185859
+    second: Orange theme spritesheet 2_248
+  - first:
+      213: 4961026550525087246
+    second: Orange theme spritesheet 2_249
+  - first:
+      213: 2217509233494920927
+    second: Orange theme spritesheet 2_250
+  - first:
+      213: 4963765444255063319
+    second: Orange theme spritesheet 2_251
+  - first:
+      213: 3371617137199567262
+    second: Orange theme spritesheet 2_252
+  - first:
+      213: 1601097125993425845
+    second: Orange theme spritesheet 2_253
+  - first:
+      213: -5994573844453391820
+    second: Orange theme spritesheet 2_254
+  - first:
+      213: 253239753860786649
+    second: Orange theme spritesheet 2_255
+  - first:
+      213: -8761581870383105434
+    second: Orange theme spritesheet 2_256
+  - first:
+      213: 5422126368208438286
+    second: Orange theme spritesheet 2_257
+  - first:
+      213: 4012794146282203309
+    second: Orange theme spritesheet 2_258
+  - first:
+      213: -3837408725737874108
+    second: Orange theme spritesheet 2_259
+  - first:
+      213: -2202823820664608181
+    second: Orange theme spritesheet 2_260
+  - first:
+      213: -2060867289081709253
+    second: Orange theme spritesheet 2_261
+  - first:
+      213: 7197487596977867832
+    second: Orange theme spritesheet 2_262
+  - first:
+      213: 7712291895053750158
+    second: Orange theme spritesheet 2_263
+  - first:
+      213: -8177967562514249016
+    second: Orange theme spritesheet 2_264
+  - first:
+      213: -1183285826218638178
+    second: Orange theme spritesheet 2_265
+  - first:
+      213: -5034155991560824430
+    second: Orange theme spritesheet 2_266
+  - first:
+      213: 4695352189125407625
+    second: Orange theme spritesheet 2_267
+  - first:
+      213: -475687614897361926
+    second: Orange theme spritesheet 2_268
+  - first:
+      213: 4804349311014527175
+    second: Orange theme spritesheet 2_269
+  - first:
+      213: -8295029607481033795
+    second: Orange theme spritesheet 2_270
+  - first:
+      213: 5377659005844670587
+    second: Orange theme spritesheet 2_271
+  - first:
+      213: 9211919499415805928
+    second: Orange theme spritesheet 2_272
+  - first:
+      213: 4680551362398293560
+    second: Orange theme spritesheet 2_273
+  - first:
+      213: 8763562345750809389
+    second: Orange theme spritesheet 2_274
+  - first:
+      213: 4488253848605718232
+    second: Orange theme spritesheet 2_275
+  - first:
+      213: 5757051439124150129
+    second: Orange theme spritesheet 2_276
+  - first:
+      213: -350911473902230838
+    second: Orange theme spritesheet 2_277
+  - first:
+      213: -4084527867979454176
+    second: Orange theme spritesheet 2_278
+  - first:
+      213: 8925865048060449949
+    second: Orange theme spritesheet 2_279
+  - first:
+      213: -6556472611688638471
+    second: Orange theme spritesheet 2_280
+  - first:
+      213: -2064525711161704890
+    second: Orange theme spritesheet 2_281
+  - first:
+      213: -3607776645979536771
+    second: Orange theme spritesheet 2_282
+  - first:
+      213: 3662229036463015241
+    second: Orange theme spritesheet 2_283
+  - first:
+      213: 2627718590958755164
+    second: Orange theme spritesheet 2_284
+  - first:
+      213: 4720282784862068757
+    second: Orange theme spritesheet 2_285
+  - first:
+      213: 8059695436159177781
+    second: Orange theme spritesheet 2_286
+  - first:
+      213: 2686989502508654676
+    second: Orange theme spritesheet 2_287
+  - first:
+      213: 5878628482153419270
+    second: Orange theme spritesheet 2_288
+  - first:
+      213: -3215709702580948521
+    second: Orange theme spritesheet 2_289
+  - first:
+      213: 4368949712353590643
+    second: Orange theme spritesheet 2_290
+  - first:
+      213: 5185971654559763464
+    second: Orange theme spritesheet 2_291
+  - first:
+      213: 6115636327651602854
+    second: Orange theme spritesheet 2_292
+  - first:
+      213: -34418255008113421
+    second: Orange theme spritesheet 2_293
+  - first:
+      213: -1129067848102480180
+    second: Orange theme spritesheet 2_294
+  - first:
+      213: 1773793940390634701
+    second: Orange theme spritesheet 2_295
+  - first:
+      213: -5536225247737716461
+    second: Orange theme spritesheet 2_296
+  - first:
+      213: 2189475285647807056
+    second: Orange theme spritesheet 2_297
+  - first:
+      213: 3990439309889490809
+    second: Orange theme spritesheet 2_298
+  - first:
+      213: -6180741181475267755
+    second: Orange theme spritesheet 2_299
+  - first:
+      213: -6036133701666917719
+    second: Orange theme spritesheet 2_300
+  - first:
+      213: -7975024931886403820
+    second: Orange theme spritesheet 2_301
+  - first:
+      213: 3117283893956583820
+    second: Orange theme spritesheet 2_302
+  - first:
+      213: 2288190421417868932
+    second: Orange theme spritesheet 2_303
+  - first:
+      213: 670521346446783089
+    second: Orange theme spritesheet 2_304
+  - first:
+      213: -3804073663321112869
+    second: Orange theme spritesheet 2_305
+  - first:
+      213: -4438855066292346244
+    second: Orange theme spritesheet 2_306
+  - first:
+      213: -340299092958169883
+    second: Orange theme spritesheet 2_307
+  - first:
+      213: 1055312216557435581
+    second: Orange theme spritesheet 2_308
+  - first:
+      213: 7999532565383587000
+    second: Orange theme spritesheet 2_309
+  - first:
+      213: -2769020443056761569
+    second: Orange theme spritesheet 2_310
+  - first:
+      213: 4811749651593665202
+    second: Orange theme spritesheet 2_311
+  - first:
+      213: 5036025933308459706
+    second: Orange theme spritesheet 2_312
+  - first:
+      213: -3402781284465971901
+    second: Orange theme spritesheet 2_313
+  - first:
+      213: 3402950362346391061
+    second: Orange theme spritesheet 2_314
+  - first:
+      213: 4039260182868324290
+    second: Orange theme spritesheet 2_315
+  - first:
+      213: -110335755733347562
+    second: Orange theme spritesheet 2_316
+  - first:
+      213: -2174715153781633046
+    second: Orange theme spritesheet 2_317
+  - first:
+      213: -8697547086309429516
+    second: Orange theme spritesheet 2_318
+  - first:
+      213: -4853386966525641465
+    second: Orange theme spritesheet 2_319
+  - first:
+      213: 7322588905779389885
+    second: Orange theme spritesheet 2_320
+  - first:
+      213: -8725944062763007258
+    second: Orange theme spritesheet 2_321
+  - first:
+      213: -3528007502966028600
+    second: Orange theme spritesheet 2_322
+  - first:
+      213: -1801560050245733643
+    second: Orange theme spritesheet 2_323
+  - first:
+      213: -5756716646343295724
+    second: Orange theme spritesheet 2_324
+  - first:
+      213: -3688363124585978895
+    second: Orange theme spritesheet 2_325
+  - first:
+      213: 876927630051089266
+    second: Orange theme spritesheet 2_326
+  - first:
+      213: -8589986179629261417
+    second: Orange theme spritesheet 2_327
+  - first:
+      213: -7806427792519641149
+    second: Orange theme spritesheet 2_328
+  - first:
+      213: 300802009896781764
+    second: Orange theme spritesheet 2_329
+  - first:
+      213: 2130940181377323413
+    second: Orange theme spritesheet 2_330
+  - first:
+      213: -1299097253824284821
+    second: Orange theme spritesheet 2_331
+  - first:
+      213: -6649994663003473626
+    second: Orange theme spritesheet 2_332
+  - first:
+      213: -371214964697515973
+    second: Orange theme spritesheet 2_333
+  - first:
+      213: -4493202275319411766
+    second: Orange theme spritesheet 2_334
+  - first:
+      213: 7148889824018451775
+    second: Orange theme spritesheet 2_335
+  - first:
+      213: -957732989435296055
+    second: Orange theme spritesheet 2_336
+  - first:
+      213: 8731534804121561681
+    second: Orange theme spritesheet 2_337
+  - first:
+      213: -6051892506201180156
+    second: Orange theme spritesheet 2_338
+  - first:
+      213: 8561308056107865791
+    second: Orange theme spritesheet 2_339
+  - first:
+      213: 1392230835252305265
+    second: Orange theme spritesheet 2_340
+  - first:
+      213: 5230712003161945641
+    second: Orange theme spritesheet 2_341
+  - first:
+      213: 1079438398261803303
+    second: Orange theme spritesheet 2_342
+  - first:
+      213: -2185621264012500415
+    second: Orange theme spritesheet 2_343
+  - first:
+      213: 570509863481840557
+    second: Orange theme spritesheet 2_344
+  - first:
+      213: 674899661273979124
+    second: Orange theme spritesheet 2_345
+  - first:
+      213: 2763003898825819443
+    second: Orange theme spritesheet 2_346
+  - first:
+      213: 549587847160431306
+    second: Orange theme spritesheet 2_347
+  - first:
+      213: 959849045156300164
+    second: Orange theme spritesheet 2_348
+  - first:
+      213: -2728460894194155297
+    second: Orange theme spritesheet 2_349
+  - first:
+      213: -205505382037553472
+    second: Orange theme spritesheet 2_350
+  - first:
+      213: -5938772727705088145
+    second: Orange theme spritesheet 2_351
+  - first:
+      213: -6224996705255093208
+    second: Orange theme spritesheet 2_352
+  - first:
+      213: -2786704186412402542
+    second: Orange theme spritesheet 2_353
+  - first:
+      213: 4449476207484969585
+    second: Orange theme spritesheet 2_354
+  - first:
+      213: -1854444407707207246
+    second: Orange theme spritesheet 2_355
+  - first:
+      213: 1244834202551617144
+    second: Orange theme spritesheet 2_356
+  - first:
+      213: -7564167681116816383
+    second: Orange theme spritesheet 2_357
+  - first:
+      213: -936353703931025422
+    second: Orange theme spritesheet 2_358
+  - first:
+      213: 4455064025687656772
+    second: Orange theme spritesheet 2_359
+  - first:
+      213: -5317016924640543945
+    second: Orange theme spritesheet 2_360
+  - first:
+      213: -6547965367440353635
+    second: Orange theme spritesheet 2_361
+  - first:
+      213: -867241740631835539
+    second: Orange theme spritesheet 2_362
+  - first:
+      213: -3936041212465843684
+    second: Orange theme spritesheet 2_363
+  - first:
+      213: 6775296124648909992
+    second: Orange theme spritesheet 2_364
+  - first:
+      213: -7439413514985257768
+    second: Orange theme spritesheet 2_365
+  - first:
+      213: -3668261731115073879
+    second: Orange theme spritesheet 2_366
+  - first:
+      213: 3479276864417676570
+    second: Orange theme spritesheet 2_367
+  - first:
+      213: -745712404434494479
+    second: Orange theme spritesheet 2_368
+  - first:
+      213: -6355162153297941969
+    second: Orange theme spritesheet 2_369
+  - first:
+      213: 4998372766501290994
+    second: Orange theme spritesheet 2_370
+  - first:
+      213: -7917354723488526704
+    second: Orange theme spritesheet 2_371
+  - first:
+      213: -2334732739083944959
+    second: Orange theme spritesheet 2_372
+  - first:
+      213: 8348191205776422325
+    second: Orange theme spritesheet 2_373
+  - first:
+      213: 5885635626631233900
+    second: Orange theme spritesheet 2_374
+  - first:
+      213: -8483660336323056714
+    second: Orange theme spritesheet 2_375
+  - first:
+      213: 3355998155614863764
+    second: Orange theme spritesheet 2_376
+  - first:
+      213: 4485596188071186713
+    second: Orange theme spritesheet 2_377
+  - first:
+      213: -4723617341181461041
+    second: Orange theme spritesheet 2_378
+  - first:
+      213: 5866689259283496893
+    second: Orange theme spritesheet 2_379
+  - first:
+      213: -2553568814121198069
+    second: Orange theme spritesheet 2_380
+  - first:
+      213: -1735521578062543453
+    second: Orange theme spritesheet 2_381
+  - first:
+      213: -50768892734488299
+    second: Orange theme spritesheet 2_382
+  - first:
+      213: 2709597997656781616
+    second: Orange theme spritesheet 2_383
+  - first:
+      213: 1261781040711820161
+    second: Orange theme spritesheet 2_384
+  - first:
+      213: -1812851858794169620
+    second: Orange theme spritesheet 2_385
+  - first:
+      213: 3403447320098796301
+    second: Orange theme spritesheet 2_386
+  - first:
+      213: 8185230209016013299
+    second: Orange theme spritesheet 2_387
+  - first:
+      213: 1789788929338929385
+    second: Orange theme spritesheet 2_388
+  - first:
+      213: -522913689386823810
+    second: Orange theme spritesheet 2_389
+  - first:
+      213: -8603027520553838758
+    second: Orange theme spritesheet 2_390
+  - first:
+      213: -4571767921832407496
+    second: Orange theme spritesheet 2_391
+  - first:
+      213: -8421429598843507750
+    second: Orange theme spritesheet 2_392
+  - first:
+      213: 7540946363956342693
+    second: Orange theme spritesheet 2_393
+  - first:
+      213: -3518159806974111545
+    second: Orange theme spritesheet 2_394
+  - first:
+      213: -2770658957278453969
+    second: Orange theme spritesheet 2_395
+  - first:
+      213: -3361720460799698516
+    second: Orange theme spritesheet 2_396
+  - first:
+      213: -8720282068299505108
+    second: Orange theme spritesheet 2_397
+  - first:
+      213: 6702748555672988041
+    second: Orange theme spritesheet 2_398
+  - first:
+      213: -457594619172064131
+    second: Orange theme spritesheet 2_399
+  - first:
+      213: -1555365866876257976
+    second: Orange theme spritesheet 2_400
+  - first:
+      213: -1326171891808984696
+    second: Orange theme spritesheet 2_401
+  - first:
+      213: 8377409412001861840
+    second: Orange theme spritesheet 2_402
+  - first:
+      213: -6113007391813556371
+    second: Orange theme spritesheet 2_403
+  - first:
+      213: 2691581634040514732
+    second: Orange theme spritesheet 2_404
+  - first:
+      213: -330249104162515315
+    second: Orange theme spritesheet 2_405
+  - first:
+      213: 3853305912528037120
+    second: Orange theme spritesheet 2_406
+  - first:
+      213: -415502222315465061
+    second: Orange theme spritesheet 2_407
+  - first:
+      213: -5770596825795873315
+    second: Orange theme spritesheet 2_408
+  - first:
+      213: 908225420944564820
+    second: Orange theme spritesheet 2_409
+  - first:
+      213: -1371758883932424882
+    second: Orange theme spritesheet 2_410
+  - first:
+      213: -4567897915325090701
+    second: Orange theme spritesheet 2_411
+  - first:
+      213: -3354877840951684860
+    second: Orange theme spritesheet 2_412
+  - first:
+      213: 5525611716595955079
+    second: Orange theme spritesheet 2_413
+  - first:
+      213: 8740337226587797368
+    second: Orange theme spritesheet 2_414
+  - first:
+      213: -8188481045536086195
+    second: Orange theme spritesheet 2_415
+  - first:
+      213: 4433112285445339793
+    second: Orange theme spritesheet 2_416
+  - first:
+      213: 8040513056672352429
+    second: Orange theme spritesheet 2_417
+  - first:
+      213: 3781840485455480643
+    second: Orange theme spritesheet 2_418
+  - first:
+      213: 6536543670073797940
+    second: Orange theme spritesheet 2_419
+  - first:
+      213: 6564226415915775480
+    second: Orange theme spritesheet 2_420
+  - first:
+      213: -1419891237454930325
+    second: Orange theme spritesheet 2_421
+  - first:
+      213: -5532012566375513012
+    second: Orange theme spritesheet 2_422
+  - first:
+      213: 6217221433692122124
+    second: Orange theme spritesheet 2_423
+  - first:
+      213: 2892494228214094600
+    second: Orange theme spritesheet 2_424
+  - first:
+      213: -8691092644383767982
+    second: Orange theme spritesheet 2_425
+  - first:
+      213: 4624763618422945536
+    second: Orange theme spritesheet 2_426
+  - first:
+      213: 7865226240245054193
+    second: Orange theme spritesheet 2_427
+  - first:
+      213: -8402966822957218605
+    second: Orange theme spritesheet 2_428
+  - first:
+      213: -4791546416764175435
+    second: Orange theme spritesheet 2_429
+  - first:
+      213: -2611201744629868682
+    second: Orange theme spritesheet 2_430
+  - first:
+      213: 8838852008974094500
+    second: Orange theme spritesheet 2_431
+  - first:
+      213: -1330952370134819138
+    second: Orange theme spritesheet 2_432
+  - first:
+      213: 8787306230190464876
+    second: Orange theme spritesheet 2_433
+  - first:
+      213: -4561425709608736879
+    second: Orange theme spritesheet 2_434
+  - first:
+      213: -7669972358441735400
+    second: Orange theme spritesheet 2_435
+  - first:
+      213: 798852416974024639
+    second: Orange theme spritesheet 2_436
+  - first:
+      213: -9199949418576233200
+    second: Orange theme spritesheet 2_437
+  - first:
+      213: 7410749415936775312
+    second: Orange theme spritesheet 2_438
+  - first:
+      213: 7640815518382677374
+    second: Orange theme spritesheet 2_439
+  - first:
+      213: -1683417895910715300
+    second: Orange theme spritesheet 2_440
+  - first:
+      213: 3521968723403059655
+    second: Orange theme spritesheet 2_441
+  - first:
+      213: -2260986029087157526
+    second: Orange theme spritesheet 2_442
+  - first:
+      213: -4590312534514741921
+    second: Orange theme spritesheet 2_443
+  - first:
+      213: -4113380093594028293
+    second: Orange theme spritesheet 2_444
+  - first:
+      213: 1157912008311818716
+    second: Orange theme spritesheet 2_445
+  - first:
+      213: -1626085077939418539
+    second: Orange theme spritesheet 2_446
+  - first:
+      213: -2012354776140904564
+    second: Orange theme spritesheet 2_447
+  - first:
+      213: -3841900719671628137
+    second: Orange theme spritesheet 2_448
+  - first:
+      213: -5024695338638938047
+    second: Orange theme spritesheet 2_449
+  - first:
+      213: -2949818901502929272
+    second: Orange theme spritesheet 2_450
+  - first:
+      213: -2851720371262128077
+    second: Orange theme spritesheet 2_451
+  - first:
+      213: 3793357264995481717
+    second: Orange theme spritesheet 2_452
+  - first:
+      213: -6948945437083337925
+    second: Orange theme spritesheet 2_453
+  - first:
+      213: -5954636129297460092
+    second: Orange theme spritesheet 2_454
+  - first:
+      213: -2409389217094581066
+    second: Orange theme spritesheet 2_455
+  - first:
+      213: -6524304599396633350
+    second: Orange theme spritesheet 2_456
+  - first:
+      213: 8674837041630090154
+    second: Orange theme spritesheet 2_457
+  - first:
+      213: 7379033046703161822
+    second: Orange theme spritesheet 2_458
+  - first:
+      213: 8552581111608504486
+    second: Orange theme spritesheet 2_459
+  - first:
+      213: 6191279470222040001
+    second: Orange theme spritesheet 2_460
+  - first:
+      213: -461459874687134741
+    second: Orange theme spritesheet 2_461
+  - first:
+      213: -7318050034994896953
+    second: Orange theme spritesheet 2_462
+  - first:
+      213: 4798132008736064266
+    second: Orange theme spritesheet 2_463
+  - first:
+      213: -3726777564875057748
+    second: Orange theme spritesheet 2_464
+  - first:
+      213: 1922759540690762060
+    second: Orange theme spritesheet 2_465
+  - first:
+      213: 4020274240643779742
+    second: Orange theme spritesheet 2_466
+  - first:
+      213: -989430614182197590
+    second: Orange theme spritesheet 2_467
+  - first:
+      213: -3720563428477936240
+    second: Orange theme spritesheet 2_468
+  - first:
+      213: -4868057631014243514
+    second: Orange theme spritesheet 2_469
+  - first:
+      213: 2175946490479446298
+    second: Orange theme spritesheet 2_470
+  - first:
+      213: 5897528746609884222
+    second: Orange theme spritesheet 2_471
+  - first:
+      213: 7067568155567712424
+    second: Orange theme spritesheet 2_472
+  - first:
+      213: 8916774708219997724
+    second: Orange theme spritesheet 2_473
+  - first:
+      213: 5097902710672830952
+    second: Orange theme spritesheet 2_474
+  - first:
+      213: -3862029116722679285
+    second: Orange theme spritesheet 2_475
+  - first:
+      213: 6762071294454682965
+    second: Orange theme spritesheet 2_476
+  - first:
+      213: -6849651490388407004
+    second: Orange theme spritesheet 2_477
+  - first:
+      213: 8323461754591986387
+    second: Orange theme spritesheet 2_478
+  - first:
+      213: -7380723664605350256
+    second: Orange theme spritesheet 2_479
+  - first:
+      213: 1060956766117768593
+    second: Orange theme spritesheet 2_480
+  - first:
+      213: 7672472837687221208
+    second: Orange theme spritesheet 2_481
+  - first:
+      213: -7688661711887193270
+    second: Orange theme spritesheet 2_482
+  - first:
+      213: -383855846439146893
+    second: Orange theme spritesheet 2_483
+  - first:
+      213: 4359092468493645679
+    second: Orange theme spritesheet 2_484
+  - first:
+      213: -6463130558065865796
+    second: Orange theme spritesheet 2_485
+  - first:
+      213: 3523143150399638276
+    second: Orange theme spritesheet 2_486
+  - first:
+      213: 5113164767374844002
+    second: Orange theme spritesheet 2_487
+  - first:
+      213: -3716535937873050167
+    second: Orange theme spritesheet 2_488
+  - first:
+      213: -7574176881379478192
+    second: Orange theme spritesheet 2_489
+  - first:
+      213: 804901869098522767
+    second: Orange theme spritesheet 2_490
+  - first:
+      213: 4979554502170605870
+    second: Orange theme spritesheet 2_491
+  - first:
+      213: -8355215430784734531
+    second: Orange theme spritesheet 2_492
+  - first:
+      213: 2425587310176610313
+    second: Orange theme spritesheet 2_493
+  - first:
+      213: -1241083725093138567
+    second: Orange theme spritesheet 2_494
+  - first:
+      213: -7744940033049296074
+    second: Orange theme spritesheet 2_495
+  - first:
+      213: -6880743755850907446
+    second: Orange theme spritesheet 2_496
+  - first:
+      213: -9066620702099326638
+    second: Orange theme spritesheet 2_497
+  - first:
+      213: 1154622858441116909
+    second: Orange theme spritesheet 2_498
+  - first:
+      213: 5555372969513661554
+    second: Orange theme spritesheet 2_499
+  - first:
+      213: -8725346526456059501
+    second: Orange theme spritesheet 2_500
+  - first:
+      213: -7878628230824676554
+    second: Orange theme spritesheet 2_501
+  - first:
+      213: -8326147544575367099
+    second: Orange theme spritesheet 2_502
+  - first:
+      213: -4812318308707330717
+    second: Orange theme spritesheet 2_503
+  - first:
+      213: 7936856317387920340
+    second: Orange theme spritesheet 2_504
+  - first:
+      213: 3200097775009657798
+    second: Orange theme spritesheet 2_505
+  - first:
+      213: 3453039834606768947
+    second: Orange theme spritesheet 2_506
+  - first:
+      213: -6545983296629305311
+    second: Orange theme spritesheet 2_507
+  - first:
+      213: 5601161450900518816
+    second: Orange theme spritesheet 2_508
+  - first:
+      213: 4460191185766657980
+    second: Orange theme spritesheet 2_509
+  - first:
+      213: 7027494370118773733
+    second: Orange theme spritesheet 2_510
+  - first:
+      213: 7068718428960544278
+    second: Orange theme spritesheet 2_511
+  - first:
+      213: -5578623529617948106
+    second: Orange theme spritesheet 2_512
+  - first:
+      213: 8642234571153858320
+    second: Orange theme spritesheet 2_513
+  - first:
+      213: -591231274204070748
+    second: Orange theme spritesheet 2_514
+  - first:
+      213: 8225535547496781531
+    second: Orange theme spritesheet 2_515
+  - first:
+      213: -1343744280424439838
+    second: Orange theme spritesheet 2_516
+  - first:
+      213: -6575535212313309908
+    second: Orange theme spritesheet 2_517
+  - first:
+      213: -8726643024623048638
+    second: Orange theme spritesheet 2_518
+  - first:
+      213: -1850161561100309315
+    second: Orange theme spritesheet 2_519
+  - first:
+      213: -5498788636071365640
+    second: Orange theme spritesheet 2_520
+  - first:
+      213: 4376288815702381512
+    second: Orange theme spritesheet 2_521
+  - first:
+      213: 3178263799480900358
+    second: Orange theme spritesheet 2_522
+  - first:
+      213: -7142557953574938610
+    second: Orange theme spritesheet 2_523
+  - first:
+      213: -7323430026822620003
+    second: Orange theme spritesheet 2_524
+  - first:
+      213: -9151093342261659377
+    second: Orange theme spritesheet 2_525
+  - first:
+      213: 7477372785038581114
+    second: Orange theme spritesheet 2_526
+  - first:
+      213: -6300563600211961241
+    second: Orange theme spritesheet 2_527
+  - first:
+      213: -3364157542100066709
+    second: Orange theme spritesheet 2_528
+  - first:
+      213: -2505800546601470712
+    second: Orange theme spritesheet 2_529
+  - first:
+      213: 7039830228070111474
+    second: Orange theme spritesheet 2_530
+  - first:
+      213: 5977338352663876788
+    second: Orange theme spritesheet 2_531
+  - first:
+      213: -7380811454023057858
+    second: Orange theme spritesheet 2_532
+  - first:
+      213: 7389516272940184515
+    second: Orange theme spritesheet 2_533
+  - first:
+      213: -7661444399991035403
+    second: Orange theme spritesheet 2_534
+  - first:
+      213: 3206555153013430468
+    second: Orange theme spritesheet 2_535
+  - first:
+      213: 8378613622023219175
+    second: Orange theme spritesheet 2_536
+  - first:
+      213: 7035426287975268364
+    second: Orange theme spritesheet 2_537
+  - first:
+      213: 4049489870556470042
+    second: Orange theme spritesheet 2_538
+  - first:
+      213: 8523376203221950157
+    second: Orange theme spritesheet 2_539
+  - first:
+      213: 4587758655504471734
+    second: Orange theme spritesheet 2_540
+  - first:
+      213: -8978166140173185263
+    second: Orange theme spritesheet 2_541
+  - first:
+      213: -4117817362579862796
+    second: Orange theme spritesheet 2_542
+  - first:
+      213: 855616284373707834
+    second: Orange theme spritesheet 2_543
+  - first:
+      213: -1754813819430118755
+    second: Orange theme spritesheet 2_544
+  - first:
+      213: -3303078054385599703
+    second: Orange theme spritesheet 2_545
+  - first:
+      213: 353597076255545171
+    second: Orange theme spritesheet 2_546
+  - first:
+      213: -7921328760166040280
+    second: Orange theme spritesheet 2_547
+  - first:
+      213: 236717508657662601
+    second: Orange theme spritesheet 2_548
+  - first:
+      213: 5853817180964477741
+    second: Orange theme spritesheet 2_549
+  - first:
+      213: 6630093177973019952
+    second: Orange theme spritesheet 2_550
+  - first:
+      213: -1137226235530376453
+    second: Orange theme spritesheet 2_551
+  - first:
+      213: -2088928794189397788
+    second: Orange theme spritesheet 2_552
+  - first:
+      213: -7502020550951631466
+    second: Orange theme spritesheet 2_553
+  - first:
+      213: -2304760914846042486
+    second: Orange theme spritesheet 2_554
+  - first:
+      213: 8087930063938436879
+    second: Orange theme spritesheet 2_555
+  - first:
+      213: 3936888316750623906
+    second: Orange theme spritesheet 2_556
+  - first:
+      213: -2473924204229519799
+    second: Orange theme spritesheet 2_557
+  - first:
+      213: 6962016629227686972
+    second: Orange theme spritesheet 2_558
+  - first:
+      213: 1465833816719683336
+    second: Orange theme spritesheet 2_559
+  - first:
+      213: 2256950344274883770
+    second: Orange theme spritesheet 2_560
+  - first:
+      213: -1343606672178868038
+    second: Orange theme spritesheet 2_561
+  - first:
+      213: 5185477699290943801
+    second: Orange theme spritesheet 2_562
+  - first:
+      213: -6560341473818884568
+    second: Orange theme spritesheet 2_563
+  - first:
+      213: 6765995521741595069
+    second: Orange theme spritesheet 2_564
+  - first:
+      213: 1911635898343314701
+    second: Orange theme spritesheet 2_565
+  - first:
+      213: -8559453913103935
+    second: Orange theme spritesheet 2_566
+  - first:
+      213: 3001536702292220004
+    second: Orange theme spritesheet 2_567
+  - first:
+      213: -6579849297961647390
+    second: Orange theme spritesheet 2_568
+  - first:
+      213: 287198125990016326
+    second: Orange theme spritesheet 2_569
+  - first:
+      213: -5823445173933712771
+    second: Orange theme spritesheet 2_570
+  - first:
+      213: -2419771233315874214
+    second: Orange theme spritesheet 2_571
+  - first:
+      213: -2631597017207672484
+    second: Orange theme spritesheet 2_572
+  - first:
+      213: -2403340763263688076
+    second: Orange theme spritesheet 2_573
+  - first:
+      213: -379061920152062694
+    second: Orange theme spritesheet 2_574
+  - first:
+      213: -5547841827223273278
+    second: Orange theme spritesheet 2_575
+  - first:
+      213: 9018472575399415447
+    second: Orange theme spritesheet 2_576
+  - first:
+      213: 3494603977881366494
+    second: Orange theme spritesheet 2_577
+  - first:
+      213: -3530358254350073904
+    second: Orange theme spritesheet 2_578
+  - first:
+      213: 7512937943417434388
+    second: Orange theme spritesheet 2_579
+  - first:
+      213: -1285140304304980655
+    second: Orange theme spritesheet 2_580
+  - first:
+      213: -2896453477736689920
+    second: Orange theme spritesheet 2_581
+  - first:
+      213: -2711238542742948135
+    second: Orange theme spritesheet 2_582
+  - first:
+      213: -537585591426216461
+    second: Orange theme spritesheet 2_583
+  - first:
+      213: 8967244043070421741
+    second: Orange theme spritesheet 2_584
+  - first:
+      213: -5438832589079661461
+    second: Orange theme spritesheet 2_585
+  - first:
+      213: -1953820796956069975
+    second: Orange theme spritesheet 2_586
+  - first:
+      213: 5759109866284069117
+    second: Orange theme spritesheet 2_587
+  - first:
+      213: -3926809967601442312
+    second: Orange theme spritesheet 2_588
+  - first:
+      213: 7240667973569469259
+    second: Orange theme spritesheet 2_589
+  - first:
+      213: 1561730025610245904
+    second: Orange theme spritesheet 2_590
+  - first:
+      213: -3698411293561497148
+    second: Orange theme spritesheet 2_591
+  - first:
+      213: 6904523764302567698
+    second: Orange theme spritesheet 2_592
+  - first:
+      213: 8670549210471839902
+    second: Orange theme spritesheet 2_593
+  - first:
+      213: -2537631656251988716
+    second: Orange theme spritesheet 2_594
+  - first:
+      213: 6737669746607170475
+    second: Orange theme spritesheet 2_595
+  - first:
+      213: -2423399074386581860
+    second: Orange theme spritesheet 2_596
+  - first:
+      213: -9046304597827678324
+    second: Orange theme spritesheet 2_597
+  - first:
+      213: 1723147778285424987
+    second: Orange theme spritesheet 2_598
+  - first:
+      213: -5526088672137992416
+    second: Orange theme spritesheet 2_599
+  - first:
+      213: 8250436418063162610
+    second: Orange theme spritesheet 2_600
+  - first:
+      213: -1381262281765112250
+    second: Orange theme spritesheet 2_601
+  - first:
+      213: 103882359520730397
+    second: Orange theme spritesheet 2_602
+  - first:
+      213: 7119932188779378439
+    second: Orange theme spritesheet 2_603
+  - first:
+      213: 1449170419461825527
+    second: Orange theme spritesheet 2_604
+  - first:
+      213: -7606301736637790756
+    second: Orange theme spritesheet 2_605
+  - first:
+      213: 5992941064870265339
+    second: Orange theme spritesheet 2_606
+  - first:
+      213: -5262385643128579104
+    second: Orange theme spritesheet 2_607
+  - first:
+      213: 247340774936167754
+    second: Orange theme spritesheet 2_608
+  - first:
+      213: 7326073148385895420
+    second: Orange theme spritesheet 2_609
+  - first:
+      213: -5206692141928458026
+    second: Orange theme spritesheet 2_610
+  - first:
+      213: 7540255020703650439
+    second: Orange theme spritesheet 2_611
+  - first:
+      213: -1517355455121023456
+    second: Orange theme spritesheet 2_612
+  - first:
+      213: -3261844144636296066
+    second: Orange theme spritesheet 2_613
+  - first:
+      213: -1237363019550552443
+    second: Orange theme spritesheet 2_614
+  - first:
+      213: 4629476929339639888
+    second: Orange theme spritesheet 2_615
+  - first:
+      213: -7163892335253944146
+    second: Orange theme spritesheet 2_616
+  - first:
+      213: -9065528695966478916
+    second: Orange theme spritesheet 2_617
+  - first:
+      213: 1508145729784067525
+    second: Orange theme spritesheet 2_618
+  - first:
+      213: -6718540707571192419
+    second: Orange theme spritesheet 2_619
+  - first:
+      213: -2069114702560157206
+    second: Orange theme spritesheet 2_620
+  - first:
+      213: -125791846096159255
+    second: Orange theme spritesheet 2_621
+  - first:
+      213: -2356708959488968230
+    second: Orange theme spritesheet 2_622
+  - first:
+      213: 2841881385845240103
+    second: Orange theme spritesheet 2_623
+  - first:
+      213: -3081962532256954751
+    second: Orange theme spritesheet 2_624
+  - first:
+      213: -1600574400369552557
+    second: Orange theme spritesheet 2_625
+  - first:
+      213: 287687807091201860
+    second: Orange theme spritesheet 2_626
+  - first:
+      213: -2937794378388775925
+    second: Orange theme spritesheet 2_627
+  - first:
+      213: 3472526620637558077
+    second: Orange theme spritesheet 2_628
+  - first:
+      213: 6841778412028117774
+    second: Orange theme spritesheet 2_629
+  - first:
+      213: -4285047201267955946
+    second: Orange theme spritesheet 2_630
+  - first:
+      213: -8303039714655921801
+    second: Orange theme spritesheet 2_631
+  - first:
+      213: -4079232910430623119
+    second: Orange theme spritesheet 2_632
+  - first:
+      213: -7338005716208024937
+    second: Orange theme spritesheet 2_633
+  - first:
+      213: -236793420472170226
+    second: Orange theme spritesheet 2_634
+  - first:
+      213: -5405174607112823609
+    second: Orange theme spritesheet 2_635
+  - first:
+      213: 3974389703915732012
+    second: Orange theme spritesheet 2_636
+  - first:
+      213: 8335070072022892105
+    second: Orange theme spritesheet 2_637
+  - first:
+      213: 6966580098619759740
+    second: Orange theme spritesheet 2_638
+  - first:
+      213: -4257838353452685136
+    second: Orange theme spritesheet 2_639
+  - first:
+      213: 8663384856549652318
+    second: Orange theme spritesheet 2_640
+  - first:
+      213: 6863882647485526487
+    second: Orange theme spritesheet 2_641
+  - first:
+      213: 2342135739292467219
+    second: Orange theme spritesheet 2_642
+  - first:
+      213: -7366295636995754353
+    second: Orange theme spritesheet 2_643
+  - first:
+      213: 2182886255188056922
+    second: Orange theme spritesheet 2_644
+  - first:
+      213: 142676982014309307
+    second: Orange theme spritesheet 2_645
+  - first:
+      213: 3896241197364111848
+    second: Orange theme spritesheet 2_646
+  - first:
+      213: -5175035624452737894
+    second: Orange theme spritesheet 2_647
+  - first:
+      213: 2472634746461394653
+    second: Orange theme spritesheet 2_648
+  - first:
+      213: 5725992391697714768
+    second: Orange theme spritesheet 2_649
+  - first:
+      213: 8155552203688028702
+    second: Orange theme spritesheet 2_650
+  - first:
+      213: 9194300337721069394
+    second: Orange theme spritesheet 2_651
+  - first:
+      213: 1697606688109877046
+    second: Orange theme spritesheet 2_652
+  - first:
+      213: 6910724113573999628
+    second: Orange theme spritesheet 2_653
+  - first:
+      213: 1639070604298694594
+    second: Orange theme spritesheet 2_654
+  - first:
+      213: -607070750495306694
+    second: Orange theme spritesheet 2_655
+  - first:
+      213: -8433735604370938179
+    second: Orange theme spritesheet 2_656
+  - first:
+      213: -338595936371658354
+    second: Orange theme spritesheet 2_657
+  - first:
+      213: 5909448137034090666
+    second: Orange theme spritesheet 2_658
+  - first:
+      213: -6513089591952117152
+    second: Orange theme spritesheet 2_659
+  - first:
+      213: 336919526345768508
+    second: Orange theme spritesheet 2_660
+  - first:
+      213: 2290951700969364116
+    second: Orange theme spritesheet 2_661
+  - first:
+      213: 299328357237432336
+    second: Orange theme spritesheet 2_662
+  - first:
+      213: 8358533555075495946
+    second: Orange theme spritesheet 2_663
+  - first:
+      213: 2469358671475807588
+    second: Orange theme spritesheet 2_664
+  - first:
+      213: 4413748270310495524
+    second: Orange theme spritesheet 2_665
+  - first:
+      213: -5240625324623211069
+    second: Orange theme spritesheet 2_666
+  - first:
+      213: 5500402019145319886
+    second: Orange theme spritesheet 2_667
+  - first:
+      213: -5466440079436222412
+    second: Orange theme spritesheet 2_668
+  - first:
+      213: -1363146487086932838
+    second: Orange theme spritesheet 2_669
+  - first:
+      213: 3768617472477940814
+    second: Orange theme spritesheet 2_670
+  - first:
+      213: 5050253466113761135
+    second: Orange theme spritesheet 2_671
+  - first:
+      213: 9101331109841828022
+    second: Orange theme spritesheet 2_672
+  - first:
+      213: -1345979372554825806
+    second: Orange theme spritesheet 2_673
+  - first:
+      213: 452201405407750245
+    second: Orange theme spritesheet 2_674
+  - first:
+      213: -4964156402146552108
+    second: Orange theme spritesheet 2_675
+  - first:
+      213: -2318375644320939271
+    second: Orange theme spritesheet 2_676
+  - first:
+      213: 5600214355260988027
+    second: Orange theme spritesheet 2_677
+  - first:
+      213: 1455617016324400444
+    second: Orange theme spritesheet 2_678
+  - first:
+      213: 3194264767385798115
+    second: Orange theme spritesheet 2_679
+  - first:
+      213: -596059047843173500
+    second: Orange theme spritesheet 2_680
+  - first:
+      213: -1673884705539082256
+    second: Orange theme spritesheet 2_681
+  - first:
+      213: -625680406631571624
+    second: Orange theme spritesheet 2_682
+  - first:
+      213: -8900108738062150525
+    second: Orange theme spritesheet 2_683
+  - first:
+      213: -3681364716401424014
+    second: Orange theme spritesheet 2_684
+  - first:
+      213: -8083877617034726883
+    second: Orange theme spritesheet 2_685
+  - first:
+      213: -4598881835326663710
+    second: Orange theme spritesheet 2_686
+  - first:
+      213: -7353106265051949392
+    second: Orange theme spritesheet 2_687
+  - first:
+      213: 3807333195147689516
+    second: Orange theme spritesheet 2_688
+  - first:
+      213: 5536206983247218351
+    second: Orange theme spritesheet 2_689
+  - first:
+      213: 4480326955575665564
+    second: Orange theme spritesheet 2_690
+  - first:
+      213: -4621543395709141347
+    second: Orange theme spritesheet 2_691
+  - first:
+      213: 1928638625345565416
+    second: Orange theme spritesheet 2_692
+  - first:
+      213: -2922576995168928069
+    second: Orange theme spritesheet 2_693
+  - first:
+      213: -7279754401760564964
+    second: Orange theme spritesheet 2_694
+  - first:
+      213: 226522868660530036
+    second: Orange theme spritesheet 2_695
+  - first:
+      213: 2866878975327359431
+    second: Orange theme spritesheet 2_696
+  - first:
+      213: 6275479360781218281
+    second: Orange theme spritesheet 2_697
+  - first:
+      213: -6224925991148270452
+    second: Orange theme spritesheet 2_698
+  - first:
+      213: 3177880420426858390
+    second: Orange theme spritesheet 2_699
+  - first:
+      213: 4384813957508928754
+    second: Orange theme spritesheet 2_700
+  - first:
+      213: 8056266991033078866
+    second: Orange theme spritesheet 2_701
+  - first:
+      213: -2228423378971798130
+    second: Orange theme spritesheet 2_702
+  - first:
+      213: 5622919114303254946
+    second: Orange theme spritesheet 2_703
+  - first:
+      213: -4306499987505094590
+    second: Orange theme spritesheet 2_704
+  - first:
+      213: 7528432559371736041
+    second: Orange theme spritesheet 2_705
+  - first:
+      213: 4678578722988148222
+    second: Orange theme spritesheet 2_706
+  - first:
+      213: -5035988145227138541
+    second: Orange theme spritesheet 2_707
+  - first:
+      213: -2337028230150104978
+    second: Orange theme spritesheet 2_708
+  - first:
+      213: -1198572205514544032
+    second: Orange theme spritesheet 2_709
+  - first:
+      213: -8642944665636518519
+    second: Orange theme spritesheet 2_710
+  - first:
+      213: 3738861212988078578
+    second: Orange theme spritesheet 2_711
+  - first:
+      213: -8745212188299131583
+    second: Orange theme spritesheet 2_712
+  - first:
+      213: 8228839542409146085
+    second: Orange theme spritesheet 2_713
+  - first:
+      213: 7807788558576517619
+    second: Orange theme spritesheet 2_714
+  - first:
+      213: 5922656584140409308
+    second: Orange theme spritesheet 2_715
+  - first:
+      213: 3496026617024011244
+    second: Orange theme spritesheet 2_716
+  - first:
+      213: -6313127178440667275
+    second: Orange theme spritesheet 2_717
+  - first:
+      213: 6341835007757178160
+    second: Orange theme spritesheet 2_718
+  - first:
+      213: -5920257950007824665
+    second: Orange theme spritesheet 2_719
+  - first:
+      213: -1569073146396821473
+    second: Orange theme spritesheet 2_720
+  - first:
+      213: -4767429548142603267
+    second: Orange theme spritesheet 2_721
+  - first:
+      213: 2579484343562639542
+    second: Orange theme spritesheet 2_722
+  - first:
+      213: 5178883127089495035
+    second: Orange theme spritesheet 2_723
+  - first:
+      213: 3376130211212361378
+    second: Orange theme spritesheet 2_724
+  - first:
+      213: 8643200932790889149
+    second: Orange theme spritesheet 2_725
+  - first:
+      213: -4160453912426823976
+    second: Orange theme spritesheet 2_726
+  - first:
+      213: -682581629587607711
+    second: Orange theme spritesheet 2_727
+  - first:
+      213: -5092045396701255601
+    second: Orange theme spritesheet 2_728
+  - first:
+      213: 4273950184881995848
+    second: Orange theme spritesheet 2_729
+  - first:
+      213: 5381923226606149483
+    second: Orange theme spritesheet 2_730
+  - first:
+      213: 5978554980349243345
+    second: Orange theme spritesheet 2_731
+  - first:
+      213: 4740535387542279179
+    second: Orange theme spritesheet 2_732
+  - first:
+      213: 1397664157182163940
+    second: Orange theme spritesheet 2_733
+  - first:
+      213: -6603485759730670119
+    second: Orange theme spritesheet 2_734
+  - first:
+      213: -4613943785796042503
+    second: Orange theme spritesheet 2_735
+  - first:
+      213: -8408020163710220028
+    second: Orange theme spritesheet 2_736
+  - first:
+      213: 2908102859739618345
+    second: Orange theme spritesheet 2_737
+  - first:
+      213: -5393541794312169022
+    second: Orange theme spritesheet 2_738
+  - first:
+      213: -6340825046666650896
+    second: Orange theme spritesheet 2_739
+  - first:
+      213: 8382924856785976784
+    second: Orange theme spritesheet 2_740
+  - first:
+      213: -4584017032451815347
+    second: Orange theme spritesheet 2_741
+  - first:
+      213: 1819194691925045116
+    second: Orange theme spritesheet 2_742
+  - first:
+      213: 2637958709744633978
+    second: Orange theme spritesheet 2_743
+  - first:
+      213: 2490452460021430947
+    second: Orange theme spritesheet 2_744
+  - first:
+      213: -2828740534763883640
+    second: Orange theme spritesheet 2_745
+  - first:
+      213: -7795237762928519508
+    second: Orange theme spritesheet 2_746
+  - first:
+      213: -9178587645181986542
+    second: Orange theme spritesheet 2_747
+  - first:
+      213: -7661466564737785909
+    second: Orange theme spritesheet 2_748
+  - first:
+      213: 4275526261137412659
+    second: Orange theme spritesheet 2_749
+  - first:
+      213: 9102438116708975370
+    second: Orange theme spritesheet 2_750
+  - first:
+      213: 7408279552075957558
+    second: Orange theme spritesheet 2_751
+  - first:
+      213: 180264117013445996
+    second: Orange theme spritesheet 2_752
+  - first:
+      213: -7893830653511747198
+    second: Orange theme spritesheet 2_753
+  - first:
+      213: -2143016202604711747
+    second: Orange theme spritesheet 2_754
+  - first:
+      213: 8095713818553429855
+    second: Orange theme spritesheet 2_755
+  - first:
+      213: 806636672900481317
+    second: Orange theme spritesheet 2_756
+  - first:
+      213: 5107353491362892806
+    second: Orange theme spritesheet 2_757
+  - first:
+      213: -8708887390139811254
+    second: Orange theme spritesheet 2_758
+  - first:
+      213: -4150324699069460207
+    second: Orange theme spritesheet 2_759
+  - first:
+      213: -8038507772734173401
+    second: Orange theme spritesheet 2_760
+  - first:
+      213: 1985754890309381727
+    second: Orange theme spritesheet 2_761
+  - first:
+      213: 3638908798244527193
+    second: Orange theme spritesheet 2_762
+  - first:
+      213: -1736778808239166454
+    second: Orange theme spritesheet 2_763
+  - first:
+      213: -6783230645951875909
+    second: Orange theme spritesheet 2_764
+  - first:
+      213: 408570638475941791
+    second: Orange theme spritesheet 2_765
+  - first:
+      213: 1191747687414468352
+    second: Orange theme spritesheet 2_766
+  - first:
+      213: -5009557517068040371
+    second: Orange theme spritesheet 2_767
+  - first:
+      213: 3433971835660835901
+    second: Orange theme spritesheet 2_768
+  - first:
+      213: 7786326685937420095
+    second: Orange theme spritesheet 2_769
+  - first:
+      213: 2424299119910447895
+    second: Orange theme spritesheet 2_770
+  - first:
+      213: -3580392703030887090
+    second: Orange theme spritesheet 2_771
+  - first:
+      213: 6767900534667088470
+    second: Orange theme spritesheet 2_772
+  - first:
+      213: 5497969448142792074
+    second: Orange theme spritesheet 2_773
+  - first:
+      213: 5072209491793812878
+    second: Orange theme spritesheet 2_774
+  - first:
+      213: -7959294891579395454
+    second: Orange theme spritesheet 2_775
+  - first:
+      213: 2589955335340459295
+    second: Orange theme spritesheet 2_776
+  - first:
+      213: -2267758834635752558
+    second: Orange theme spritesheet 2_777
+  - first:
+      213: -8870066890542874629
+    second: Orange theme spritesheet 2_778
+  - first:
+      213: 1085990892915674569
+    second: Orange theme spritesheet 2_779
+  - first:
+      213: -5398342180361694809
+    second: Orange theme spritesheet 2_780
+  - first:
+      213: 2053460515975351611
+    second: Orange theme spritesheet 2_781
+  - first:
+      213: 6942192486244098293
+    second: Orange theme spritesheet 2_782
+  - first:
+      213: 6748620606508471640
+    second: Orange theme spritesheet 2_783
+  - first:
+      213: 4406196165861733402
+    second: Orange theme spritesheet 2_784
+  - first:
+      213: -3042655952784471065
+    second: Orange theme spritesheet 2_785
+  - first:
+      213: 2026267888718635622
+    second: Orange theme spritesheet 2_786
+  - first:
+      213: -3318080390026165339
+    second: Orange theme spritesheet 2_787
+  - first:
+      213: -3109773041411060493
+    second: Orange theme spritesheet 2_788
+  - first:
+      213: -5607955798615998151
+    second: Orange theme spritesheet 2_789
+  - first:
+      213: 5626933552082098764
+    second: Orange theme spritesheet 2_790
+  - first:
+      213: -8048584260075482897
+    second: Orange theme spritesheet 2_791
+  - first:
+      213: 782859493332045708
+    second: Orange theme spritesheet 2_792
+  - first:
+      213: 2029942755446892993
+    second: Orange theme spritesheet 2_793
+  - first:
+      213: 3387382112390769683
+    second: Orange theme spritesheet 2_794
+  - first:
+      213: -8523642834522609308
+    second: Orange theme spritesheet 2_795
+  - first:
+      213: 2255625540642859566
+    second: Orange theme spritesheet 2_796
+  - first:
+      213: 385729911291837593
+    second: Orange theme spritesheet 2_797
+  - first:
+      213: 6734176290513821576
+    second: Orange theme spritesheet 2_798
+  - first:
+      213: -3587981931092081965
+    second: Orange theme spritesheet 2_799
+  - first:
+      213: -6629842377253618451
+    second: Orange theme spritesheet 2_800
+  - first:
+      213: 3205954959171572925
+    second: Orange theme spritesheet 2_801
+  - first:
+      213: -5586324363926168351
+    second: Orange theme spritesheet 2_802
+  - first:
+      213: 124879407566436423
+    second: Orange theme spritesheet 2_803
+  - first:
+      213: -3665309816174371350
+    second: Orange theme spritesheet 2_804
+  - first:
+      213: -1271173175935455615
+    second: Orange theme spritesheet 2_805
+  - first:
+      213: -6129796546399495993
+    second: Orange theme spritesheet 2_806
+  - first:
+      213: -4592054101808239692
+    second: Orange theme spritesheet 2_807
+  - first:
+      213: -4833475403610200143
+    second: Orange theme spritesheet 2_808
+  - first:
+      213: 2769022247841426247
+    second: Orange theme spritesheet 2_809
+  - first:
+      213: 3106547638803982879
+    second: Orange theme spritesheet 2_810
+  - first:
+      213: 819814419971673904
+    second: Orange theme spritesheet 2_811
+  - first:
+      213: -6920319671582999571
+    second: Orange theme spritesheet 2_812
+  - first:
+      213: 3813257081070065310
+    second: Orange theme spritesheet 2_813
+  - first:
+      213: -426296666406306425
+    second: Orange theme spritesheet 2_814
+  - first:
+      213: 7660824178935400368
+    second: Orange theme spritesheet 2_815
+  - first:
+      213: 7683560148745732715
+    second: Orange theme spritesheet 2_816
+  - first:
+      213: -4194062373760464762
+    second: Orange theme spritesheet 2_817
+  - first:
+      213: 2070345299562864856
+    second: Orange theme spritesheet 2_818
+  - first:
+      213: -4888755848125374007
+    second: Orange theme spritesheet 2_819
+  - first:
+      213: 8344952061331003293
+    second: Orange theme spritesheet 2_820
+  - first:
+      213: -6244420493335968169
+    second: Orange theme spritesheet 2_821
+  - first:
+      213: -1615927331930083867
+    second: Orange theme spritesheet 2_822
+  - first:
+      213: -3224707672125385870
+    second: Orange theme spritesheet 2_823
+  - first:
+      213: -3838520971765999672
+    second: Orange theme spritesheet 2_824
+  - first:
+      213: -3600799773310490566
+    second: Orange theme spritesheet 2_825
+  - first:
+      213: 4857180651773515006
+    second: Orange theme spritesheet 2_826
+  - first:
+      213: 8159974288010938244
+    second: Orange theme spritesheet 2_827
+  - first:
+      213: 3401123484027251894
+    second: Orange theme spritesheet 2_828
+  - first:
+      213: 4738277549409168816
+    second: Orange theme spritesheet 2_829
+  - first:
+      213: 5347118581837362560
+    second: Orange theme spritesheet 2_830
+  - first:
+      213: 6518528671428417639
+    second: Orange theme spritesheet 2_831
+  - first:
+      213: 1307114168460035259
+    second: Orange theme spritesheet 2_832
+  - first:
+      213: -8411796897068618936
+    second: Orange theme spritesheet 2_833
+  - first:
+      213: 7360788333423872937
+    second: Orange theme spritesheet 2_834
+  - first:
+      213: -2960949266628933124
+    second: Orange theme spritesheet 2_835
+  - first:
+      213: -4636987893568843093
+    second: Orange theme spritesheet 2_836
+  - first:
+      213: -3561860781160542509
+    second: Orange theme spritesheet 2_837
+  - first:
+      213: 4840944114717927752
+    second: Orange theme spritesheet 2_838
+  - first:
+      213: 9214939999561791959
+    second: Orange theme spritesheet 2_839
+  - first:
+      213: -7442759355728192663
+    second: Orange theme spritesheet 2_840
+  - first:
+      213: -5418421027562874152
+    second: Orange theme spritesheet 2_841
+  - first:
+      213: -4069439155082810785
+    second: Orange theme spritesheet 2_842
+  - first:
+      213: 4029297161698780494
+    second: Orange theme spritesheet 2_843
+  - first:
+      213: 8180251446574748004
+    second: Orange theme spritesheet 2_844
+  - first:
+      213: -1774165945156893161
+    second: Orange theme spritesheet 2_845
+  - first:
+      213: 1422791063919040514
+    second: Orange theme spritesheet 2_846
+  - first:
+      213: 4040714527858885423
+    second: Orange theme spritesheet 2_847
+  - first:
+      213: 6461219764679251128
+    second: Orange theme spritesheet 2_848
+  - first:
+      213: 4423740874235941060
+    second: Orange theme spritesheet 2_849
+  - first:
+      213: 3889809167453921690
+    second: Orange theme spritesheet 2_850
+  - first:
+      213: 7118770385585241392
+    second: Orange theme spritesheet 2_851
+  - first:
+      213: -891412131600163096
+    second: Orange theme spritesheet 2_852
+  - first:
+      213: -7812216870124538334
+    second: Orange theme spritesheet 2_853
+  - first:
+      213: -2672505690516449848
+    second: Orange theme spritesheet 2_854
+  - first:
+      213: 154235343033875711
+    second: Orange theme spritesheet 2_855
+  - first:
+      213: -8971705418855056376
+    second: Orange theme spritesheet 2_856
+  - first:
+      213: 4212010975119410703
+    second: Orange theme spritesheet 2_857
+  - first:
+      213: 2443384027897279663
+    second: Orange theme spritesheet 2_858
+  - first:
+      213: 7356836788484676655
+    second: Orange theme spritesheet 2_859
+  - first:
+      213: -8117582094589238455
+    second: Orange theme spritesheet 2_860
+  - first:
+      213: -8013433242619035631
+    second: Orange theme spritesheet 2_861
+  - first:
+      213: 2237307019664426464
+    second: Orange theme spritesheet 2_862
+  - first:
+      213: 2445739835253914681
+    second: Orange theme spritesheet 2_863
+  - first:
+      213: 6273608333759113052
+    second: Orange theme spritesheet 2_864
+  - first:
+      213: -7831179350041756788
+    second: Orange theme spritesheet 2_865
+  - first:
+      213: -6824024438087443459
+    second: Orange theme spritesheet 2_866
+  - first:
+      213: 8242915858568858762
+    second: Orange theme spritesheet 2_867
+  - first:
+      213: 6246824900986838648
+    second: Orange theme spritesheet 2_868
+  - first:
+      213: -1287610258018250589
+    second: Orange theme spritesheet 2_869
+  - first:
+      213: -1917809966900206507
+    second: Orange theme spritesheet 2_870
+  - first:
+      213: -1851294078735617784
+    second: Orange theme spritesheet 2_871
+  - first:
+      213: 6538122650558398352
+    second: Orange theme spritesheet 2_872
+  - first:
+      213: -4920657331093627124
+    second: Orange theme spritesheet 2_873
+  - first:
+      213: 3139447018976378962
+    second: Orange theme spritesheet 2_874
+  - first:
+      213: 1243159723527290724
+    second: Orange theme spritesheet 2_875
+  - first:
+      213: 6027684362054139118
+    second: Orange theme spritesheet 2_876
+  - first:
+      213: -2282374154646704490
+    second: Orange theme spritesheet 2_877
+  - first:
+      213: -8323851614733889949
+    second: Orange theme spritesheet 2_878
+  - first:
+      213: -2258685038131754275
+    second: Orange theme spritesheet 2_879
+  - first:
+      213: -1222363782787372398
+    second: Orange theme spritesheet 2_880
+  - first:
+      213: 8050404453253519268
+    second: Orange theme spritesheet 2_881
+  - first:
+      213: 3677053370987506166
+    second: Orange theme spritesheet 2_882
+  - first:
+      213: -3519718088751337879
+    second: Orange theme spritesheet 2_883
+  - first:
+      213: 8376524721619192408
+    second: Orange theme spritesheet 2_884
+  - first:
+      213: 208741982668697313
+    second: Orange theme spritesheet 2_885
+  - first:
+      213: 636302760950527451
+    second: Orange theme spritesheet 2_886
+  - first:
+      213: 7774434058752861545
+    second: Orange theme spritesheet 2_887
+  - first:
+      213: -5811967362132264444
+    second: Orange theme spritesheet 2_888
+  - first:
+      213: 7480757269680356815
+    second: Orange theme spritesheet 2_889
+  - first:
+      213: -3316582959673077912
+    second: Orange theme spritesheet 2_890
+  - first:
+      213: 8647986164526677947
+    second: Orange theme spritesheet 2_891
+  - first:
+      213: 8054135242838676510
+    second: Orange theme spritesheet 2_892
+  - first:
+      213: -6244706946666521159
+    second: Orange theme spritesheet 2_893
+  - first:
+      213: 5441609041089851771
+    second: Orange theme spritesheet 2_894
+  - first:
+      213: -5961103292638428585
+    second: Orange theme spritesheet 2_895
+  - first:
+      213: -344583146575447517
+    second: Orange theme spritesheet 2_896
+  - first:
+      213: -2066508897967081861
+    second: Orange theme spritesheet 2_897
+  - first:
+      213: -2548823130098641313
+    second: Orange theme spritesheet 2_898
+  - first:
+      213: 1016596368912888056
+    second: Orange theme spritesheet 2_899
+  - first:
+      213: -4547728350374703552
+    second: Orange theme spritesheet 2_900
+  - first:
+      213: -8680953448621314673
+    second: Orange theme spritesheet 2_901
+  - first:
+      213: 8372729987083850034
+    second: Orange theme spritesheet 2_902
+  - first:
+      213: -4245252510914676300
+    second: Orange theme spritesheet 2_903
+  - first:
+      213: 8317760482433317207
+    second: Orange theme spritesheet 2_904
+  - first:
+      213: 1823484817716302247
+    second: Orange theme spritesheet 2_905
+  - first:
+      213: -1295275233156363262
+    second: Orange theme spritesheet 2_906
+  - first:
+      213: -3005907966139631434
+    second: Orange theme spritesheet 2_907
+  - first:
+      213: -5465134710351875393
+    second: Orange theme spritesheet 2_908
+  - first:
+      213: 2249273877463087832
+    second: Orange theme spritesheet 2_909
+  - first:
+      213: 7969870915991241919
+    second: Orange theme spritesheet 2_910
+  - first:
+      213: -4876574960651491156
+    second: Orange theme spritesheet 2_911
+  - first:
+      213: -1879756681994853604
+    second: Orange theme spritesheet 2_912
+  - first:
+      213: 7629281096365509434
+    second: Orange theme spritesheet 2_913
+  - first:
+      213: 4983609371194670994
+    second: Orange theme spritesheet 2_914
+  - first:
+      213: 7359061047162834684
+    second: Orange theme spritesheet 2_915
+  - first:
+      213: -3235140144455503826
+    second: Orange theme spritesheet 2_916
+  - first:
+      213: 5908177095972430032
+    second: Orange theme spritesheet 2_917
+  - first:
+      213: -6663034245815497619
+    second: Orange theme spritesheet 2_918
+  - first:
+      213: -7888559565349828024
+    second: Orange theme spritesheet 2_919
+  - first:
+      213: 1003171396922563483
+    second: Orange theme spritesheet 2_920
+  - first:
+      213: 2594243933617703502
+    second: Orange theme spritesheet 2_921
+  - first:
+      213: 3239648339156549345
+    second: Orange theme spritesheet 2_922
+  - first:
+      213: 2611790026615517463
+    second: Orange theme spritesheet 2_923
+  - first:
+      213: -1703984854418608026
+    second: Orange theme spritesheet 2_924
+  - first:
+      213: 3510278069219879225
+    second: Orange theme spritesheet 2_925
+  - first:
+      213: 7229858608981458783
+    second: Orange theme spritesheet 2_926
+  - first:
+      213: -5438609936466028705
+    second: Orange theme spritesheet 2_927
+  - first:
+      213: 2163423407833852953
+    second: Orange theme spritesheet 2_928
+  - first:
+      213: -7398330060040956167
+    second: Orange theme spritesheet 2_929
+  - first:
+      213: 7383179223527618862
+    second: Orange theme spritesheet 2_930
+  - first:
+      213: -5387183735043211184
+    second: Orange theme spritesheet 2_931
+  - first:
+      213: 1987027766737331082
+    second: Orange theme spritesheet 2_932
+  - first:
+      213: 8619375249518920502
+    second: Orange theme spritesheet 2_933
+  - first:
+      213: 3772816651647941352
+    second: Orange theme spritesheet 2_934
+  - first:
+      213: -5631073045391377441
+    second: Orange theme spritesheet 2_935
+  - first:
+      213: -540472054457923083
+    second: Orange theme spritesheet 2_936
+  - first:
+      213: -27283816376952871
+    second: Orange theme spritesheet 2_937
+  - first:
+      213: 1719192860719999919
+    second: Orange theme spritesheet 2_938
+  - first:
+      213: 3089539356387298994
+    second: Orange theme spritesheet 2_939
+  - first:
+      213: 4283489200711065621
+    second: Orange theme spritesheet 2_940
+  - first:
+      213: -1091967309995521867
+    second: Orange theme spritesheet 2_941
+  - first:
+      213: 3955829679824514428
+    second: Orange theme spritesheet 2_942
+  - first:
+      213: -5710368863182835542
+    second: Orange theme spritesheet 2_943
+  - first:
+      213: -2102139594479630528
+    second: Orange theme spritesheet 2_944
+  - first:
+      213: -8164276809784626078
+    second: Orange theme spritesheet 2_945
+  - first:
+      213: 4846302959327862071
+    second: Orange theme spritesheet 2_946
+  - first:
+      213: -1276589370534904967
+    second: Orange theme spritesheet 2_947
+  - first:
+      213: 1371535707788771070
+    second: Orange theme spritesheet 2_948
+  - first:
+      213: -7872543023016085239
+    second: Orange theme spritesheet 2_949
+  - first:
+      213: 7959274865540884000
+    second: Orange theme spritesheet 2_950
+  - first:
+      213: -6303679831294806966
+    second: Orange theme spritesheet 2_951
+  - first:
+      213: 3195820032957064419
+    second: Orange theme spritesheet 2_952
+  - first:
+      213: 2943423755464971320
+    second: Orange theme spritesheet 2_953
+  - first:
+      213: -8013925382827846598
+    second: Orange theme spritesheet 2_954
+  - first:
+      213: -5618644406440529831
+    second: Orange theme spritesheet 2_955
+  - first:
+      213: 3252373330242910883
+    second: Orange theme spritesheet 2_956
+  - first:
+      213: -7137727068403296677
+    second: Orange theme spritesheet 2_957
+  - first:
+      213: -7612490380744674739
+    second: Orange theme spritesheet 2_958
+  - first:
+      213: 8615673701330779331
+    second: Orange theme spritesheet 2_959
+  - first:
+      213: -1961954020988207373
+    second: Orange theme spritesheet 2_960
+  - first:
+      213: 6614903189735220655
+    second: Orange theme spritesheet 2_961
+  - first:
+      213: 1018527072693647987
+    second: Orange theme spritesheet 2_962
+  - first:
+      213: -3822564449056480822
+    second: Orange theme spritesheet 2_963
+  - first:
+      213: 6085234203322038264
+    second: Orange theme spritesheet 2_964
+  - first:
+      213: -6748882137380798119
+    second: Orange theme spritesheet 2_965
+  - first:
+      213: -7471986152205434859
+    second: Orange theme spritesheet 2_966
+  - first:
+      213: 7547759052707744212
+    second: Orange theme spritesheet 2_967
+  - first:
+      213: -5641293000569365406
+    second: Orange theme spritesheet 2_968
+  - first:
+      213: 282712447551906798
+    second: Orange theme spritesheet 2_969
+  - first:
+      213: -2804082608522513118
+    second: Orange theme spritesheet 2_970
+  - first:
+      213: 5002839680829432827
+    second: Orange theme spritesheet 2_971
+  - first:
+      213: -7846483031490598091
+    second: Orange theme spritesheet 2_972
+  - first:
+      213: 9126940674010292457
+    second: Orange theme spritesheet 2_973
+  - first:
+      213: -6427197937111677483
+    second: Orange theme spritesheet 2_974
+  - first:
+      213: 7618874730914038371
+    second: Orange theme spritesheet 2_975
+  - first:
+      213: -1587411504420687260
+    second: Orange theme spritesheet 2_976
+  - first:
+      213: 4511502625445422285
+    second: Orange theme spritesheet 2_977
+  - first:
+      213: 5123063117602591300
+    second: Orange theme spritesheet 2_978
+  - first:
+      213: 1929943270568471653
+    second: Orange theme spritesheet 2_979
+  - first:
+      213: -7915435897475400212
+    second: Orange theme spritesheet 2_980
+  - first:
+      213: -4431709272411022800
+    second: Orange theme spritesheet 2_981
+  - first:
+      213: 5348663312664524520
+    second: Orange theme spritesheet 2_982
+  - first:
+      213: -3268877237442078562
+    second: Orange theme spritesheet 2_983
+  - first:
+      213: -7386206046115800341
+    second: Orange theme spritesheet 2_984
+  - first:
+      213: -4470005239690581310
+    second: Orange theme spritesheet 2_985
+  - first:
+      213: 8514698683342867510
+    second: Orange theme spritesheet 2_986
+  - first:
+      213: 6013327981580686243
+    second: Orange theme spritesheet 2_987
+  - first:
+      213: -6650748807298258329
+    second: Orange theme spritesheet 2_988
+  - first:
+      213: -5206770277933646555
+    second: Orange theme spritesheet 2_989
+  - first:
+      213: -1096741745336074889
+    second: Orange theme spritesheet 2_990
+  - first:
+      213: -511699361741145780
+    second: Orange theme spritesheet 2_991
+  - first:
+      213: -5298570839282384727
+    second: Orange theme spritesheet 2_992
+  - first:
+      213: -8039289800786065838
+    second: Orange theme spritesheet 2_993
+  - first:
+      213: 6154109536843932851
+    second: Orange theme spritesheet 2_994
+  - first:
+      213: 846965587805288901
+    second: Orange theme spritesheet 2_995
+  - first:
+      213: -7759990329803590897
+    second: Orange theme spritesheet 2_996
+  - first:
+      213: 275659846523157726
+    second: Orange theme spritesheet 2_997
+  - first:
+      213: -5241248533669736272
+    second: Orange theme spritesheet 2_998
+  - first:
+      213: -924051787874356623
+    second: Orange theme spritesheet 2_999
+  - first:
+      213: -9159255604520808718
+    second: Orange theme spritesheet 2_1000
+  - first:
+      213: 479254979542059624
+    second: Orange theme spritesheet 2_1001
+  - first:
+      213: 4101181332537802595
+    second: Orange theme spritesheet 2_1002
+  - first:
+      213: 1169314797657191021
+    second: Orange theme spritesheet 2_1003
+  - first:
+      213: 4868612803973532945
+    second: Orange theme spritesheet 2_1004
+  - first:
+      213: 8572041396202354703
+    second: Orange theme spritesheet 2_1005
+  - first:
+      213: -7008481999148892453
+    second: Orange theme spritesheet 2_1006
+  - first:
+      213: -6227876978644815075
+    second: Orange theme spritesheet 2_1007
+  - first:
+      213: 4051795435974797209
+    second: Orange theme spritesheet 2_1008
+  - first:
+      213: 6971471360018542483
+    second: Orange theme spritesheet 2_1009
+  - first:
+      213: -8627962596362977364
+    second: Orange theme spritesheet 2_1010
+  - first:
+      213: 5860110292695766780
+    second: Orange theme spritesheet 2_1011
+  - first:
+      213: -2387869019795365221
+    second: Orange theme spritesheet 2_1012
+  - first:
+      213: -2563141026264781565
+    second: Orange theme spritesheet 2_1013
+  - first:
+      213: 6189332693794591495
+    second: Orange theme spritesheet 2_1014
+  - first:
+      213: 9214554103620012910
+    second: Orange theme spritesheet 2_1015
+  - first:
+      213: -4235551662987508468
+    second: Orange theme spritesheet 2_1016
+  - first:
+      213: 4375456234446812004
+    second: Orange theme spritesheet 2_1017
+  - first:
+      213: -4454499296978014623
+    second: Orange theme spritesheet 2_1018
+  - first:
+      213: -8885170215788324333
+    second: Orange theme spritesheet 2_1019
+  - first:
+      213: 6612164284244631256
+    second: Orange theme spritesheet 2_1020
+  - first:
+      213: -7348604613092553476
+    second: Orange theme spritesheet 2_1021
+  - first:
+      213: 1953779450163246186
+    second: Orange theme spritesheet 2_1022
+  - first:
+      213: -804663605200144918
+    second: Orange theme spritesheet 2_1023
+  - first:
+      213: -322373140228527392
+    second: Orange theme spritesheet 2_1024
+  - first:
+      213: 7449672650036492993
+    second: Orange theme spritesheet 2_1025
+  - first:
+      213: -7562223905541479053
+    second: Orange theme spritesheet 2_1026
+  - first:
+      213: 6762481916961149509
+    second: Orange theme spritesheet 2_1027
+  - first:
+      213: -4011072434276028086
+    second: Orange theme spritesheet 2_1028
+  - first:
+      213: 594860683552962814
+    second: Orange theme spritesheet 2_1029
+  - first:
+      213: 2624284570084943391
+    second: Orange theme spritesheet 2_1030
+  - first:
+      213: -7810091823017935709
+    second: Orange theme spritesheet 2_1031
+  - first:
+      213: -6017590491284168203
+    second: Orange theme spritesheet 2_1032
+  - first:
+      213: 4215402193634108838
+    second: Orange theme spritesheet 2_1033
+  - first:
+      213: -4232588738526403897
+    second: Orange theme spritesheet 2_1034
+  - first:
+      213: 3275300206159608475
+    second: Orange theme spritesheet 2_1035
+  - first:
+      213: -1121492138123513975
+    second: Orange theme spritesheet 2_1036
+  - first:
+      213: 1748660245361423619
+    second: Orange theme spritesheet 2_1037
+  - first:
+      213: -5874526755297494145
+    second: Orange theme spritesheet 2_1038
+  - first:
+      213: -567314224693324761
+    second: Orange theme spritesheet 2_1039
+  - first:
+      213: 1691570510931375845
+    second: Orange theme spritesheet 2_1040
+  - first:
+      213: 4608700156605483947
+    second: Orange theme spritesheet 2_1041
+  - first:
+      213: 1844172720333983839
+    second: Orange theme spritesheet 2_1042
+  - first:
+      213: 7187050810902349437
+    second: Orange theme spritesheet 2_1043
+  - first:
+      213: -2118538188634379913
+    second: Orange theme spritesheet 2_1044
+  - first:
+      213: 4899540525712922163
+    second: Orange theme spritesheet 2_1045
+  - first:
+      213: -8421622474093507101
+    second: Orange theme spritesheet 2_1046
+  - first:
+      213: -6103064293485804335
+    second: Orange theme spritesheet 2_1047
+  - first:
+      213: -3467311231104878793
+    second: Orange theme spritesheet 2_1048
+  - first:
+      213: 7598134820654287416
+    second: Orange theme spritesheet 2_1049
+  - first:
+      213: 2879944423692766681
+    second: Orange theme spritesheet 2_1050
+  - first:
+      213: -3349236228497230084
+    second: Orange theme spritesheet 2_1051
+  - first:
+      213: -9038185992820083818
+    second: Orange theme spritesheet 2_1052
+  - first:
+      213: -1433777894151334617
+    second: Orange theme spritesheet 2_1053
+  - first:
+      213: -5068415138398834688
+    second: Orange theme spritesheet 2_1054
+  - first:
+      213: -2203111553562413219
+    second: Orange theme spritesheet 2_1055
+  - first:
+      213: 6112022973361169806
+    second: Orange theme spritesheet 2_1056
+  - first:
+      213: -8000592220148832620
+    second: Orange theme spritesheet 2_1057
+  - first:
+      213: -971641657203921502
+    second: Orange theme spritesheet 2_1058
+  - first:
+      213: -8209214317360438103
+    second: Orange theme spritesheet 2_1059
+  - first:
+      213: -1456623870101499302
+    second: Orange theme spritesheet 2_1060
+  - first:
+      213: 6261657252664383489
+    second: Orange theme spritesheet 2_1061
+  - first:
+      213: -3502910450743745119
+    second: Orange theme spritesheet 2_1062
+  - first:
+      213: -3907340501690207799
+    second: Orange theme spritesheet 2_1063
+  - first:
+      213: 7452997512911939959
+    second: Orange theme spritesheet 2_1064
+  - first:
+      213: -2347652748411932471
+    second: Orange theme spritesheet 2_1065
+  - first:
+      213: 5408845891711586330
+    second: Orange theme spritesheet 2_1066
+  - first:
+      213: -2789284624663043902
+    second: Orange theme spritesheet 2_1067
+  - first:
+      213: 4077642904042083729
+    second: Orange theme spritesheet 2_1068
+  - first:
+      213: -351607895191610539
+    second: Orange theme spritesheet 2_1069
+  - first:
+      213: -7360830728584132920
+    second: Orange theme spritesheet 2_1070
+  - first:
+      213: 7011654718516068918
+    second: Orange theme spritesheet 2_1071
+  - first:
+      213: 3182264866253485077
+    second: Orange theme spritesheet 2_1072
+  - first:
+      213: -3053607982263498717
+    second: Orange theme spritesheet 2_1073
+  - first:
+      213: 2778298460133507963
+    second: Orange theme spritesheet 2_1074
+  - first:
+      213: 8333455546738613035
+    second: Orange theme spritesheet 2_1075
+  - first:
+      213: 8697069571877852152
+    second: Orange theme spritesheet 2_1076
+  - first:
+      213: -2070537808165622390
+    second: Orange theme spritesheet 2_1077
+  - first:
+      213: -4967150936173248506
+    second: Orange theme spritesheet 2_1078
+  - first:
+      213: -3795960714436431339
+    second: Orange theme spritesheet 2_1079
+  - first:
+      213: 1066052585628820224
+    second: Orange theme spritesheet 2_1080
+  - first:
+      213: 6699670027117274320
+    second: Orange theme spritesheet 2_1081
+  - first:
+      213: -5651503475539748665
+    second: Orange theme spritesheet 2_1082
+  - first:
+      213: 5129398310579158609
+    second: Orange theme spritesheet 2_1083
+  - first:
+      213: -7873357689291424157
+    second: Orange theme spritesheet 2_1084
+  - first:
+      213: -7194103511554418883
+    second: Orange theme spritesheet 2_1085
+  - first:
+      213: 2184284464893340280
+    second: Orange theme spritesheet 2_1086
+  - first:
+      213: -4067273319914934131
+    second: Orange theme spritesheet 2_1087
+  - first:
+      213: 5769052013708459796
+    second: Orange theme spritesheet 2_1088
+  - first:
+      213: 5519548742219799430
+    second: Orange theme spritesheet 2_1089
+  - first:
+      213: 5305216221362949393
+    second: Orange theme spritesheet 2_1090
+  - first:
+      213: -3288190239930461941
+    second: Orange theme spritesheet 2_1091
+  - first:
+      213: 9076336102342770887
+    second: Orange theme spritesheet 2_1092
+  - first:
+      213: -4864138027086870422
+    second: Orange theme spritesheet 2_1093
+  - first:
+      213: 1076107415092854691
+    second: Orange theme spritesheet 2_1094
+  - first:
+      213: -1256948985697475616
+    second: Orange theme spritesheet 2_1095
+  - first:
+      213: 6693284952903661950
+    second: Orange theme spritesheet 2_1096
+  - first:
+      213: 4332329233991628202
+    second: Orange theme spritesheet 2_1097
+  - first:
+      213: -4621264176327134808
+    second: Orange theme spritesheet 2_1098
+  - first:
+      213: -6120992348462432229
+    second: Orange theme spritesheet 2_1099
+  - first:
+      213: 2714879224572659337
+    second: Orange theme spritesheet 2_1100
+  - first:
+      213: -5035314577025358221
+    second: Orange theme spritesheet 2_1101
+  - first:
+      213: -5466782432857783912
+    second: Orange theme spritesheet 2_1102
+  - first:
+      213: 5410997493304905862
+    second: Orange theme spritesheet 2_1103
+  - first:
+      213: -8716713538494224879
+    second: Orange theme spritesheet 2_1104
+  - first:
+      213: 2240303928037183934
+    second: Orange theme spritesheet 2_1105
+  - first:
+      213: 210515007022125795
+    second: Orange theme spritesheet 2_1106
+  - first:
+      213: 4751470412447119100
+    second: Orange theme spritesheet 2_1107
+  - first:
+      213: -6462739437752461646
+    second: Orange theme spritesheet 2_1108
+  - first:
+      213: 8499537799069728476
+    second: Orange theme spritesheet 2_1109
+  - first:
+      213: -4046591282352067066
+    second: Orange theme spritesheet 2_1110
+  - first:
+      213: -5762704016066797537
+    second: Orange theme spritesheet 2_1111
+  - first:
+      213: 8299515162706974546
+    second: Orange theme spritesheet 2_1112
+  - first:
+      213: -4114066619590202498
+    second: Orange theme spritesheet 2_1113
+  - first:
+      213: 1484270919941782494
+    second: Orange theme spritesheet 2_1114
+  - first:
+      213: -1852197189186992165
+    second: Orange theme spritesheet 2_1115
+  - first:
+      213: -6864557707468963497
+    second: Orange theme spritesheet 2_1116
+  - first:
+      213: -594794511105260829
+    second: Orange theme spritesheet 2_1117
+  - first:
+      213: -81025568723379677
+    second: Orange theme spritesheet 2_1118
+  - first:
+      213: 8325205888326408481
+    second: Orange theme spritesheet 2_1119
+  - first:
+      213: -2465610516316614688
+    second: Orange theme spritesheet 2_1120
+  - first:
+      213: 977199780356304830
+    second: Orange theme spritesheet 2_1121
+  - first:
+      213: -4008359617877038734
+    second: Orange theme spritesheet 2_1122
+  - first:
+      213: 4412755983110324358
+    second: Orange theme spritesheet 2_1123
+  - first:
+      213: -4177782830034391341
+    second: Orange theme spritesheet 2_1124
+  - first:
+      213: 2426370942267510993
+    second: Orange theme spritesheet 2_1125
+  - first:
+      213: -8586442864615597459
+    second: Orange theme spritesheet 2_1126
+  - first:
+      213: 1489918226831518069
+    second: Orange theme spritesheet 2_1127
+  - first:
+      213: -4150666706759049766
+    second: Orange theme spritesheet 2_1128
+  - first:
+      213: -8298323017113124557
+    second: Orange theme spritesheet 2_1129
+  - first:
+      213: 6205164959589999784
+    second: Orange theme spritesheet 2_1130
+  - first:
+      213: 8456815627289627845
+    second: Orange theme spritesheet 2_1131
+  - first:
+      213: 6636317558612350432
+    second: Orange theme spritesheet 2_1132
+  - first:
+      213: -5815720573530561154
+    second: Orange theme spritesheet 2_1133
+  - first:
+      213: -6336735401249418599
+    second: Orange theme spritesheet 2_1134
+  - first:
+      213: -4170531080479712467
+    second: Orange theme spritesheet 2_1135
+  - first:
+      213: -7568150334611828732
+    second: Orange theme spritesheet 2_1136
+  - first:
+      213: 8975682819969814377
+    second: Orange theme spritesheet 2_1137
+  - first:
+      213: 5345029579922102697
+    second: Orange theme spritesheet 2_1138
+  - first:
+      213: -5628547636295448919
+    second: Orange theme spritesheet 2_1139
+  - first:
+      213: -8968961505509977522
+    second: Orange theme spritesheet 2_1140
+  - first:
+      213: 5516255913018804135
+    second: Orange theme spritesheet 2_1141
+  - first:
+      213: -2916836859402450348
+    second: Orange theme spritesheet 2_1142
+  - first:
+      213: -3322167572830319042
+    second: Orange theme spritesheet 2_1143
+  - first:
+      213: 2427244664309014724
+    second: Orange theme spritesheet 2_1144
+  - first:
+      213: -2087159115386185876
+    second: Orange theme spritesheet 2_1145
+  - first:
+      213: 71681363061337093
+    second: Orange theme spritesheet 2_1146
+  - first:
+      213: 2065933448193965279
+    second: Orange theme spritesheet 2_1147
+  - first:
+      213: 4426335021300184162
+    second: Orange theme spritesheet 2_1148
+  - first:
+      213: 2647315823216902296
+    second: Orange theme spritesheet 2_1149
+  - first:
+      213: -5781497153002901647
+    second: Orange theme spritesheet 2_1150
+  - first:
+      213: 1412364949510410906
+    second: Orange theme spritesheet 2_1151
+  - first:
+      213: 5688206949378359903
+    second: Orange theme spritesheet 2_1152
+  - first:
+      213: -1858623572131649994
+    second: Orange theme spritesheet 2_1153
+  - first:
+      213: 3896705497512397859
+    second: Orange theme spritesheet 2_1154
+  - first:
+      213: -8135688742334376766
+    second: Orange theme spritesheet 2_1155
+  - first:
+      213: -5457337756002505151
+    second: Orange theme spritesheet 2_1156
+  - first:
+      213: -4031005649450586441
+    second: Orange theme spritesheet 2_1157
+  - first:
+      213: 8203909140964065260
+    second: Orange theme spritesheet 2_1158
+  - first:
+      213: 3383808746416932559
+    second: Orange theme spritesheet 2_1159
+  - first:
+      213: -926078609429063408
+    second: Orange theme spritesheet 2_1160
+  - first:
+      213: 2795008063893380329
+    second: Orange theme spritesheet 2_1161
+  - first:
+      213: -7355914420103307435
+    second: Orange theme spritesheet 2_1162
+  - first:
+      213: -82097152828626153
+    second: Orange theme spritesheet 2_1163
+  - first:
+      213: 4579655247790774049
+    second: Orange theme spritesheet 2_1164
+  - first:
+      213: -7075082438271492195
+    second: Orange theme spritesheet 2_1165
+  - first:
+      213: -1494183102851213058
+    second: Orange theme spritesheet 2_1166
+  - first:
+      213: -4377740325460153729
+    second: Orange theme spritesheet 2_1167
+  - first:
+      213: -6138245651517838602
+    second: Orange theme spritesheet 2_1168
+  - first:
+      213: 6099098299742622000
+    second: Orange theme spritesheet 2_1169
+  - first:
+      213: -8584015696951178634
+    second: Orange theme spritesheet 2_1170
+  - first:
+      213: -7146691042855484750
+    second: Orange theme spritesheet 2_1171
+  - first:
+      213: 11570526990997766
+    second: Orange theme spritesheet 2_1172
+  - first:
+      213: 2151083223871397319
+    second: Orange theme spritesheet 2_1173
+  - first:
+      213: -6072355134831286059
+    second: Orange theme spritesheet 2_1174
+  - first:
+      213: 7593559615307458244
+    second: Orange theme spritesheet 2_1175
+  - first:
+      213: -4355609429520783780
+    second: Orange theme spritesheet 2_1176
+  - first:
+      213: 8027731392013162743
+    second: Orange theme spritesheet 2_1177
+  - first:
+      213: 123574235847712403
+    second: Orange theme spritesheet 2_1178
+  - first:
+      213: -8830880545528653487
+    second: Orange theme spritesheet 2_1179
+  - first:
+      213: 2621826945557302267
+    second: Orange theme spritesheet 2_1180
+  - first:
+      213: 8147561866414561774
+    second: Orange theme spritesheet 2_1181
+  - first:
+      213: 4531587346562516163
+    second: Orange theme spritesheet 2_1182
+  - first:
+      213: 3604051336289021573
+    second: Orange theme spritesheet 2_1183
+  - first:
+      213: 4454558782392094289
+    second: Orange theme spritesheet 2_1184
+  - first:
+      213: -856715645836197420
+    second: Orange theme spritesheet 2_1185
+  - first:
+      213: 1035858731582130948
+    second: Orange theme spritesheet 2_1186
+  - first:
+      213: 5575105688699544621
+    second: Orange theme spritesheet 2_1187
+  - first:
+      213: 2480241354076617803
+    second: Orange theme spritesheet 2_1188
+  - first:
+      213: -627349814036415972
+    second: Orange theme spritesheet 2_1189
+  - first:
+      213: 4651578574367452845
+    second: Orange theme spritesheet 2_1190
+  - first:
+      213: -2998752602338444588
+    second: Orange theme spritesheet 2_1191
+  - first:
+      213: -1208362352814987940
+    second: Orange theme spritesheet 2_1192
+  - first:
+      213: -3983989325925527074
+    second: Orange theme spritesheet 2_1193
+  - first:
+      213: -5255167815910810314
+    second: Orange theme spritesheet 2_1194
+  - first:
+      213: -6584950874182641851
+    second: Orange theme spritesheet 2_1195
+  - first:
+      213: 2317894929979034306
+    second: Orange theme spritesheet 2_1196
+  - first:
+      213: 5275367270717421496
+    second: Orange theme spritesheet 2_1197
+  - first:
+      213: -4373693409047377665
+    second: Orange theme spritesheet 2_1198
+  - first:
+      213: -7011362950483697005
+    second: Orange theme spritesheet 2_1199
+  - first:
+      213: -8910064269962345823
+    second: Orange theme spritesheet 2_1200
+  - first:
+      213: 8982139712879198095
+    second: Orange theme spritesheet 2_1201
+  - first:
+      213: -357374765565202011
+    second: Orange theme spritesheet 2_1202
+  - first:
+      213: -5684297273428261971
+    second: Orange theme spritesheet 2_1203
+  - first:
+      213: -5767626121861366602
+    second: Orange theme spritesheet 2_1204
+  - first:
+      213: 122100835321947861
+    second: Orange theme spritesheet 2_1205
+  - first:
+      213: 3121079286172514005
+    second: Orange theme spritesheet 2_1206
+  - first:
+      213: -2991357319099373138
+    second: Orange theme spritesheet 2_1207
+  - first:
+      213: 6414389985258536901
+    second: Orange theme spritesheet 2_1208
+  - first:
+      213: 8815441029154631517
+    second: Orange theme spritesheet 2_1209
+  - first:
+      213: -3315336464353773317
+    second: Orange theme spritesheet 2_1210
+  - first:
+      213: -4328809886947230188
+    second: Orange theme spritesheet 2_1211
+  - first:
+      213: 1155293436440321304
+    second: Orange theme spritesheet 2_1212
+  - first:
+      213: 330744691631225552
+    second: Orange theme spritesheet 2_1213
+  - first:
+      213: -295332679254363238
+    second: Orange theme spritesheet 2_1214
+  - first:
+      213: -5350074591308118972
+    second: Orange theme spritesheet 2_1215
+  - first:
+      213: 1260005902087410512
+    second: Orange theme spritesheet 2_1216
+  - first:
+      213: -4000944535050346467
+    second: Orange theme spritesheet 2_1217
+  - first:
+      213: -3631518232532287181
+    second: Orange theme spritesheet 2_1218
+  - first:
+      213: 7637056730190910138
+    second: Orange theme spritesheet 2_1219
+  - first:
+      213: 255314746952858004
+    second: Orange theme spritesheet 2_1220
+  - first:
+      213: 2747954480162997258
+    second: Orange theme spritesheet 2_1221
+  - first:
+      213: 4717876052890376959
+    second: Orange theme spritesheet 2_1222
+  - first:
+      213: -7158191830707962809
+    second: Orange theme spritesheet 2_1223
+  - first:
+      213: -3909940120125510962
+    second: Orange theme spritesheet 2_1224
+  - first:
+      213: 2769622196659120884
+    second: Orange theme spritesheet 2_1225
+  - first:
+      213: 5385974710469168088
+    second: Orange theme spritesheet 2_1226
+  - first:
+      213: 4356481792135045842
+    second: Orange theme spritesheet 2_1227
+  - first:
+      213: 6505835630960956544
+    second: Orange theme spritesheet 2_1228
+  - first:
+      213: -2251301875415433206
+    second: Orange theme spritesheet 2_1229
+  - first:
+      213: 5451929967288813485
+    second: Orange theme spritesheet 2_1230
+  - first:
+      213: 1238715634099203389
+    second: Orange theme spritesheet 2_1231
+  - first:
+      213: -9619252680698516
+    second: Orange theme spritesheet 2_1232
+  - first:
+      213: -8580100871891189779
+    second: Orange theme spritesheet 2_1233
+  - first:
+      213: 7706780141889488411
+    second: Orange theme spritesheet 2_1234
+  - first:
+      213: 7000552558049613052
+    second: Orange theme spritesheet 2_1235
+  - first:
+      213: 2525264022390251474
+    second: Orange theme spritesheet 2_1236
+  - first:
+      213: -8549541802046808280
+    second: Orange theme spritesheet 2_1237
+  - first:
+      213: 9060038450609511009
+    second: Orange theme spritesheet 2_1238
+  - first:
+      213: 1609347677868906124
+    second: Orange theme spritesheet 2_1239
+  - first:
+      213: -50032171264722526
+    second: Orange theme spritesheet 2_1240
+  - first:
+      213: -620592712672770096
+    second: Orange theme spritesheet 2_1241
+  - first:
+      213: -2900419859951905397
+    second: Orange theme spritesheet 2_1242
+  - first:
+      213: 4444238281901443395
+    second: Orange theme spritesheet 2_1243
+  - first:
+      213: -3490364483357834706
+    second: Orange theme spritesheet 2_1244
+  - first:
+      213: 5936528551077302605
+    second: Orange theme spritesheet 2_1245
+  - first:
+      213: 1058858638506420711
+    second: Orange theme spritesheet 2_1246
+  - first:
+      213: -7255599724605421965
+    second: Orange theme spritesheet 2_1247
+  - first:
+      213: 5102322270175655449
+    second: Orange theme spritesheet 2_1248
+  - first:
+      213: 3775090562605611709
+    second: Orange theme spritesheet 2_1249
+  - first:
+      213: -332941106426837679
+    second: Orange theme spritesheet 2_1250
+  - first:
+      213: -3812226714624762373
+    second: Orange theme spritesheet 2_1251
+  - first:
+      213: 9075015735571012504
+    second: Orange theme spritesheet 2_1252
+  - first:
+      213: -8569091454366369757
+    second: Orange theme spritesheet 2_1253
+  - first:
+      213: -9196733778152690582
+    second: Orange theme spritesheet 2_1254
+  - first:
+      213: -3256468429064957439
+    second: Orange theme spritesheet 2_1255
+  - first:
+      213: 3282521493226011938
+    second: Orange theme spritesheet 2_1256
+  - first:
+      213: -1365108830974279279
+    second: Orange theme spritesheet 2_1257
+  - first:
+      213: 8138991459822494815
+    second: Orange theme spritesheet 2_1258
+  - first:
+      213: 440632047414122115
+    second: Orange theme spritesheet 2_1259
+  - first:
+      213: 1276528006366074273
+    second: Orange theme spritesheet 2_1260
+  - first:
+      213: -6344771141121556423
+    second: Orange theme spritesheet 2_1261
+  - first:
+      213: -8286696365893641530
+    second: Orange theme spritesheet 2_1262
+  - first:
+      213: -4856621817213418423
+    second: Orange theme spritesheet 2_1263
+  - first:
+      213: -3458179429239397073
+    second: Orange theme spritesheet 2_1264
+  - first:
+      213: -3048689553634779222
+    second: Orange theme spritesheet 2_1265
+  - first:
+      213: 2511473837918651199
+    second: Orange theme spritesheet 2_1266
+  - first:
+      213: -7488413242805213510
+    second: Orange theme spritesheet 2_1267
+  - first:
+      213: -336610818192929195
+    second: Orange theme spritesheet 2_1268
+  - first:
+      213: -8238302917650493842
+    second: Orange theme spritesheet 2_1269
+  - first:
+      213: -7734506549872957129
+    second: Orange theme spritesheet 2_1270
+  - first:
+      213: -1711761870630646906
+    second: Orange theme spritesheet 2_1271
+  - first:
+      213: -8072131056287248268
+    second: Orange theme spritesheet 2_1272
+  - first:
+      213: 3602522065253132488
+    second: Orange theme spritesheet 2_1273
+  - first:
+      213: -6386288489665347903
+    second: Orange theme spritesheet 2_1274
+  - first:
+      213: 6339129729992922284
+    second: Orange theme spritesheet 2_1275
+  - first:
+      213: 5181008519236809732
+    second: Orange theme spritesheet 2_1276
+  - first:
+      213: -7892339707643827218
+    second: Orange theme spritesheet 2_1277
+  - first:
+      213: -1476035698502631670
+    second: Orange theme spritesheet 2_1278
+  - first:
+      213: -5637110911009121229
+    second: Orange theme spritesheet 2_1279
+  - first:
+      213: 3057616849881297668
+    second: Orange theme spritesheet 2_1280
+  - first:
+      213: -6053787030749743496
+    second: Orange theme spritesheet 2_1281
+  - first:
+      213: 4919070446555414555
+    second: Orange theme spritesheet 2_1282
+  - first:
+      213: -5410076936509278646
+    second: Orange theme spritesheet 2_1283
+  - first:
+      213: -3168855679389006705
+    second: Orange theme spritesheet 2_1284
+  - first:
+      213: -1732837703361776269
+    second: Orange theme spritesheet 2_1285
+  - first:
+      213: 5498983819226327369
+    second: Orange theme spritesheet 2_1286
+  - first:
+      213: -8918170059920096923
+    second: Orange theme spritesheet 2_1287
+  - first:
+      213: -9028509501651762701
+    second: Orange theme spritesheet 2_1288
+  - first:
+      213: 4725990529947162072
+    second: Orange theme spritesheet 2_1289
+  - first:
+      213: 945895074718327434
+    second: Orange theme spritesheet 2_1290
+  - first:
+      213: -7231527295795130009
+    second: Orange theme spritesheet 2_1291
+  - first:
+      213: 7915012843621989363
+    second: Orange theme spritesheet 2_1292
+  - first:
+      213: 3130500623598174723
+    second: Orange theme spritesheet 2_1293
+  - first:
+      213: 859908001395302918
+    second: Orange theme spritesheet 2_1294
+  - first:
+      213: -6976625720469964907
+    second: Orange theme spritesheet 2_1295
+  - first:
+      213: -1402877608985078115
+    second: Orange theme spritesheet 2_1296
+  - first:
+      213: -1626274334878510902
+    second: Orange theme spritesheet 2_1297
+  - first:
+      213: 6776679359517991621
+    second: Orange theme spritesheet 2_1298
+  - first:
+      213: 2292312385279188029
+    second: Orange theme spritesheet 2_1299
+  - first:
+      213: -5676472670043705421
+    second: Orange theme spritesheet 2_1300
+  - first:
+      213: 7491901863048578465
+    second: Orange theme spritesheet 2_1301
+  - first:
+      213: -4375090071554350277
+    second: Orange theme spritesheet 2_1302
+  - first:
+      213: 8051463471331550523
+    second: Orange theme spritesheet 2_1303
+  - first:
+      213: 4537172165309002786
+    second: Orange theme spritesheet 2_1304
+  - first:
+      213: 8695377851751025706
+    second: Orange theme spritesheet 2_1305
+  - first:
+      213: 8139897129669955415
+    second: Orange theme spritesheet 2_1306
+  - first:
+      213: 711447308071353035
+    second: Orange theme spritesheet 2_1307
+  - first:
+      213: 746328624363370388
+    second: Orange theme spritesheet 2_1308
+  - first:
+      213: 5040161125931347320
+    second: Orange theme spritesheet 2_1309
+  - first:
+      213: 8945955076383894758
+    second: Orange theme spritesheet 2_1310
+  - first:
+      213: 8250754728070548046
+    second: Orange theme spritesheet 2_1311
+  - first:
+      213: 858535307914505311
+    second: Orange theme spritesheet 2_1312
+  - first:
+      213: 1097164430257816479
+    second: Orange theme spritesheet 2_1313
+  - first:
+      213: -4208074462908622945
+    second: Orange theme spritesheet 2_1314
+  - first:
+      213: 4836308128491983812
+    second: Orange theme spritesheet 2_1315
+  - first:
+      213: 6422965435595191389
+    second: Orange theme spritesheet 2_1316
+  - first:
+      213: -7384769821155727447
+    second: Orange theme spritesheet 2_1317
+  - first:
+      213: 1195307288263980091
+    second: Orange theme spritesheet 2_1318
+  - first:
+      213: -9155824428575302420
+    second: Orange theme spritesheet 2_1319
+  - first:
+      213: -8080426754187553954
+    second: Orange theme spritesheet 2_1320
+  - first:
+      213: 1580629785313298091
+    second: Orange theme spritesheet 2_1321
+  - first:
+      213: -7840372965160719428
+    second: Orange theme spritesheet 2_1322
+  - first:
+      213: 8350956783607745074
+    second: Orange theme spritesheet 2_1323
+  - first:
+      213: 7307807127631506442
+    second: Orange theme spritesheet 2_1324
+  - first:
+      213: -7175610845774772143
+    second: Orange theme spritesheet 2_1325
+  - first:
+      213: 4921260613743019401
+    second: Orange theme spritesheet 2_1326
+  - first:
+      213: -6694991680506778305
+    second: Orange theme spritesheet 2_1327
+  - first:
+      213: 8115373682344758035
+    second: Orange theme spritesheet 2_1328
+  - first:
+      213: -3899084107035548661
+    second: Orange theme spritesheet 2_1329
+  - first:
+      213: 1115100351411303255
+    second: Orange theme spritesheet 2_1330
+  - first:
+      213: -1758505633381826959
+    second: Orange theme spritesheet 2_1331
+  - first:
+      213: 4482909413864749567
+    second: Orange theme spritesheet 2_1332
+  - first:
+      213: -2570020531554788390
+    second: Orange theme spritesheet 2_1333
+  - first:
+      213: 4353535954915035169
+    second: Orange theme spritesheet 2_1334
+  - first:
+      213: -8721912020523170895
+    second: Orange theme spritesheet 2_1335
+  - first:
+      213: -4420522431983337735
+    second: Orange theme spritesheet 2_1336
+  - first:
+      213: 6389131688450258342
+    second: Orange theme spritesheet 2_1337
+  - first:
+      213: 3100481812093817763
+    second: Orange theme spritesheet 2_1338
+  - first:
+      213: -6538238617420239354
+    second: Orange theme spritesheet 2_1339
+  - first:
+      213: 5841296772485818277
+    second: Orange theme spritesheet 2_1340
+  - first:
+      213: -7042935941143546810
+    second: Orange theme spritesheet 2_1341
+  - first:
+      213: 5356771096724844115
+    second: Orange theme spritesheet 2_1342
+  - first:
+      213: -3405459743377580656
+    second: Orange theme spritesheet 2_1343
+  - first:
+      213: 6278601793316527717
+    second: Orange theme spritesheet 2_1344
+  - first:
+      213: 4041453462278949915
+    second: Orange theme spritesheet 2_1345
+  - first:
+      213: -8205663009330236695
+    second: Orange theme spritesheet 2_1346
+  - first:
+      213: 3387189189499586928
+    second: Orange theme spritesheet 2_1347
+  - first:
+      213: -758208354324810755
+    second: Orange theme spritesheet 2_1348
+  - first:
+      213: -7112524763003000343
+    second: Orange theme spritesheet 2_1349
+  - first:
+      213: -4810986853122887126
+    second: Orange theme spritesheet 2_1350
+  - first:
+      213: -3518269180167571908
+    second: Orange theme spritesheet 2_1351
+  - first:
+      213: -7536237368712199641
+    second: Orange theme spritesheet 2_1352
+  - first:
+      213: 4187722469549104565
+    second: Orange theme spritesheet 2_1353
+  - first:
+      213: 9068603281591013913
+    second: Orange theme spritesheet 2_1354
+  - first:
+      213: 2970682134351330638
+    second: Orange theme spritesheet 2_1355
+  - first:
+      213: -1141034568389284345
+    second: Orange theme spritesheet 2_1356
+  - first:
+      213: 8534553901702934482
+    second: Orange theme spritesheet 2_1357
+  - first:
+      213: 3198079144029432454
+    second: Orange theme spritesheet 2_1358
+  - first:
+      213: -3912433089269703761
+    second: Orange theme spritesheet 2_1359
+  - first:
+      213: -4139483058952817034
+    second: Orange theme spritesheet 2_1360
+  - first:
+      213: -5566562852552514725
+    second: Orange theme spritesheet 2_1361
+  - first:
+      213: 958347194571934975
+    second: Orange theme spritesheet 2_1362
+  - first:
+      213: -5556365534603466093
+    second: Orange theme spritesheet 2_1363
+  - first:
+      213: -7371258993316703352
+    second: Orange theme spritesheet 2_1364
+  - first:
+      213: -5640786583301236795
+    second: Orange theme spritesheet 2_1365
+  - first:
+      213: -2690042190081335385
+    second: Orange theme spritesheet 2_1366
+  - first:
+      213: -2908945575088302173
+    second: Orange theme spritesheet 2_1367
+  - first:
+      213: 3399911245942542595
+    second: Orange theme spritesheet 2_1368
+  - first:
+      213: -2883975869743128965
+    second: Orange theme spritesheet 2_1369
+  - first:
+      213: -3571121643365984350
+    second: Orange theme spritesheet 2_1370
+  - first:
+      213: -339951090811397183
+    second: Orange theme spritesheet 2_1371
+  - first:
+      213: 4976923160996616164
+    second: Orange theme spritesheet 2_1372
+  - first:
+      213: -4707235316729912588
+    second: Orange theme spritesheet 2_1373
+  - first:
+      213: 214719200288860721
+    second: Orange theme spritesheet 2_1374
+  - first:
+      213: -3812590758537406734
+    second: Orange theme spritesheet 2_1375
+  - first:
+      213: -8974394378331484246
+    second: Orange theme spritesheet 2_1376
+  - first:
+      213: -7010319110485470744
+    second: Orange theme spritesheet 2_1377
+  - first:
+      213: -4025808462901263083
+    second: Orange theme spritesheet 2_1378
+  - first:
+      213: 7526183396777348308
+    second: Orange theme spritesheet 2_1379
+  - first:
+      213: -5076332669186483334
+    second: Orange theme spritesheet 2_1380
+  - first:
+      213: 703503887990694068
+    second: Orange theme spritesheet 2_1381
+  - first:
+      213: 7966602316140756488
+    second: Orange theme spritesheet 2_1382
+  - first:
+      213: -4797539624090309493
+    second: Orange theme spritesheet 2_1383
+  - first:
+      213: -6725816906849718535
+    second: Orange theme spritesheet 2_1384
+  - first:
+      213: 6247632001098461117
+    second: Orange theme spritesheet 2_1385
+  - first:
+      213: -4145905824137614547
+    second: Orange theme spritesheet 2_1386
+  - first:
+      213: 5440341227965010396
+    second: Orange theme spritesheet 2_1387
+  - first:
+      213: -5900056811111141312
+    second: Orange theme spritesheet 2_1388
+  - first:
+      213: 808702556915812560
+    second: Orange theme spritesheet 2_1389
+  - first:
+      213: -5082862174341807887
+    second: Orange theme spritesheet 2_1390
+  - first:
+      213: -4969223198482415631
+    second: Orange theme spritesheet 2_1391
+  - first:
+      213: -1551076997782594047
+    second: Orange theme spritesheet 2_1392
+  - first:
+      213: -156934625431674943
+    second: Orange theme spritesheet 2_1393
+  - first:
+      213: 5213080145537311421
+    second: Orange theme spritesheet 2_1394
+  - first:
+      213: 2957787327493855326
+    second: Orange theme spritesheet 2_1395
+  - first:
+      213: 4473195096064877486
+    second: Orange theme spritesheet 2_1396
+  - first:
+      213: -8257905097680199233
+    second: Orange theme spritesheet 2_1397
+  - first:
+      213: 1130177519098856368
+    second: Orange theme spritesheet 2_1398
+  - first:
+      213: -8729378329420511780
+    second: Orange theme spritesheet 2_1399
+  - first:
+      213: -6658855386914290970
+    second: Orange theme spritesheet 2_1400
+  - first:
+      213: 106364164963996792
+    second: Orange theme spritesheet 2_1401
+  - first:
+      213: 7157480870075227732
+    second: Orange theme spritesheet 2_1402
+  - first:
+      213: -3912015336879924898
+    second: Orange theme spritesheet 2_1403
+  - first:
+      213: 7150717285012279589
+    second: Orange theme spritesheet 2_1404
+  - first:
+      213: 1779656909334657522
+    second: Orange theme spritesheet 2_1405
+  - first:
+      213: 3728735408479229656
+    second: Orange theme spritesheet 2_1406
+  - first:
+      213: -4286066379476006434
+    second: Orange theme spritesheet 2_1407
+  - first:
+      213: 8197019290040184985
+    second: Orange theme spritesheet 2_1408
+  - first:
+      213: -8667126122497073905
+    second: Orange theme spritesheet 2_1409
+  - first:
+      213: 2881150393198255005
+    second: Orange theme spritesheet 2_1410
+  - first:
+      213: -748664915889516513
+    second: Orange theme spritesheet 2_1411
+  - first:
+      213: -1082313150269277136
+    second: Orange theme spritesheet 2_1412
+  - first:
+      213: -451738984982200116
+    second: Orange theme spritesheet 2_1413
+  - first:
+      213: -3869011175038530412
+    second: Orange theme spritesheet 2_1414
+  - first:
+      213: -1021887333212335414
+    second: Orange theme spritesheet 2_1415
+  - first:
+      213: -4753154947945241919
+    second: Orange theme spritesheet 2_1416
+  - first:
+      213: -1848961909142932362
+    second: Orange theme spritesheet 2_1417
+  - first:
+      213: 1588862217718024276
+    second: Orange theme spritesheet 2_1418
+  - first:
+      213: -6100877554396171527
+    second: Orange theme spritesheet 2_1419
+  - first:
+      213: 6210317934976026326
+    second: Orange theme spritesheet 2_1420
+  - first:
+      213: -2762373354663484468
+    second: Orange theme spritesheet 2_1421
+  - first:
+      213: -2977863187328635441
+    second: Orange theme spritesheet 2_1422
+  - first:
+      213: 4914333652014771168
+    second: Orange theme spritesheet 2_1423
+  - first:
+      213: 5594768904611092889
+    second: Orange theme spritesheet 2_1424
+  - first:
+      213: -5917727318079294876
+    second: Orange theme spritesheet 2_1425
+  - first:
+      213: -1141779944523116294
+    second: Orange theme spritesheet 2_1426
+  - first:
+      213: -1622276859870895310
+    second: Orange theme spritesheet 2_1427
+  - first:
+      213: 4427946418767279809
+    second: Orange theme spritesheet 2_1428
+  - first:
+      213: -4922039243327399748
+    second: Orange theme spritesheet 2_1429
+  - first:
+      213: -1777690738647743964
+    second: Orange theme spritesheet 2_1430
+  - first:
+      213: 6565055732689169862
+    second: Orange theme spritesheet 2_1431
+  - first:
+      213: -6193957790097895783
+    second: Orange theme spritesheet 2_1432
+  - first:
+      213: 6730648393295025329
+    second: Orange theme spritesheet 2_1433
+  - first:
+      213: -9205945443083920332
+    second: Orange theme spritesheet 2_1434
+  - first:
+      213: 5844090029987216505
+    second: Orange theme spritesheet 2_1435
+  - first:
+      213: -7870156039804991982
+    second: Orange theme spritesheet 2_1436
+  - first:
+      213: 6842461535014547481
+    second: Orange theme spritesheet 2_1437
+  - first:
+      213: -6973303646691432450
+    second: Orange theme spritesheet 2_1438
+  - first:
+      213: 1274021002454375353
+    second: Orange theme spritesheet 2_1439
+  - first:
+      213: 6952765722268235293
+    second: Orange theme spritesheet 2_1440
+  - first:
+      213: -4169299551476793553
+    second: Orange theme spritesheet 2_1441
+  - first:
+      213: -5408073788934001953
+    second: Orange theme spritesheet 2_1442
+  - first:
+      213: 771669019348268672
+    second: Orange theme spritesheet 2_1443
+  - first:
+      213: -8928492337394635600
+    second: Orange theme spritesheet 2_1444
+  - first:
+      213: 1001603757537550955
+    second: Orange theme spritesheet 2_1445
+  - first:
+      213: 8379578370632524880
+    second: Orange theme spritesheet 2_1446
+  - first:
+      213: 4616284554041739563
+    second: Orange theme spritesheet 2_1447
+  - first:
+      213: -4964428099479744091
+    second: Orange theme spritesheet 2_1448
+  - first:
+      213: 447228579253638784
+    second: Orange theme spritesheet 2_1449
+  - first:
+      213: -3388702047777327042
+    second: Orange theme spritesheet 2_1450
+  - first:
+      213: 3787332426207298240
+    second: Orange theme spritesheet 2_1451
+  - first:
+      213: 6542912711759203482
+    second: Orange theme spritesheet 2_1452
+  - first:
+      213: 2042022649245265091
+    second: Orange theme spritesheet 2_1453
+  - first:
+      213: 2022611071650767268
+    second: Orange theme spritesheet 2_1454
+  - first:
+      213: 5650770737902771570
+    second: Orange theme spritesheet 2_1455
+  - first:
+      213: 8900105930395730393
+    second: Orange theme spritesheet 2_1456
+  - first:
+      213: -5394874953877120520
+    second: Orange theme spritesheet 2_1457
+  - first:
+      213: -4593774805461577140
+    second: Orange theme spritesheet 2_1458
+  - first:
+      213: -6042521381023332004
+    second: Orange theme spritesheet 2_1459
+  - first:
+      213: -3866889371986540514
+    second: Orange theme spritesheet 2_1460
+  - first:
+      213: 4717137469469185919
+    second: Orange theme spritesheet 2_1461
+  - first:
+      213: -5234788535663956523
+    second: Orange theme spritesheet 2_1462
+  - first:
+      213: 737927864529034771
+    second: Orange theme spritesheet 2_1463
+  - first:
+      213: 5296114036680465642
+    second: Orange theme spritesheet 2_1464
+  - first:
+      213: -2912523209318838005
+    second: Orange theme spritesheet 2_1465
+  - first:
+      213: 574044962338565770
+    second: Orange theme spritesheet 2_1466
+  - first:
+      213: 4894227771891309884
+    second: Orange theme spritesheet 2_1467
+  - first:
+      213: -8966955987956447020
+    second: Orange theme spritesheet 2_1468
+  - first:
+      213: 2207846445805215120
+    second: Orange theme spritesheet 2_1469
+  - first:
+      213: 9181862446384989997
+    second: Orange theme spritesheet 2_1470
+  - first:
+      213: 1405085890319050053
+    second: Orange theme spritesheet 2_1471
+  - first:
+      213: -1904127562185628707
+    second: Orange theme spritesheet 2_1472
+  - first:
+      213: -8414470263586487198
+    second: Orange theme spritesheet 2_1473
+  - first:
+      213: 3677447472010174818
+    second: Orange theme spritesheet 2_1474
+  - first:
+      213: -5111781789553693379
+    second: Orange theme spritesheet 2_1475
+  - first:
+      213: -8431641751718954579
+    second: Orange theme spritesheet 2_1476
+  - first:
+      213: -7826883629520487200
+    second: Orange theme spritesheet 2_1477
+  - first:
+      213: 83409436920439271
+    second: Orange theme spritesheet 2_1478
+  - first:
+      213: 6534809109803091664
+    second: Orange theme spritesheet 2_1479
+  - first:
+      213: -4866685559561432485
+    second: Orange theme spritesheet 2_1480
+  - first:
+      213: 5830176291158926671
+    second: Orange theme spritesheet 2_1481
+  - first:
+      213: 7388580655522080839
+    second: Orange theme spritesheet 2_1482
+  - first:
+      213: 8432522705721254865
+    second: Orange theme spritesheet 2_1483
+  - first:
+      213: -3317635103326259976
+    second: Orange theme spritesheet 2_1484
+  - first:
+      213: 3907782657300682585
+    second: Orange theme spritesheet 2_1485
+  - first:
+      213: 9122620284782542190
+    second: Orange theme spritesheet 2_1486
+  - first:
+      213: 4868351758713533934
+    second: Orange theme spritesheet 2_1487
+  - first:
+      213: 272997328078318914
+    second: Orange theme spritesheet 2_1488
+  - first:
+      213: 2450698961475862684
+    second: Orange theme spritesheet 2_1489
+  - first:
+      213: 8880466001819115298
+    second: Orange theme spritesheet 2_1490
+  - first:
+      213: 7026052844216878399
+    second: Orange theme spritesheet 2_1491
+  - first:
+      213: 392273628390149179
+    second: Orange theme spritesheet 2_1492
+  - first:
+      213: -6955196385727525287
+    second: Orange theme spritesheet 2_1493
+  - first:
+      213: 1522962266837528278
+    second: Orange theme spritesheet 2_1494
+  - first:
+      213: -7596554218256276999
+    second: Orange theme spritesheet 2_1495
+  - first:
+      213: -4797228406691040216
+    second: Orange theme spritesheet 2_1496
+  - first:
+      213: -9192444203554343906
+    second: Orange theme spritesheet 2_1497
+  - first:
+      213: -4106079009562582210
+    second: Orange theme spritesheet 2_1498
+  - first:
+      213: -6108982444511205437
+    second: Orange theme spritesheet 2_1499
+  - first:
+      213: -4718339598082266697
+    second: Orange theme spritesheet 2_1500
+  - first:
+      213: -3544144552020388093
+    second: Orange theme spritesheet 2_1501
+  - first:
+      213: 3473035885248404090
+    second: Orange theme spritesheet 2_1502
+  - first:
+      213: 5560953780694240878
+    second: Orange theme spritesheet 2_1503
+  - first:
+      213: -4833786096897455935
+    second: Orange theme spritesheet 2_1504
+  - first:
+      213: 865613862680037703
+    second: Orange theme spritesheet 2_1505
+  - first:
+      213: -4457968062116436107
+    second: Orange theme spritesheet 2_1506
+  - first:
+      213: -3046202188660772497
+    second: Orange theme spritesheet 2_1507
+  - first:
+      213: -4285500007680883701
+    second: Orange theme spritesheet 2_1508
+  - first:
+      213: -8534223912640408493
+    second: Orange theme spritesheet 2_1509
+  - first:
+      213: -4856523242946258284
+    second: Orange theme spritesheet 2_1510
+  - first:
+      213: -8717920684233942346
+    second: Orange theme spritesheet 2_1511
+  - first:
+      213: 1279134305166137502
+    second: Orange theme spritesheet 2_1512
+  - first:
+      213: 6531940582970475017
+    second: Orange theme spritesheet 2_1513
+  - first:
+      213: 4741294464227847035
+    second: Orange theme spritesheet 2_1514
+  - first:
+      213: 3371130770821391245
+    second: Orange theme spritesheet 2_1515
+  - first:
+      213: -1162706543490357398
+    second: Orange theme spritesheet 2_1516
+  - first:
+      213: -2028219435664065057
+    second: Orange theme spritesheet 2_1517
+  - first:
+      213: -5185567953157077956
+    second: Orange theme spritesheet 2_1518
+  - first:
+      213: 4310198490381541032
+    second: Orange theme spritesheet 2_1519
+  - first:
+      213: 765098684689040399
+    second: Orange theme spritesheet 2_1520
+  - first:
+      213: -758182941809033865
+    second: Orange theme spritesheet 2_1521
+  - first:
+      213: -9091536385965195535
+    second: Orange theme spritesheet 2_1522
+  - first:
+      213: -308746400425663059
+    second: Orange theme spritesheet 2_1523
+  - first:
+      213: 3911726594499331221
+    second: Orange theme spritesheet 2_1524
+  - first:
+      213: 6338135153523504171
+    second: Orange theme spritesheet 2_1525
+  - first:
+      213: 7235931588652565778
+    second: Orange theme spritesheet 2_1526
+  - first:
+      213: 8578550743869204308
+    second: Orange theme spritesheet 2_1527
+  - first:
+      213: 9161543811023628580
+    second: Orange theme spritesheet 2_1528
+  - first:
+      213: -2038200783876595728
+    second: Orange theme spritesheet 2_1529
+  - first:
+      213: 7973374779788303722
+    second: Orange theme spritesheet 2_1530
+  - first:
+      213: -8601911952371256234
+    second: Orange theme spritesheet 2_1531
+  - first:
+      213: 8226320313498123374
+    second: Orange theme spritesheet 2_1532
+  - first:
+      213: 5775325856453985861
+    second: Orange theme spritesheet 2_1533
+  - first:
+      213: 3480685895023757190
+    second: Orange theme spritesheet 2_1534
+  - first:
+      213: 5179571584893517889
+    second: Orange theme spritesheet 2_1535
+  - first:
+      213: 4415938314052014063
+    second: Orange theme spritesheet 2_1536
+  - first:
+      213: 8197823049819815630
+    second: Orange theme spritesheet 2_1537
+  - first:
+      213: -6136320731258633166
+    second: Orange theme spritesheet 2_1538
+  - first:
+      213: -4856222692546391750
+    second: Orange theme spritesheet 2_1539
+  - first:
+      213: 2328140739728171046
+    second: Orange theme spritesheet 2_1540
+  - first:
+      213: 1280261537220971996
+    second: Orange theme spritesheet 2_1541
+  - first:
+      213: 6324625963594067518
+    second: Orange theme spritesheet 2_1542
+  - first:
+      213: -7949183261171147514
+    second: Orange theme spritesheet 2_1543
+  - first:
+      213: 8811676756696201077
+    second: Orange theme spritesheet 2_1544
+  - first:
+      213: 2443754096353788265
+    second: Orange theme spritesheet 2_1545
+  - first:
+      213: -5297959801820626682
+    second: Orange theme spritesheet 2_1546
+  - first:
+      213: -3739696869608407553
+    second: Orange theme spritesheet 2_1547
+  - first:
+      213: -3519436444563180073
+    second: Orange theme spritesheet 2_1548
+  - first:
+      213: 1075099433824021524
+    second: Orange theme spritesheet 2_1549
+  - first:
+      213: 972948954975409621
+    second: Orange theme spritesheet 2_1550
+  - first:
+      213: 3829763273855635533
+    second: Orange theme spritesheet 2_1551
+  - first:
+      213: -3598563348446556315
+    second: Orange theme spritesheet 2_1552
+  - first:
+      213: -7513764425345527451
+    second: Orange theme spritesheet 2_1553
+  - first:
+      213: 747588955947379249
+    second: Orange theme spritesheet 2_1554
+  - first:
+      213: 4863961632243681472
+    second: Orange theme spritesheet 2_1555
+  - first:
+      213: 1118945749005627911
+    second: Orange theme spritesheet 2_1556
+  - first:
+      213: 7872616335241033375
+    second: Orange theme spritesheet 2_1557
+  - first:
+      213: 1498041887756241892
+    second: Orange theme spritesheet 2_1558
+  - first:
+      213: -6270830600390892861
+    second: Orange theme spritesheet 2_1559
+  - first:
+      213: 2595065276368777640
+    second: Orange theme spritesheet 2_1560
+  - first:
+      213: -1002463554516580282
+    second: Orange theme spritesheet 2_1561
+  - first:
+      213: -2192321626949518219
+    second: Orange theme spritesheet 2_1562
+  - first:
+      213: -1140991695202209351
+    second: Orange theme spritesheet 2_1563
+  - first:
+      213: 8159827853552026208
+    second: Orange theme spritesheet 2_1564
+  - first:
+      213: 3616619405469970703
+    second: Orange theme spritesheet 2_1565
+  - first:
+      213: -7062940696208577388
+    second: Orange theme spritesheet 2_1566
+  - first:
+      213: -5378873519900368649
+    second: Orange theme spritesheet 2_1567
+  - first:
+      213: -7864239555006984955
+    second: Orange theme spritesheet 2_1568
+  - first:
+      213: -2336252222790917008
+    second: Orange theme spritesheet 2_1569
+  - first:
+      213: -7164785861340614677
+    second: Orange theme spritesheet 2_1570
+  - first:
+      213: 216378601041570003
+    second: Orange theme spritesheet 2_1571
+  - first:
+      213: 1766547602796560227
+    second: Orange theme spritesheet 2_1572
+  - first:
+      213: 4459175937616767265
+    second: Orange theme spritesheet 2_1573
+  - first:
+      213: 8461335288181674143
+    second: Orange theme spritesheet 2_1574
+  - first:
+      213: -4783609198451156659
+    second: Orange theme spritesheet 2_1575
+  - first:
+      213: -2669947068717175670
+    second: Orange theme spritesheet 2_1576
+  - first:
+      213: 6916682948169912477
+    second: Orange theme spritesheet 2_1577
+  - first:
+      213: -7380930243105842249
+    second: Orange theme spritesheet 2_1578
+  - first:
+      213: 164802777840207641
+    second: Orange theme spritesheet 2_1579
+  - first:
+      213: -8682031479115184037
+    second: Orange theme spritesheet 2_1580
+  - first:
+      213: -115500236131615464
+    second: Orange theme spritesheet 2_1581
+  - first:
+      213: 7397973118591097094
+    second: Orange theme spritesheet 2_1582
+  - first:
+      213: 8386031544321662722
+    second: Orange theme spritesheet 2_1583
+  - first:
+      213: -3056335412859698584
+    second: Orange theme spritesheet 2_1584
+  - first:
+      213: 4621019943042280722
+    second: Orange theme spritesheet 2_1585
+  - first:
+      213: 4510752524368929598
+    second: Orange theme spritesheet 2_1586
+  - first:
+      213: -1420001578866821073
+    second: Orange theme spritesheet 2_1587
+  - first:
+      213: -7722128133824594930
+    second: Orange theme spritesheet 2_1588
+  - first:
+      213: -6763242259217338261
+    second: Orange theme spritesheet 2_1589
+  - first:
+      213: 3313569816204341802
+    second: Orange theme spritesheet 2_1590
+  - first:
+      213: -6469410500130381444
+    second: Orange theme spritesheet 2_1591
+  - first:
+      213: 677367854323485903
+    second: Orange theme spritesheet 2_1592
+  - first:
+      213: 6832727392656999137
+    second: Orange theme spritesheet 2_1593
+  - first:
+      213: -2072104701885113436
+    second: Orange theme spritesheet 2_1594
+  - first:
+      213: -799018769893896142
+    second: Orange theme spritesheet 2_1595
+  - first:
+      213: 4660399186744717573
+    second: Orange theme spritesheet 2_1596
+  - first:
+      213: -3661806808022665463
+    second: Orange theme spritesheet 2_1597
+  - first:
+      213: 1822454303046287237
+    second: Orange theme spritesheet 2_1598
+  - first:
+      213: -6243596471960132552
+    second: Orange theme spritesheet 2_1599
+  - first:
+      213: -8632178393071119157
+    second: Orange theme spritesheet 2_1600
+  - first:
+      213: -7466998361310862588
+    second: Orange theme spritesheet 2_1601
+  - first:
+      213: 1373533668032746471
+    second: Orange theme spritesheet 2_1602
+  - first:
+      213: 8117808027838756005
+    second: Orange theme spritesheet 2_1603
+  - first:
+      213: -7689200205005127891
+    second: Orange theme spritesheet 2_1604
+  - first:
+      213: 6743030465258277602
+    second: Orange theme spritesheet 2_1605
+  - first:
+      213: -3349515121645431036
+    second: Orange theme spritesheet 2_1606
+  - first:
+      213: -6916192217906868403
+    second: Orange theme spritesheet 2_1607
+  - first:
+      213: -7098429181875007608
+    second: Orange theme spritesheet 2_1608
+  - first:
+      213: -21773096688689379
+    second: Orange theme spritesheet 2_1609
+  - first:
+      213: -5045008766439927109
+    second: Orange theme spritesheet 2_1610
+  - first:
+      213: -8771037212908123135
+    second: Orange theme spritesheet 2_1611
+  - first:
+      213: 7338090507060791342
+    second: Orange theme spritesheet 2_1612
+  - first:
+      213: 4576549881098622411
+    second: Orange theme spritesheet 2_1613
+  - first:
+      213: 8824934810329430892
+    second: Orange theme spritesheet 2_1614
+  - first:
+      213: 4608882051880389317
+    second: Orange theme spritesheet 2_1615
+  - first:
+      213: -4915951909815118118
+    second: Orange theme spritesheet 2_1616
+  - first:
+      213: -5575877216293658334
+    second: Orange theme spritesheet 2_1617
+  - first:
+      213: -5130372956739409742
+    second: Orange theme spritesheet 2_1618
+  - first:
+      213: 3059708031077574828
+    second: Orange theme spritesheet 2_1619
+  - first:
+      213: 4038430115827729118
+    second: Orange theme spritesheet 2_1620
+  - first:
+      213: 145935790669085751
+    second: Orange theme spritesheet 2_1621
+  - first:
+      213: -2971044807901520965
+    second: Orange theme spritesheet 2_1622
+  - first:
+      213: 6979920090841716925
+    second: Orange theme spritesheet 2_1623
+  - first:
+      213: 6561918013569835877
+    second: Orange theme spritesheet 2_1624
+  - first:
+      213: -5639144154761036813
+    second: Orange theme spritesheet 2_1625
+  - first:
+      213: 2979651234944905791
+    second: Orange theme spritesheet 2_1626
+  - first:
+      213: 4025322976648861474
+    second: Orange theme spritesheet 2_1627
+  - first:
+      213: 4726031898275177052
+    second: Orange theme spritesheet 2_1628
+  - first:
+      213: -6676115878505114926
+    second: Orange theme spritesheet 2_1629
+  - first:
+      213: 5255012356197149889
+    second: Orange theme spritesheet 2_1630
+  - first:
+      213: 6944592007510233084
+    second: Orange theme spritesheet 2_1631
+  - first:
+      213: -3329236431261581536
+    second: Orange theme spritesheet 2_1632
+  - first:
+      213: 6695177161985310599
+    second: Orange theme spritesheet 2_1633
+  - first:
+      213: -2706942279451947296
+    second: Orange theme spritesheet 2_1634
+  - first:
+      213: -4821915923988614493
+    second: Orange theme spritesheet 2_1635
+  - first:
+      213: -3248859606446194308
+    second: Orange theme spritesheet 2_1636
+  - first:
+      213: 1471570502513163568
+    second: Orange theme spritesheet 2_1637
+  - first:
+      213: -234113178745721088
+    second: Orange theme spritesheet 2_1638
+  - first:
+      213: 2432482975825941817
+    second: Orange theme spritesheet 2_1639
+  - first:
+      213: -4652415560644079353
+    second: Orange theme spritesheet 2_1640
+  - first:
+      213: -7666206500304805901
+    second: Orange theme spritesheet 2_1641
+  - first:
+      213: 7937022098283507019
+    second: Orange theme spritesheet 2_1642
+  - first:
+      213: 4651239420882483457
+    second: Orange theme spritesheet 2_1643
+  - first:
+      213: 5122642002549146551
+    second: Orange theme spritesheet 2_1644
+  - first:
+      213: 2459096648197607759
+    second: Orange theme spritesheet 2_1645
+  - first:
+      213: 6876541746660624288
+    second: Orange theme spritesheet 2_1646
+  - first:
+      213: 7380835161357179787
+    second: Orange theme spritesheet 2_1647
+  - first:
+      213: -8973463209710227606
+    second: Orange theme spritesheet 2_1648
+  - first:
+      213: 9218344225653331385
+    second: Orange theme spritesheet 2_1649
+  - first:
+      213: -407678070712983917
+    second: Orange theme spritesheet 2_1650
+  - first:
+      213: -2463619493462859274
+    second: Orange theme spritesheet 2_1651
+  - first:
+      213: 1457472806512045181
+    second: Orange theme spritesheet 2_1652
+  - first:
+      213: 6018818276106133021
+    second: Orange theme spritesheet 2_1653
+  - first:
+      213: 2150921619571844327
+    second: Orange theme spritesheet 2_1654
+  - first:
+      213: -30508378238495633
+    second: Orange theme spritesheet 2_1655
+  - first:
+      213: 9215733381811560628
+    second: Orange theme spritesheet 2_1656
+  - first:
+      213: 4065433533907142757
+    second: Orange theme spritesheet 2_1657
+  - first:
+      213: 6628223180105353480
+    second: Orange theme spritesheet 2_1658
+  - first:
+      213: -5019165639280935933
+    second: Orange theme spritesheet 2_1659
+  - first:
+      213: -7925426663361489174
+    second: Orange theme spritesheet 2_1660
+  - first:
+      213: 2327907542790490788
+    second: Orange theme spritesheet 2_1661
+  - first:
+      213: 3317036856107697741
+    second: Orange theme spritesheet 2_1662
+  - first:
+      213: -4560807924398552114
+    second: Orange theme spritesheet 2_1663
+  - first:
+      213: -5088824525534009953
+    second: Orange theme spritesheet 2_1664
+  - first:
+      213: -3367845646776496981
+    second: Orange theme spritesheet 2_1665
+  - first:
+      213: 1832485041842821554
+    second: Orange theme spritesheet 2_1666
+  - first:
+      213: 5994907830783318169
+    second: Orange theme spritesheet 2_1667
+  - first:
+      213: 6857774305361043444
+    second: Orange theme spritesheet 2_1668
+  - first:
+      213: -6625935210153485824
+    second: Orange theme spritesheet 2_1669
+  - first:
+      213: -3617523145567513882
+    second: Orange theme spritesheet 2_1670
+  - first:
+      213: 602211457079692608
+    second: Orange theme spritesheet 2_1671
+  - first:
+      213: -5243804773713043764
+    second: Orange theme spritesheet 2_1672
+  - first:
+      213: -4955987898155642659
+    second: Orange theme spritesheet 2_1673
+  - first:
+      213: 4045365873579480698
+    second: Orange theme spritesheet 2_1674
+  - first:
+      213: 7665258205933246963
+    second: Orange theme spritesheet 2_1675
+  - first:
+      213: 7764395426730866004
+    second: Orange theme spritesheet 2_1676
+  - first:
+      213: -8616115278055580218
+    second: Orange theme spritesheet 2_1677
+  - first:
+      213: 890201876433139492
+    second: Orange theme spritesheet 2_1678
+  - first:
+      213: 940669344614398704
+    second: Orange theme spritesheet 2_1679
+  - first:
+      213: 235300149450697496
+    second: Orange theme spritesheet 2_1680
+  - first:
+      213: -8766887865654737474
+    second: Orange theme spritesheet 2_1681
+  - first:
+      213: -1602601392876123688
+    second: Orange theme spritesheet 2_1682
+  - first:
+      213: 4296706312644522363
+    second: Orange theme spritesheet 2_1683
+  - first:
+      213: 9133458997028891170
+    second: Orange theme spritesheet 2_1684
+  - first:
+      213: 6469691192415693430
+    second: Orange theme spritesheet 2_1685
+  - first:
+      213: 3611275285881547945
+    second: Orange theme spritesheet 2_1686
+  - first:
+      213: 849876476591546599
+    second: Orange theme spritesheet 2_1687
+  - first:
+      213: 940176171878431084
+    second: Orange theme spritesheet 2_1688
+  - first:
+      213: -3389610288706526291
+    second: Orange theme spritesheet 2_1689
+  - first:
+      213: -3564591796281649042
+    second: Orange theme spritesheet 2_1690
+  - first:
+      213: 1450969591634429006
+    second: Orange theme spritesheet 2_1691
+  - first:
+      213: 6679561731729457056
+    second: Orange theme spritesheet 2_1692
+  - first:
+      213: -6564805405414933223
+    second: Orange theme spritesheet 2_1693
+  - first:
+      213: -1978240827699615124
+    second: Orange theme spritesheet 2_1694
+  - first:
+      213: -2288997723684109686
+    second: Orange theme spritesheet 2_1695
+  - first:
+      213: -1497480500168756438
+    second: Orange theme spritesheet 2_1696
+  - first:
+      213: 7419479032653302399
+    second: Orange theme spritesheet 2_1697
+  - first:
+      213: -4517487804777146343
+    second: Orange theme spritesheet 2_1698
+  - first:
+      213: 8302118330468193163
+    second: Orange theme spritesheet 2_1699
+  - first:
+      213: 7588376274081006065
+    second: Orange theme spritesheet 2_1700
+  - first:
+      213: -3766957770967862475
+    second: Orange theme spritesheet 2_1701
+  - first:
+      213: -38113588427891643
+    second: Orange theme spritesheet 2_1702
+  - first:
+      213: -1810362701998906085
+    second: Orange theme spritesheet 2_1703
+  - first:
+      213: -7174540486487480707
+    second: Orange theme spritesheet 2_1704
+  - first:
+      213: -8444939995028364788
+    second: Orange theme spritesheet 2_1705
+  - first:
+      213: 1176745540829320280
+    second: Orange theme spritesheet 2_1706
+  - first:
+      213: -84641493332935900
+    second: Orange theme spritesheet 2_1707
+  - first:
+      213: -5075955355007650212
+    second: Orange theme spritesheet 2_1708
+  - first:
+      213: -6687964886947202601
+    second: Orange theme spritesheet 2_1709
+  - first:
+      213: 35125337932712013
+    second: Orange theme spritesheet 2_1710
+  - first:
+      213: -138957922259777850
+    second: Orange theme spritesheet 2_1711
+  - first:
+      213: -2214085573590418364
+    second: Orange theme spritesheet 2_1712
+  - first:
+      213: 7348926448493470463
+    second: Orange theme spritesheet 2_1713
+  - first:
+      213: 5544362022141907135
+    second: Orange theme spritesheet 2_1714
+  - first:
+      213: -7447118462945410764
+    second: Orange theme spritesheet 2_1715
+  - first:
+      213: -1794221494395623026
+    second: Orange theme spritesheet 2_1716
+  - first:
+      213: -5690428109867167389
+    second: Orange theme spritesheet 2_1717
+  - first:
+      213: -6534065887253839920
+    second: Orange theme spritesheet 2_1718
+  - first:
+      213: -8101847509556251634
+    second: Orange theme spritesheet 2_1719
+  - first:
+      213: 8816008470033870914
+    second: Orange theme spritesheet 2_1720
+  - first:
+      213: -1602062003709411721
+    second: Orange theme spritesheet 2_1721
+  - first:
+      213: 1684427913411067766
+    second: Orange theme spritesheet 2_1722
+  - first:
+      213: 7775587856570798581
+    second: Orange theme spritesheet 2_1723
+  - first:
+      213: -5232347341922234402
+    second: Orange theme spritesheet 2_1724
+  - first:
+      213: 8555910749103611097
+    second: Orange theme spritesheet 2_1725
+  - first:
+      213: 8617721138992749900
+    second: Orange theme spritesheet 2_1726
+  - first:
+      213: 4577834998210389102
+    second: Orange theme spritesheet 2_1727
+  - first:
+      213: 8869200748100303422
+    second: Orange theme spritesheet 2_1728
+  - first:
+      213: 910556420610480862
+    second: Orange theme spritesheet 2_1729
+  - first:
+      213: -3511635119406807698
+    second: Orange theme spritesheet 2_1730
+  - first:
+      213: 5658412608825183167
+    second: Orange theme spritesheet 2_1731
+  - first:
+      213: 1874337812946322214
+    second: Orange theme spritesheet 2_1732
+  - first:
+      213: 6988548530258178503
+    second: Orange theme spritesheet 2_1733
+  - first:
+      213: -418338129893211137
+    second: Orange theme spritesheet 2_1734
+  - first:
+      213: 1720131461379367081
+    second: Orange theme spritesheet 2_1735
+  - first:
+      213: -3150726104213371146
+    second: Orange theme spritesheet 2_1736
+  - first:
+      213: 5458799084921557594
+    second: Orange theme spritesheet 2_1737
+  - first:
+      213: -7967190577857917037
+    second: Orange theme spritesheet 2_1738
+  - first:
+      213: 2161736983101175356
+    second: Orange theme spritesheet 2_1739
+  - first:
+      213: -3444051659317127214
+    second: Orange theme spritesheet 2_1740
+  - first:
+      213: -97513684213825092
+    second: Orange theme spritesheet 2_1741
+  - first:
+      213: 6062473436993021025
+    second: Orange theme spritesheet 2_1742
+  - first:
+      213: 8374960607401170549
+    second: Orange theme spritesheet 2_1743
+  - first:
+      213: 5624929975651954322
+    second: Orange theme spritesheet 2_1744
+  - first:
+      213: -4808105999226810925
+    second: Orange theme spritesheet 2_1745
+  - first:
+      213: 5126499547607766280
+    second: Orange theme spritesheet 2_1746
+  - first:
+      213: 3105640239777032368
+    second: Orange theme spritesheet 2_1747
+  - first:
+      213: 1065651227984193060
+    second: Orange theme spritesheet 2_1748
+  - first:
+      213: -1300153884904712151
+    second: Orange theme spritesheet 2_1749
+  - first:
+      213: -2938796776850287784
+    second: Orange theme spritesheet 2_1750
+  - first:
+      213: -2025221166961524972
+    second: Orange theme spritesheet 2_1751
+  - first:
+      213: -2208116859126052041
+    second: Orange theme spritesheet 2_1752
+  - first:
+      213: 9164277240454589330
+    second: Orange theme spritesheet 2_1753
+  - first:
+      213: -3403614114903044412
+    second: Orange theme spritesheet 2_1754
+  - first:
+      213: -3632739517307597880
+    second: Orange theme spritesheet 2_1755
+  - first:
+      213: 2025056800675834494
+    second: Orange theme spritesheet 2_1756
+  - first:
+      213: -4068896424986884069
+    second: Orange theme spritesheet 2_1757
+  - first:
+      213: -370442877264871400
+    second: Orange theme spritesheet 2_1758
+  - first:
+      213: -7061651118083909270
+    second: Orange theme spritesheet 2_1759
+  - first:
+      213: 2715554011316778227
+    second: Orange theme spritesheet 2_1760
+  - first:
+      213: -7872830607459880705
+    second: Orange theme spritesheet 2_1761
+  - first:
+      213: -3433502087717983795
+    second: Orange theme spritesheet 2_1762
+  - first:
+      213: -8133142357582083738
+    second: Orange theme spritesheet 2_1763
+  - first:
+      213: -1627420442058113420
+    second: Orange theme spritesheet 2_1764
+  - first:
+      213: -5733828040367967595
+    second: Orange theme spritesheet 2_1765
+  - first:
+      213: 3720198200220235282
+    second: Orange theme spritesheet 2_1766
+  - first:
+      213: 7857374324321389074
+    second: Orange theme spritesheet 2_1767
+  - first:
+      213: 1032011426018367005
+    second: Orange theme spritesheet 2_1768
+  - first:
+      213: -6739484392440449381
+    second: Orange theme spritesheet 2_1769
+  - first:
+      213: -7189537450476500169
+    second: Orange theme spritesheet 2_1770
+  - first:
+      213: 1840613057393009144
+    second: Orange theme spritesheet 2_1771
+  - first:
+      213: 6340038134143362234
+    second: Orange theme spritesheet 2_1772
+  - first:
+      213: -3290557825018836018
+    second: Orange theme spritesheet 2_1773
+  - first:
+      213: 5349992457274733741
+    second: Orange theme spritesheet 2_1774
+  - first:
+      213: -6136736058841582445
+    second: Orange theme spritesheet 2_1775
+  - first:
+      213: -2203744129737342753
+    second: Orange theme spritesheet 2_1776
+  - first:
+      213: 7559544648394575044
+    second: Orange theme spritesheet 2_1777
+  - first:
+      213: 2644208343460921915
+    second: Orange theme spritesheet 2_1778
+  - first:
+      213: -139158265360016451
+    second: Orange theme spritesheet 2_1779
+  - first:
+      213: 6293653380295728081
+    second: Orange theme spritesheet 2_1780
+  - first:
+      213: 9004830546562992578
+    second: Orange theme spritesheet 2_1781
+  - first:
+      213: -8648133417276223927
+    second: Orange theme spritesheet 2_1782
+  - first:
+      213: 987219741349613141
+    second: Orange theme spritesheet 2_1783
+  - first:
+      213: -1833362063957536342
+    second: Orange theme spritesheet 2_1784
+  - first:
+      213: 1936733309734427286
+    second: Orange theme spritesheet 2_1785
+  - first:
+      213: 2540778760829675781
+    second: Orange theme spritesheet 2_1786
+  - first:
+      213: 5255487185670372000
+    second: Orange theme spritesheet 2_1787
+  - first:
+      213: -6502803787392594205
+    second: Orange theme spritesheet 2_1788
+  - first:
+      213: 3253869395884239665
+    second: Orange theme spritesheet 2_1789
+  - first:
+      213: 6859273335319897462
+    second: Orange theme spritesheet 2_1790
+  - first:
+      213: 3188219277885754153
+    second: Orange theme spritesheet 2_1791
+  - first:
+      213: -3324584192646031676
+    second: Orange theme spritesheet 2_1792
+  - first:
+      213: -1305016269060410878
+    second: Orange theme spritesheet 2_1793
+  - first:
+      213: -7922622983217351456
+    second: Orange theme spritesheet 2_1794
+  - first:
+      213: -7714788460964048118
+    second: Orange theme spritesheet 2_1795
+  - first:
+      213: 1821404351396157069
+    second: Orange theme spritesheet 2_1796
+  - first:
+      213: 8917736512826347325
+    second: Orange theme spritesheet 2_1797
+  - first:
+      213: -1440146206853157769
+    second: Orange theme spritesheet 2_1798
+  - first:
+      213: -4553062176013229465
+    second: Orange theme spritesheet 2_1799
+  - first:
+      213: 3387429759168036543
+    second: Orange theme spritesheet 2_1800
+  - first:
+      213: -7262882286169763655
+    second: Orange theme spritesheet 2_1801
+  - first:
+      213: 537421507998463417
+    second: Orange theme spritesheet 2_1802
+  - first:
+      213: -4965319596127842368
+    second: Orange theme spritesheet 2_1803
+  - first:
+      213: 8010900676614728383
+    second: Orange theme spritesheet 2_1804
+  - first:
+      213: 1962061215627211836
+    second: Orange theme spritesheet 2_1805
+  - first:
+      213: 7230406727459041531
+    second: Orange theme spritesheet 2_1806
+  - first:
+      213: 1985602432284668971
+    second: Orange theme spritesheet 2_1807
+  - first:
+      213: 3786104512535043070
+    second: Orange theme spritesheet 2_1808
+  - first:
+      213: -3584310756177932079
+    second: Orange theme spritesheet 2_1809
+  - first:
+      213: -1709811878471355808
+    second: Orange theme spritesheet 2_1810
+  - first:
+      213: 8506906927942965658
+    second: Orange theme spritesheet 2_1811
+  - first:
+      213: 6258492767067994643
+    second: Orange theme spritesheet 2_1812
+  - first:
+      213: -8102791833831870588
+    second: Orange theme spritesheet 2_1813
+  - first:
+      213: -3471090993269063131
+    second: Orange theme spritesheet 2_1814
+  - first:
+      213: -3359704226430951755
+    second: Orange theme spritesheet 2_1815
+  - first:
+      213: -6906941436498400205
+    second: Orange theme spritesheet 2_0
+  - first:
+      213: 6704538071022865797
+    second: Orange theme spritesheet 2_1
+  - first:
+      213: 8768853278591156296
+    second: Orange theme spritesheet 2_2
+  - first:
+      213: -1434864614433980964
+    second: Orange theme spritesheet 2_3
+  - first:
+      213: 667437599068052101
+    second: Orange theme spritesheet 2_4
+  - first:
+      213: 4617597666508123829
+    second: Orange theme spritesheet 2_5
+  - first:
+      213: -2100252158491836132
+    second: Orange theme spritesheet 2_6
+  - first:
+      213: 993103600116207068
+    second: Orange theme spritesheet 2_7
+  - first:
+      213: -996776723301613651
+    second: Orange theme spritesheet 2_8
+  - first:
+      213: 3775045466462838249
+    second: Orange theme spritesheet 2_9
+  - first:
+      213: -7241742509747495495
+    second: Orange theme spritesheet 2_10
+  - first:
+      213: -138268764178646302
+    second: Orange theme spritesheet 2_11
+  - first:
+      213: 2427760977523343292
+    second: Orange theme spritesheet 2_12
+  - first:
+      213: 8800143705946931850
+    second: Orange theme spritesheet 2_13
+  - first:
+      213: 3993137104549144189
+    second: Orange theme spritesheet 2_14
+  - first:
+      213: -2674137814923166467
+    second: Orange theme spritesheet 2_15
+  - first:
+      213: 2127679014364733244
+    second: Orange theme spritesheet 2_16
+  - first:
+      213: 7963370053716113925
+    second: Orange theme spritesheet 2_17
+  - first:
+      213: 9057532897072313028
+    second: Orange theme spritesheet 2_18
+  - first:
+      213: -8863047164622404309
+    second: Orange theme spritesheet 2_19
+  - first:
+      213: -2749630962958612293
+    second: Orange theme spritesheet 2_20
+  - first:
+      213: -470671007803190545
+    second: Orange theme spritesheet 2_21
+  - first:
+      213: -7782575259913983474
+    second: Orange theme spritesheet 2_22
+  - first:
+      213: -3179220683935332607
+    second: Orange theme spritesheet 2_23
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 1
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Web
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Orange theme spritesheet 2_0
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 3563
+        width: 1523
+        height: 515
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33c2619ab5d9520a0800000000000000
+      internalID: -6906941436498400205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orange theme spritesheet 2_1
+      rect:
+        serializedVersion: 2
+        x: 1658
+        y: 3586
+        width: 1548
+        height: 448
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58d866a7add4b0d50800000000000000
+      internalID: 6704538071022865797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orange theme spritesheet 2_2
+      rect:
+        serializedVersion: 2
+        x: 3486
+        y: 3630
+        width: 536
+        height: 404
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84002f5f89931b970800000000000000
+      internalID: 8768853278591156296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orange theme spritesheet 2_3
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 2946
+        width: 1388
+        height: 544
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdd72e34c36561ce0800000000000000
+      internalID: -1434864614433980964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orange theme spritesheet 2_4
+      rect:
+        serializedVersion: 2
+        x: 1686
+        y: 3166
+        width: 1688
+        height: 328
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58ad03ac5f6334900800000000000000
+      internalID: 667437599068052101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orange theme spritesheet 2_5
+      rect:
+        serializedVersion: 2
+        x: 3514
+        y: 3190
+        width: 540
+        height: 372
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bea3e3dc90051040800000000000000
+      internalID: 4617597666508123829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orange theme spritesheet 2_6
+      rect:
+        serializedVersion: 2
+        x: 1686
+        y: 2878
+        width: 1680
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c11c85a1ac76ad2e0800000000000000
+      internalID: -2100252158491836132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orange theme spritesheet 2_7
+      rect:
+        serializedVersion: 2
+        x: 3394
+        y: 2806
+        width: 676
+        height: 324
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdd861e667638cd00800000000000000
+      internalID: 993103600116207068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orange theme spritesheet 2_8
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 2470
+        width: 748
+        height: 368
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dafba3fe9dcba22f0800000000000000
+      internalID: -996776723301613651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orange theme spritesheet 2_9
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 2490
+        width: 860
+        height: 348
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ed5777c9d7a36430800000000000000
+      internalID: 3775045466462838249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orange theme spritesheet 2_10
+      rect:
+        serializedVersion: 2
+        x: 1658
+        y: 2490
+        width: 1700
+        height: 332
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bd97a74e89208b90800000000000000
+      internalID: -7241742509747495495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orange theme spritesheet 2_11
+      rect:
+        serializedVersion: 2
+        x: 3394
+        y: 2326
+        width: 668
+        height: 420
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ea7993aa45c41ef0800000000000000
+      internalID: -138268764178646302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orange theme spritesheet 2_12
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 1962
+        width: 1168
+        height: 468
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbf75d80fb321b120800000000000000
+      internalID: 2427760977523343292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orange theme spritesheet 2_13
+      rect:
+        serializedVersion: 2
+        x: 1658
+        y: 2106
+        width: 1636
+        height: 324
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a824b5d4314602a70800000000000000
+      internalID: 8800143705946931850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orange theme spritesheet 2_14
+      rect:
+        serializedVersion: 2
+        x: 3450
+        y: 1814
+        width: 632
+        height: 424
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7665104a097a6730800000000000000
+      internalID: 3993137104549144189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orange theme spritesheet 2_15
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 1478
+        width: 1288
+        height: 495
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfcb01553dd83ead0800000000000000
+      internalID: -2674137814923166467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orange theme spritesheet 2_16
+      rect:
+        serializedVersion: 2
+        x: 1659
+        y: 1790
+        width: 1731
+        height: 252
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3f53476ac8078d10800000000000000
+      internalID: 2127679014364733244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orange theme spritesheet 2_17
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 986
+        width: 1604
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50a7bb24fd2938e60800000000000000
+      internalID: 7963370053716113925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orange theme spritesheet 2_18
+      rect:
+        serializedVersion: 2
+        x: 1629
+        y: 1386
+        width: 1864
+        height: 363
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c2f8675e22d2bd70800000000000000
+      internalID: 9057532897072313028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orange theme spritesheet 2_19
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 502
+        width: 1584
+        height: 492
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b25062def81200580800000000000000
+      internalID: -8863047164622404309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orange theme spritesheet 2_20
+      rect:
+        serializedVersion: 2
+        x: 1658
+        y: 902
+        width: 1708
+        height: 376
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb8cf65153957d9d0800000000000000
+      internalID: -2749630962958612293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orange theme spritesheet 2_21
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 22
+        width: 1052
+        height: 491
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe2d0dd4637d779f0800000000000000
+      internalID: -470671007803190545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orange theme spritesheet 2_22
+      rect:
+        serializedVersion: 2
+        x: 1650
+        y: 442
+        width: 1728
+        height: 368
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0a6513f80dbef390800000000000000
+      internalID: -7782575259913983474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orange theme spritesheet 2_23
+      rect:
+        serializedVersion: 2
+        x: 1966
+        y: 106
+        width: 852
+        height: 164
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 107c577d1a321e3d0800000000000000
+      internalID: -3179220683935332607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
