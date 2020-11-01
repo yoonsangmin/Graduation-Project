@@ -11,7 +11,7 @@ public class BulletController : MonoBehaviour
     List<GameObject> bullets = new List<GameObject>();
 
     [SerializeField]
-    GameObject mainCamera;
+    GameObject directionObject;
 
     //총알 설정
     public void SetBullet(int bulletNum, float accuracy, float range, float speed, float damage)
@@ -30,9 +30,8 @@ public class BulletController : MonoBehaviour
     public void Fire()
     {
         GameObject obj = GetUnusedBullet();
-        obj.SetActive(true);
-        obj.transform.parent = transform;
-        obj.transform.rotation = mainCamera.transform.rotation;
+        obj.SetActive(true);        
+        obj.transform.rotation = directionObject.transform.rotation;
         obj.transform.position = gunEntry.transform.position;
         obj.GetComponent<Bullet>().Fire();
     }

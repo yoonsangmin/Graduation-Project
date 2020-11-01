@@ -6,16 +6,12 @@ public class MainCamera : MonoBehaviour
 {
     Transform playerPos;
 
-    //거리
-    float dist = 0.0f;
-
     //민감도
     float sensitivity = 2.0f;
 
     //회전
     float rotLimit = 45.0f;
     float curRotX = 0.0f;
-    float curRotY = 0.0f;
 
     bool cameraStop = false;
 
@@ -35,15 +31,12 @@ public class MainCamera : MonoBehaviour
     void CameraMove()
     {
         float x_rot = Input.GetAxisRaw("Mouse Y");
-        float y_rot = Input.GetAxisRaw("Mouse X");
 
         curRotX -= x_rot * sensitivity;
-        curRotY += y_rot * sensitivity;
 
         curRotX = Mathf.Clamp(curRotX, -rotLimit, rotLimit);
 
-        this.transform.localEulerAngles = new Vector3(curRotX, curRotY, 0.0f);
-        this.transform.position = Quaternion.Euler(curRotX, curRotY, 0) * new Vector3(0, playerPos.position.y - 3.2f, -dist) + playerPos.position;
+        this.transform.localEulerAngles = new Vector3(curRotX, 0.0f, 0.0f);
     }
 
     //public void CameraStop()
@@ -63,4 +56,5 @@ public class MainCamera : MonoBehaviour
     //}
 
     public float GetCameraSensitivity() { return sensitivity; }
+    public void DoRecoilAction(float value) { curRotX -= value; }
 }

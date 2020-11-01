@@ -49,8 +49,6 @@ public class Bullet : MonoBehaviour
     {
         if (collision.gameObject.tag == "Bullet") return;
 
-        if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "Player") collision.gameObject.GetComponent<CharacterBase>().ReceiveDamage(damage, collision.contacts[0].point);
-
         transform.parent = collision.gameObject.transform;
 
         Invoke("Vanish", 1.0f);
@@ -58,9 +56,13 @@ public class Bullet : MonoBehaviour
         col.enabled = false;
         shape.SetActive(false);
 
-        //이펙트        
-        trace.transform.position = collision.contacts[0].point;
-        trace.Play();
+        if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "Player") collision.gameObject.GetComponent<CharacterBase>().ReceiveDamage(damage, collision.contacts[0].point);
+        else
+        { 
+            //이펙트        
+            trace.transform.position = collision.contacts[0].point;
+            trace.Play();
+        }
     }
 
     void Vanish()

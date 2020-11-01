@@ -11,51 +11,10 @@ enum WeaponKind
 
 public class WeaponController : MonoBehaviour
 {
-    [SerializeField]
-    CrossHair crossHair;
-    [SerializeField]
-    RangedWeapon AK;
-
-    void Start()
-    {
-        AK.SetWeaponStat("AK", 30, 100, 60.0f, 0.002f, 0.2f, 3, 0.3f, 0.7f, 30, 20);
-    }
-
-    void Update()
-    {
-        Fire();
-        Reload();
-        Zoom();
-    }
-
-    void Fire()
-    {
-        if (Input.GetMouseButton(0) && AK.IsReload() == false)
-        {
-            AK.Fire();
-            crossHair.StartFireAnimation();
-        }
-        if (Input.GetMouseButtonUp(0) || AK.IsReload() == true)
-        {
-            crossHair.StopFireAnimation();
-        }
-    }
-
-    void Reload()
-    {
-        if (Input.GetKeyDown(KeyCode.R))
-            AK.Reload();
-    }
-
-    void Zoom()
-    {
-        if (Input.GetMouseButtonDown(1))
-            AK.Zoom();
-        if (Input.GetMouseButtonUp(1))
-            AK.StopZoom();
-    }
-
-    //Bullet HUD를 위한 public 함수
-    public int GetCurMagazine() { return AK.GetCurMagazine(); }
-    public int GetCurBullet() { return AK.GetCurBullet(); }
+   protected RangedWeapon curRangedWeapon;
+    
+    public void Fire(bool isPlayer) { curRangedWeapon.Fire(isPlayer); }
+    public void Reload() { curRangedWeapon.Reload(); }        
+    public bool CanFire() { return curRangedWeapon.CanFire(); }
+    public bool IsReload() { return curRangedWeapon.IsReload(); }   
 }

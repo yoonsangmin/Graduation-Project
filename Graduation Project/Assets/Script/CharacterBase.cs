@@ -19,6 +19,8 @@ public class CharacterBase : MonoBehaviour
     protected float maxLife;
     protected float walkSpeed;
 
+    protected bool haveDamaged = false;
+
     protected void SetCharacterStat(float maxLife, float walkSpeed)
     {
         this.maxLife = maxLife;
@@ -44,13 +46,26 @@ public class CharacterBase : MonoBehaviour
         bloodSpit.transform.rotation = Quaternion.Euler(0, Random.Range(-90.0f, 90.0f), 90.0f);
         bloodSpit.Play();
 
-        curLife -= damage;
-        hpBar.value = curLife / maxLife;
+        ReceiveDamage(damage);
     }
 
     public void ReceiveDamage(float damage)
     {
         curLife -= damage;
         hpBar.value = curLife / maxLife;
+
+        haveDamaged = true;
+        if (IsInvoking("HaveDamaged") == true) CancelInvoke("HaveDamaged");
+        else Invoke("HaveDamaged", 0.5f);
+    }
+
+    void HaveDamaged()
+    {
+        haveDamaged = false;
+    }
+
+    void Dead()
+    {
+
     }
 }

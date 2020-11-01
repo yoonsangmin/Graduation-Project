@@ -5,6 +5,8 @@ using UnityEngine;
 public class RangedWeapon : Weapon
 {
     //반동
+    [SerializeField]
+    MainCamera mainCamera;
     float recoilActionForce;
     float recoilActionZoomForce;
 
@@ -64,9 +66,9 @@ public class RangedWeapon : Weapon
     }
 
     //사격
-    public void Fire()
+    public void Fire(bool isPlayer)
     {
-        if (curFireCooltime > 0 || isReload == true) return;
+        if (curFireCooltime > 0 || isReload == true || (curBulletInBag <= 0 && curBulletInMagazine <= 0)) return;
 
         if (curBulletInMagazine > 0)
         {
@@ -76,8 +78,11 @@ public class RangedWeapon : Weapon
             flash.Play();
             Bullet.Fire();
 
-            StopAllCoroutines();
-            StartCoroutine(RecoilActionCoroutine());
+            if (isPlayer == true)
+                mainCamera.DoRecoilAction(recoilActionForce);
+
+            //StopAllCoroutines();
+            //StartCoroutine(RecoilActionCoroutine());
         }
         else
         {
@@ -97,7 +102,7 @@ public class RangedWeapon : Weapon
     {
         if (isReload == true || curBulletInMagazine >= maxBulletInMagazine) return;
 
-        StopZoom();
+        //StopZoom();
         StartCoroutine(ReloadCoroutine());
     }
 
@@ -108,10 +113,10 @@ public class RangedWeapon : Weapon
         {
             isReload = true;
 
+            yield return new WaitForSeconds(reloadTime);
+
             //총알이있을때 장전
             curBulletInBag += curBulletInMagazine;
-
-            yield return new WaitForSeconds(reloadTime);
 
             if (curBulletInBag >= maxBulletInMagazine)
             {
@@ -132,88 +137,88 @@ public class RangedWeapon : Weapon
         }
     }
 
-    //줌 모드
-    public void Zoom()
-    {
-        if (isReload == true) return;
+    ////줌 모드
+    //public void Zoom()
+    //{
+    //    if (isReload == true) return;
 
-        isZoomMode = !isZoomMode;
+    //    isZoomMode = !isZoomMode;
 
-        StopAllCoroutines();
+    //    StopAllCoroutines();
 
-        if (isZoomMode == true)
-            StartCoroutine(ZoomCoroutine(zoomOriginPos));
-        else
-            StartCoroutine(ZoomCoroutine(weaponOriginPos));
-    }
+    //    if (isZoomMode == true)
+    //        StartCoroutine(ZoomCoroutine(zoomOriginPos));
+    //    else
+    //        StartCoroutine(ZoomCoroutine(weaponOriginPos));
+    //}
 
-    //줌모드 취소
-    public void StopZoom()
-    {
-        if (isZoomMode == true)
-            Zoom();
-    }
+    ////줌모드 취소
+    //public void StopZoom()
+    //{
+    //    if (isZoomMode == true)
+    //        Zoom();
+    //}
 
-    //줌모드 코루틴
-    IEnumerator ZoomCoroutine(Vector3 goalPos)
-    {
-        while (transform.localPosition != goalPos)
-        {
-            transform.localPosition = Vector3.Lerp(transform.localPosition, goalPos, 0.2f);
-            yield return null;
-        }
-    }
+    ////줌모드 코루틴
+    //IEnumerator ZoomCoroutine(Vector3 goalPos)
+    //{
+    //    while (transform.localPosition != goalPos)
+    //    {
+    //        transform.localPosition = Vector3.Lerp(transform.localPosition, goalPos, 0.2f);
+    //        yield return null;
+    //    }
+    //}
 
     //반동
     //velocity를 통해 반동 조절 해보기
-    IEnumerator RecoilActionCoroutine()
-    {
-        Vector3 recoil_back = new Vector3(weaponOriginPos.x, weaponOriginPos.y, recoilActionForce);
-        Vector3 retro_action_recoil_back = new Vector3(zoomOriginPos.x, zoomOriginPos.y, recoilActionZoomForce);
+    //IEnumerator RecoilActionCoroutine()
+    //{
+    //    Vector3 recoil_back = new Vector3(weaponOriginPos.x, weaponOriginPos.y, recoilActionForce);
+    //    Vector3 retro_action_recoil_back = new Vector3(zoomOriginPos.x, zoomOriginPos.y, recoilActionZoomForce);
 
-        if (isZoomMode == false)
-        {
-            transform.localPosition = weaponOriginPos;
+    //    if (isZoomMode == false)
+    //    {
+    //        transform.localPosition = weaponOriginPos;
 
-            //반동시작
-            while (transform.localPosition.z <= recoilActionForce - 0.02f)
-            {
-                transform.localPosition = Vector3.Lerp(transform.localPosition, recoil_back, 0.4f);
-                yield return null;
-            }
+    //        //반동시작
+    //        while (transform.localPosition.z <= recoilActionForce - 0.02f)
+    //        {
+    //            transform.localPosition = Vector3.Lerp(transform.localPosition, recoil_back, 0.4f);
+    //            yield return null;
+    //        }
 
-            // 원위치
-            while (transform.localPosition != weaponOriginPos)
-            {
-                transform.localPosition = Vector3.Lerp(transform.localPosition, weaponOriginPos, 0.1f);
-                yield return null;
-            }
-        }
-        else
-        {
-            transform.localPosition = zoomOriginPos;
+    //        // 원위치
+    //        while (transform.localPosition != weaponOriginPos)
+    //        {
+    //            transform.localPosition = Vector3.Lerp(transform.localPosition, weaponOriginPos, 0.1f);
+    //            yield return null;
+    //        }
+    //    }
+    //    else
+    //    {
+    //        transform.localPosition = zoomOriginPos;
 
-            //반동시작
-            while (transform.localPosition.z <= recoilActionForce - 0.02f)
-            {
-                transform.localPosition = Vector3.Lerp(transform.localPosition, retro_action_recoil_back, 0.4f);
-                yield return null;
-            }
+    //        //반동시작
+    //        while (transform.localPosition.z <= recoilActionForce - 0.02f)
+    //        {
+    //            transform.localPosition = Vector3.Lerp(transform.localPosition, retro_action_recoil_back, 0.4f);
+    //            yield return null;
+    //        }
 
-            //원 위치
-            while (transform.localPosition != zoomOriginPos)
-            {
-                transform.localPosition = Vector3.Lerp(transform.localPosition, zoomOriginPos, 0.1f);
-                yield return null;
-            }
-        }
-    }
-
+    //        //원 위치
+    //        while (transform.localPosition != zoomOriginPos)
+    //        {
+    //            transform.localPosition = Vector3.Lerp(transform.localPosition, zoomOriginPos, 0.1f);
+    //            yield return null;
+    //        }
+    //    }
+    //}
 
     //Bullet HUD를 위한 public 함수
     public int GetCurMagazine() { return curBulletInMagazine; }
     public int GetCurBullet() { return curBulletInBag; }
 
-
+    //사격 가능여부
+    public bool CanFire() { return isReload == false && (curBulletInBag > 0 || curBulletInMagazine > 0) && curFireCooltime <= 0; }
     public bool IsReload() { return isReload; }
 }

@@ -11,12 +11,9 @@ public class CrossHair : MonoBehaviour
         ani = GetComponent<Animator>();
     }
 
-    public void SetAnimation(Player player)
-    {
-        ani.SetBool("IsCrouch", player.IsPlayerCrouch());
-        ani.SetBool("IsWalk", player.IsPlayerWalk());
-        ani.SetBool("IsRun", player.IsPlayerRun());
-    }
+    public void SetCrouchAnimation(bool state) { ani.SetBool("IsCrouch", state); }
+    public void SetWalkAnimation(bool state) { ani.SetBool("IsWalk", state); }
+    public void SetRunAnimation(bool state) { ani.SetBool("IsRun", state); }
 
     public void StartFireAnimation() { ani.SetBool("IsFire", true); }
     public void StopFireAnimation() { ani.SetBool("IsFire", false); }

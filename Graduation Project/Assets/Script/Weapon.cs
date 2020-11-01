@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    protected Animator ani;
     [SerializeField]
     protected ParticleSystem flash;
     protected AudioClip fireSound;
@@ -13,8 +12,4 @@ public class Weapon : MonoBehaviour
     protected float damage;
     protected float range;    
 
-    void Start()
-    {
-        //Ani = GetComponent<Animator>();
-    }
 }

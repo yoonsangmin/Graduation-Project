@@ -5,6 +5,10 @@ using UnityEngine;
 public class Player : CharacterBase
 {
     [SerializeField]
+    CrossHair crossHair;
+    [SerializeField]
+    PlayerWeaponController weaponController;
+    [SerializeField]
     GameObject arm;
 
     //컴포넌트
@@ -22,27 +26,27 @@ public class Player : CharacterBase
     bool isGround = true;
 
     //앉기
-    float crouchPosY;
-    float originPosY;
-    float curCrouchPosY;
     bool isCrouch = false;
+    //콜라이더 크기 조절
+    float colOriginHeight;
+    float colCrouchHeight = 1.0f;
 
     bool playerStop = false;
 
     void Start()
     {
-        ani = GetComponent<Animator>();
+        ani = arm.GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
         col = GetComponent<CapsuleCollider>();
 
-        SetCharacterStat(100.0f, 10.0f);
+        weaponController.SetCrossHair(crossHair);
+
+        colOriginHeight = col.height;
+
+        SetCharacterStat(100.0f, 15.0f);
         runSpeed = walkSpeed * 1.5f;
         crouchSpeed = walkSpeed * 0.6f;
         curSpeed = walkSpeed;
-
-        originPosY = mainCamera.transform.localPosition.y;
-        curCrouchPosY = originPosY;
-        crouchPosY = col.bounds.extents.y;
     }
 
     void Update()
@@ -56,6 +60,10 @@ public class Player : CharacterBase
         PlayerJump();
         PlayerRun();
         PlayerCrouch();
+
+        //사격
+        Fire();
+        Reload();
     }
 
     //이동
@@ -73,6 +81,8 @@ public class Player : CharacterBase
 
         if (velocity.magnitude == 0) isWalk = false;
         else isWalk = true;
+
+        //ani.SetBool("isWalking", isWalk);
     }
 
     void PlayerRotation()
@@ -80,18 +90,15 @@ public class Player : CharacterBase
         float yRot = Input.GetAxisRaw("Mouse X");
         Vector3 playerRot = new Vector3(0.0f, yRot, 0.0f) * mainCamera.GetComponent<MainCamera>().GetCameraSensitivity();
 
-        float xRot = Input.GetAxisRaw("Mouse Y");
-        xRot = Mathf.Clamp(xRot, -45, 45);
-
-        arm.transform.rotation = arm.transform.rotation * Quaternion.Euler(new Vector3(-xRot, 0.0f, 0.0f) * mainCamera.GetComponent<MainCamera>().GetCameraSensitivity());
-
         rb.MoveRotation(rb.rotation * Quaternion.Euler(playerRot));
     }
 
     void PlayerRun()
     {
-        if (Input.GetKey(KeyCode.LeftShift)) Running();
+        if (Input.GetKey(KeyCode.LeftShift) && weaponController.CanFire() == false) Running();
         if (Input.GetKeyUp(KeyCode.LeftShift)) StopRunning();
+
+        ani.SetBool("IsRunning", isRun);
     }
 
     void Running()
@@ -119,8 +126,7 @@ public class Player : CharacterBase
 
     void IsGround()
     {
-        //capsule collider의 반 만큼 레이 쏘기
-        isGround = Physics.Raycast(transform.position, Vector3.down, col.bounds.extents.y + 0.1f);
+        isGround = Physics.Raycast(transform.position, Vector3.down, 0.1f);
     }
 
     //앉기
@@ -143,38 +149,44 @@ public class Player : CharacterBase
         if (isCrouch)
         {
             curSpeed = crouchSpeed;
-            curCrouchPosY = crouchPosY;
+            col.height = colCrouchHeight;
         }
         else
         {
             curSpeed = walkSpeed;
-            curCrouchPosY = originPosY;
+            col.height = colOriginHeight;
         }
-
-        StartCoroutine(CrouchCoroutine());
     }
 
-    IEnumerator CrouchCoroutine()
+    //무기관련
+    void Fire()
     {
-        float pos_y = mainCamera.transform.localPosition.y;
-        int count = 0;
-
-        while (pos_y != curCrouchPosY)
+        if (Input.GetMouseButton(0) && weaponController.CanFire() == true && isRun == false)
         {
-            count++;
-            pos_y = Mathf.Lerp(pos_y, curCrouchPosY, 0.4f);
-            mainCamera.transform.localPosition = new Vector3(mainCamera.transform.localPosition.x, pos_y, mainCamera.transform.localPosition.z);
-            //20번 실행 후 보간 끝내기
-            if (count > 20)
-                break;
-            yield return null;
+            weaponController.Fire(true);
+            crossHair.StartFireAnimation();
+            ani.SetBool("IsFire", true);
         }
-
-        mainCamera.transform.localPosition = new Vector3(mainCamera.transform.localPosition.x, curCrouchPosY, mainCamera.transform.localPosition.z);
+        if (Input.GetMouseButtonUp(0) || weaponController.CanFire() == false)
+        {
+            crossHair.StopFireAnimation();
+            ani.SetBool("IsFire", false);
+        }
     }
 
-    //플레이어 상태 전하는 함수
-    public bool IsPlayerWalk() { return isWalk; }
-    public bool IsPlayerRun() { return isRun; }
-    public bool IsPlayerCrouch() { return isCrouch; }
+    void Reload()
+    {
+        if (Input.GetKeyDown(KeyCode.R) || weaponController.GetCurMagazine() <= 0)
+            weaponController.Reload();
+
+        ani.SetBool("IsReloading", weaponController.IsReload());
+    }
+
+    //크로스헤어
+    void CrossHairState()
+    {
+        crossHair.SetCrouchAnimation(isCrouch);
+        crossHair.SetRunAnimation(isRun);
+        crossHair.SetWalkAnimation(isWalk);
+    }
 }
