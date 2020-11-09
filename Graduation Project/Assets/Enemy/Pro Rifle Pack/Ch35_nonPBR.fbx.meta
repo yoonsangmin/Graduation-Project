@@ -11,21 +11,21 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Ch35_body
-    second: {fileID: 2100000, guid: e679662e4840e5247822d2cb8d026360, type: 2}
+    second: {fileID: 2100000, guid: 20b1ee8c6a78d3e459653076b41d448d, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Ch35_body1
-    second: {fileID: 2100000, guid: 483e246b5bb9adb4cb69cf327f20685c, type: 2}
+    second: {fileID: 2100000, guid: c29921a5996f92b458252af7613507ac, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Ch35_body2
-    second: {fileID: 2100000, guid: f3b2458eadf7706498f15e5f3892cd73, type: 2}
+    second: {fileID: 2100000, guid: 1b3f79780a63b5a419d243ab76f49371, type: 2}
   materials:
     materialImportMode: 1
-    materialName: 0
-    materialSearch: 1
+    materialName: 1
+    materialSearch: 0
     materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
@@ -86,7 +86,7 @@ ModelImporter:
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
   referencedClips: []
-  importAnimation: 0
+  importAnimation: 1
   humanDescription:
     serializedVersion: 3
     human: []

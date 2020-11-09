@@ -9,10 +9,7 @@ public class Player : CharacterBase
     [SerializeField]
     PlayerWeaponController weaponController;
     [SerializeField]
-    GameObject arm;
-
-    //컴포넌트
-    Animator ani;
+    GameObject arm = null;    
 
     //이동
     float curSpeed;
@@ -95,8 +92,8 @@ public class Player : CharacterBase
 
     void PlayerRun()
     {
-        if (Input.GetKey(KeyCode.LeftShift) && weaponController.CanFire() == false) Running();
-        if (Input.GetKeyUp(KeyCode.LeftShift)) StopRunning();
+        if (Input.GetKey(KeyCode.LeftShift) && weaponController.IsReload() == false) Running();
+        if (Input.GetKeyUp(KeyCode.LeftShift) || weaponController.IsReload() == true) StopRunning();
 
         ani.SetBool("IsRunning", isRun);
     }
@@ -160,14 +157,14 @@ public class Player : CharacterBase
 
     //무기관련
     void Fire()
-    {
+    {      
         if (Input.GetMouseButton(0) && weaponController.CanFire() == true && isRun == false)
         {
             weaponController.Fire(true);
             crossHair.StartFireAnimation();
             ani.SetBool("IsFire", true);
         }
-        if (Input.GetMouseButtonUp(0) || weaponController.CanFire() == false)
+        if ((Input.GetMouseButtonUp(0) || weaponController.CanFire() == false) && (!Input.GetMouseButton(0) || isRun == true))
         {
             crossHair.StopFireAnimation();
             ani.SetBool("IsFire", false);

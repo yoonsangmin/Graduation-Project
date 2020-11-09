@@ -5,9 +5,9 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     [SerializeField]
-    ParticleSystem trace;
+    ParticleSystem trace = null;
     [SerializeField]
-    GameObject shape;
+    GameObject shape = null;
 
     Rigidbody rb;
     Collider col;

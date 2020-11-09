@@ -73,9 +73,9 @@
     <Compile Include="Assets\Script\DummyController.cs" />
     <Compile Include="Assets\Script\Enemy.cs" />
     <Compile Include="Assets\Script\EnemyWeaponController.cs" />
-    <Compile Include="Assets\Script\HPBar.cs" />
     <Compile Include="Assets\Script\MainCamera.cs" />
     <Compile Include="Assets\Script\MeleeWeapon.cs" />
+    <Compile Include="Assets\Script\MiniMap.cs" />
     <Compile Include="Assets\Script\Player.cs" />
     <Compile Include="Assets\Script\PlayerWeaponController.cs" />
     <Compile Include="Assets\Script\RangedWeapon.cs" />

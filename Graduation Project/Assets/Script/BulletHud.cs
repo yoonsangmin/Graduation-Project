@@ -6,9 +6,9 @@ using UnityEngine.UI;
 public class BulletHud : MonoBehaviour
 {
     [SerializeField]
-    Text loadedBullet;
+    Text loadedBullet = null;
     [SerializeField]
-    Text remainBullet;
+    Text remainBullet = null;
     [SerializeField]
     Image weaponImage;
 

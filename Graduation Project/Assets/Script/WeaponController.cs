@@ -2,13 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-enum WeaponKind
-{
-    AK,
-    Sniper,
-    Knife
-}
-
 public class WeaponController : MonoBehaviour
 {
    protected RangedWeapon curRangedWeapon;

@@ -10,6 +10,8 @@ public class CharacterBase : MonoBehaviour
 
     protected Rigidbody rb;
     protected CapsuleCollider col;
+    protected Animator ani;
+
     [SerializeField]
     protected ParticleSystem bloodSpit;
     [SerializeField]
@@ -20,6 +22,7 @@ public class CharacterBase : MonoBehaviour
     protected float walkSpeed;
 
     protected bool haveDamaged = false;
+    protected bool isDead = false;
 
     protected void SetCharacterStat(float maxLife, float walkSpeed)
     {
@@ -54,6 +57,12 @@ public class CharacterBase : MonoBehaviour
         curLife -= damage;
         hpBar.value = curLife / maxLife;
 
+        if (curLife <= 0)
+        {
+            Dead();
+            return;
+        }
+
         haveDamaged = true;
         if (IsInvoking("HaveDamaged") == true) CancelInvoke("HaveDamaged");
         else Invoke("HaveDamaged", 0.5f);
@@ -66,6 +75,9 @@ public class CharacterBase : MonoBehaviour
 
     void Dead()
     {
-
+        isDead = true;
+        ani.SetTrigger("Dead");        
+        hpBar.gameObject.SetActive(false);
+        col.enabled = false;
     }
 }

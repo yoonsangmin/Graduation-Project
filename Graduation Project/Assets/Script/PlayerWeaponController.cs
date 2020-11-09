@@ -2,11 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+enum WeaponKind
+{
+    AK,
+    Sniper,
+    Knife
+}
+
 public class PlayerWeaponController : WeaponController
 {
     CrossHair crossHair;
     [SerializeField]
     RangedWeapon AK;
+    [SerializeField]
+    RangedWeapon Sniper;
 
     void Start()
     {
@@ -18,6 +27,11 @@ public class PlayerWeaponController : WeaponController
         curRangedWeapon = AK;
     }
     
+    public void WeaponChange()
+    {
+
+    }
+
     //void Zoom()
     //{
     //    if (Input.GetMouseButtonDown(1))

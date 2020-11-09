@@ -3,9 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+enum Pattern
+{
+    FixPos,
+    Detect
+}
+
 public class Enemy : CharacterBase
 {
     NavMeshAgent enemyAi;
+
+    [SerializeField]
+    Pattern whatEnemyPattern;
 
     //정찰위치
     [SerializeField]
@@ -32,26 +41,52 @@ public class Enemy : CharacterBase
     {
         SetCharacterStat(100, 3.0f);
         enemyAi = GetComponent<NavMeshAgent>();
+        ani = GetComponent<Animator>();
+        col = GetComponent<CapsuleCollider>();
         enemyAi.speed = walkSpeed;
     }
 
     void Update()
     {
+        if (isDead == true) return;
+
+        HpBarLookAtCamera();
         View();
 
-        if (target != null)
-            AttackToTarget();
+        switch (whatEnemyPattern)
+        {
+            case Pattern.Detect:
+                AnimatorSetting();
+
+                if (target != null)
+                    DetectAttackToTarget();
+                else
+                {
+                    if (IsInvoking("MoveToDetectionPoint") == false)
+                        Invoke("MoveToDetectionPoint", 0.5f);
+                }
+                break;
+
+            case Pattern.FixPos:
+                if (target != null)
+                    FixAttackToTarget();
+                break;
+        }
+    }
+
+    void AnimatorSetting()
+    {
+        if (enemyAi.velocity != Vector3.zero)
+            ani.SetBool("Walking", true);
         else
-            MoveToDetectionPoint();
+            ani.SetBool("Walking", false);
     }
 
     void MoveToDetectionPoint()
     {
-        Debug.Log("dd");
         if (enemyAi.velocity == Vector3.zero && enemyAi.pathPending == false)
         {
             enemyAi.stoppingDistance = 0.0f;
-
             enemyAi.SetDestination(patrolPoints[patrolCount++].position);
 
             if (patrolCount >= patrolPoints.Length)
@@ -59,7 +94,7 @@ public class Enemy : CharacterBase
         }
     }
 
-    void AttackToTarget()
+    void DetectAttackToTarget()
     {
         enemyAi.stoppingDistance = RangeAttackDistance - 5.0f;
 
@@ -72,7 +107,6 @@ public class Enemy : CharacterBase
             //플레이어와 근접하게 이동
             if (targetToDistance <= MoveToTargetDistance && targetToDistance > enemyAi.stoppingDistance)
             {
-                Debug.Log("이동");
                 enemyAi.SetDestination(target.position);
             }
             else
@@ -85,14 +119,12 @@ public class Enemy : CharacterBase
                         //장거리 공격
                         if (targetToDistance <= RangeAttackDistance && targetToDistance > MeleeAttackDistance)
                         {
-                            Debug.Log("장거리");
                             transform.LookAt(target);
                             Attack();
                         }
                         //근접 공격
                         else if (targetToDistance <= MeleeAttackDistance)
                         {
-                            Debug.Log("근접");
                             transform.LookAt(target);
                             Attack();
                         }
@@ -104,9 +136,30 @@ public class Enemy : CharacterBase
         }
     }
 
+    void FixAttackToTarget()
+    {
+        enemyAi.stoppingDistance = RangeAttackDistance - 5.0f;
+
+        float targetToDistance = Vector3.Distance(target.position, transform.position);
+
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position + transform.up, (target.position - transform.position).normalized, out hit, RangeAttackDistance, targetMask))
+        {
+            if (hit.transform.tag == "Player")
+            {
+                //장거리 공격
+                if (targetToDistance <= RangeAttackDistance * 2)
+                {
+                    transform.LookAt(target);
+                    Attack();
+                }
+            }
+        }
+    }
     void Attack()
     {
         weapon.LookAtTarget(target);
+        ani.SetBool("IsFire", weapon.CanFire());
         weapon.Fire(false);
     }
 

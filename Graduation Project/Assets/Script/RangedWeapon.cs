@@ -6,7 +6,7 @@ public class RangedWeapon : Weapon
 {
     //반동
     [SerializeField]
-    MainCamera mainCamera;
+    MainCamera mainCamera = null;
     float recoilActionForce;
     float recoilActionZoomForce;
 
@@ -24,7 +24,7 @@ public class RangedWeapon : Weapon
 
     //총알 관련 변수
     [SerializeField]
-    BulletController Bullet;
+    BulletController Bullet = null;
     int maxBulletInMagazine;
     int curBulletInMagazine;
     int maxBulletInBag;

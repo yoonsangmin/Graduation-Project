@@ -6,15 +6,13 @@ public class UiController : MonoBehaviour
 {
     //참조하기 위한 오브젝트
     [SerializeField]
-    PlayerWeaponController weaponController;
+    PlayerWeaponController weaponController = null;
     [SerializeField]
-    Player player;
+    Player player = null;
 
     //Ui 관련
     [SerializeField]
-    BulletHud bulletHud;
-    [SerializeField]
-    HPBar hpBar;
+    BulletHud bulletHud = null;
 
     void Start()
     {
