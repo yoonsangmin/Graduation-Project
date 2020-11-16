@@ -91,7 +91,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300008, guid: 165b285d8813c4b459ac04e83c94db1b, type: 3}
 --- !u!1 &1000011254384922
@@ -105,7 +105,7 @@ GameObject:
   - component: {fileID: 4000013963034346}
   - component: {fileID: 33000010763039198}
   - component: {fileID: 23000011836317424}
-  - component: {fileID: 64000014232975922}
+  - component: {fileID: 3902222909690727609}
   m_Layer: 0
   m_Name: Object086
   m_TagString: Untagged
@@ -174,7 +174,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &64000014232975922
+--- !u!64 &3902222909690727609
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -185,7 +185,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300006, guid: 165b285d8813c4b459ac04e83c94db1b, type: 3}
 --- !u!1 &1000012491009290
@@ -279,7 +279,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300010, guid: 165b285d8813c4b459ac04e83c94db1b, type: 3}
 --- !u!1 &1000013012713382

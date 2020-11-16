@@ -62,27 +62,28 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Script\Barrel.cs" />
-    <Compile Include="Assets\Script\BarrelController.cs" />
-    <Compile Include="Assets\Script\Bullet.cs" />
-    <Compile Include="Assets\Script\BulletController.cs" />
-    <Compile Include="Assets\Script\BulletHud.cs" />
     <Compile Include="Assets\Script\CharacterBase.cs" />
-    <Compile Include="Assets\Script\CrossHair.cs" />
-    <Compile Include="Assets\Script\Dummy.cs" />
-    <Compile Include="Assets\Script\DummyController.cs" />
-    <Compile Include="Assets\Script\Enemy.cs" />
-    <Compile Include="Assets\Script\EnemyWeaponController.cs" />
+    <Compile Include="Assets\Script\Enemy\Enemy.cs" />
+    <Compile Include="Assets\Script\Enemy\EnemyRangedWeapon.cs" />
+    <Compile Include="Assets\Script\Enemy\EnemyWeaponController.cs" />
     <Compile Include="Assets\Script\MainCamera.cs" />
-    <Compile Include="Assets\Script\MeleeWeapon.cs" />
-    <Compile Include="Assets\Script\MiniMap.cs" />
-    <Compile Include="Assets\Script\Player.cs" />
-    <Compile Include="Assets\Script\PlayerWeaponController.cs" />
-    <Compile Include="Assets\Script\RangedWeapon.cs" />
-    <Compile Include="Assets\Script\UiController.cs" />
-    <Compile Include="Assets\Script\Weapon.cs" />
-    <Compile Include="Assets\Script\WeaponController.cs" />
-    <Compile Include="Assets\Ui Resource\BlackMetal UI\Demo_Assets\scripts\GUI_Demo.cs" />
+    <Compile Include="Assets\Script\Player\CrossHair.cs" />
+    <Compile Include="Assets\Script\Player\Player.cs" />
+    <Compile Include="Assets\Script\Player\PlayerRangedWeapon.cs" />
+    <Compile Include="Assets\Script\Player\PlayerWeaponController.cs" />
+    <Compile Include="Assets\Script\Tutorial\BarrelController.cs" />
+    <Compile Include="Assets\Script\Tutorial\Dummy.cs" />
+    <Compile Include="Assets\Script\Tutorial\DummyController.cs" />
+    <Compile Include="Assets\Script\Ui\BulletHud.cs" />
+    <Compile Include="Assets\Script\Ui\MiniMap.cs" />
+    <Compile Include="Assets\Script\Ui\UiController.cs" />
+    <Compile Include="Assets\Script\Weapon\Barrel.cs" />
+    <Compile Include="Assets\Script\Weapon\Bullet.cs" />
+    <Compile Include="Assets\Script\Weapon\BulletController.cs" />
+    <Compile Include="Assets\Script\Weapon\MeleeWeapon.cs" />
+    <Compile Include="Assets\Script\Weapon\RangedWeapon.cs" />
+    <Compile Include="Assets\Script\Weapon\Weapon.cs" />
+    <Compile Include="Assets\Script\Weapon\WeaponController.cs" />
     <None Include="Assets\Particle\JMO Assets\WarFX\Shaders\WFX_S Multiply Soft.shader" />
     <None Include="Assets\Particle\JMO Assets\WarFX\Shaders\WFX_S Multiply Soft Scroll.shader" />
     <None Include="Assets\Particle\JMO Assets\WarFX\Shaders\WFX_S Alpha-Specular TintColor.shader" />

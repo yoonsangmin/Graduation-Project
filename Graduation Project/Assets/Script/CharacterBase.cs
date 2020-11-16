@@ -43,6 +43,19 @@ public class CharacterBase : MonoBehaviour
         hpBar.value = curLife / maxLife;
     }
 
+    void HaveDamaged()
+    {
+        haveDamaged = false;
+    }
+
+    protected void Dead()
+    {
+        isDead = true;
+        ani.SetTrigger("Dead");
+        hpBar.gameObject.SetActive(false);
+        col.enabled = false;
+    }
+
     public void ReceiveDamage(float damage, Vector3 damagePos)
     {
         bloodSpit.transform.position = damagePos;
@@ -68,16 +81,5 @@ public class CharacterBase : MonoBehaviour
         else Invoke("HaveDamaged", 0.5f);
     }
 
-    void HaveDamaged()
-    {
-        haveDamaged = false;
-    }
-
-    void Dead()
-    {
-        isDead = true;
-        ani.SetTrigger("Dead");        
-        hpBar.gameObject.SetActive(false);
-        col.enabled = false;
-    }
+    public bool IsDead() { return isDead; }
 }

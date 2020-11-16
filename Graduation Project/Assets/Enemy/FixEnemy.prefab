@@ -370,6 +370,7 @@ GameObject:
   - component: {fileID: 3762122829144637594}
   - component: {fileID: 1329461546002921526}
   - component: {fileID: 7012652685013186518}
+  - component: {fileID: 9207523226705354583}
   m_Layer: 0
   m_Name: FixEnemy
   m_TagString: Enemy
@@ -460,7 +461,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1950828320250754286}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fca4fc4121abef439bec4360e634018, type: 3}
+  m_Script: {fileID: 11500000, guid: 8eb5579b81b4f1a459cfa9b21a335bb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 0}
@@ -472,6 +473,22 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   weapon: {fileID: 519348050916784239}
+--- !u!54 &9207523226705354583
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1950828320250754286}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
 --- !u!1 &1957670294580117643
 GameObject:
   m_ObjectHideFlags: 0
@@ -5970,10 +5987,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4053594909297658881}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f89bf10e91680d4fac0905537678e84, type: 3}
+  m_Script: {fileID: 11500000, guid: d87e9fc1e0d786742831399c0f3a04a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rangeWeapon: {fileID: 6701255213544186331}
+  rangeWeapon: {fileID: 1333882418121288040}
 --- !u!1 &4080949883417310321
 GameObject:
   m_ObjectHideFlags: 0
@@ -6680,7 +6697,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2255232888217288356}
-  - component: {fileID: 6701255213544186331}
+  - component: {fileID: 1333882418121288040}
   m_Layer: 0
   m_Name: Ak-47
   m_TagString: Untagged
@@ -6706,7 +6723,7 @@ Transform:
   m_Father: {fileID: 4286425649152344478}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: -72.5, y: 127, z: -26}
---- !u!114 &6701255213544186331
+--- !u!114 &1333882418121288040
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6715,13 +6732,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 6057188580560776276}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c825e1719a0d3146bb03a8ee9e80d07, type: 3}
+  m_Script: {fileID: 11500000, guid: 80b9f215ba8a87c4cae2e9a7e4ab023a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   flash: {fileID: 4440536469180402973}
-  mainCamera: {fileID: 0}
-  Bullet: {fileID: 2675429947227275900}
-  zoomOriginPos: {x: 0.1, y: 0.05, z: -0.1}
+  Bullets: {fileID: 2675429947227275900}
+  gunEntry: {fileID: 2436987485707232164}
 --- !u!1 &6083320964763259266
 GameObject:
   m_ObjectHideFlags: 0
@@ -7555,12 +7571,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 8127266888045006554}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1d0fe5848320704c961d0e50de3def9, type: 3}
+  m_Script: {fileID: 11500000, guid: 7e7083a01d15d2a42817dd7be4a183ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   gunEntry: {fileID: 2436987485707232164}
+  directionObject: {fileID: 1950828320250754286}
   bullet: {fileID: 82901854763837648, guid: d106d6570ec9bda459de01d156008ae9, type: 3}
-  directionObject: {fileID: 6057188580560776276}
 --- !u!1 &8209884944802264844
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MainCamera : MonoBehaviour
 {
+    [SerializeField]
     Transform playerPos;
 
     //민감도
@@ -13,12 +14,10 @@ public class MainCamera : MonoBehaviour
     float rotLimit = 45.0f;
     float curRotX = 0.0f;
 
-    bool cameraStop = false;
+    //bool cameraStop = false;
 
     void Start()
-    {
-        playerPos = GameObject.Find("Player").transform;
-
+    {      
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked; //커서 고정
     }
@@ -56,5 +55,15 @@ public class MainCamera : MonoBehaviour
     //}
 
     public float GetCameraSensitivity() { return sensitivity; }
-    public void DoRecoilAction(float value) { curRotX -= value; }
+
+    //weapon 관련함수
+    public void DoRecoilAction(float value) { curRotX -= value; }    
+    public void StartCameraZoom()
+    {
+        GetComponent<Camera>().fieldOfView = 30;
+    }
+    public void StopCameraZoom()
+    {
+        GetComponent<Camera>().fieldOfView = 60;
+    }
 }
