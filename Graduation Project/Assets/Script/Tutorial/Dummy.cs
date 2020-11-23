@@ -16,8 +16,8 @@ public class Dummy : CharacterBase
         HpBarLookAtCamera();
     }
 
-    public bool IsDead() { return (curLife <= 0) && isRevivaling == false; }
-    public void Dead() { isRevivaling = true; }
+    public bool NeedRevivaling() { return (curLife <= 0) && isRevivaling == false; }
+    public void StartRevival() { isRevivaling = true; }
     public void Revival()
     {
         HpReset();

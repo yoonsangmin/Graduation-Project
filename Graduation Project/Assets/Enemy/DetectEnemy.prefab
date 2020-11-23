@@ -427,9 +427,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.25
-  m_Height: 1.9
+  m_Height: 1.8
   m_Direction: 1
-  m_Center: {x: 0, y: 0.85, z: 0}
+  m_Center: {x: 0, y: 0.9, z: 0}
 --- !u!195 &1329461546002921526
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -6737,7 +6737,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flash: {fileID: 4440536469180402973}
   Bullets: {fileID: 3111920752736821174}
-  gunEntry: {fileID: 2436987485707232164}
 --- !u!1 &6083320964763259266
 GameObject:
   m_ObjectHideFlags: 0
@@ -7209,7 +7208,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 1.9300002}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 1.2, y: 0.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &7014068192722169608
 Canvas:
@@ -7574,8 +7573,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e7083a01d15d2a42817dd7be4a183ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gunEntry: {fileID: 2436987485707232164}
-  directionObject: {fileID: 1950828320250754286}
   bullet: {fileID: 82901854763837648, guid: d106d6570ec9bda459de01d156008ae9, type: 3}
 --- !u!1 &8209884944802264844
 GameObject:

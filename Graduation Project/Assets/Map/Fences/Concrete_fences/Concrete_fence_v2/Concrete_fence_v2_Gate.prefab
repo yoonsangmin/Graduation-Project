@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 64000014045595570}
   m_Layer: 0
   m_Name: Concrete_fence_v2_Gate_lattice
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -140,7 +140,7 @@ GameObject:
   - component: {fileID: 64000010960438940}
   m_Layer: 0
   m_Name: Concrete_fence_v2_Gate
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

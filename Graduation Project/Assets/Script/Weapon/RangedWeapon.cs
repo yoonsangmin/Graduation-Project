@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class RangedWeapon : Weapon
-{   
+{
     //반동
     protected float recoilActionForce;
-    protected float recoilActionZoomForce;
 
     //정확도, 속도
     protected float accuracy;
@@ -28,15 +27,12 @@ public class RangedWeapon : Weapon
     protected int maxBulletInBag;
     protected int curBulletInBag;
 
-    [SerializeField]
-    protected GameObject gunEntry;
-
     void Update()
     {
         GunFireCooltimeCalc();
     }
 
-    public void SetWeaponStat(string name, float damage, float range, float speed, float accuracy, float fireCooltime, float reloadTime, float recoilActionForce, float recoilActionZoomForce, int maxBulletInMagazine, int maxBulletInBag)
+    public void SetWeaponStat(string name, float damage, float range, float speed, float accuracy, float fireCooltime, float reloadTime, float recoilActionForce, int maxBulletInMagazine, int maxBulletInBag)
     {
         Bullets.SetBullet(maxBulletInMagazine, accuracy, range, speed, damage);
 
@@ -48,7 +44,6 @@ public class RangedWeapon : Weapon
         this.fireCooltime = fireCooltime;
         this.reloadTime = reloadTime;
         this.recoilActionForce = recoilActionForce;
-        this.recoilActionZoomForce = recoilActionZoomForce;
         this.maxBulletInMagazine = maxBulletInMagazine;
         this.curBulletInMagazine = this.maxBulletInMagazine;
         this.maxBulletInBag = maxBulletInBag;
@@ -62,17 +57,10 @@ public class RangedWeapon : Weapon
             curFireCooltime -= Time.deltaTime;
     }
 
-    //재장전
-    public void Reload()
-    {
-        if (isReload == true || curBulletInMagazine >= maxBulletInMagazine) return;
-
-        //StopZoom();
-        StartCoroutine(ReloadCoroutine());
-    }
+    public virtual void Reload() { if (isReload == true || curBulletInMagazine >= maxBulletInMagazine) return; }
 
     //재장전 코루틴
-    IEnumerator ReloadCoroutine()
+    protected IEnumerator ReloadCoroutine()
     {
         if (curBulletInBag > 0)
         {
@@ -100,55 +88,9 @@ public class RangedWeapon : Weapon
         {
             //총알이 없을 때
         }
-    }  
+    }        
 
     //사격 가능여부
-    public bool CanFire() { return isReload == false && (curBulletInBag > 0 || curBulletInMagazine > 0) && curFireCooltime <= 0; }
+    public bool CanFire() { return isReload == false && curFireCooltime <= 0 && (curBulletInBag > 0 || curBulletInMagazine > 0); }
     public bool IsReload() { return isReload; }
-
-
-    //반동
-    //velocity를 통해 반동 조절 해보기
-    //IEnumerator RecoilActionCoroutine()
-    //{
-    //    Vector3 recoil_back = new Vector3(weaponOriginPos.x, weaponOriginPos.y, recoilActionForce);
-    //    Vector3 retro_action_recoil_back = new Vector3(zoomOriginPos.x, zoomOriginPos.y, recoilActionZoomForce);
-
-    //    if (isZoomMode == false)
-    //    {
-    //        transform.localPosition = weaponOriginPos;
-
-    //        //반동시작
-    //        while (transform.localPosition.z <= recoilActionForce - 0.02f)
-    //        {
-    //            transform.localPosition = Vector3.Lerp(transform.localPosition, recoil_back, 0.4f);
-    //            yield return null;
-    //        }
-
-    //        // 원위치
-    //        while (transform.localPosition != weaponOriginPos)
-    //        {
-    //            transform.localPosition = Vector3.Lerp(transform.localPosition, weaponOriginPos, 0.1f);
-    //            yield return null;
-    //        }
-    //    }
-    //    else
-    //    {
-    //        transform.localPosition = zoomOriginPos;
-
-    //        //반동시작
-    //        while (transform.localPosition.z <= recoilActionForce - 0.02f)
-    //        {
-    //            transform.localPosition = Vector3.Lerp(transform.localPosition, retro_action_recoil_back, 0.4f);
-    //            yield return null;
-    //        }
-
-    //        //원 위치
-    //        while (transform.localPosition != zoomOriginPos)
-    //        {
-    //            transform.localPosition = Vector3.Lerp(transform.localPosition, zoomOriginPos, 0.1f);
-    //            yield return null;
-    //        }
-    //    }
-    //}
 }

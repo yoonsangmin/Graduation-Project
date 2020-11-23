@@ -10,6 +10,7 @@ public class UiController : MonoBehaviour
     [SerializeField]
     Player player = null;
     [SerializeField]
+    EnemyController enemyController = null;
     Dictionary<int, List<Enemy>> enemys = new Dictionary<int, List<Enemy>>();
 
     //Ui 관련
@@ -17,36 +18,24 @@ public class UiController : MonoBehaviour
     BulletHud bulletHud = null;
     [SerializeField]
     MiniMap miniMap = null;
-
-    int curProgress = 0;
+    [SerializeField]
+    Stage1Quest quest = null;
 
     void Start()
     {
-        SetEnemys();
-        miniMap.SetEnemysCount(enemys[curProgress].Count);
+        enemys = enemyController.GetEnemys();
+        miniMap.SetEnemysCount(enemys[quest.GetCurProgressStep() - 1].Count);
     }
 
     void Update()
     {
         WeaponUi();
-        miniMap.MiniMapUpdate(player.transform, enemys[curProgress]);
+        miniMap.MiniMapUpdate(player.transform, enemys[quest.GetCurProgressStep() - 1]);
+        quest.UpdateQuestView();
     }
 
     void WeaponUi()
     {
         bulletHud.UpdateText(weaponController.GetCurMagazine(), weaponController.GetCurBullet());
-    }
-
-    void SetEnemys()
-    {
-        List<Enemy> addEnemys = new List<Enemy>();
-        for (int i = 0; i < GameObject.Find("Enemys").transform.childCount; i++)
-        {
-            GameObject enemyObj = GameObject.Find("Enemys").transform.GetChild(i).gameObject;
-            if (enemyObj.tag == "Enemy")
-                addEnemys.Add(enemyObj.GetComponent<Enemy>());
-        }
-
-        enemys.Add(0, addEnemys);
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyRangedWeapon : RangedWeapon
 {    
     //사격
-    public void Fire(Vector3 target)
+    public void Fire()
     {
         if (curFireCooltime > 0 || isReload == true || (curBulletInBag <= 0 && curBulletInMagazine <= 0)) return;
 
@@ -15,15 +15,20 @@ public class EnemyRangedWeapon : RangedWeapon
             curFireCooltime = fireCooltime;
 
             flash.Play();
-            Vector3 temp = new Vector3(target.x, target.y + 0.9f, target.z);            
-            Bullets.Fire(temp-gunEntry.transform.position);
-          
-            //StopAllCoroutines();
-            //StartCoroutine(RecoilActionCoroutine());
+
+            Bullets.Fire(this.gameObject);
         }
         else
         {
             Reload();
         }
+    }
+
+    //재장전
+    public override void Reload()
+    {
+        base.Reload();
+
+        StartCoroutine(ReloadCoroutine());
     }
 }

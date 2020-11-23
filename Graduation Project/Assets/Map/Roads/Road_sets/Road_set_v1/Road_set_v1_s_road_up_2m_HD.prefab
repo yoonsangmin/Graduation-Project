@@ -105,7 +105,7 @@ GameObject:
   - component: {fileID: 4000013694635034}
   m_Layer: 0
   m_Name: Road_set_v1_s_road_up_2m_HD
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

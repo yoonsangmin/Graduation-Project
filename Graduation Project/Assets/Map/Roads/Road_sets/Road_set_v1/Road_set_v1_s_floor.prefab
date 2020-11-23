@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3019026383585614841}
   m_Layer: 0
   m_Name: Road_set_v1_s_floor
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -7,9 +7,9 @@ public class CrossHair : MonoBehaviour
 {
     Animator ani;
     [SerializeField]
-    Image zoomMode;
+    Image zoomMode = null;
     [SerializeField]
-    GameObject originMode;
+    GameObject originMode = null;
 
     void Start()
     {

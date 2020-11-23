@@ -8,15 +8,9 @@ public class Barrel : MonoBehaviour
     bool isExplosion = false;
 
     [SerializeField]
-    ParticleSystem explosion;
+    ParticleSystem explosion = null;
 
-    void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "Bullet")
-            Explosion();            
-    }
-
-    void Explosion()
+    public void Explosion()
     {
         gameObject.GetComponent<MeshRenderer>().enabled = false;
         gameObject.GetComponent<BoxCollider>().enabled = false;

@@ -13,11 +13,13 @@ public class MainCamera : MonoBehaviour
     //회전
     float rotLimit = 45.0f;
     float curRotX = 0.0f;
+    float originRotX = 0.0f;
+    float curRotY = 0.0f;
 
     //bool cameraStop = false;
 
     void Start()
-    {      
+    {
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked; //커서 고정
     }
@@ -33,9 +35,11 @@ public class MainCamera : MonoBehaviour
 
         curRotX -= x_rot * sensitivity;
 
+        OriginPosOfRecoilAction(x_rot * sensitivity);
+
         curRotX = Mathf.Clamp(curRotX, -rotLimit, rotLimit);
 
-        this.transform.localEulerAngles = new Vector3(curRotX, 0.0f, 0.0f);
+        this.transform.localEulerAngles = new Vector3(curRotX, curRotY, 0.0f);
     }
 
     //public void CameraStop()
@@ -57,13 +61,30 @@ public class MainCamera : MonoBehaviour
     public float GetCameraSensitivity() { return sensitivity; }
 
     //weapon 관련함수
-    public void DoRecoilAction(float value) { curRotX -= value; }    
-    public void StartCameraZoom()
+    public void DoRecoilAction(float value)
     {
-        GetComponent<Camera>().fieldOfView = 30;
+        float recoilVal = value;
+        if (originRotX > value / 2) recoilVal *= 1.5f;
+
+        curRotY += Random.Range(-recoilVal / 2, recoilVal / 2);
+        curRotX -= recoilVal;
+        originRotX += recoilVal;
     }
-    public void StopCameraZoom()
+
+    void OriginPosOfRecoilAction(float moveMousePos)
     {
-        GetComponent<Camera>().fieldOfView = 60;
+        if (originRotX > 0.0f)
+        {
+            originRotX -= moveMousePos;
+            float recoilVal = originRotX / 30;
+            originRotX -= recoilVal;
+            curRotX += recoilVal;
+        }
+
+        if (curRotY <= 0.1f && curRotY >= -0.1f) curRotY = 0;
+        else curRotY -= curRotY / 30;
     }
+
+    public void StartCameraZoom() { GetComponent<Camera>().fieldOfView = 30; }
+    public void StopCameraZoom() { GetComponent<Camera>().fieldOfView = 90; }
 }

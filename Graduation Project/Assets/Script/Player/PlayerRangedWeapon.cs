@@ -5,21 +5,17 @@ using UnityEngine;
 public class PlayerRangedWeapon : RangedWeapon
 {
     [SerializeField]
-    MainCamera mainCamera = null;  
+    MainCamera mainCamera = null;
 
+    CrossHair crossHair;
+
+    //스나이퍼 무기 최종 나오면 바꿔야됨
     //줌모드
     [SerializeField]
-    GameObject arm;
-    [SerializeField]
-    SkinnedMeshRenderer hand;
+    SkinnedMeshRenderer hand = null;
     bool isZoomMode = false;
-    Vector3 weaponOriginPos = new Vector3(0.011f, -0.016f, 0.08f);
-    Vector3 zoomOriginPos = new Vector3(-0.06f, 0.01f, -0.1f);
-
-    void Start()
-    {
-        arm.transform.localPosition = weaponOriginPos;
-    }
+    //Vector3 weaponOriginPos = new Vector3(0.011f, -0.016f, 0.08f);
+    //Vector3 zoomOriginPos = new Vector3(-0.06f, 0.01f, -0.1f);
 
     //사격
     public void Fire()
@@ -31,13 +27,12 @@ public class PlayerRangedWeapon : RangedWeapon
             curBulletInMagazine--;
             curFireCooltime = fireCooltime;
 
-            flash.Play();
-            Bullets.Fire(FirePos());
+            if (isZoomMode == false)
+                flash.Play();
+
+            Bullets.Fire(mainCamera.gameObject);
 
             mainCamera.DoRecoilAction(recoilActionForce);
-
-            //StopAllCoroutines();
-            //StartCoroutine(RecoilActionCoroutine());
         }
         else
         {
@@ -45,66 +40,61 @@ public class PlayerRangedWeapon : RangedWeapon
         }
     }
 
-    Vector3 FirePos()
+    //재장전
+    public override void Reload()
     {
-        RaycastHit hitInfo;
-        if (Physics.Raycast(mainCamera.transform.position, mainCamera.transform.forward, out hitInfo, range))
-            return hitInfo.point - gunEntry.transform.position;
-        else
-            return mainCamera.transform.position + mainCamera.transform.forward * range - gunEntry.transform.position;
+        base.Reload();        
+
+        StopZoom();
+        StartCoroutine(ReloadCoroutine());        
     }
 
     //줌 모드
-    public void Zoom(CrossHair crossHair)
+    public void Zoom()
     {
         if (isReload == true) return;
 
         isZoomMode = !isZoomMode;
 
-        StopAllCoroutines();
-
-        StartCoroutine(ZoomCoroutine(crossHair));
-    }
-
-    //줌모드 취소
-    public void StopZoom(CrossHair crossHair)
-    {
         if (isZoomMode == true)
-            Zoom(crossHair);
-    }
-
-    //줌모드 코루틴
-    IEnumerator ZoomCoroutine(CrossHair crossHair)
-    {
-        Vector3 goalPos;
-
-        if (isZoomMode == true) goalPos = zoomOriginPos;
-        else goalPos = weaponOriginPos;
-
-        while (Vector3.Distance(arm.transform.localPosition, goalPos) > 0.005f)
-            arm.transform.localPosition = Vector3.Lerp(arm.transform.localPosition, goalPos, 0.005f);
-
-        arm.transform.localPosition = goalPos;
-
-        if (goalPos == zoomOriginPos)
         {
             mainCamera.StartCameraZoom();
             crossHair.ActiveZoomMode();
-            hand.enabled = false;
-            GetComponent<SkinnedMeshRenderer>().enabled = false;
         }
         else
         {
             mainCamera.StopCameraZoom();
             crossHair.DeactiveZoomMode();
-            hand.enabled = true;
-            GetComponent<SkinnedMeshRenderer>().enabled = true;
         }
 
-        yield return null;
+        hand.enabled = !isZoomMode;
+        GetComponent<SkinnedMeshRenderer>().enabled = !isZoomMode;
+    }
+
+    //줌모드 취소
+    public void StopZoom()
+    {
+        if (isZoomMode == true)
+            Zoom();
     }
 
     //Bullet HUD를 위한 public 함수
     public int GetCurMagazine() { return curBulletInMagazine; }
     public int GetCurBullet() { return curBulletInBag; }
+
+    public void SetCrossHair(CrossHair crossHair) { this.crossHair = crossHair; }
+
+    public void DoWeaponChange()
+    {
+        if (isReload == true)
+        {
+            StopAllCoroutines();
+            isReload = false;
+        }
+        
+        if(isZoomMode == true)
+        {
+            StopZoom();
+        }
+    }
 }

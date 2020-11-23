@@ -12,14 +12,14 @@ public class DummyController : MonoBehaviour
     void Update()
     {
         foreach (GameObject dummy in dummys)
-            if (dummy.GetComponent<Dummy>().IsDead())
+            if (dummy.GetComponent<Dummy>().NeedRevivaling() == true)
                 StartCoroutine(RevivalCoroutine(dummy));
     }
 
     IEnumerator RevivalCoroutine(GameObject dummy)
     {
         dummy.SetActive(false);
-        dummy.GetComponent<Dummy>().Dead();
+        dummy.GetComponent<Dummy>().StartRevival();
         yield return new WaitForSeconds(revivalTime);
 
         dummy.SetActive(true);

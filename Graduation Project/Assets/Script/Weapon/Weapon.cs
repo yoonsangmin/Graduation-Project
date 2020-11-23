@@ -6,7 +6,7 @@ public class Weapon : MonoBehaviour
 {
     [SerializeField]
     protected ParticleSystem flash;
-    protected AudioClip fireSound;
+    protected AudioClip attackSound;
 
     protected string weaponName;
     protected float damage;

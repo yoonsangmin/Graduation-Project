@@ -6,13 +6,13 @@ using UnityEngine.UI;
 public class MiniMap : MonoBehaviour
 {
     [SerializeField]
-    Image playerImage;
+    Image playerImage = null;
     [SerializeField]
-    List<Image> enemysImage;
+    List<Image> enemysImage = new List<Image>();
     [SerializeField]
-    Sprite enemyOutOfRangeImage;
+    Sprite enemyOutOfRangeImage = null;
     [SerializeField]
-    Sprite enemyOriginImage;
+    Sprite enemyOriginImage = null;
     [SerializeField]
     Vector3 enemyHidePos = new Vector3(0.0f, 65.0f, 0.0f);
 
@@ -33,6 +33,7 @@ public class MiniMap : MonoBehaviour
     {
         foreach (Image enemyImage in enemysImage)
         {
+            enemyImage.gameObject.SetActive(true);
             enemyImage.sprite = enemyOriginImage;
             enemyImage.transform.localPosition = enemyHidePos;
         }
@@ -46,6 +47,7 @@ public class MiniMap : MonoBehaviour
         //적 이미지
         for (int i = 0; i < enemysCount; i++)
         {
+            if (enemysImage[i].gameObject.activeSelf == false) continue;
             if (enemysPos[i].IsDead() == true)
             {
                 enemysImage[i].gameObject.SetActive(false);

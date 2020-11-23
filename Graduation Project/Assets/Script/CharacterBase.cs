@@ -51,9 +51,8 @@ public class CharacterBase : MonoBehaviour
     protected void Dead()
     {
         isDead = true;
-        ani.SetTrigger("Dead");
-        hpBar.gameObject.SetActive(false);
-        col.enabled = false;
+        //ani.SetTrigger("Dead");        
+        //col.enabled = false;
     }
 
     public void ReceiveDamage(float damage, Vector3 damagePos)

@@ -9,74 +9,161 @@ enum Pattern
     Detect
 }
 
+enum State
+{
+    Detect,
+    Avoid,
+    Attack,
+    Die
+}
+
 public class Enemy : CharacterBase
 {
-    NavMeshAgent enemyAi;
+    NavMeshAgent enemyAi = null;
 
     [SerializeField]
-    Pattern whatEnemyPattern;
+    Pattern whatEnemyPattern = 0;
+
+    State curState = State.Detect;
 
     //정찰위치
     [SerializeField]
-    Transform[] patrolPoints;
+    Transform[] patrolPoints = null;
     int patrolCount = 0;
 
-    Transform target;
+    //Fix enemy 정찰
+    float rotMax = 60;
+    float curRot = 0;
+    float rotVal = 0.5f;
+
+    Transform target = null;
+
+    //피하기
+    Vector3 avoidDir;
 
     //시야각
     float viewAngle = 130.0f;
-    float viewDistance = 20.0f;
+    float viewDistance = 30.0f;
 
     [SerializeField]
-    LayerMask targetMask;
+    LayerMask targetMask = 0;
 
     [SerializeField]
-    EnemyWeaponController weapon;
+    EnemyWeaponController weapon = null;
 
     float RangeAttackDistance = 30.0f;
     float MeleeAttackDistance = 2.0f;
     float MoveToTargetDistance = 50.0f;
+    float targetToDistance = 0.0f;
 
     void Start()
     {
-        SetCharacterStat(100, 3.0f);
+        SetCharacterStat(100, 2.0f);
         enemyAi = GetComponent<NavMeshAgent>();
         ani = GetComponent<Animator>();
         col = GetComponent<CapsuleCollider>();
         enemyAi.speed = walkSpeed;
+        enemyAi.isStopped = false;
     }
 
     void Update()
     {
-        if (isDead == true) return;
-
         HpBarLookAtCamera();
-        View();
+
+        FsmMain();
+    }
+
+    //Fsm State
+    void FsmMain()
+    {
+        if (isDead == true) ChangeState(State.Die);
+        if (target != null)
+            targetToDistance = Vector3.Distance(target.position, transform.position);
 
         switch (whatEnemyPattern)
         {
             case Pattern.Detect:
-                AnimatorSetting();
-
-                if (target != null)
+                switch (curState)
                 {
-                    DetectAttackToTarget();
-                }
-                else
-                {
-                    if (IsInvoking("MoveToDetectionPoint") == false)
-                        Invoke("MoveToDetectionPoint", 0.5f);
+                    case State.Detect:
+                        if (IsInvoking("MoveToDetectionPoint") == false) Invoke("MoveToDetectionPoint", 1.0f);
+                        WalkAnimatorSetting();
+                        break;
+                    case State.Attack:
+                        DetectAttackToTarget();
+                        break;
+                    case State.Avoid:
+                        transform.LookAt(target);
+                        if (IsInvoking("SetAvoidDir") == false) Invoke("SetAvoidDir", 4.0f);
+                        else Avoid();
+                        break;
+                    case State.Die:
+                        break;
                 }
                 break;
 
             case Pattern.FixPos:
-                if (target != null)
-                    FixAttackToTarget();
+                switch (curState)
+                {
+                    case State.Detect:
+                        FixDetectToRotate();
+                        break;
+                    case State.Attack:
+                        FixAttackToTarget();
+                        break;
+                    case State.Avoid:
+                        transform.LookAt(target);
+                        if (IsInvoking("SetAvoidDir") == false) Invoke("SetAvoidDir", 4.0f);
+                        else Avoid();
+                        break;
+                    case State.Die:
+                        break;
+                }
                 break;
         }
     }
 
-    void AnimatorSetting()
+    void ChangeState(State change)
+    {
+        //FSM State Out
+        switch (curState)
+        {
+            case State.Detect:
+                break;
+            case State.Attack:
+                ani.SetBool("IsFire", false);
+                break;
+            case State.Avoid:
+                CancelInvoke("SetAvoidDir");
+                break;
+            case State.Die:
+                break;
+        }
+
+        //FSM State In
+        switch (change)
+        {
+            case State.Detect:
+                RemoveTarget();
+                break;
+            case State.Attack:
+                break;
+            case State.Avoid:
+                SetAvoidDir();
+                break;
+            case State.Die:
+                ani.SetTrigger("Dead");
+                col.enabled = false;
+                enemyAi.isStopped = true;
+                hpBar.gameObject.SetActive(false);
+                Invoke("DieToVanish", 5.0f);
+                break;
+        }
+
+        curState = change;
+    }
+
+    void WalkAnimatorSetting()
     {
         if (enemyAi.velocity != Vector3.zero)
             ani.SetBool("Walking", true);
@@ -86,10 +173,11 @@ public class Enemy : CharacterBase
 
     void MoveToDetectionPoint()
     {
+        View();
+
         if (enemyAi.velocity == Vector3.zero && enemyAi.pathPending == false)
         {
-            enemyAi.stoppingDistance = 0.0f;
-            enemyAi.SetDestination(patrolPoints[patrolCount++].position);
+            SetDestination(patrolPoints[patrolCount++].position);
 
             if (patrolCount >= patrolPoints.Length)
                 patrolCount = 0;
@@ -98,89 +186,98 @@ public class Enemy : CharacterBase
 
     void DetectAttackToTarget()
     {
-        enemyAi.stoppingDistance = RangeAttackDistance - 5.0f;
-
-        float targetToDistance = Vector3.Distance(target.position, transform.position);
-
-        //플레이어가 벗어나면 다시 순찰 위치로
-        if (targetToDistance > MoveToTargetDistance) RemoveTarget();
+        //플레이어와 근접하게 이동
+        if (targetToDistance <= MoveToTargetDistance && targetToDistance > RangeAttackDistance - 5.0f)
+        {
+            SetDestination(target.position);
+        }
         else
         {
-            //플레이어와 근접하게 이동
-            if (targetToDistance <= MoveToTargetDistance && targetToDistance > enemyAi.stoppingDistance)
+            RaycastHit hit;
+            if (Physics.Raycast(transform.position + transform.up, (target.position - transform.position).normalized, out hit, RangeAttackDistance))
             {
-                enemyAi.SetDestination(target.position);
-            }
-            else
-            {
-                RaycastHit hit;
-                if (Physics.Raycast(transform.position + transform.up, (target.position - transform.position).normalized, out hit, RangeAttackDistance, targetMask))
+                if (hit.transform.tag == "Player")
                 {
-                    if (hit.transform.tag == "Player")
-                    {
-                        //장거리 공격
-                        if (targetToDistance <= RangeAttackDistance && targetToDistance > MeleeAttackDistance)
-                        {
-                            transform.LookAt(target);
-                            if (IsInvoking("MoveAttack") == false && enemyAi.velocity == Vector3.zero && enemyAi.pathPending == false)
-                                Invoke("MoveAttack", 1.0f);
-                            Attack();
-                        }
-                        //근접 공격
-                        else if (targetToDistance <= MeleeAttackDistance)
-                        {
-                            transform.LookAt(target);
-                            Attack();
-                        }
-                    }
+                    enemyAi.isStopped = true;
+
+                    //장거리 공격
+                    if (targetToDistance <= RangeAttackDistance && targetToDistance > MeleeAttackDistance)
+                        Attack();
+                    //근접 공격
+                    else if (targetToDistance <= MeleeAttackDistance)
+                        Attack();
                 }
                 else
-                    enemyAi.SetDestination(target.position);
+                {
+                    SetDestination(target.position);
+                }
             }
         }
     }
 
+    void FixDetectToRotate()
+    {
+        View();
+
+        if (curRot >= rotMax || curRot <= -rotMax) rotVal = -rotVal;
+        curRot += rotVal;
+
+        enemyAi.transform.rotation = enemyAi.transform.rotation * Quaternion.Euler(0.0f, rotVal, 0.0f);
+    }
+
     void FixAttackToTarget()
     {
-        enemyAi.stoppingDistance = RangeAttackDistance - 5.0f;
-
-        float targetToDistance = Vector3.Distance(target.position, transform.position);
-
         RaycastHit hit;
-        if (Physics.Raycast(transform.position + transform.up, (target.position - transform.position).normalized, out hit, RangeAttackDistance, targetMask))
+        if (Physics.Raycast(transform.position + transform.up, (target.position - transform.position).normalized, out hit, RangeAttackDistance * 2))
         {
             if (hit.transform.tag == "Player")
             {
+                enemyAi.isStopped = true;
+
                 //장거리 공격
                 if (targetToDistance <= RangeAttackDistance * 2)
-                {
-                    transform.LookAt(target);
                     Attack();
-                }
+            }
+            else
+            {
+                SetDestination(target.position);
             }
         }
     }
 
     void Attack()
     {
-        ani.SetBool("IsFire", weapon.CanFire());
-        weapon.Fire(target.transform.position);
+        transform.LookAt(target);
+        weapon.LookAtTarget(target);
+        weapon.Fire();
+        ani.SetBool("IsFire", true);
+
+        if (weapon.CanFire() == false) ChangeState(State.Avoid);
+        if (targetToDistance > MoveToTargetDistance) ChangeState(State.Detect);
     }
 
-    void MoveAttack()
+    void SetAvoidDir()
     {
         int moveDir = Random.Range(1, 3);
-        Vector3 velocity = new Vector3(0, 0, 0);
+        avoidDir = Vector3.zero;
         switch (moveDir)
         {
             case 1:
-                velocity = transform.right * walkSpeed * 1.5f;
+                avoidDir = enemyAi.transform.right;
                 break;
             case 2:
-                velocity = -transform.right * walkSpeed * 1.5f;
+                avoidDir = -enemyAi.transform.right;
                 break;
         }
-        enemyAi.SetDestination(transform.position + velocity);
+    }
+
+    void Avoid()
+    {
+        if (weapon.CanFire() == true) ChangeState(State.Attack);
+        if (targetToDistance > MoveToTargetDistance) ChangeState(State.Detect);
+
+       SetDestination(enemyAi.transform.position + avoidDir);
+        WalkAnimatorSetting();
     }
 
     //시야각 관련 함수
@@ -189,26 +286,25 @@ public class Enemy : CharacterBase
         Vector3 leftBoundary = BoundaryAngle(-viewAngle * 0.5f);
         Vector3 rightBoundary = BoundaryAngle(viewAngle * 0.5f);
 
-        Collider[] target = Physics.OverlapSphere(transform.position, viewDistance, targetMask);
+        Collider[] target = Physics.OverlapSphere(transform.position, viewDistance * 2, targetMask);
 
-        for (int i = 0; i < target.Length; i++)
+        if (target.Length < 1) return;
+
+        Transform findTarget = target[0].transform;
+
+        Vector3 direction = (findTarget.position - transform.position).normalized;
+        float angle = Vector3.Angle(direction, transform.forward);
+
+        if (angle < viewAngle * 0.5f || haveDamaged == true)
         {
-            Transform findTarget = target[i].transform;
+            RaycastHit hit;
 
-            if (findTarget.tag == "Player")
-            {
-                Vector3 direction = (findTarget.position - transform.position).normalized;
-                float angle = Vector3.Angle(direction, transform.forward);
-
-                if (angle < viewAngle * 0.5f || haveDamaged == true)
+            if (Physics.Raycast(transform.position + transform.up, direction, out hit, viewDistance, targetMask))
+                if (hit.transform.tag == "Player")
                 {
-                    RaycastHit hit;
-
-                    if (Physics.Raycast(transform.position + transform.up, direction, out hit, viewDistance, targetMask))
-                        if (hit.transform.tag == "Player")
-                            SetTarget(hit.transform);
+                    SetTarget(hit.transform);
+                    ChangeState(State.Attack);
                 }
-            }
         }
     }
 
@@ -218,13 +314,16 @@ public class Enemy : CharacterBase
         return new Vector3(Mathf.Sin(angle * Mathf.Deg2Rad), 0.0f, Mathf.Cos(angle * Mathf.Deg2Rad));
     }
 
-    void SetTarget(Transform target)
+    //타겟 설정 변경
+    void SetTarget(Transform target) { this.target = target; }
+    void RemoveTarget() { this.target = null; }
+
+    //이동 설정
+    void SetDestination(Vector3 target)
     {
-        this.target = target;
+        enemyAi.isStopped = false;
+        enemyAi.SetDestination(target);
     }
 
-    void RemoveTarget()
-    {
-        this.target = null;
-    }
+    void DieToVanish() { gameObject.SetActive(false); }
 }

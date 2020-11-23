@@ -5,24 +5,13 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     [SerializeField]
-    ParticleSystem trace = null;
-    [SerializeField]
-    GameObject shape = null;
-
-    Rigidbody rb;
-    Collider col;
-
-    Vector3 startPos;
+    ParticleSystem trace = null; 
 
     //총알의 변수
     float accuracy;
     float range;
     float speed;
     float damage;
-
-    //총알의 상태 변수
-    bool isFired = false;
-    bool isCol = false;
 
     public void SetBullet(float accuracy, float range, float speed, float damage)
     {
@@ -34,35 +23,7 @@ public class Bullet : MonoBehaviour
 
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
-        col = GetComponent<Collider>();
         this.gameObject.SetActive(false);
-    }
-
-    void Update()
-    {
-        if (Vector3.Distance(startPos, transform.position) >= range)
-            Vanish();
-    }
-
-    void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "Bullet") return;
-
-        transform.parent = collision.gameObject.transform;
-
-        Invoke("Vanish", 1.0f);
-        rb.velocity = new Vector3(0, 0, 0);
-        col.enabled = false;
-        shape.SetActive(false);
-
-        if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "Player") collision.gameObject.GetComponent<CharacterBase>().ReceiveDamage(damage, collision.contacts[0].point);
-        else
-        { 
-            //이펙트        
-            trace.transform.position = collision.contacts[0].point;
-            trace.Play();
-        }
     }
 
     void Vanish()
@@ -70,16 +31,33 @@ public class Bullet : MonoBehaviour
         this.gameObject.SetActive(false);
     }
 
-    public float GetDamage()
+    public void Fire(GameObject dirObject)
     {
-        return damage;
-    }
+        RaycastHit[] hits;
+        hits = Physics.RaycastAll(dirObject.transform.position, dirObject.transform.forward + new Vector3(Random.Range(-accuracy, accuracy), Random.Range(-accuracy, accuracy), 0), range);
 
-    public void Fire(Vector3 target)
-    {
-        shape.SetActive(true);
-        col.enabled = true;
-        startPos = transform.position;
-        rb.velocity = (target.normalized + new Vector3(Random.Range(-accuracy, accuracy), Random.Range(-accuracy, accuracy), 0)) * speed;
+        for (int i = 0; i < hits.Length; i++)
+        {
+            RaycastHit hitInfo = hits[i];
+
+            if (!(hitInfo.collider.gameObject.tag == "Enemy" || hitInfo.collider.gameObject.tag == "Player"|| hitInfo.collider.gameObject.tag == "Barrel" || hitInfo.collider.gameObject.tag == "Wall")) continue;
+
+            if (hitInfo.collider.gameObject.tag == "Enemy" || hitInfo.collider.gameObject.tag == "Player")
+            {
+                hitInfo.collider.gameObject.GetComponent<CharacterBase>().ReceiveDamage(damage, hitInfo.point);
+            }
+            else
+            {
+                if (hitInfo.collider.gameObject.tag == "Barrel")
+                    hitInfo.collider.gameObject.GetComponent<Barrel>().Explosion();
+                else if (hitInfo.collider.gameObject.tag == "Wall")
+                {
+                    trace.transform.position = hitInfo.point;
+                    trace.Play();
+                }
+            }           
+        }
+
+        Invoke("Vanish", 1.0f);
     }
 }

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 337133819141541546}
   m_Layer: 0
   m_Name: UNIConcrete_wall_v1_W_tile_1
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -139,7 +139,7 @@ GameObject:
   - component: {fileID: 65000014136442070}
   m_Layer: 0
   m_Name: Road_set_v1_s_floor
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

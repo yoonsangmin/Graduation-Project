@@ -64,9 +64,11 @@
   <ItemGroup>
     <Compile Include="Assets\Script\CharacterBase.cs" />
     <Compile Include="Assets\Script\Enemy\Enemy.cs" />
+    <Compile Include="Assets\Script\Enemy\EnemyController.cs" />
     <Compile Include="Assets\Script\Enemy\EnemyRangedWeapon.cs" />
     <Compile Include="Assets\Script\Enemy\EnemyWeaponController.cs" />
     <Compile Include="Assets\Script\MainCamera.cs" />
+    <Compile Include="Assets\Script\NextStepArea.cs" />
     <Compile Include="Assets\Script\Player\CrossHair.cs" />
     <Compile Include="Assets\Script\Player\Player.cs" />
     <Compile Include="Assets\Script\Player\PlayerRangedWeapon.cs" />
@@ -76,6 +78,7 @@
     <Compile Include="Assets\Script\Tutorial\DummyController.cs" />
     <Compile Include="Assets\Script\Ui\BulletHud.cs" />
     <Compile Include="Assets\Script\Ui\MiniMap.cs" />
+    <Compile Include="Assets\Script\Ui\Stage1Quest.cs" />
     <Compile Include="Assets\Script\Ui\UiController.cs" />
     <Compile Include="Assets\Script\Weapon\Barrel.cs" />
     <Compile Include="Assets\Script\Weapon\Bullet.cs" />

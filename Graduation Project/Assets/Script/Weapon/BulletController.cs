@@ -5,11 +5,7 @@ using UnityEngine;
 public class BulletController : MonoBehaviour
 {
     [SerializeField]
-    GameObject gunEntry;
-    [SerializeField]
-    GameObject directionObject;
-    [SerializeField]
-    GameObject bullet;
+    GameObject bullet = null;
     List<GameObject> bullets = new List<GameObject>();
 
     //총알 설정
@@ -17,22 +13,19 @@ public class BulletController : MonoBehaviour
     {
         for (int i = 0; i < bulletNum; i++)
         {
-            GameObject obj = Instantiate(bullet) as GameObject;
-            obj.transform.position = transform.position;
-            obj.transform.parent = transform;
+            GameObject obj = Instantiate(bullet) as GameObject;          
             obj.GetComponent<Bullet>().SetBullet(accuracy, range, speed, damage);
+            obj.transform.parent = transform;
             bullets.Add(obj);
         }
     }
 
     //사격
-    public void Fire(Vector3 target)
+    public void Fire(GameObject dirObject)
     {
         GameObject obj = GetUnusedBullet();
         obj.SetActive(true);
-        obj.transform.rotation = directionObject.transform.rotation;
-        obj.transform.position = gunEntry.transform.position;
-        obj.GetComponent<Bullet>().Fire(target);
+        obj.GetComponent<Bullet>().Fire(dirObject);
     }
 
     //사용할 수 있는 총알 찾기

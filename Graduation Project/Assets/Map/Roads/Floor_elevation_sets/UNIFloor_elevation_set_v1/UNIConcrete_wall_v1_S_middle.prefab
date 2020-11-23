@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 64000013087928114}
   m_Layer: 0
   m_Name: UNIConcrete_wall_v1_S_middle
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
