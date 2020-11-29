@@ -9,9 +9,9 @@ public class NextStepArea : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(quest.CanGoToNextStep() == true && other.tag == "Player")
+        if (quest.CanGoToNextStep() == true && other.tag == "Player")
         {
-            if (gameObject.name == quest.GetCurProgressStep().ToString())
+            if (gameObject.name == (quest.GetCurEnemySummonInex() + 1).ToString())
                 quest.GoNextStep();
         }
     }

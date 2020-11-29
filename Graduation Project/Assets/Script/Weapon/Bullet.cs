@@ -5,7 +5,9 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     [SerializeField]
-    ParticleSystem trace = null; 
+    ParticleSystem trace = null;
+
+    Transform parent;
 
     //총알의 변수
     float accuracy;
@@ -23,12 +25,14 @@ public class Bullet : MonoBehaviour
 
     void Start()
     {
-        this.gameObject.SetActive(false);
+        parent = gameObject.transform.parent;
+        gameObject.SetActive(false);
     }
 
     void Vanish()
     {
-        this.gameObject.SetActive(false);
+        gameObject.transform.SetParent(parent);
+        gameObject.SetActive(false);        
     }
 
     public void Fire(GameObject dirObject)
@@ -50,8 +54,10 @@ public class Bullet : MonoBehaviour
             {
                 if (hitInfo.collider.gameObject.tag == "Barrel")
                     hitInfo.collider.gameObject.GetComponent<Barrel>().Explosion();
+
                 else if (hitInfo.collider.gameObject.tag == "Wall")
                 {
+                    gameObject.transform.SetParent(null);
                     trace.transform.position = hitInfo.point;
                     trace.Play();
                 }

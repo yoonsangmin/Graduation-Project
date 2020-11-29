@@ -24,13 +24,13 @@ public class UiController : MonoBehaviour
     void Start()
     {
         enemys = enemyController.GetEnemys();
-        miniMap.SetEnemysCount(enemys[quest.GetCurProgressStep() - 1].Count);
+        miniMap.SetEnemysCount(enemys[quest.GetCurEnemySummonInex()].Count);
     }
 
     void Update()
     {
         WeaponUi();
-        miniMap.MiniMapUpdate(player.transform, enemys[quest.GetCurProgressStep() - 1]);
+        miniMap.MiniMapUpdate(player.transform, enemys[quest.GetCurEnemySummonInex()]);
         quest.UpdateQuestView();
     }
 

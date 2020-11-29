@@ -151,9 +151,7 @@ public class Enemy : CharacterBase
             case State.Avoid:
                 SetAvoidDir();
                 break;
-            case State.Die:
-                ani.SetTrigger("Dead");
-                col.enabled = false;
+            case State.Die:                
                 enemyAi.isStopped = true;
                 hpBar.gameObject.SetActive(false);
                 Invoke("DieToVanish", 5.0f);
@@ -326,4 +324,10 @@ public class Enemy : CharacterBase
     }
 
     void DieToVanish() { gameObject.SetActive(false); }
+
+    override protected void Dead()
+    {
+        base.Dead();
+        col.enabled = false;
+    }
 }

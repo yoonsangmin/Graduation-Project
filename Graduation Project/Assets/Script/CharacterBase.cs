@@ -48,13 +48,13 @@ public class CharacterBase : MonoBehaviour
         haveDamaged = false;
     }
 
-    protected void Dead()
+    virtual protected void Dead()
     {
         isDead = true;
-        //ani.SetTrigger("Dead");        
-        //col.enabled = false;
+        ani.SetTrigger("Dead");
     }
 
+    //총알 데미지
     public void ReceiveDamage(float damage, Vector3 damagePos)
     {
         bloodSpit.transform.position = damagePos;
@@ -64,6 +64,7 @@ public class CharacterBase : MonoBehaviour
         ReceiveDamage(damage);
     }
 
+    //베럴 데미지
     public void ReceiveDamage(float damage)
     {
         curLife -= damage;
