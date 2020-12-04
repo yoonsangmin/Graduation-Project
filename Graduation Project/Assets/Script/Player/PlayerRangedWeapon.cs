@@ -13,6 +13,8 @@ public class PlayerRangedWeapon : RangedWeapon
     //줌모드
     [SerializeField]
     SkinnedMeshRenderer hand = null;
+    [SerializeField]
+    MeshRenderer weapon = null;
     bool isZoomMode = false;
     //Vector3 weaponOriginPos = new Vector3(0.011f, -0.016f, 0.08f);
     //Vector3 zoomOriginPos = new Vector3(-0.06f, 0.01f, -0.1f);
@@ -25,6 +27,7 @@ public class PlayerRangedWeapon : RangedWeapon
         if (curBulletInMagazine > 0)
         {
             curBulletInMagazine--;
+            
             curFireCooltime = fireCooltime;
 
             if (isZoomMode == false)
@@ -68,6 +71,7 @@ public class PlayerRangedWeapon : RangedWeapon
         }
 
         hand.enabled = !isZoomMode;
+        weapon.enabled = !isZoomMode;
         GetComponent<SkinnedMeshRenderer>().enabled = !isZoomMode;
     }
 

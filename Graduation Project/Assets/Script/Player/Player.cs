@@ -161,9 +161,15 @@ public class Player : CharacterBase
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            weaponController.WeaponChange();
-            ani.SetTrigger("WeaponChange");
+            if (ani.GetCurrentAnimatorStateInfo(0).IsName("Hands|draw"))
+            {
+                ani.Play("Hands|draw", -1, 0f);
+                ani.ResetTrigger("WeaponChange");
+            }
+            else ani.SetTrigger("WeaponChange");
+            if (IsInvoking("WaitWeaponChange")) CancelInvoke("WaitWeaponChange");
             Invoke("WaitWeaponChange", 1.5f);
+            weaponController.WeaponChange();            
         }
     }
 
