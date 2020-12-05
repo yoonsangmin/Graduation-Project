@@ -6,7 +6,6 @@ public class ObjectText : MonoBehaviour
 {
     GameObject mainCamera;
 
-    [SerializeField]
     GameObject colUi = null;
     [SerializeField]
     GameObject unColUi = null;
@@ -14,6 +13,7 @@ public class ObjectText : MonoBehaviour
     void Start()
     {
         mainCamera = GameObject.Find("Main Camera").gameObject;
+        colUi = GameObject.Find("Ui").transform.Find("Object Text").transform.Find("Col").gameObject;
         colUi.SetActive(false);
         unColUi.SetActive(false);
     }

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class UiController : MonoBehaviour
 {
+    //public static UiController instance;
+    
     //참조하기 위한 오브젝트
     [SerializeField]
     PlayerWeaponController weaponController = null;
