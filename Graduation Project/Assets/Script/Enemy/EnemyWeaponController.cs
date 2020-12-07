@@ -22,10 +22,5 @@ public class EnemyWeaponController : WeaponController
     public void Fire() { curRangedWeapon.Fire(); }
     public void Reload() { curRangedWeapon.Reload(); }
     public bool CanFire() { return curRangedWeapon.CanFire(); }
-    public bool IsReload() { return curRangedWeapon.IsReload(); }
-    public void LookAtTarget(Transform target)
-    {
-        Vector3 randomPos = new Vector3(target.position.x, target.position.y + Random.Range(0.5f, 1.5f), target.position.z);
-        curRangedWeapon.transform.LookAt(randomPos);
-    }
+    public bool IsReload() { return curRangedWeapon.IsReload(); }   
 }

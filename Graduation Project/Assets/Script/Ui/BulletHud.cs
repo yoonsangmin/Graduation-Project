@@ -9,8 +9,13 @@ public class BulletHud : MonoBehaviour
     Text loadedBullet = null;
     [SerializeField]
     Text remainBullet = null;
+
     [SerializeField]
-    Image weaponImage;
+    Image weaponImage = null;
+    [SerializeField]
+    Sprite akImage = null;
+    [SerializeField]
+    Sprite sniperImage = null;
 
     public void UpdateText(int loadedBulletNum, int remainBulletNum)
     {
@@ -18,8 +23,16 @@ public class BulletHud : MonoBehaviour
         remainBullet.text = remainBulletNum.ToString();
     }
 
-    public void ChangeWeapon()
+    public void ChangeWeapon(string name)
     {
-
+        switch(name)
+        {
+            case "AK":
+                weaponImage.sprite = akImage;
+                break;
+            case "Sniper":
+                weaponImage.sprite = sniperImage;
+                break;
+        }        
     }
 }

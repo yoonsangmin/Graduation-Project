@@ -20,6 +20,7 @@ enum State
 public class Enemy : CharacterBase
 {
     NavMeshAgent enemyAi = null;
+    List<Rigidbody> rigidBodys = new List<Rigidbody>();
 
     [SerializeField]
     Pattern whatEnemyPattern = 0;
@@ -42,7 +43,7 @@ public class Enemy : CharacterBase
     Vector3 avoidDir;
 
     //시야각
-    float viewAngle = 130.0f;
+    float viewAngle = 220.0f;
     float viewDistance = 30.0f;
 
     [SerializeField]
@@ -69,7 +70,7 @@ public class Enemy : CharacterBase
     void Update()
     {
         HpBarLookAtCamera();
-
+        WalkAnimatorSetting();
         FsmMain();
     }
 
@@ -87,7 +88,6 @@ public class Enemy : CharacterBase
                 {
                     case State.Detect:
                         if (IsInvoking("MoveToDetectionPoint") == false) Invoke("MoveToDetectionPoint", 1.0f);
-                        WalkAnimatorSetting();
                         break;
                     case State.Attack:
                         DetectAttackToTarget();
@@ -128,10 +128,10 @@ public class Enemy : CharacterBase
         //FSM State Out
         switch (curState)
         {
-            case State.Detect:
+            case State.Detect:                
                 break;
             case State.Attack:
-                ani.SetBool("IsFire", false);
+                ani.SetBool("IsFired", false);
                 break;
             case State.Avoid:
                 CancelInvoke("SetAvoidDir");
@@ -144,16 +144,14 @@ public class Enemy : CharacterBase
         switch (change)
         {
             case State.Detect:
-                RemoveTarget();
+                RemoveTarget();                
                 break;
             case State.Attack:
                 break;
             case State.Avoid:
                 SetAvoidDir();
                 break;
-            case State.Die:                
-                enemyAi.isStopped = true;
-                hpBar.gameObject.SetActive(false);
+            case State.Die:
                 Invoke("DieToVanish", 5.0f);
                 break;
         }
@@ -163,10 +161,9 @@ public class Enemy : CharacterBase
 
     void WalkAnimatorSetting()
     {
-        if (enemyAi.velocity != Vector3.zero)
-            ani.SetBool("Walking", true);
-        else
-            ani.SetBool("Walking", false);
+        ani.SetFloat("Horizontal", enemyAi.velocity.x);
+        ani.SetFloat("Vertical", enemyAi.velocity.z);
+        ani.SetBool("HaveDamaged", haveDamagedByBarrel || haveDamagedByBullet);
     }
 
     void MoveToDetectionPoint()
@@ -246,9 +243,8 @@ public class Enemy : CharacterBase
     void Attack()
     {
         transform.LookAt(target);
-        weapon.LookAtTarget(target);
         weapon.Fire();
-        ani.SetBool("IsFire", true);
+        ani.SetBool("IsFired", true);
 
         if (weapon.CanFire() == false) ChangeState(State.Avoid);
         if (targetToDistance > MoveToTargetDistance) ChangeState(State.Detect);
@@ -274,8 +270,7 @@ public class Enemy : CharacterBase
         if (weapon.CanFire() == true) ChangeState(State.Attack);
         if (targetToDistance > MoveToTargetDistance) ChangeState(State.Detect);
 
-       SetDestination(enemyAi.transform.position + avoidDir);
-        WalkAnimatorSetting();
+        SetDestination(enemyAi.transform.position + avoidDir);
     }
 
     //시야각 관련 함수
@@ -293,7 +288,7 @@ public class Enemy : CharacterBase
         Vector3 direction = (findTarget.position - transform.position).normalized;
         float angle = Vector3.Angle(direction, transform.forward);
 
-        if (angle < viewAngle * 0.5f || haveDamaged == true)
+        if (angle < viewAngle * 0.5f || haveDamagedByBarrel == true || haveDamagedByBullet == true)
         {
             RaycastHit hit;
 
@@ -319,6 +314,7 @@ public class Enemy : CharacterBase
     //이동 설정
     void SetDestination(Vector3 target)
     {
+        if (enemyAi.enabled == false) return;
         enemyAi.isStopped = false;
         enemyAi.SetDestination(target);
     }
@@ -328,6 +324,14 @@ public class Enemy : CharacterBase
     override protected void Dead()
     {
         base.Dead();
-        col.enabled = false;
+
+        enemyAi.enabled = false;
+        hpBar.gameObject.SetActive(false);
+
+        foreach (Rigidbody rb in rigidBodys)
+            rb.isKinematic = false;
+        ani.enabled = false;
     }
+
+    public void AddRigidBody(Rigidbody rb) { rigidBodys.Add(rb); }    
 }

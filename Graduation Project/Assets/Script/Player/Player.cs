@@ -192,7 +192,7 @@ public class Player : CharacterBase
 
     void Reload()
     {
-        if (Input.GetKeyDown(KeyCode.R) || weaponController.GetCurMagazine() <= 0)
+        if ((Input.GetKeyDown(KeyCode.R) || weaponController.GetCurMagazine() <= 0) && weaponController.IsReload() == false)
             weaponController.Reload();
 
         ani.SetBool("IsReloading", weaponController.IsReload());

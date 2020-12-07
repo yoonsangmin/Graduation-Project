@@ -9,11 +9,13 @@ public class ObjectText : MonoBehaviour
     GameObject colUi = null;
     [SerializeField]
     GameObject unColUi = null;
+    [SerializeField]
+    string objectName = null;
 
     void Start()
     {
         mainCamera = GameObject.Find("Main Camera").gameObject;
-        colUi = GameObject.Find("Ui").transform.Find("Object Text").transform.Find("Col").gameObject;
+        colUi = GameObject.Find("Ui").transform.Find("Object Text").transform.Find(objectName).transform.Find("Col").gameObject;
         colUi.SetActive(false);
         unColUi.SetActive(false);
     }

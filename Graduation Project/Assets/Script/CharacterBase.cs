@@ -21,7 +21,8 @@ public class CharacterBase : MonoBehaviour
     protected float maxLife;
     protected float walkSpeed;
 
-    protected bool haveDamaged = false;
+    protected bool haveDamagedByBullet = false;
+    protected bool haveDamagedByBarrel = false;
     protected bool isDead = false;
 
     protected void SetCharacterStat(float maxLife, float walkSpeed)
@@ -43,15 +44,12 @@ public class CharacterBase : MonoBehaviour
         hpBar.value = curLife / maxLife;
     }
 
-    void HaveDamaged()
-    {
-        haveDamaged = false;
-    }
+    void HaveDamagedByBulletInit() { haveDamagedByBullet = false; }
+    void HaveDamagedByBarrelInit() { haveDamagedByBarrel = false; }
 
     virtual protected void Dead()
     {
         isDead = true;
-        ani.SetTrigger("Dead");
     }
 
     //총알 데미지
@@ -61,11 +59,24 @@ public class CharacterBase : MonoBehaviour
         bloodSpit.transform.rotation = Quaternion.Euler(0, Random.Range(-90.0f, 90.0f), 90.0f);
         bloodSpit.Play();
 
-        ReceiveDamage(damage);
+        DownLife(damage);
+
+        haveDamagedByBullet = true;
+        if (IsInvoking("HaveDamagedByBulletInit") == true) CancelInvoke("HaveDamagedByBulletInit");
+        else Invoke("HaveDamagedByBulletInit", 0.2f);
     }
 
     //베럴 데미지
     public void ReceiveDamage(float damage)
+    {
+        DownLife(damage);
+
+        haveDamagedByBarrel = true;
+        if (IsInvoking("HaveDamagedByBarrelInit") == true) CancelInvoke("HaveDamagedByBarrelInit");
+        else Invoke("HaveDamagedByBarrelInit", 0.2f);
+    }
+
+    void DownLife(float damage)
     {
         curLife -= damage;
         hpBar.value = curLife / maxLife;
@@ -75,11 +86,9 @@ public class CharacterBase : MonoBehaviour
             Dead();
             return;
         }
-
-        haveDamaged = true;
-        if (IsInvoking("HaveDamaged") == true) CancelInvoke("HaveDamaged");
-        else Invoke("HaveDamaged", 0.5f);
     }
 
     public bool IsDead() { return isDead; }
+    public bool HaveDamagedByBullet() { return haveDamagedByBullet; }
+    public bool HaveDamagedByBarrel() { return haveDamagedByBarrel; }
 }

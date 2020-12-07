@@ -13,14 +13,16 @@ public class Barrel : MonoBehaviour
     public void Explosion()
     {
         gameObject.GetComponent<MeshRenderer>().enabled = false;
-        gameObject.GetComponent<BoxCollider>().enabled = false;
-        
+        gameObject.GetComponent<BoxCollider>().enabled = false;            
+
         //폭발 범위 내 데미지 주기
         Collider[] colliders = Physics.OverlapSphere(transform.position, explosionRange);
         foreach (Collider col in colliders)
         {
-            if (col.gameObject.tag == "Enemy" || col.gameObject.tag == "Player")
+            if (col.gameObject.tag == "Player")
                 col.gameObject.GetComponent<CharacterBase>().ReceiveDamage(50);
+            if(col.gameObject.tag == "Enemy")
+                col.gameObject.GetComponent<EnemyHit>().HitByBarrel(50);
         }
 
         explosion.Play();

@@ -14,7 +14,7 @@ public class PlayerRangedWeapon : RangedWeapon
     [SerializeField]
     SkinnedMeshRenderer hand = null;
     [SerializeField]
-    MeshRenderer weapon = null;
+    GameObject weaponShape = null;
     bool isZoomMode = false;
     //Vector3 weaponOriginPos = new Vector3(0.011f, -0.016f, 0.08f);
     //Vector3 zoomOriginPos = new Vector3(-0.06f, 0.01f, -0.1f);
@@ -71,8 +71,7 @@ public class PlayerRangedWeapon : RangedWeapon
         }
 
         hand.enabled = !isZoomMode;
-        weapon.enabled = !isZoomMode;
-        GetComponent<SkinnedMeshRenderer>().enabled = !isZoomMode;
+        weaponShape.SetActive(!isZoomMode);
     }
 
     //줌모드 취소
@@ -85,6 +84,7 @@ public class PlayerRangedWeapon : RangedWeapon
     //Bullet HUD를 위한 public 함수
     public int GetCurMagazine() { return curBulletInMagazine; }
     public int GetCurBullet() { return curBulletInBag; }
+    public string GetName() { return weaponName; }
 
     public void SetCrossHair(CrossHair crossHair) { this.crossHair = crossHair; }
 
@@ -101,4 +101,6 @@ public class PlayerRangedWeapon : RangedWeapon
             StopZoom();
         }
     }
+
+    public float GetReloadTime() { return reloadTime; }   
 }

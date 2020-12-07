@@ -82,11 +82,8 @@ public class RangedWeapon : Weapon
                 curBulletInMagazine = curBulletInBag;
                 curBulletInBag = 0;
             }
+
             isReload = false;
-        }
-        else
-        {
-            //총알이 없을 때
         }
     }        
 

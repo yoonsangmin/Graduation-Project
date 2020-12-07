@@ -9,6 +9,9 @@ TagManager:
   - Bullet
   - Barrel
   - Wall
+  - FxTemporaire
+  - Effect
+  - EnemyHead
   layers:
   - Default
   - TransparentFX

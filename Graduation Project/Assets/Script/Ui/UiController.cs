@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class UiController : MonoBehaviour
 {
-    //public static UiController instance;
+    public static UiController instance;
     
     //참조하기 위한 오브젝트
     [SerializeField]
@@ -22,6 +22,13 @@ public class UiController : MonoBehaviour
     MiniMap miniMap = null;
     [SerializeField]
     Stage1Quest quest = null;
+    [SerializeField]
+    CriticalTexts criticalText = null;
+
+    void Awake()
+    {
+        instance = this;
+    }
 
     void Start()
     {
@@ -40,4 +47,7 @@ public class UiController : MonoBehaviour
     {
         bulletHud.UpdateText(weaponController.GetCurMagazine(), weaponController.GetCurBullet());
     }
+
+    public void HitCritical() { criticalText.HitCritical(); }
+    public void ChangeWeaponImage(string name) { bulletHud.ChangeWeapon(name); }
 }

@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyRangedWeapon : RangedWeapon
-{    
+{
+    [SerializeField]
+    GameObject dirObject = null;
+    
     //사격
     public void Fire()
     {
@@ -16,7 +19,7 @@ public class EnemyRangedWeapon : RangedWeapon
 
             flash.Play();
 
-            Bullets.Fire(this.gameObject);
+            Bullets.Fire(dirObject);
         }
         else
         {
