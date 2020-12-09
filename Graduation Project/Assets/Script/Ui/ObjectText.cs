@@ -4,27 +4,35 @@ using UnityEngine;
 
 public class ObjectText : MonoBehaviour
 {
-    GameObject mainCamera;
+    Camera mainCamera;
 
+    [SerializeField]
+    float yPosDistance = 0.0f;
+
+    [SerializeField]
     GameObject colUi = null;
     [SerializeField]
     GameObject unColUi = null;
     [SerializeField]
-    string objectName = null;
+    GameObject rootObject = null;
+
+    Vector3 originPos = new Vector3(205.0f, 0.0f, 0.0f);
 
     void Start()
     {
-        mainCamera = GameObject.Find("Main Camera").gameObject;
-        colUi = GameObject.Find("Ui").transform.Find("Object Text").transform.Find(objectName).transform.Find("Col").gameObject;
+        mainCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
         colUi.SetActive(false);
-        unColUi.SetActive(false);
+        gameObject.SetActive(false);
     }
 
     void Update()
     {
-        transform.LookAt(mainCamera.transform.position);        
+        if (colUi.activeSelf == true || rootObject.GetComponent<CheckObjectVisible>().isVisible == false ) return;
+
+        Vector3 screenPos = mainCamera.WorldToScreenPoint(rootObject.transform.position + new Vector3(0.0f, yPosDistance, 0.0f));
+        transform.position = new Vector3(screenPos.x, screenPos.y, 0.0f);
     }
 
-    public void ColObject() { colUi.SetActive(true); unColUi.SetActive(false); }
+    public void ColObject() { transform.localPosition = originPos; colUi.SetActive(true); unColUi.SetActive(false); }
     public void UnColObject() { colUi.SetActive(false); unColUi.SetActive(true); }
 }

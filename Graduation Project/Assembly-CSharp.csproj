@@ -64,6 +64,7 @@
   <ItemGroup>
     <Compile Include="Assets\Script\Audio\AudioController.cs" />
     <Compile Include="Assets\Script\CharacterBase.cs" />
+    <Compile Include="Assets\Script\CheckObjectVisible.cs" />
     <Compile Include="Assets\Script\Enemy\Enemy.cs" />
     <Compile Include="Assets\Script\Enemy\EnemyController.cs" />
     <Compile Include="Assets\Script\Enemy\EnemyHit.cs" />
@@ -77,7 +78,6 @@
     <Compile Include="Assets\Script\Player\Player.cs" />
     <Compile Include="Assets\Script\Player\PlayerRangedWeapon.cs" />
     <Compile Include="Assets\Script\Player\PlayerWeaponController.cs" />
-    <Compile Include="Assets\Script\Test.cs" />
     <Compile Include="Assets\Script\Tutorial\BarrelController.cs" />
     <Compile Include="Assets\Script\Tutorial\Dummy.cs" />
     <Compile Include="Assets\Script\Tutorial\DummyController.cs" />
@@ -107,6 +107,7 @@
     <None Include="Assets\Particle\JMO Assets\WarFX\Shaders\WFX_S Smoke Scroll.shader" />
     <None Include="Assets\Particle\JMO Assets\WarFX\Shaders\WFX_S Particle Multiply A8.shader" />
     <None Include="Assets\Particle\JMO Assets\WarFX\Shaders\WFX_S AlphaBlend Scroll.shader" />
+    <None Include="Assets\Particle\Effect\README.txt" />
     <None Include="Assets\Particle\JMO Assets\WarFX\Shaders\WFX_S Particle AddSoft A8.shader" />
     <None Include="Assets\Particle\JMO Assets\WarFX\Shaders\WFX_S Alpha-Diffuse TintColor.shader" />
     <None Include="Assets\Particle\JMO Assets\WarFX\Shaders\WFX_S AlphaBlend NoSoftParticles.shader" />

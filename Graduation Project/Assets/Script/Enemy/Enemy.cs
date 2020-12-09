@@ -57,6 +57,9 @@ public class Enemy : CharacterBase
     float MoveToTargetDistance = 50.0f;
     float targetToDistance = 0.0f;
 
+    [SerializeField]
+    ParticleSystem summonParticle = null;
+
     void Start()
     {
         SetCharacterStat(100, 2.0f);
@@ -128,7 +131,7 @@ public class Enemy : CharacterBase
         //FSM State Out
         switch (curState)
         {
-            case State.Detect:                
+            case State.Detect:
                 break;
             case State.Attack:
                 ani.SetBool("IsFired", false);
@@ -144,7 +147,7 @@ public class Enemy : CharacterBase
         switch (change)
         {
             case State.Detect:
-                RemoveTarget();                
+                RemoveTarget();
                 break;
             case State.Attack:
                 break;
@@ -288,7 +291,7 @@ public class Enemy : CharacterBase
         Vector3 direction = (findTarget.position - transform.position).normalized;
         float angle = Vector3.Angle(direction, transform.forward);
 
-        if (angle < viewAngle * 0.5f || haveDamagedByBarrel == true || haveDamagedByBullet == true)
+        if ((angle < viewAngle * 0.5f && angle > -viewAngle * 0.5f) || haveDamagedByBarrel == true || haveDamagedByBullet == true)
         {
             RaycastHit hit;
 
@@ -333,5 +336,6 @@ public class Enemy : CharacterBase
         ani.enabled = false;
     }
 
-    public void AddRigidBody(Rigidbody rb) { rigidBodys.Add(rb); }    
+    public void AddRigidBody(Rigidbody rb) { rigidBodys.Add(rb); }
+    public void SummonParticlePlay() { summonParticle.Play(); }
 }

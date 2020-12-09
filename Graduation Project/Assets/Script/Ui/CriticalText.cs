@@ -7,7 +7,7 @@ public class CriticalText : MonoBehaviour
 {
     Text thisText;
 
-    float endYPos = -21.0f;
+    float endYPos = 0.0f;
 
     void Awake()
     {
@@ -25,7 +25,7 @@ public class CriticalText : MonoBehaviour
 
         while (transform.localPosition.y < endYPos)
         {
-            textPos.y += 0.3f;
+            textPos.y += 0.5f;
             transform.localPosition = textPos;
 
             alphaValue.a = (endYPos - transform.localPosition.y) / (endYPos - startPos.y);

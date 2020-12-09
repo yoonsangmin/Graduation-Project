@@ -15,7 +15,7 @@ public class Generator : MonoBehaviour
     Stage1Quest goNext = null;
 
     bool generatorStart = false;
-    bool operateDone = false;
+    bool operateDone = false;      
 
     void OnCollisionEnter(Collision collision)
     {
@@ -63,6 +63,6 @@ public class Generator : MonoBehaviour
     public void GeneratorStart()
     {
         generatorStart = true;
-        objectText.UnColObject();
+        objectText.gameObject.SetActive(true);
     }
 }

@@ -94,7 +94,7 @@ public class Player : CharacterBase
     void PlayerRun()
     {
         if (Input.GetKey(KeyCode.LeftShift) && weaponController.IsReload() == false) Running();
-        if (Input.GetKeyUp(KeyCode.LeftShift)) StopRunning();
+        if (Input.GetKeyUp(KeyCode.LeftShift) || weaponController.IsReload() == true ) StopRunning();
 
         ani.SetBool("IsRunning", isRun);
     }

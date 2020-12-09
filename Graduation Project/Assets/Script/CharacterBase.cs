@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class CharacterBase : MonoBehaviour
 {
-    [SerializeField]
     protected GameObject mainCamera;
 
     protected Rigidbody rb;
@@ -31,6 +30,7 @@ public class CharacterBase : MonoBehaviour
         this.curLife = maxLife;
         hpBar.value = curLife / maxLife;
         this.walkSpeed = walkSpeed;
+        mainCamera = GameObject.Find("Main Camera").gameObject;
     }
 
     protected void HpBarLookAtCamera()
