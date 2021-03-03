@@ -16,8 +16,6 @@ public class PlayerRangedWeapon : RangedWeapon
     [SerializeField]
     GameObject weaponShape = null;
     bool isZoomMode = false;
-    //Vector3 weaponOriginPos = new Vector3(0.011f, -0.016f, 0.08f);
-    //Vector3 zoomOriginPos = new Vector3(-0.06f, 0.01f, -0.1f);
 
     //사격
     public void Fire()
