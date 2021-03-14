@@ -4,19 +4,18 @@ using UnityEngine;
 
 public class BarrelController : MonoBehaviour
 {
-    [SerializeField]
-    List<GameObject> barrels = new List<GameObject>();
+    [SerializeField] private List<GameObject> barrels = new List<GameObject>();
 
-    float recreateTime = 5.0f;
+    private float recreateTime = 5.0f;
 
     void Update()
     {
         foreach (GameObject barrel in barrels)
-            if (barrel.GetComponent<Barrel>().IsExplosion() == true)
+            if (barrel.GetComponent<Barrel>()._isExplosion == true)
                 StartCoroutine(RecreateCoroutine(barrel));
     }
 
-    IEnumerator RecreateCoroutine(GameObject barrel)
+    private IEnumerator RecreateCoroutine(GameObject barrel)
     {
         yield return new WaitForSeconds(recreateTime);
 

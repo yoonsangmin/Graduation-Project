@@ -5,15 +5,15 @@ using UnityEngine;
 public class MeleeWeapon : Weapon
 {
     //공격 시간
-    float attackCooltime;
-    float attackStartTime;
-    float attackEndTime;
+    private float attackCooltime;
+    private float attackStartTime;
+    private float attackEndTime;
 
     //체크 변수
-    bool isAttack = false;
-    bool isSwing = false;
+    private bool isAttack = false;
+    private bool isSwing = false;
 
-    RaycastHit hitInfo;
+    private RaycastHit hitInfo;
 
     public void SetWeaponStat(string name, float damage, float range, float attackCooltime, float attackStartTime, float attackEndTime)
     {
@@ -37,7 +37,7 @@ public class MeleeWeapon : Weapon
     }
 
     //공격 코루틴
-    IEnumerator AttackCoroutine()
+    private IEnumerator AttackCoroutine()
     {
         isAttack = true;
         //StartAttackAni("Attack");
@@ -54,7 +54,7 @@ public class MeleeWeapon : Weapon
         isAttack = false;
     }
 
-    IEnumerator HitCoroutine()
+    private IEnumerator HitCoroutine()
     {
         while (isSwing == true)
         {
@@ -69,7 +69,7 @@ public class MeleeWeapon : Weapon
     }
 
     //맞은 물체 확인
-    bool CheckHitObject()
+    private bool CheckHitObject()
     {
         if (Physics.Raycast(transform.position, transform.forward, out hitInfo, range))
             return true;

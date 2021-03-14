@@ -4,23 +4,19 @@ using UnityEngine;
 
 public class PlayerWeaponController : WeaponController
 {
-    PlayerRangedWeapon curRangedWeapon;
+    private PlayerRangedWeapon curRangedWeapon;
+    public PlayerRangedWeapon _curRangedWeapon { get { return curRangedWeapon; } }
 
-    AudioSource audioSource;
-    float audioSourceOriginPitch;
-    [SerializeField]
-    AudioClip reload = null;
-    [SerializeField]
-    AudioClip shoot = null;
-    [SerializeField]
-    AudioClip draw = null;
+    private AudioSource audioSource;
+    private float audioSourceOriginPitch;
+    [SerializeField] private AudioClip reload = null;
+    [SerializeField] private AudioClip shoot = null;
+    [SerializeField] private AudioClip draw = null;
 
-    [SerializeField]
-    PlayerRangedWeapon AK = null;
-    [SerializeField]
-    PlayerRangedWeapon Sniper = null;
+    [SerializeField] private PlayerRangedWeapon AK = null;
+    [SerializeField] private PlayerRangedWeapon Sniper = null;
 
-    bool doWeaponChange = false;
+    private bool doWeaponChange = false;
 
     void Awake()
     {
@@ -46,8 +42,7 @@ public class PlayerWeaponController : WeaponController
 
     public void Fire() { if (doWeaponChange == true) return; curRangedWeapon.Fire(); PlayShootAudio(); }
     public void Reload() { if (doWeaponChange == true) return; curRangedWeapon.Reload(); PlayReloadAudio(); }
-    public bool CanFire() { return doWeaponChange == false && curRangedWeapon.CanFire(); }
-    public bool IsReload() { return curRangedWeapon.IsReload(); }
+    public bool CanFire() { return doWeaponChange == false && curRangedWeapon.CanFire(); }    
 
     public void WeaponChange()
     {
@@ -74,7 +69,7 @@ public class PlayerWeaponController : WeaponController
             curRangedWeapon.GetComponent<SkinnedMeshRenderer>().enabled = true;
         }
 
-        UiController.instance.ChangeWeaponImage(curRangedWeapon.GetName());
+        UiController.instance.ChangeWeaponImage(curRangedWeapon._weaponName);
     }
 
     public void Zoom()
@@ -86,23 +81,17 @@ public class PlayerWeaponController : WeaponController
     {
         if (curRangedWeapon != Sniper) return;
         curRangedWeapon.StopZoom();
-    }
-
-    //Bullet HUD를 위한 public 함수
-    public int GetCurMagazine() { return curRangedWeapon.GetCurMagazine(); }
-    public int GetCurBullet() { return curRangedWeapon.GetCurBullet(); }
-
-    public void SetCrossHair(CrossHair crossHair) { Sniper.SetCrossHair(crossHair); }
+    }    
 
     public void FinishWeaponChange() { doWeaponChange = false; }
 
-    void PlayReloadAudio()
+    private void PlayReloadAudio()
     {
         audioSource.pitch = reload.length / curRangedWeapon.GetReloadTime();
         audioSource.PlayOneShot(reload);
         Invoke("ReturnAudioOriginPitch", curRangedWeapon.GetReloadTime());
     }
-    void ReturnAudioOriginPitch() { audioSource.pitch = audioSourceOriginPitch; }
-    void PlayShootAudio() { audioSource.PlayOneShot(shoot); }
-    void PlayDrawAudio() { audioSource.PlayOneShot(draw); }
+    private void ReturnAudioOriginPitch() { audioSource.pitch = audioSourceOriginPitch; }
+    private void PlayShootAudio() { audioSource.PlayOneShot(shoot); }
+    private void PlayDrawAudio() { audioSource.PlayOneShot(draw); }
 }

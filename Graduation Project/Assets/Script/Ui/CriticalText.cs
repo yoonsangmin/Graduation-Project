@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class CriticalText : MonoBehaviour
 {
-    Text thisText;
+    private Text thisText;
 
-    float endYPos = 0.0f;
+    private float endYPos = 0.0f;
 
     void Awake()
     {

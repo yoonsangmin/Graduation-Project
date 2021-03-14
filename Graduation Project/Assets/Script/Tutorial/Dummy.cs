@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Dummy : CharacterBase
 {
-    bool isRevivaling = false;
+    private bool isRevivaling = false;
 
     void Start()
     {

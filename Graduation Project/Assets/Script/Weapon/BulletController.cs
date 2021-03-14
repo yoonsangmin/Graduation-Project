@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class BulletController : MonoBehaviour
 {
-    [SerializeField]
-    GameObject bullet = null;
-    List<GameObject> bullets = new List<GameObject>();
+    [SerializeField] private GameObject bullet = null;
+    private List<GameObject> bullets = new List<GameObject>();
 
     //총알 설정
     public void SetBullet(int bulletNum, float accuracy, float range, float speed, float damage)
@@ -29,7 +28,7 @@ public class BulletController : MonoBehaviour
     }
 
     //사용할 수 있는 총알 찾기
-    GameObject GetUnusedBullet()
+    private GameObject GetUnusedBullet()
     {
         foreach (var obj in bullets)
             if (obj.activeSelf == false)

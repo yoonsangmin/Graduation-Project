@@ -4,50 +4,31 @@ using UnityEngine;
 
 public class PlayerRangedWeapon : RangedWeapon
 {
-    [SerializeField]
-    MainCamera mainCamera = null;
-
-    CrossHair crossHair;
-
-    //스나이퍼 무기 최종 나오면 바꿔야됨
     //줌모드
-    [SerializeField]
-    SkinnedMeshRenderer hand = null;
-    [SerializeField]
-    GameObject weaponShape = null;
-    bool isZoomMode = false;
+    [SerializeField] private SkinnedMeshRenderer hand = null;
+    [SerializeField] private GameObject weaponShape = null;
+    private bool isZoomMode = false;
 
     //사격
-    public void Fire()
+    public override void Fire()
     {
-        if (curFireCooltime > 0 || isReload == true || (curBulletInBag <= 0 && curBulletInMagazine <= 0)) return;
+        base.Fire();
 
-        if (curBulletInMagazine > 0)
-        {
-            curBulletInMagazine--;
-            
-            curFireCooltime = fireCooltime;
+        if (isZoomMode == false)
+            flash.Play();
 
-            if (isZoomMode == false)
-                flash.Play();
+        Bullets.Fire(MainCamera.instance.gameObject);
 
-            Bullets.Fire(mainCamera.gameObject);
-
-            mainCamera.DoRecoilAction(recoilActionForce);
-        }
-        else
-        {
-            Reload();
-        }
+        MainCamera.instance.DoRecoilAction(recoilActionForce);
     }
 
     //재장전
     public override void Reload()
     {
-        base.Reload();        
+        base.Reload();
 
         StopZoom();
-        StartCoroutine(ReloadCoroutine());        
+        StartCoroutine(ReloadCoroutine());
     }
 
     //줌 모드
@@ -59,13 +40,13 @@ public class PlayerRangedWeapon : RangedWeapon
 
         if (isZoomMode == true)
         {
-            mainCamera.StartCameraZoom();
-            crossHair.ActiveZoomMode();
+            MainCamera.instance.StartCameraZoom();
+            CrossHair.instance.ActiveZoomMode();
         }
         else
         {
-            mainCamera.StopCameraZoom();
-            crossHair.DeactiveZoomMode();
+            MainCamera.instance.StopCameraZoom();
+            CrossHair.instance.DeactiveZoomMode();
         }
 
         hand.enabled = !isZoomMode;
@@ -79,13 +60,6 @@ public class PlayerRangedWeapon : RangedWeapon
             Zoom();
     }
 
-    //Bullet HUD를 위한 public 함수
-    public int GetCurMagazine() { return curBulletInMagazine; }
-    public int GetCurBullet() { return curBulletInBag; }
-    public string GetName() { return weaponName; }
-
-    public void SetCrossHair(CrossHair crossHair) { this.crossHair = crossHair; }
-
     public void DoWeaponChange()
     {
         if (isReload == true)
@@ -93,8 +67,8 @@ public class PlayerRangedWeapon : RangedWeapon
             StopAllCoroutines();
             isReload = false;
         }
-        
-        if(isZoomMode == true)
+
+        if (isZoomMode == true)
         {
             StopZoom();
         }

@@ -5,14 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class TitleUi : MonoBehaviour
 {
-    void Update()
+    [SerializeField] private GameObject OptionWindow = null;
+
+    void Start()
     {
-        //버튼눌리는 효과
+        OptionWindow.SetActive(false);
     }
 
     public void StartButton()
     {
-        SceneManager.LoadScene("Begin Stage 1");
+        if (DataController.instance.gameDataInstance.Stage1Clear == false)
+            SceneManager.LoadScene("Begin Stage 1");
+        else
+            SceneManager.LoadScene("Begin Stage 2");
     }
 
     public void TraniningButton()
@@ -22,6 +27,7 @@ public class TitleUi : MonoBehaviour
 
     public void OptionButton()
     {
+        OptionWindow.SetActive(true);
     }
 
     public void QuitButton()

@@ -5,11 +5,23 @@ using UnityEngine.UI;
 
 public class CrossHair : MonoBehaviour
 {
-    Animator ani;
-    [SerializeField]
-    Image zoomMode = null;
-    [SerializeField]
-    GameObject originMode = null;
+    private static CrossHair crossHair;
+    public static CrossHair instance
+    {
+        get
+        {
+            if (crossHair == null)
+                crossHair = FindObjectOfType<CrossHair>();
+            return crossHair;
+        }
+    }
+
+    private Animator ani;
+    [SerializeField] private Image zoomMode = null;
+    [SerializeField] private GameObject originMode = null;
+
+    [SerializeField] private Image[] originModeImage = null;
+    [SerializeField] private Image zoomModeImage = null;
 
     void Start()
     {
@@ -29,9 +41,28 @@ public class CrossHair : MonoBehaviour
         zoomMode.gameObject.SetActive(true);
         originMode.SetActive(false);
     }
+
     public void DeactiveZoomMode()
     {
         zoomMode.gameObject.SetActive(false);
         originMode.SetActive(true);
+    }
+
+    public void IsEnemyLocateCrosshair(bool isLocated)
+    {
+        if (isLocated == false)
+        {
+            if (originMode.activeSelf == false)
+                zoomModeImage.color = Color.white;
+            for (int index = 0; index < originModeImage.Length; index++)
+                originModeImage[index].color = Color.white;
+        }
+        else
+        {            
+            if (originMode.activeSelf == false)
+                zoomModeImage.color = Color.red;
+            for (int index = 0; index < originModeImage.Length; index++)
+                originModeImage[index].color = Color.red;
+        }
     }
 }

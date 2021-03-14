@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class EnemyWeaponController : WeaponController
 {
-    EnemyRangedWeapon curRangedWeapon = null;
+    private EnemyRangedWeapon curRangedWeapon = null;
 
-    [SerializeField]
-    EnemyRangedWeapon rangeWeapon = null;
+    [SerializeField] private EnemyRangedWeapon rangeWeapon = null;
 
     void Start()
     {
@@ -22,5 +21,5 @@ public class EnemyWeaponController : WeaponController
     public void Fire() { curRangedWeapon.Fire(); }
     public void Reload() { curRangedWeapon.Reload(); }
     public bool CanFire() { return curRangedWeapon.CanFire(); }
-    public bool IsReload() { return curRangedWeapon.IsReload(); }   
+    public bool IsReload() { return curRangedWeapon._isReload; }   
 }

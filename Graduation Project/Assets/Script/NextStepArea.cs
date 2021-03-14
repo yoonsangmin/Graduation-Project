@@ -3,16 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class NextStepArea : MonoBehaviour
-{
-    [SerializeField]
-    Stage1Quest quest = null;
-
+{   
     private void OnTriggerEnter(Collider other)
     {
-        if (quest.CanGoToNextStep() == true && other.tag == "Player")
+        if (Stage1Controller.instance.CanGoToNextStep() == true && other.tag == "Player")
         {
-            if (gameObject.name == (quest.GetCurEnemySummonInex() + 1).ToString())
-                quest.GoNextStep();
+            if (gameObject.name == (Stage1Controller.instance._enemySummonIndex + 1).ToString())
+                Stage1Controller.instance.GoNextStep();
         }
     }
 }

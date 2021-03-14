@@ -5,14 +5,13 @@ using UnityEngine.UI;
 
 public class CriticalTexts : MonoBehaviour
 {
-    [SerializeField]
-    CriticalText criticalText = null;
+    [SerializeField] private CriticalText criticalText = null;
 
-    List<CriticalText> criticalTexts = new List<CriticalText>();
+    private List<CriticalText> criticalTexts = new List<CriticalText>();
 
-    Vector3 startPos = new Vector3(290.0f, -60.0f, 0.0f);
+    private Vector3 startPos = new Vector3(290.0f, -60.0f, 0.0f);
 
-    int maxNum = 30;
+    private int maxNum = 30;
 
     void Start()
     {
@@ -34,7 +33,7 @@ public class CriticalTexts : MonoBehaviour
     }
 
     //사용할 수 있는 텍스트 찾기
-    CriticalText GetUnusedText()
+    private CriticalText GetUnusedText()
     {
         foreach (var text in criticalTexts)
             if (text.gameObject.activeSelf == false)

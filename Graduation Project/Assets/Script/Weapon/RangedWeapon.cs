@@ -18,19 +18,16 @@ public class RangedWeapon : Weapon
     //재장전
     protected float reloadTime;
     protected bool isReload = false;
+    public bool _isReload { get { return isReload; } }
 
     //총알 관련 변수
-    [SerializeField]
-    protected BulletController Bullets = null;
+    [SerializeField] protected BulletController Bullets = null;
     protected int maxBulletInMagazine;
     protected int curBulletInMagazine;
+    public int _curBulletInMagazine { get { return curBulletInMagazine; } }
     protected int maxBulletInBag;
     protected int curBulletInBag;
-
-    void Update()
-    {
-        GunFireCooltimeCalc();
-    }
+    public int _curBulletInBag { get { return curBulletInBag; } }
 
     public void SetWeaponStat(string name, float damage, float range, float speed, float accuracy, float fireCooltime, float reloadTime, float recoilActionForce, int maxBulletInMagazine, int maxBulletInBag)
     {
@@ -50,11 +47,27 @@ public class RangedWeapon : Weapon
         this.curBulletInBag = this.maxBulletInBag;
     }
 
+    private void Update()
+    {
+        GunFireCooltimeCalc();
+    }
+
     //연사속도 재계산
-    void GunFireCooltimeCalc()
+    private void GunFireCooltimeCalc()
     {
         if (curFireCooltime > 0)
             curFireCooltime -= Time.deltaTime;
+    }
+
+    public virtual void Fire()
+    {
+        if (curFireCooltime > 0 || isReload == true || (curBulletInBag <= 0 && curBulletInMagazine <= 0)) return;
+
+        if (curBulletInMagazine <= 0) { Reload(); return; }
+
+        curBulletInMagazine--;
+
+        curFireCooltime = fireCooltime;
     }
 
     public virtual void Reload() { if (isReload == true || curBulletInMagazine >= maxBulletInMagazine) return; }
@@ -85,9 +98,28 @@ public class RangedWeapon : Weapon
 
             isReload = false;
         }
-    }        
+    }
 
     //사격 가능여부
     public bool CanFire() { return isReload == false && curFireCooltime <= 0 && (curBulletInBag > 0 || curBulletInMagazine > 0); }
-    public bool IsReload() { return isReload; }
+
+    public void GetBullets(int value)
+    {
+        if (curBulletInBag + value <= maxBulletInBag)
+            curBulletInBag += value;
+        else
+            curBulletInBag = maxBulletInBag;
+    }
+
+    public bool IsTargerPointOfSight(GameObject startPoint, string targetTagName)
+    {
+        RaycastHit hitInfo;
+        
+        if (Physics.Raycast(startPoint.transform.position, startPoint.transform.forward + new Vector3(Random.Range(-accuracy, accuracy), Random.Range(-accuracy, accuracy), 0), out hitInfo, range))
+        {
+            if (hitInfo.collider.gameObject.tag.Contains(targetTagName))
+                return true;            
+        }
+        return false;
+    }
 }

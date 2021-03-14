@@ -4,19 +4,30 @@ using UnityEngine;
 
 public class MainCamera : MonoBehaviour
 {
-    [SerializeField]
-    Transform playerPos;
+    private static MainCamera mainCamera;
+    public static MainCamera instance
+    {
+        get
+        {
+            if (mainCamera == null)
+                mainCamera = FindObjectOfType<MainCamera>();
+            return mainCamera;
+        }
+    }
+
+    [SerializeField] private Transform playerPos;
 
     //민감도
-    float sensitivity = 2.0f;
+    private float sensitivity = 2.0f;
+    public float _sensitivity { get { return sensitivity; } }
 
     //회전
-    float rotLimit = 45.0f;
-    float curRotX = 0.0f;
-    float originRotX = 0.0f;
-    float curRotY = 0.0f;
+    private float rotLimit = 45.0f;
+    private float curRotX = 0.0f;
+    private float originRotX = 0.0f;
+    private float curRotY = 0.0f;
 
-    //bool cameraStop = false;
+    private bool cameraStop = false;
 
     void Start()
     {
@@ -26,10 +37,11 @@ public class MainCamera : MonoBehaviour
 
     void Update()
     {
+        if (cameraStop == true) return;
         CameraMove();
     }
 
-    void CameraMove()
+    private void CameraMove()
     {
         float x_rot = Input.GetAxisRaw("Mouse Y");
 
@@ -42,23 +54,21 @@ public class MainCamera : MonoBehaviour
         this.transform.localEulerAngles = new Vector3(curRotX, curRotY, 0.0f);
     }
 
-    //public void CameraStop()
-    //{
-    //    Cursor.visible = true;
-    //    Cursor.lockState = CursorLockMode.None; //커서 풀기
+    public void StopCamera()
+    {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None; //커서 풀기
 
-    //    camera_stop = true;
-    //}
+        cameraStop = true;
+    }
 
-    //public void CameraPlay()
-    //{
-    //    Cursor.visible = false;
-    //    Cursor.lockState = CursorLockMode.Locked; //커서 고정
+    public void PlayCamera()
+    {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked; //커서 고정
 
-    //    camera_stop = false;
-    //}
-
-    public float GetCameraSensitivity() { return sensitivity; }
+        cameraStop = false;
+    }
 
     //weapon 관련함수
     public void DoRecoilAction(float value)
@@ -71,7 +81,7 @@ public class MainCamera : MonoBehaviour
         originRotX += recoilVal;
     }
 
-    void OriginPosOfRecoilAction(float moveMousePos)
+    private void OriginPosOfRecoilAction(float moveMousePos)
     {
         if (originRotX > 0.0f)
         {
@@ -87,4 +97,7 @@ public class MainCamera : MonoBehaviour
 
     public void StartCameraZoom() { GetComponent<Camera>().fieldOfView = 30; }
     public void StopCameraZoom() { GetComponent<Camera>().fieldOfView = 90; }
+
+    public void UpMouseSensitivity() { sensitivity++; }
+    public void DownMouseSensitivity() { sensitivity--; }
 }

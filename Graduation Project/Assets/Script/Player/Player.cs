@@ -4,40 +4,48 @@ using UnityEngine;
 
 public class Player : CharacterBase
 {
-    [SerializeField]
-    CrossHair crossHair = null;
-    [SerializeField]
-    PlayerWeaponController weaponController = null;
-    [SerializeField]
-    GameObject arm = null;
+    private static Player player;
+    public static Player instance
+    {
+        get
+        {
+            if (player == null)
+                player = FindObjectOfType<Player>();
+            return player;
+        }
+    }
+
+    [SerializeField] private PlayerWeaponController weaponController = null;
+    public PlayerWeaponController _weaponController { get { return weaponController; } }
+    [SerializeField] private GameObject arm = null;
 
     //이동
-    float curSpeed;
-    float runSpeed;
-    float crouchSpeed;
-    bool isRun = false;
-    bool isWalk = false;
+    private float curSpeed;
+    private float runSpeed;
+    private float crouchSpeed;
+    private bool isRun = false;
+    private bool isWalk = false;
 
     //점프
-    float jumpForce = 7.0f;
-    bool isGround = true;
+    private float jumpForce = 7.0f;
+    private bool isGround = true;
 
     //앉기
-    bool isCrouch = false;
+    private bool isCrouch = false;
 
     //콜라이더 크기 조절
-    float colOriginHeight;
-    float colCrouchHeight = 1.0f;
+    private float colOriginHeight;
+    private float colCrouchHeight = 1.0f;
 
-    bool playerStop = false;
+    private bool playerStop = false;
+    public void StopPlayer() { playerStop = true; }
+    public void PlayPlayer() { playerStop = false; }
 
     void Start()
     {
         ani = arm.GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
         col = GetComponent<CapsuleCollider>();
-
-        weaponController.SetCrossHair(crossHair);
 
         colOriginHeight = col.height;
 
@@ -60,14 +68,17 @@ public class Player : CharacterBase
         PlayerCrouch();
 
         //사격
+        CrossHair.instance.IsEnemyLocateCrosshair(weaponController._curRangedWeapon.IsTargerPointOfSight(MainCamera.instance.gameObject, "Enemy"));
         WeaponChange();
         Fire();
         Reload();
         Zoom();
+
+        ControlMouseSensitivity();
     }
 
     //이동
-    void PlayerMove()
+    private void PlayerMove()
     {
         float xDir = Input.GetAxisRaw("Horizontal");
         float zDir = Input.GetAxisRaw("Vertical");
@@ -83,52 +94,52 @@ public class Player : CharacterBase
         else isWalk = true;
     }
 
-    void PlayerRotation()
+    private void PlayerRotation()
     {
         float yRot = Input.GetAxisRaw("Mouse X");
-        Vector3 playerRot = new Vector3(0.0f, yRot, 0.0f) * mainCamera.GetComponent<MainCamera>().GetCameraSensitivity();
+        Vector3 playerRot = new Vector3(0.0f, yRot, 0.0f) * MainCamera.instance.GetComponent<MainCamera>()._sensitivity;
 
         rb.MoveRotation(rb.rotation * Quaternion.Euler(playerRot));
     }
 
-    void PlayerRun()
+    private void PlayerRun()
     {
-        if (Input.GetKey(KeyCode.LeftShift) && weaponController.IsReload() == false) Running();
-        if (Input.GetKeyUp(KeyCode.LeftShift) || weaponController.IsReload() == true ) StopRunning();
+        if (Input.GetKey(KeyCode.LeftShift) && weaponController._curRangedWeapon._isReload == false) Running();
+        if (Input.GetKeyUp(KeyCode.LeftShift) || weaponController._curRangedWeapon._isReload == true) StopRunning();
 
         ani.SetBool("IsRunning", isRun);
     }
 
-    void Running()
+    private void Running()
     {
         isRun = true;
         curSpeed = runSpeed;
     }
 
-    void StopRunning()
+    private void StopRunning()
     {
         isRun = false;
         curSpeed = walkSpeed;
     }
 
     //점프
-    void PlayerJump()
+    private void PlayerJump()
     {
         if (Input.GetKeyDown(KeyCode.Space) && isGround == true) Jump();
     }
 
-    void Jump()
+    private void Jump()
     {
         rb.velocity = transform.up * jumpForce;
     }
 
-    void IsGround()
+    private void IsGround()
     {
         isGround = Physics.Raycast(transform.position, Vector3.down, 0.1f);
     }
 
     //앉기
-    void PlayerCrouch()
+    private void PlayerCrouch()
     {
         if (Input.GetKey(KeyCode.LeftControl))
         {
@@ -142,7 +153,7 @@ public class Player : CharacterBase
         }
     }
 
-    void Crouch()
+    private void Crouch()
     {
         if (isCrouch)
         {
@@ -157,7 +168,7 @@ public class Player : CharacterBase
     }
 
     //무기관련
-    void WeaponChange()
+    private void WeaponChange()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
@@ -169,36 +180,36 @@ public class Player : CharacterBase
             else ani.SetTrigger("WeaponChange");
             if (IsInvoking("WaitWeaponChange")) CancelInvoke("WaitWeaponChange");
             Invoke("WaitWeaponChange", 1.5f);
-            weaponController.WeaponChange();            
+            weaponController.WeaponChange();
         }
     }
 
-    void WaitWeaponChange() { weaponController.FinishWeaponChange(); }
+    private void WaitWeaponChange() { weaponController.FinishWeaponChange(); }
 
-    void Fire()
+    private void Fire()
     {
         if (Input.GetMouseButton(0) && weaponController.CanFire() == true && isRun == false)
         {
             weaponController.Fire();
-            crossHair.StartFireAnimation();
+            CrossHair.instance.StartFireAnimation();
             ani.SetBool("IsFire", true);
         }
-        if (Input.GetMouseButtonUp(0) || weaponController.IsReload() == true || isRun == true)
+        if (Input.GetMouseButtonUp(0) || weaponController._curRangedWeapon._isReload == true || isRun == true)
         {
-            crossHair.StopFireAnimation();
+            CrossHair.instance.StopFireAnimation();
             ani.SetBool("IsFire", false);
         }
     }
 
-    void Reload()
+    private void Reload()
     {
-        if ((Input.GetKeyDown(KeyCode.R) || weaponController.GetCurMagazine() <= 0) && weaponController.IsReload() == false)
+        if ((Input.GetKeyDown(KeyCode.R) || weaponController._curRangedWeapon._curBulletInMagazine <= 0) && weaponController._curRangedWeapon._isReload == false)
             weaponController.Reload();
 
-        ani.SetBool("IsReloading", weaponController.IsReload());
+        ani.SetBool("IsReloading", weaponController._curRangedWeapon._isReload);
     }
 
-    void Zoom()
+    private void Zoom()
     {
         if (Input.GetMouseButtonDown(1) && isRun == false)
             weaponController.Zoom();
@@ -207,10 +218,16 @@ public class Player : CharacterBase
     }
 
     //크로스헤어
-    void CrossHairState()
+    private void CrossHairState()
     {
-        crossHair.SetCrouchAnimation(isCrouch);
-        crossHair.SetRunAnimation(isRun);
-        crossHair.SetWalkAnimation(isWalk);
+        CrossHair.instance.SetCrouchAnimation(isCrouch);
+        CrossHair.instance.SetRunAnimation(isRun);
+        CrossHair.instance.SetWalkAnimation(isWalk);
+    }
+
+    private void ControlMouseSensitivity()
+    {
+        if (Input.GetKeyDown(KeyCode.LeftBracket)) MainCamera.instance.GetComponent<MainCamera>().UpMouseSensitivity();
+        if (Input.GetKeyDown(KeyCode.RightBracket)) MainCamera.instance.GetComponent<MainCamera>().DownMouseSensitivity();
     }
 }

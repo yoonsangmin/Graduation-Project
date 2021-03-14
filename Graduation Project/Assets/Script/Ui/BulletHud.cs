@@ -5,17 +5,12 @@ using UnityEngine.UI;
 
 public class BulletHud : MonoBehaviour
 {
-    [SerializeField]
-    Text loadedBullet = null;
-    [SerializeField]
-    Text remainBullet = null;
+    [SerializeField] private Text loadedBullet = null;
+    [SerializeField] private Text remainBullet = null;
 
-    [SerializeField]
-    Image weaponImage = null;
-    [SerializeField]
-    Sprite akImage = null;
-    [SerializeField]
-    Sprite sniperImage = null;
+    [SerializeField] private Image weaponImage = null;
+    [SerializeField] private Sprite akImage = null;
+    [SerializeField] private Sprite sniperImage = null;
 
     public void UpdateText(int loadedBulletNum, int remainBulletNum)
     {

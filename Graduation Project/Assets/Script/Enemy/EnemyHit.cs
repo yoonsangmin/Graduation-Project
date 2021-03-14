@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class EnemyHit : MonoBehaviour
 {
-    [SerializeField]
-    Enemy enemyMain = null;
+    [SerializeField] private Enemy enemyMain = null;
 
     void Start()
     {
@@ -19,7 +18,7 @@ public class EnemyHit : MonoBehaviour
 
     public void HitByBarrel(float damage)
     {
-        if (enemyMain.HaveDamagedByBarrel() == true) return;
+        if (enemyMain._haveDamagedByBarrel == true) return;
         enemyMain.ReceiveDamage(damage);
     }
 }

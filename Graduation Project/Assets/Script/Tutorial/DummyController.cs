@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class DummyController : MonoBehaviour
 {
-    [SerializeField]
-    List<GameObject> dummys = new List<GameObject>();
+    [SerializeField] private List<GameObject> dummys = new List<GameObject>();
 
-    float revivalTime = 5.0f;
+    private float revivalTime = 5.0f;
 
     void Update()
     {

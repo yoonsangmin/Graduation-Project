@@ -4,26 +4,22 @@ using UnityEngine;
 
 public class Generator : MonoBehaviour
 {
-    [SerializeField]
-    ObjectText objectText = null;
+    [SerializeField] private ObjectText objectText = null;
 
-    [SerializeField]
-    GameObject door = null;
-    [SerializeField]
-    Camera cam = null;
-    [SerializeField]
-    Stage1Quest goNext = null;
+    [SerializeField] private GameObject door = null;
+    [SerializeField] private Camera cam = null;
 
-    bool generatorStart = false;
-    bool operateDone = false;      
+    private bool generatorStart = false;
+    private bool operateDone = false;
+    public bool _operateDone { get { return operateDone; } }
 
-    void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag != "Player" && operateDone == false && generatorStart == true) return;
         objectText.ColObject();
     }
 
-    void OnCollisionStay(Collision collision)
+    private void OnCollisionStay(Collision collision)
     {
         if (collision.gameObject.tag != "Player" && operateDone == false && generatorStart == true) return;
 
@@ -34,13 +30,13 @@ public class Generator : MonoBehaviour
         }
     }
 
-    void OnCollisionExit(Collision collision)
+    private void OnCollisionExit(Collision collision)
     {
         if (collision.gameObject.tag != "Player" && operateDone == false && generatorStart == true) return;
         objectText.UnColObject();
     }
 
-    IEnumerator OpenDoorCouroutine()
+    private IEnumerator OpenDoorCouroutine()
     {
         yield return new WaitForSeconds(1.0f);
 
@@ -56,10 +52,9 @@ public class Generator : MonoBehaviour
         objectText.gameObject.SetActive(false);
         cam.gameObject.SetActive(false);
         operateDone = true;
-        goNext.GoNextStep();
+        Stage1Controller.instance.GoNextStep();
     }
 
-    public bool OperateDone() { return operateDone; }
     public void GeneratorStart()
     {
         generatorStart = true;

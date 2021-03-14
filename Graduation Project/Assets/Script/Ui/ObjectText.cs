@@ -4,19 +4,15 @@ using UnityEngine;
 
 public class ObjectText : MonoBehaviour
 {
-    Camera mainCamera;
+    private Camera mainCamera;
 
-    [SerializeField]
-    float yPosDistance = 0.0f;
+    [SerializeField] private float yPosDistance = 0.0f;
 
-    [SerializeField]
-    GameObject colUi = null;
-    [SerializeField]
-    GameObject unColUi = null;
-    [SerializeField]
-    GameObject rootObject = null;
+    [SerializeField] private GameObject colUi = null;
+    [SerializeField] private GameObject unColUi = null;
+    [SerializeField] private GameObject rootObject = null;
 
-    Vector3 originPos = new Vector3(205.0f, 0.0f, 0.0f);
+    private Vector3 originPos = new Vector3(205.0f, 0.0f, 0.0f);
 
     void Start()
     {

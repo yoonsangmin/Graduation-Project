@@ -19,46 +19,44 @@ enum State
 
 public class Enemy : CharacterBase
 {
-    NavMeshAgent enemyAi = null;
-    List<Rigidbody> rigidBodys = new List<Rigidbody>();
+    private NavMeshAgent enemyAi = null;
+    public NavMeshAgent _enemyAi { get { return enemyAi; } }
+    private List<Rigidbody> rigidBodys = new List<Rigidbody>();
 
-    [SerializeField]
-    Pattern whatEnemyPattern = 0;
+    [SerializeField] private Pattern whatEnemyPattern = 0;
 
-    State curState = State.Detect;
+    private State curState = State.Detect;
 
     //정찰위치
-    [SerializeField]
-    Transform[] patrolPoints = null;
-    int patrolCount = 0;
+    [SerializeField] private Transform[] patrolPoints = null;
+    private int patrolCount = 0;
 
     //Fix enemy 정찰
-    float rotMax = 60;
-    float curRot = 0;
-    float rotVal = 0.5f;
+    private float rotMax = 60;
+    private float curRot = 0;
+    private float rotVal = 0.5f;
 
-    Transform target = null;
+    private Transform target = null;
 
     //피하기
-    Vector3 avoidDir;
+    private Vector3 avoidDir;
 
     //시야각
-    float viewAngle = 220.0f;
-    float viewDistance = 30.0f;
+    private float viewAngle = 220.0f;
+    private float viewDistance = 30.0f;
 
-    [SerializeField]
-    LayerMask targetMask = 0;
+    [SerializeField] private LayerMask targetMask = 0;
 
-    [SerializeField]
-    EnemyWeaponController weapon = null;
+    [SerializeField] private EnemyWeaponController weapon = null;
 
-    float RangeAttackDistance = 30.0f;
-    float MeleeAttackDistance = 2.0f;
-    float MoveToTargetDistance = 50.0f;
-    float targetToDistance = 0.0f;
+    private float RangeAttackDistance = 30.0f;
+    private float MeleeAttackDistance = 2.0f;
+    private float MoveToTargetDistance = 50.0f;
+    private float targetToDistance = 0.0f;
 
-    [SerializeField]
-    ParticleSystem summonParticle = null;
+    [SerializeField] private ParticleSystem summonParticle = null;
+
+    [SerializeField] private BulletItem dropItem = null;
 
     void Start()
     {
@@ -68,65 +66,75 @@ public class Enemy : CharacterBase
         col = GetComponent<CapsuleCollider>();
         enemyAi.speed = walkSpeed;
         enemyAi.isStopped = false;
+
+        dropItem.gameObject.SetActive(false);        
+       // StartCoroutine(FsmMain());
     }
 
     void Update()
     {
-        HpBarLookAtCamera();
         WalkAnimatorSetting();
-        FsmMain();
+        HpBarLookAtCamera();
     }
 
     //Fsm State
-    void FsmMain()
+    private IEnumerator FsmMain()
     {
-        if (isDead == true) ChangeState(State.Die);
-        if (target != null)
-            targetToDistance = Vector3.Distance(target.position, transform.position);
-
-        switch (whatEnemyPattern)
+        while (true)
         {
-            case Pattern.Detect:
-                switch (curState)
-                {
-                    case State.Detect:
-                        if (IsInvoking("MoveToDetectionPoint") == false) Invoke("MoveToDetectionPoint", 1.0f);
-                        break;
-                    case State.Attack:
-                        DetectAttackToTarget();
-                        break;
-                    case State.Avoid:
-                        transform.LookAt(target);
-                        if (IsInvoking("SetAvoidDir") == false) Invoke("SetAvoidDir", 4.0f);
-                        else Avoid();
-                        break;
-                    case State.Die:
-                        break;
-                }
-                break;
+            HpBarLookAtCamera();
+            WalkAnimatorSetting();
 
-            case Pattern.FixPos:
-                switch (curState)
-                {
-                    case State.Detect:
-                        FixDetectToRotate();
-                        break;
-                    case State.Attack:
-                        FixAttackToTarget();
-                        break;
-                    case State.Avoid:
-                        transform.LookAt(target);
-                        if (IsInvoking("SetAvoidDir") == false) Invoke("SetAvoidDir", 4.0f);
-                        else Avoid();
-                        break;
-                    case State.Die:
-                        break;
-                }
-                break;
+            if (isDead == true) ChangeState(State.Die);
+            if (target != null)
+                targetToDistance = Vector3.Distance(target.position, enemyAi.transform.position);
+
+            switch (whatEnemyPattern)
+            {
+                case Pattern.Detect:
+                    switch (curState)
+                    {
+                        case State.Detect:
+                            if (IsInvoking("MoveToDetectionPoint") == false) Invoke("MoveToDetectionPoint", 1.0f);
+                            break;
+                        case State.Attack:
+                            DetectAttackToTarget();
+                            break;
+                        case State.Avoid:
+                            if (IsInvoking("SetAvoidDir") == false) Invoke("SetAvoidDir", 4.0f);
+                            else Avoid();
+                            enemyAi.transform.LookAt(target);
+                            break;
+                        case State.Die:
+                            break;
+                    }
+                    break;
+
+                case Pattern.FixPos:
+                    switch (curState)
+                    {
+                        case State.Detect:
+                            FixDetectToRotate();
+                            break;
+                        case State.Attack:
+                            FixAttackToTarget();
+                            break;
+                        case State.Avoid:
+                            if (IsInvoking("SetAvoidDir") == false) Invoke("SetAvoidDir", 4.0f);
+                            else Avoid();
+                            enemyAi.transform.LookAt(target);
+                            break;
+                        case State.Die:
+                            break;
+                    }
+                    break;
+            }
+
+            yield return null;
         }
     }
 
-    void ChangeState(State change)
+    private void ChangeState(State change)
     {
         //FSM State Out
         switch (curState)
@@ -155,6 +163,8 @@ public class Enemy : CharacterBase
                 SetAvoidDir();
                 break;
             case State.Die:
+                StopAllCoroutines();
+                RandomDropItem();
                 Invoke("DieToVanish", 5.0f);
                 break;
         }
@@ -162,14 +172,14 @@ public class Enemy : CharacterBase
         curState = change;
     }
 
-    void WalkAnimatorSetting()
+    private void WalkAnimatorSetting()
     {
-        ani.SetFloat("Horizontal", enemyAi.velocity.x);
-        ani.SetFloat("Vertical", enemyAi.velocity.z);
+        ani.SetFloat("Horizontal", enemyAi.velocity.z);
+        ani.SetFloat("Vertical", -enemyAi.velocity.x);
         ani.SetBool("HaveDamaged", haveDamagedByBarrel || haveDamagedByBullet);
     }
 
-    void MoveToDetectionPoint()
+    private void MoveToDetectionPoint()
     {
         View();
 
@@ -182,7 +192,7 @@ public class Enemy : CharacterBase
         }
     }
 
-    void DetectAttackToTarget()
+    private void DetectAttackToTarget()
     {
         //플레이어와 근접하게 이동
         if (targetToDistance <= MoveToTargetDistance && targetToDistance > RangeAttackDistance - 5.0f)
@@ -213,7 +223,7 @@ public class Enemy : CharacterBase
         }
     }
 
-    void FixDetectToRotate()
+    private void FixDetectToRotate()
     {
         View();
 
@@ -223,7 +233,7 @@ public class Enemy : CharacterBase
         enemyAi.transform.rotation = enemyAi.transform.rotation * Quaternion.Euler(0.0f, rotVal, 0.0f);
     }
 
-    void FixAttackToTarget()
+    private void FixAttackToTarget()
     {
         RaycastHit hit;
         if (Physics.Raycast(transform.position + transform.up, (target.position - transform.position).normalized, out hit, RangeAttackDistance * 2))
@@ -243,9 +253,9 @@ public class Enemy : CharacterBase
         }
     }
 
-    void Attack()
+    private void Attack()
     {
-        transform.LookAt(target);
+        enemyAi.transform.LookAt(target);
         weapon.Fire();
         ani.SetBool("IsFired", true);
 
@@ -253,7 +263,7 @@ public class Enemy : CharacterBase
         if (targetToDistance > MoveToTargetDistance) ChangeState(State.Detect);
     }
 
-    void SetAvoidDir()
+    private void SetAvoidDir()
     {
         int moveDir = Random.Range(1, 3);
         avoidDir = Vector3.zero;
@@ -268,7 +278,7 @@ public class Enemy : CharacterBase
         }
     }
 
-    void Avoid()
+    private void Avoid()
     {
         if (weapon.CanFire() == true) ChangeState(State.Attack);
         if (targetToDistance > MoveToTargetDistance) ChangeState(State.Detect);
@@ -277,7 +287,7 @@ public class Enemy : CharacterBase
     }
 
     //시야각 관련 함수
-    void View()
+    private void View()
     {
         Vector3 leftBoundary = BoundaryAngle(-viewAngle * 0.5f);
         Vector3 rightBoundary = BoundaryAngle(viewAngle * 0.5f);
@@ -304,29 +314,31 @@ public class Enemy : CharacterBase
         }
     }
 
-    Vector3 BoundaryAngle(float angle)
+    private Vector3 BoundaryAngle(float angle)
     {
         angle += transform.eulerAngles.y;
         return new Vector3(Mathf.Sin(angle * Mathf.Deg2Rad), 0.0f, Mathf.Cos(angle * Mathf.Deg2Rad));
     }
 
     //타겟 설정 변경
-    void SetTarget(Transform target) { this.target = target; }
-    void RemoveTarget() { this.target = null; }
+    private void SetTarget(Transform target) { this.target = target; }
+    private void RemoveTarget() { this.target = null; }
 
     //이동 설정
-    void SetDestination(Vector3 target)
+    private void SetDestination(Vector3 target)
     {
         if (enemyAi.enabled == false) return;
         enemyAi.isStopped = false;
         enemyAi.SetDestination(target);
     }
 
-    void DieToVanish() { gameObject.SetActive(false); }
+    private void DieToVanish() { gameObject.SetActive(false); }
 
     override protected void Dead()
     {
         base.Dead();
+        
+        GetComponent<BehaviorExecutor>().enabled = false;
 
         enemyAi.enabled = false;
         hpBar.gameObject.SetActive(false);
@@ -338,4 +350,15 @@ public class Enemy : CharacterBase
 
     public void AddRigidBody(Rigidbody rb) { rigidBodys.Add(rb); }
     public void SummonParticlePlay() { summonParticle.Play(); }
+
+    private void RandomDropItem()
+    {
+        int randomVal = Random.Range(0, 100);
+
+        if (randomVal > 70)
+        {
+            dropItem.gameObject.SetActive(true);
+            dropItem.SetDropBulletsNum(Random.Range(5, 20));
+        }
+    }
 }

@@ -4,27 +4,15 @@ using UnityEngine;
 
 public class EnemyRangedWeapon : RangedWeapon
 {
-    [SerializeField]
-    GameObject dirObject = null;
-    
+    [SerializeField] private GameObject dirObject = null;
+
     //사격
-    public void Fire()
+    public override void Fire()
     {
-        if (curFireCooltime > 0 || isReload == true || (curBulletInBag <= 0 && curBulletInMagazine <= 0)) return;
+        base.Fire();
 
-        if (curBulletInMagazine > 0)
-        {
-            curBulletInMagazine--;
-            curFireCooltime = fireCooltime;
-
-            flash.Play();
-
-            Bullets.Fire(dirObject);
-        }
-        else
-        {
-            Reload();
-        }
+        flash.Play();
+        Bullets.Fire(dirObject);
     }
 
     //재장전

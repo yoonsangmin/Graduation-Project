@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class Barrel : MonoBehaviour
 {
-    float explosionRange = 2.0f;
-    bool isExplosion = false;
+    private float explosionRange = 2.0f;
+    private bool isExplosion = false;
+    public bool _isExplosion { get { return isExplosion; } }
 
-    [SerializeField]
-    ParticleSystem explosion = null;
+    [SerializeField] private ParticleSystem explosion = null;
 
     public void Explosion()
     {
         gameObject.GetComponent<MeshRenderer>().enabled = false;
-        gameObject.GetComponent<BoxCollider>().enabled = false;            
+        gameObject.GetComponent<BoxCollider>().enabled = false;
 
         //폭발 범위 내 데미지 주기
         Collider[] colliders = Physics.OverlapSphere(transform.position, explosionRange);
@@ -21,7 +21,7 @@ public class Barrel : MonoBehaviour
         {
             if (col.gameObject.tag == "Player")
                 col.gameObject.GetComponent<CharacterBase>().ReceiveDamage(50);
-            if(col.gameObject.tag == "Enemy")
+            if (col.gameObject.tag == "Enemy")
                 col.gameObject.GetComponent<EnemyHit>().HitByBarrel(50);
         }
 
@@ -36,6 +36,4 @@ public class Barrel : MonoBehaviour
 
         isExplosion = false;
     }
-
-    public bool IsExplosion() { return isExplosion; }
 }

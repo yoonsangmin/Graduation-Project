@@ -5,22 +5,15 @@ using UnityEngine.UI;
 
 public class MiniMap : MonoBehaviour
 {
-    [SerializeField]
-    Image playerImage = null;
-    [SerializeField]
-    List<Image> enemysImage = new List<Image>();
-    [SerializeField]
-    Sprite enemyOutOfRangeImage = null;
-    [SerializeField]
-    Sprite enemyOriginImage = null;
-    [SerializeField]
-    Vector3 enemyHidePos = new Vector3(0.0f, 65.0f, 0.0f);
-    //[SerializeField]    Sprite nextObjectImage = null;
+    [SerializeField] private Image playerImage = null;
+    [SerializeField] private List<Image> enemysImage = new List<Image>();
+    [SerializeField] private Sprite enemyOutOfRangeImage = null;
+    [SerializeField] private Sprite enemyOriginImage = null;
+    [SerializeField] private Vector3 enemyHidePos = new Vector3(0.0f, 65.0f, 0.0f);    
 
-    [SerializeField]
-    float dist = 85.0f;
+    [SerializeField] private float dist = 85.0f;
 
-    int enemysCount = 1;
+    private int enemysCount = 1;
 
     public void MiniMapUpdate(Transform playerPos, List<Enemy> enemysPos) { ObjectsImagePos(enemysPos, playerPos); }
 
@@ -30,7 +23,7 @@ public class MiniMap : MonoBehaviour
         ResetEnemysImage();
     }
 
-    void ResetEnemysImage()
+    private void ResetEnemysImage()
     {
         foreach (Image enemyImage in enemysImage)
         {
@@ -40,7 +33,7 @@ public class MiniMap : MonoBehaviour
         }
     }
 
-    void ObjectsImagePos(List<Enemy> enemysPos, Transform playerPos)
+    private void ObjectsImagePos(List<Enemy> enemysPos, Transform playerPos)
     {
         //플레이어 이미지
         playerImage.transform.rotation = Quaternion.Euler(0.0f, 0.0f, -(playerPos.eulerAngles.y - 90));
@@ -52,7 +45,7 @@ public class MiniMap : MonoBehaviour
         for (int i = 0; i < enemysCount; i++)
         {
             if (enemysImage[i].gameObject.activeSelf == false) continue;
-            if (enemysPos[i].IsDead() == true)
+            if (enemysPos[i]._isDead == true)
             {
                 enemysImage[i].gameObject.SetActive(false);
                 continue;

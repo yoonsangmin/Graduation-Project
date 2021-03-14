@@ -4,16 +4,15 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    [SerializeField]
-    ParticleSystem trace = null;
+    [SerializeField] private ParticleSystem trace = null;
 
-    Transform parent;
+    private Transform parent;
 
     //총알의 변수
-    float accuracy;
-    float range;
-    float speed;
-    float damage;
+    private float accuracy;
+    private float range;
+    private float speed;
+    private float damage;
 
     public void SetBullet(float accuracy, float range, float speed, float damage)
     {
@@ -29,7 +28,7 @@ public class Bullet : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    void Vanish()
+    private void Vanish()
     {
         gameObject.transform.SetParent(parent);
         gameObject.SetActive(false);

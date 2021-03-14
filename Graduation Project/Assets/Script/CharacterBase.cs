@@ -5,37 +5,35 @@ using UnityEngine.UI;
 
 public class CharacterBase : MonoBehaviour
 {
-    protected GameObject mainCamera;
-
     protected Rigidbody rb;
     protected CapsuleCollider col;
     protected Animator ani;
 
-    [SerializeField]
-    protected ParticleSystem bloodSpit;
-    [SerializeField]
-    protected Slider hpBar;
+    [SerializeField] protected ParticleSystem bloodSpit;
+    [SerializeField] protected Slider hpBar;
 
-    protected float curLife;
+    [SerializeField] protected float curLife;
     protected float maxLife;
     protected float walkSpeed;
 
     protected bool haveDamagedByBullet = false;
+    public bool _haveDamagedByBullet { get { return haveDamagedByBullet; } }
     protected bool haveDamagedByBarrel = false;
+    public bool _haveDamagedByBarrel { get { return haveDamagedByBarrel; } }
     protected bool isDead = false;
+    public bool _isDead { get { return isDead; } }
 
     protected void SetCharacterStat(float maxLife, float walkSpeed)
     {
         this.maxLife = maxLife;
         this.curLife = maxLife;
         hpBar.value = curLife / maxLife;
-        this.walkSpeed = walkSpeed;
-        mainCamera = GameObject.Find("Main Camera").gameObject;
+        this.walkSpeed = walkSpeed;        
     }
 
     protected void HpBarLookAtCamera()
     {
-        hpBar.transform.LookAt(mainCamera.transform);
+        hpBar.transform.LookAt(MainCamera.instance.transform);
     }
 
     protected void HpReset()
@@ -44,8 +42,8 @@ public class CharacterBase : MonoBehaviour
         hpBar.value = curLife / maxLife;
     }
 
-    void HaveDamagedByBulletInit() { haveDamagedByBullet = false; }
-    void HaveDamagedByBarrelInit() { haveDamagedByBarrel = false; }
+    private void HaveDamagedByBulletInit() { haveDamagedByBullet = false; }
+    private void HaveDamagedByBarrelInit() { haveDamagedByBarrel = false; }
 
     virtual protected void Dead()
     {
@@ -76,19 +74,15 @@ public class CharacterBase : MonoBehaviour
         else Invoke("HaveDamagedByBarrelInit", 0.2f);
     }
 
-    void DownLife(float damage)
+    private void DownLife(float damage)
     {
         curLife -= damage;
         hpBar.value = curLife / maxLife;
 
         if (curLife <= 0)
-        {
+        {            
             Dead();
             return;
         }
-    }
-
-    public bool IsDead() { return isDead; }
-    public bool HaveDamagedByBullet() { return haveDamagedByBullet; }
-    public bool HaveDamagedByBarrel() { return haveDamagedByBarrel; }
+    }    
 }
