@@ -20,16 +20,6 @@ public class PlayerWeaponController : WeaponController
 
     void Awake()
     {
-        AK.SetWeaponStat("AK", 30.0f, 60.0f, //name, damage, range
-                                150.0f, 0.002f, 0.2f, //speed, accuracy, fireCooltime
-                                3.0f, 2.0f, //reloadTime, 반동
-                                30, 500); //탄창 최대 개수, 총알 최대 개수
-
-        Sniper.SetWeaponStat("Sniper", 120.0f, 120.0f, //name, damage, range
-                                150.0f, 0.002f, 1.0f, //speed, accuracy, fireCooltime
-                                3.0f, 10.0f, //reloadTime, 반동
-                                2, 50); //탄창 최대 개수, 총알 최대 개수
-
         curRangedWeapon = AK;    
     }
 
@@ -69,7 +59,7 @@ public class PlayerWeaponController : WeaponController
             curRangedWeapon.GetComponent<SkinnedMeshRenderer>().enabled = true;
         }
 
-        UiController.instance.ChangeWeaponImage(curRangedWeapon._weaponName);
+        UiController.instance.ChangeWeaponImage(curRangedWeapon._weaponStat._weaponName);
     }
 
     public void Zoom()

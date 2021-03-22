@@ -2,52 +2,36 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RangedWeapon : Weapon
+public class RangedWeapon : MonoBehaviour
 {
-    //반동
-    protected float recoilActionForce;
+    [SerializeField] protected RangedWeaponStat weaponStat;
+    public RangedWeaponStat _weaponStat { get { return weaponStat; } }
 
-    //정확도, 속도
-    protected float accuracy;
-    protected float speed;
+    [SerializeField] protected ParticleSystem flash;
+    protected AudioClip attackSound;
 
     //사격 속도    
-    protected float fireCooltime;
     protected float curFireCooltime;
 
     //재장전
-    protected float reloadTime;
     protected bool isReload = false;
     public bool _isReload { get { return isReload; } }
 
     //총알 관련 변수
     [SerializeField] protected BulletController Bullets = null;
-    protected int maxBulletInMagazine;
     protected int curBulletInMagazine;
     public int _curBulletInMagazine { get { return curBulletInMagazine; } }
-    protected int maxBulletInBag;
     protected int curBulletInBag;
     public int _curBulletInBag { get { return curBulletInBag; } }
 
-    public void SetWeaponStat(string name, float damage, float range, float speed, float accuracy, float fireCooltime, float reloadTime, float recoilActionForce, int maxBulletInMagazine, int maxBulletInBag)
+    void Awake()
     {
-        Bullets.SetBullet(maxBulletInMagazine, accuracy, range, speed, damage);
-
-        weaponName = name;
-        this.damage = damage;
-        this.range = range;
-        this.speed = speed;
-        this.accuracy = accuracy;
-        this.fireCooltime = fireCooltime;
-        this.reloadTime = reloadTime;
-        this.recoilActionForce = recoilActionForce;
-        this.maxBulletInMagazine = maxBulletInMagazine;
-        this.curBulletInMagazine = this.maxBulletInMagazine;
-        this.maxBulletInBag = maxBulletInBag;
-        this.curBulletInBag = this.maxBulletInBag;
+        Bullets.SetBullet(weaponStat._maxBulletInMagazine, weaponStat._accuracy, weaponStat._range, weaponStat._speed, weaponStat._damage);
+        curBulletInMagazine = weaponStat._maxBulletInMagazine;
+        curBulletInBag = weaponStat._maxBulletInBag;
     }
 
-    private void Update()
+    void Update()
     {
         GunFireCooltimeCalc();
     }
@@ -67,10 +51,10 @@ public class RangedWeapon : Weapon
 
         curBulletInMagazine--;
 
-        curFireCooltime = fireCooltime;
+        curFireCooltime = weaponStat._fireColltime;
     }
 
-    public virtual void Reload() { if (isReload == true || curBulletInMagazine >= maxBulletInMagazine) return; }
+    public virtual void Reload() { if (isReload == true || curBulletInMagazine >= weaponStat._maxBulletInMagazine) return; }
 
     //재장전 코루틴
     protected IEnumerator ReloadCoroutine()
@@ -79,15 +63,15 @@ public class RangedWeapon : Weapon
         {
             isReload = true;
 
-            yield return new WaitForSeconds(reloadTime);
+            yield return new WaitForSeconds(weaponStat._reloadTime);
 
             //총알이있을때 장전
             curBulletInBag += curBulletInMagazine;
 
-            if (curBulletInBag >= maxBulletInMagazine)
+            if (curBulletInBag >= weaponStat._maxBulletInMagazine)
             {
-                curBulletInMagazine = maxBulletInMagazine;
-                curBulletInBag -= maxBulletInMagazine;
+                curBulletInMagazine = weaponStat._maxBulletInMagazine;
+                curBulletInBag -= weaponStat._maxBulletInMagazine;
             }
             //현재 가지고 있는 총알의 개수가 탄창을 가득 채울수 없다면
             else
@@ -105,17 +89,17 @@ public class RangedWeapon : Weapon
 
     public void GetBullets(int value)
     {
-        if (curBulletInBag + value <= maxBulletInBag)
+        if (curBulletInBag + value <= weaponStat._maxBulletInBag)
             curBulletInBag += value;
         else
-            curBulletInBag = maxBulletInBag;
+            curBulletInBag = weaponStat._maxBulletInBag;
     }
 
     public bool IsTargerPointOfSight(GameObject startPoint, string targetTagName)
     {
         RaycastHit hitInfo;
         
-        if (Physics.Raycast(startPoint.transform.position, startPoint.transform.forward + new Vector3(Random.Range(-accuracy, accuracy), Random.Range(-accuracy, accuracy), 0), out hitInfo, range))
+        if (Physics.Raycast(startPoint.transform.position, startPoint.transform.forward + new Vector3(Random.Range(-weaponStat._accuracy, weaponStat._accuracy), Random.Range(-weaponStat._accuracy, weaponStat._accuracy), 0), out hitInfo, weaponStat._range))
         {
             if (hitInfo.collider.gameObject.tag.Contains(targetTagName))
                 return true;            

@@ -30,7 +30,7 @@ public class Bullet : MonoBehaviour
 
     private void Vanish()
     {
-        gameObject.transform.SetParent(parent);
+        gameObject.transform.SetParent(parent);        
         gameObject.SetActive(false);
     }
 
@@ -67,7 +67,6 @@ public class Bullet : MonoBehaviour
                 trace.Play();
             }
         }
-
         Invoke("Vanish", 1.0f);
     }
 }

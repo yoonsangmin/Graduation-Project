@@ -11,11 +11,8 @@ public class BB_HaveTarget : GOCondition
     [InParam("Target")]
     public GameObject target;
 
-    [InParam("IsTrue")]
-    public bool isTrue;
-
     public override bool Check()
     {
-        return target == null || isTrue;
+        return target != null;
     }
 }

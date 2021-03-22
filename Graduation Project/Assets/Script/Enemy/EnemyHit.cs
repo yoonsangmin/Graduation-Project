@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class EnemyHit : MonoBehaviour
 {
-    [SerializeField] private Enemy enemyMain = null;
+    private Enemy enemyMain = null;
 
     void Start()
     {
-        enemyMain.AddRigidBody(GetComponent<Rigidbody>());
+        enemyMain = transform.root.GetComponent<Enemy>();
+        transform.root.GetComponent<Enemy>().AddRigidBody(GetComponent<Rigidbody>());
     }
 
     public void HitByBullet(float damage, Vector3 point)

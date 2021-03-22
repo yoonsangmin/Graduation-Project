@@ -19,7 +19,7 @@ public class PlayerRangedWeapon : RangedWeapon
 
         Bullets.Fire(MainCamera.instance.gameObject);
 
-        MainCamera.instance.DoRecoilAction(recoilActionForce);
+        MainCamera.instance.DoRecoilAction(weaponStat._recoilActionForce);
     }
 
     //재장전
@@ -74,5 +74,5 @@ public class PlayerRangedWeapon : RangedWeapon
         }
     }
 
-    public float GetReloadTime() { return reloadTime; }   
+    public float GetReloadTime() { return weaponStat._reloadTime; }   
 }

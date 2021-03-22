@@ -11,11 +11,8 @@ public class BB_IsDead : GOCondition
     [InParam("EnemyMain")]
     public Enemy enemyMain;
 
-    [InParam("IsTrue")]
-    public bool isTrue;
-
     public override bool Check()
     {
-        return enemyMain._isDead == false || isTrue;
+        return enemyMain._isDead;
     }
 }

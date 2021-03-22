@@ -49,10 +49,9 @@ public class Player : CharacterBase
 
         colOriginHeight = col.height;
 
-        SetCharacterStat(1000.0f, 15.0f);
-        runSpeed = walkSpeed * 1.5f;
-        crouchSpeed = walkSpeed * 0.6f;
-        curSpeed = walkSpeed;
+        runSpeed = stat._walkSpeed * 1.5f;
+        crouchSpeed = stat._walkSpeed * 0.6f;
+        curSpeed = stat._walkSpeed;
     }
 
     void Update()
@@ -119,7 +118,7 @@ public class Player : CharacterBase
     private void StopRunning()
     {
         isRun = false;
-        curSpeed = walkSpeed;
+        curSpeed = stat._walkSpeed;
     }
 
     //점프
@@ -162,7 +161,7 @@ public class Player : CharacterBase
         }
         else
         {
-            curSpeed = walkSpeed;
+            curSpeed = stat._walkSpeed;
             col.height = colOriginHeight;
         }
     }

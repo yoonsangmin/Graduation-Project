@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class CharacterBase : MonoBehaviour
 {
+    [SerializeField] protected CharacterStat stat;
+    public CharacterStat _stat { get { return stat; } }
+
     protected Rigidbody rb;
     protected CapsuleCollider col;
     protected Animator ani;
@@ -13,8 +16,6 @@ public class CharacterBase : MonoBehaviour
     [SerializeField] protected Slider hpBar;
 
     [SerializeField] protected float curLife;
-    protected float maxLife;
-    protected float walkSpeed;
 
     protected bool haveDamagedByBullet = false;
     public bool _haveDamagedByBullet { get { return haveDamagedByBullet; } }
@@ -23,12 +24,10 @@ public class CharacterBase : MonoBehaviour
     protected bool isDead = false;
     public bool _isDead { get { return isDead; } }
 
-    protected void SetCharacterStat(float maxLife, float walkSpeed)
+    void Awake()
     {
-        this.maxLife = maxLife;
-        this.curLife = maxLife;
-        hpBar.value = curLife / maxLife;
-        this.walkSpeed = walkSpeed;        
+        curLife = stat._maxLife;
+        hpBar.value = curLife / stat._maxLife;
     }
 
     protected void HpBarLookAtCamera()
@@ -38,8 +37,8 @@ public class CharacterBase : MonoBehaviour
 
     protected void HpReset()
     {
-        curLife = maxLife;
-        hpBar.value = curLife / maxLife;
+        curLife = stat._maxLife;
+        hpBar.value = curLife / stat._maxLife;
     }
 
     private void HaveDamagedByBulletInit() { haveDamagedByBullet = false; }
@@ -76,13 +75,15 @@ public class CharacterBase : MonoBehaviour
 
     private void DownLife(float damage)
     {
+        if (curLife <= 0) return;
+
         curLife -= damage;
-        hpBar.value = curLife / maxLife;
+        hpBar.value = curLife / stat._maxLife;
 
         if (curLife <= 0)
-        {            
+        {
             Dead();
             return;
         }
-    }    
+    }
 }

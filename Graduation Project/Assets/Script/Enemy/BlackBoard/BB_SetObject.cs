@@ -24,7 +24,7 @@ public class BB_SetObject : BasePrimitiveAction
     }
 
     public override TaskStatus OnUpdate()
-    {
+    {        
         return TaskStatus.COMPLETED;
     }
 }
