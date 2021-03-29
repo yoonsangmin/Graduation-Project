@@ -20,8 +20,9 @@ public class BB_EnemyFiring : BasePrimitiveAction
         if (weapon == null || ani == null)
             return TaskStatus.FAILED;
 
-        weapon.Fire();
         ani.SetBool("IsFired", true);
+        weapon.Fire();
+        ani.SetBool("IsFired", false);
 
         return TaskStatus.COMPLETED;
     }

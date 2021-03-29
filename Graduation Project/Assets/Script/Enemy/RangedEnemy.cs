@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class RangedEnemy : Enemy
 {
-    [SerializeField] private EnemyWeaponController weapon = null;
+    //[SerializeField] private EnemyWeaponController weapon = null;
 
     protected override void AnimatorSetting()
     {
         base.AnimatorSetting();
-        ani.SetBool("IsFired", weapon.CanFire());
     }
 }

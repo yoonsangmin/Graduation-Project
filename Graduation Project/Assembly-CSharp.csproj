@@ -116,9 +116,11 @@
     <Compile Include="Assets\Script\Controller\Stage1Controller.cs" />
     <Compile Include="Assets\Script\Controller\UiController.cs" />
     <Compile Include="Assets\Script\Enemy\BlackBoard\BB_ClearValue.cs" />
+    <Compile Include="Assets\Script\Enemy\BlackBoard\BB_HaveNoTarget.cs" />
     <Compile Include="Assets\Script\Enemy\BlackBoard\BB_HaveTarget.cs" />
     <Compile Include="Assets\Script\Enemy\BlackBoard\BB_IsDead.cs" />
     <Compile Include="Assets\Script\Enemy\BlackBoard\BB_IsTargetCloseOrInSight.cs" />
+    <Compile Include="Assets\Script\Enemy\BlackBoard\BB_IsTargetFar.cs" />
     <Compile Include="Assets\Script\Enemy\BlackBoard\BB_SetObject.cs" />
     <Compile Include="Assets\Script\Enemy\BlackBoard\Melee\BB_CanMeleeAttack.cs" />
     <Compile Include="Assets\Script\Enemy\BlackBoard\Melee\BB_MeleeAttack.cs" />

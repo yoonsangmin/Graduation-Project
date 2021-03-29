@@ -17,13 +17,12 @@ public class GameData
 
     public void LoadData()
     {
-        UiController.instance.option.OnSoundVolumeChange(soundVol);
         GameController.instance.Stage1Clear = Stage1Clear;
     }
 
     public void SaveData()
     {
-        soundVol= AudioController.instance._volume;
+        soundVol = AudioController.instance._volume;
         Stage1Clear = GameController.instance.Stage1Clear;
     }
 }

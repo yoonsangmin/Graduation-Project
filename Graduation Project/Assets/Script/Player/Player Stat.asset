@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Player Stat
   m_EditorClassIdentifier: 
   maxLife: 1000
-  walkSpeed: 4
+  walkSpeed: 8

@@ -8,7 +8,7 @@ public class EnemyWeaponController : WeaponController
 
     [SerializeField] private EnemyRangedWeapon rangeWeapon = null;
 
-    void Start()
+    void Awake()
     {
         curRangedWeapon = rangeWeapon;
     }

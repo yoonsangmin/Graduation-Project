@@ -8,7 +8,7 @@ using BBUnity.Conditions;
 
 public class BB_HaveTarget : GOCondition
 {
-    [InParam("Target")]
+    [InParam("Target")]    
     public GameObject target;
 
     public override bool Check()

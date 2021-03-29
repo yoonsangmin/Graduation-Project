@@ -31,8 +31,8 @@ public class Enemy : CharacterBase
 
     protected virtual void AnimatorSetting()
     {
-        ani.SetFloat("Horizontal", enemyAi.velocity.z);
-        ani.SetFloat("Vertical", -enemyAi.velocity.x);
+        ani.SetFloat("Horizontal", enemyAi.velocity.normalized.x);
+        ani.SetFloat("Vertical", -enemyAi.velocity.normalized.z);
         ani.SetBool("HaveDamaged", haveDamagedByBarrel || haveDamagedByBullet);
     }
 

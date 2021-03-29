@@ -3,25 +3,33 @@ using System.Collections.Generic;
 using UnityEngine;
 using Pada1.BBCore;
 using Pada1.BBCore.Tasks;
-using Pada1.BBCore.Framework;
+using BBUnity.Actions;
 
 [Action("MyActions / MeleeAttack")]
 
-public class BB_MeleeAttack : BasePrimitiveAction
+public class BB_MeleeAttack : GOAction
 {
     [InParam("Weapon")]
     public MeleeWeapon weapon;
 
-    [InParam("Animator")]
-    public Animator ani;
+    [InParam("target")]
+    public GameObject target;
+
+    private UnityEngine.AI.NavMeshAgent navAgent;
+
+    public override void OnStart()
+    {
+        navAgent = gameObject.GetComponent<UnityEngine.AI.NavMeshAgent>();        
+        base.OnStart();
+    }
 
     public override TaskStatus OnUpdate()
     {
-        if (weapon == null || ani == null)
+        if (weapon == null)
             return TaskStatus.FAILED;
 
+        navAgent.transform.LookAt(target.transform);
         weapon.Attack();
-        ani.SetBool("IsAttack", true);
 
         return TaskStatus.COMPLETED;
     }

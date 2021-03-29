@@ -7,14 +7,17 @@ public class MeleeWeapon : MonoBehaviour
     [SerializeField] protected MeleeWeaponStat weaponStat = null;
     public MeleeWeaponStat _weaponStat { get { return weaponStat; } }
 
+    [SerializeField] protected Animator ani;
+
     protected string targetObjectName;
 
     //체크 변수
     protected bool isAttack = false;
     public bool _isAttack { get { return isAttack; } }
     public bool CanAttack() { return !_isAttack; }
-    
-    private bool isSwing = false;      
+
+    private bool isSwing = false;
+    public bool _isSwing { get { return isSwing; } }
 
     public void Attack()
     {
@@ -27,30 +30,30 @@ public class MeleeWeapon : MonoBehaviour
     {
         isAttack = true;
 
+        ani.SetTrigger("IsAttackTrigger");
+        ani.SetBool("IsAttack", true);
         yield return new WaitForSeconds(weaponStat._attackStartTime);
         isSwing = true;
-
-        StartCoroutine(HitCoroutine());
+        Hit();
 
         yield return new WaitForSeconds(weaponStat._attackEndTime);
         isSwing = false;
+        ani.SetBool("IsAttack", false);
 
         yield return new WaitForSeconds(weaponStat._attackCoolTime - weaponStat._attackStartTime - weaponStat._attackEndTime);
-        isAttack = false;
+        isAttack = false;        
     }
 
-    private IEnumerator HitCoroutine()
+    private void Hit()
     {
-        while (isSwing == true)
+        if (isSwing == false) return;
+
+        RaycastHit hitInfo;
+        if (Physics.Raycast(transform.position, transform.forward, out hitInfo, weaponStat._range))
         {
-            RaycastHit hitInfo;
-            if (Physics.Raycast(transform.position, transform.forward, out hitInfo, weaponStat._range))
-            {
-                if (hitInfo.collider.gameObject.tag == targetObjectName)
-                    ProcessHiting(hitInfo);
-                isSwing = false;
-            }
-            yield return null;
+            if (hitInfo.collider.gameObject.tag == targetObjectName)
+                ProcessHiting(hitInfo);
+            isSwing = false;
         }
     }
 

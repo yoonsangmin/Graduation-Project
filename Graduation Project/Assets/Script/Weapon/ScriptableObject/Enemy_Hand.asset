@@ -15,6 +15,6 @@ MonoBehaviour:
   weaponName: Hand
   damage: 10
   range: 5
-  attackCoolTime: 2
-  attackStartTime: 0.2
+  attackCoolTime: 3
+  attackStartTime: 0.5
   attackEndTime: 0.5

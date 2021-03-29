@@ -10,13 +10,12 @@ using BBUnity.Actions;
 
 public class BB_ClearValue : BasePrimitiveAction
 {
-    [OutParam("outputValue")]
-    [Help("output variable")]
-    public GameObject output;
+    [InParam("value")]
+    public GameObject input;
 
     public override void OnStart()
     {
-        output = null;
+        input = null;
     }
 
     public override TaskStatus OnUpdate()

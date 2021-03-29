@@ -1922,6 +1922,11 @@ PrefabInstance:
       propertyPath: m_ConnectedAnchor.z
       value: 0.0000018142164
       objectReference: {fileID: 0}
+    - target: {fileID: 1087445930204310403, guid: 889dff4bfc3b87b418060da38b059612,
+        type: 3}
+      propertyPath: ani
+      value: 
+      objectReference: {fileID: 386603197}
     - target: {fileID: 2619829072136639193, guid: 889dff4bfc3b87b418060da38b059612,
         type: 3}
       propertyPath: m_ConnectedAnchor.x
@@ -1955,14 +1960,7 @@ PrefabInstance:
     - target: {fileID: 3583274412641397560, guid: 889dff4bfc3b87b418060da38b059612,
         type: 3}
       propertyPath: m_WarningMessage
-      value: "\nBinding warning: Some generic clip(s) animate transforms that are
-        already bound by a Humanoid avatar. These transforms can only be changed
-        by Humanoid clips.\n\tTransform 'mixamorig5:Hips'\n\tTransform 'mixamorig5:Spine'\n\tTransform
-        'mixamorig5:LeftHandIndex2'\n\tTransform 'mixamorig5:RightHandMiddle2'\n\tTransform
-        'mixamorig5:RightHandRing3'\n\tTransform 'mixamorig5:RightHandIndex1'\n\tTransform
-        'mixamorig5:LeftHandRing2'\n\tTransform 'mixamorig5:LeftLeg'\n\tTransform
-        'mixamorig5:LeftToeBase'\n\tTransform 'mixamorig5:RightHandPinky3'\n\tand
-        more ...\n\tFrom animation clip 'Idle'\n\tFrom animation clip 'attack'"
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3763973147741870981, guid: 889dff4bfc3b87b418060da38b059612,
         type: 3}
@@ -2088,6 +2086,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MeleeEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 7596168557902099537, guid: 889dff4bfc3b87b418060da38b059612,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7689145121352939435, guid: 889dff4bfc3b87b418060da38b059612,
         type: 3}
@@ -7294,6 +7297,12 @@ Transform:
   m_Father: {fileID: 1679167812}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &386603197 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3583274412641397560, guid: 889dff4bfc3b87b418060da38b059612,
+    type: 3}
+  m_PrefabInstance: {fileID: 90496436}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &387925502
 PrefabInstance:
   m_ObjectHideFlags: 0

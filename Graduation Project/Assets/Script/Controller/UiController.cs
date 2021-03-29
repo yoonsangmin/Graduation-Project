@@ -36,15 +36,15 @@ public class UiController : MonoBehaviour
         PlayGame += Player.instance.PlayPlayer;
         PlayGame += MainCamera.instance.PlayCamera;
 
-        //enemys = EnemyController.instance.GetEnemys();
-        //miniMap.SetEnemysCount(enemys[Stage1Controller.instance._enemySummonIndex].Count);
+        enemys = EnemyController.instance.GetEnemys();
+        miniMap.SetEnemysCount(enemys[Stage1Controller.instance._enemySummonIndex].Count);
     }
 
     void Update()
     {
         WeaponUi();
-        // miniMap.MiniMapUpdate(Player.instance.transform, enemys[Stage1Controller.instance._enemySummonIndex]);
-        //Stage1Controller.instance.UpdateQuestView();
+        miniMap.MiniMapUpdate(Player.instance.transform, enemys[Stage1Controller.instance._enemySummonIndex]);
+        Stage1Controller.instance.UpdateQuestView();
         OpenOptionWindow();
     }
 

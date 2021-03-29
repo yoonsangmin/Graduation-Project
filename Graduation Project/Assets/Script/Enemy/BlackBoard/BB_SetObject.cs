@@ -11,11 +11,9 @@ using BBUnity.Actions;
 public class BB_SetObject : BasePrimitiveAction
 {
     [OutParam("outputObject")]
-    [Help("output variable")]
     public GameObject outputObject;
 
     [InParam("inputObject")]
-    [Help("Value")]
     public GameObject inputObject;
 
     public override void OnStart()
@@ -24,7 +22,7 @@ public class BB_SetObject : BasePrimitiveAction
     }
 
     public override TaskStatus OnUpdate()
-    {        
+    {     
         return TaskStatus.COMPLETED;
     }
 }

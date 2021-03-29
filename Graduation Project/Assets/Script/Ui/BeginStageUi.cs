@@ -12,6 +12,11 @@ public class BeginStageUi : MonoBehaviour
     [SerializeField] private List<string> text = new List<string>();
     private int textIndex = 0;
 
+    void Start()
+    {
+        explainText.text = text[textIndex];
+    }
+
     public void NextButton()
     {
         textIndex++;

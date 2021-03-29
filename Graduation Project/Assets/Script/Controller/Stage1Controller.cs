@@ -119,7 +119,7 @@ public class Stage1Controller : MonoBehaviour
     {
         show.SetActive(false);
         nextShow.SetActive(true);
-        nextShowProgressText.text = progressText.text;
+        nextShowProgressText.text = (int)curProgressStep + "/" + (int)maxProgressStep;
         nextShowGoalText.text = goalText.text;
         yield return new WaitForSeconds(1.0f);
 

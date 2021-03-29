@@ -11,6 +11,7 @@ public class Option : MonoBehaviour
 
     void Start()
     {
+        soundSlider.value = DataController.instance.gameDataInstance.soundVol;
         soundSlider.onValueChanged.AddListener(OnSoundVolumeChange);
         gameObject.SetActive(false);
     }
