@@ -114,6 +114,8 @@
     <Compile Include="Assets\Script\Controller\EnemyController.cs" />
     <Compile Include="Assets\Script\Controller\GameController.cs" />
     <Compile Include="Assets\Script\Controller\Stage1Controller.cs" />
+    <Compile Include="Assets\Script\Controller\Stage2Controller.cs" />
+    <Compile Include="Assets\Script\Controller\StageController.cs" />
     <Compile Include="Assets\Script\Controller\UiController.cs" />
     <Compile Include="Assets\Script\Enemy\BlackBoard\BB_ClearValue.cs" />
     <Compile Include="Assets\Script\Enemy\BlackBoard\BB_HaveNoTarget.cs" />
@@ -162,6 +164,7 @@
     <Compile Include="Assets\Script\Weapon\ScriptableObject\MeleeWeaponStat.cs" />
     <Compile Include="Assets\Script\Weapon\ScriptableObject\RangedWeaponStat.cs" />
     <Compile Include="Assets\Script\Weapon\WeaponController.cs" />
+    <Compile Include="Assets\Tutorial Map\Miscellaneous\SceneExplorer\FreeFly.cs" />
     <None Include="Assets\Particle\JMO Assets\WarFX\Shaders\WFX_S Multiply Soft.shader" />
     <None Include="Assets\Particle\JMO Assets\WarFX\Shaders\WFX_S Multiply Soft Scroll.shader" />
     <None Include="Assets\Particle\JMO Assets\WarFX\Shaders\WFX_S Alpha-Specular TintColor.shader" />

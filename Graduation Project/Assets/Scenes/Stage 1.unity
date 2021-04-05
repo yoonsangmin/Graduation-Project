@@ -5103,7 +5103,7 @@ GameObject:
   - component: {fileID: 240298890}
   - component: {fileID: 240298891}
   m_Layer: 0
-  m_Name: Stage1 Controller
+  m_Name: Stage Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5135,18 +5135,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86970299cda36f74391e8082a505470a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyController: {fileID: 549536616}
+  miniMap: {fileID: 625267931}
   show: {fileID: 624329305}
   progressText: {fileID: 660521684}
   remainEnemyText: {fileID: 1090369905}
   goalText: {fileID: 840657198}
-  miniMap: {fileID: 625267931}
-  generator: {fileID: 465744511}
   nextShow: {fileID: 1945936168}
   nextShowGoalText: {fileID: 1819220946}
   nextShowProgressText: {fileID: 1161210951}
   nextShowProgressTitleText: {fileID: 1765018265}
   nextShowBackground: {fileID: 1313593537}
+  generator: {fileID: 465744511}
 --- !u!1001 &241349325
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10255,7 +10254,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletHud: {fileID: 1377019154}
-  miniMap: {fileID: 625267931}
   criticalText: {fileID: 1012950768}
   option: {fileID: 688741506}
 --- !u!1 &493207548

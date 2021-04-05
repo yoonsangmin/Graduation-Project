@@ -19,12 +19,8 @@ public class UiController : MonoBehaviour
     ControllGame StopGame;
     ControllGame PlayGame;
 
-    //참조하기 위한 오브젝트      
-    private Dictionary<int, List<Enemy>> enemys = new Dictionary<int, List<Enemy>>();
-
     //Ui 관련
     [SerializeField] private BulletHud bulletHud = null;
-    [SerializeField] private MiniMap miniMap = null;
     [SerializeField] private CriticalTexts criticalText = null;
     [SerializeField] public Option option = null;
 
@@ -35,16 +31,11 @@ public class UiController : MonoBehaviour
 
         PlayGame += Player.instance.PlayPlayer;
         PlayGame += MainCamera.instance.PlayCamera;
-
-        enemys = EnemyController.instance.GetEnemys();
-        miniMap.SetEnemysCount(enemys[Stage1Controller.instance._enemySummonIndex].Count);
     }
 
     void Update()
     {
-        WeaponUi();
-        miniMap.MiniMapUpdate(Player.instance.transform, enemys[Stage1Controller.instance._enemySummonIndex]);
-        Stage1Controller.instance.UpdateQuestView();
+        WeaponUi();        
         OpenOptionWindow();
     }
 

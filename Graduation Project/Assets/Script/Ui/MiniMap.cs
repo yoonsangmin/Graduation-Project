@@ -38,9 +38,6 @@ public class MiniMap : MonoBehaviour
         //플레이어 이미지
         playerImage.transform.rotation = Quaternion.Euler(0.0f, 0.0f, -(playerPos.eulerAngles.y - 90));
 
-        //오브젝트 이미지
-        
-
         //적 이미지
         for (int i = 0; i < enemysCount; i++)
         {
