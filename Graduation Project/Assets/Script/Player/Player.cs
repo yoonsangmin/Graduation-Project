@@ -38,8 +38,8 @@ public class Player : CharacterBase
     private float colCrouchHeight = 1.0f;
 
     private bool playerStop = false;
-    public void StopPlayer() { playerStop = true; }
-    public void PlayPlayer() { playerStop = false; }
+    public void StopPlayer() { playerStop = true; CrossHair.instance.gameObject.SetActive(false); }
+    public void PlayPlayer() { playerStop = false; CrossHair.instance.gameObject.SetActive(true); }
 
     void Start()
     {

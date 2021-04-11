@@ -23,14 +23,18 @@ public class Stage2Controller : StageController
     private string enemyKillText = "몰려 오는 실험체들을 모두 처치하시오!";
     private string getExperimentalDocumentsText = "실험 문서들을 획득하세요!";
 
+    [SerializeField] private ExperimentDocument experimentDocument = null;
+
     private List<Enemy> enemys = new List<Enemy>();
+
+    private int curEnemys = 0;
 
     void Start()
     {
         nextSceneName = "Begin Stage 3";
         GoNextStep();
         for (int i = 0; i < EnemyController.instance._enemys.Count; i++)
-            enemys.AddRange(EnemyController.instance._enemys[i]);
+            allEnemys += EnemyController.instance._enemys[i].Count;
         SummonEnemy();
     }
 
@@ -47,7 +51,7 @@ public class Stage2Controller : StageController
             dieEnemysCount += EnemyController.instance.HowManyEnemysDie(i);
         dieEnemys = dieEnemysCount;
 
-        if (CanGoToNextStep() == true)
+        if (CanGoToNextStep() == true && curProgressStep == StageStep.Step1)
             GoNextStep();
     }
 
@@ -71,6 +75,7 @@ public class Stage2Controller : StageController
             case StageStep.Step2:
                 goalText.text = getExperimentalDocumentsText;
                 NextShowUi((int)curProgressStep, (int)maxProgressStep);
+                experimentDocument.CanGetExperimentDocumentStart();
                 break;
             case StageStep.End:
                 EndStage();
@@ -91,9 +96,6 @@ public class Stage2Controller : StageController
 
     private IEnumerator SummonEnemyCoroutine()
     {
-        allEnemys = enemys.Count;
-        miniMap.SetEnemysCount(allEnemys);
-
         int summonindex_1 = 0;
         int summonindex_2 = 0;
         while (summonindex_1 < EnemyController.instance._enemys[0].Count || summonindex_2 < EnemyController.instance._enemys[1].Count)
@@ -106,6 +108,10 @@ public class Stage2Controller : StageController
 
             EnemyController.instance._enemys[summonindex[0]][summonindex[1]].gameObject.SetActive(true);
             EnemyController.instance._enemys[summonindex[0]][summonindex[1]].SummonParticlePlay();
+
+            enemys.Add(EnemyController.instance._enemys[summonindex[0]][summonindex[1]]);
+            curEnemys++;
+            miniMap.SetEnemysCount(curEnemys);
             yield return new WaitForSeconds(1.5f);
         }
     }

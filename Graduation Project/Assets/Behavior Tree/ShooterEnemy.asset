@@ -130,7 +130,7 @@ MonoBehaviour:
     in one cycle.\" cardinality=\"0\" hasParent=\"False\">\r\n          <BehaviorTree
     id=\"0\" />\r\n          <ActionNode id=\"126\" />\r\n        </data>\r\n     
     </_data>\r\n    </ActionNode>\r\n    <ConditionEvalNode id=\"186\">\r\n     
-    <_data>\r\n        <data breakpoint=\"0\" selected=\"True\" position=\"699 505\"
+    <_data>\r\n        <data breakpoint=\"0\" selected=\"False\" position=\"699 505\"
     name=\"MyCondition/IsTargetCloseOrInSight\" description=\"Eval\" cardinality=\"1\"
     hasParent=\"True\">\r\n          <BehaviorTree id=\"0\" />\r\n          <ConditionEvalNode
     id=\"186\" />\r\n          <PrioritySelectorNode id=\"100\" />\r\n        </data>\r\n     

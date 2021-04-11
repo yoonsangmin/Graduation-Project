@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class ObjectText : MonoBehaviour
 {
-    private Camera mainCamera;
-
     [SerializeField] private float yPosDistance = 0.0f;
 
     [SerializeField] private GameObject colUi = null;
@@ -16,7 +14,6 @@ public class ObjectText : MonoBehaviour
 
     void Start()
     {
-        mainCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
         colUi.SetActive(false);
         gameObject.SetActive(false);
     }
@@ -24,8 +21,7 @@ public class ObjectText : MonoBehaviour
     void Update()
     {
         if (colUi.activeSelf == true || rootObject.GetComponent<CheckObjectVisible>().isVisible == false ) return;
-
-        Vector3 screenPos = mainCamera.WorldToScreenPoint(rootObject.transform.position + new Vector3(0.0f, yPosDistance, 0.0f));
+        Vector3 screenPos = MainCamera.instance.GetComponent<Camera>().WorldToScreenPoint(rootObject.transform.position + new Vector3(0.0f, yPosDistance, 0.0f));
         transform.position = new Vector3(screenPos.x, screenPos.y, 0.0f);
     }
 

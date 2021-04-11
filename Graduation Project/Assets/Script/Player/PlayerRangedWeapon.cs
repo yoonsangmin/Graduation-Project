@@ -17,7 +17,7 @@ public class PlayerRangedWeapon : RangedWeapon
         if (isZoomMode == false)
             flash.Play();
 
-        Bullets.Fire(MainCamera.instance.gameObject);
+        Bullets.Fire(MainCamera.instance.gameObject, "Player");
 
         MainCamera.instance.DoRecoilAction(weaponStat._recoilActionForce);
     }

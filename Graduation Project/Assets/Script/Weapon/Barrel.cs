@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Barrel : MonoBehaviour
 {
-    private float explosionRange = 2.0f;
+    private float explosionRange = 4.0f;
     private bool isExplosion = false;
     public bool _isExplosion { get { return isExplosion; } }
 
@@ -20,9 +20,15 @@ public class Barrel : MonoBehaviour
         foreach (Collider col in colliders)
         {
             if (col.gameObject.tag == "Player")
+            {
                 col.gameObject.GetComponent<CharacterBase>().ReceiveDamage(50);
+                col.gameObject.GetComponent<CharacterBase>().ExplosionAction(300.0f, gameObject.transform.position, explosionRange*5.0f);
+            }
             if (col.gameObject.tag == "Enemy")
+            {
                 col.gameObject.GetComponent<EnemyHit>().HitByBarrel(50);
+                col.gameObject.GetComponent<EnemyHit>()._enemyMain.GetComponent<CharacterBase>().ExplosionAction(300.0f, gameObject.transform.position, explosionRange * 5.0f);
+            }
         }
 
         explosion.Play();

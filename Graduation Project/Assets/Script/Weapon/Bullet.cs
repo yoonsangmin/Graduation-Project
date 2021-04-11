@@ -34,22 +34,22 @@ public class Bullet : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    public void Fire(GameObject dirObject)
+    public void Fire(GameObject dirObject, string owner)
     {
         RaycastHit hitInfo;
 
         if (Physics.Raycast(dirObject.transform.position, dirObject.transform.forward + new Vector3(Random.Range(-accuracy, accuracy), Random.Range(-accuracy, accuracy), 0), out hitInfo, range))
         {
-            if (hitInfo.collider.gameObject.tag == "Player")
+            if (hitInfo.collider.gameObject.tag == "Player" && owner != "Player")
             {
                 hitInfo.collider.gameObject.GetComponent<CharacterBase>().ReceiveDamage(damage, hitInfo.point);
             }
 
-            else if (hitInfo.collider.gameObject.tag == "Enemy")
+            else if (hitInfo.collider.gameObject.tag == "Enemy" && owner != "Enemy")
             {
                 hitInfo.collider.gameObject.GetComponent<EnemyHit>().HitByBullet(damage, hitInfo.point);
             }
-            else if (hitInfo.collider.gameObject.tag == "EnemyHead")
+            else if (hitInfo.collider.gameObject.tag == "EnemyHead" && owner != "Enemy")
             {
                 UiController.instance.HitCritical();
                 hitInfo.collider.gameObject.GetComponent<EnemyHit>().HitByBullet(damage * 2, hitInfo.point);

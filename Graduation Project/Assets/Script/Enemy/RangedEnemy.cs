@@ -4,10 +4,21 @@ using UnityEngine;
 
 public class RangedEnemy : Enemy
 {
-    //[SerializeField] private EnemyWeaponController weapon = null;
-
-    protected override void AnimatorSetting()
+    override protected void AnimatorSetting()
     {
         base.AnimatorSetting();
+        ani.SetBool("HaveDamaged", haveDamagedByBarrel || haveDamagedByBullet);
+    }
+
+    override protected void Die()
+    {
+        enemyAi.enabled = false;
+        hpBar.gameObject.SetActive(false);
+
+        foreach (Rigidbody rb in rigidBodys)
+            rb.isKinematic = false;
+        ani.enabled = false;
+
+        Invoke("DieToVanish", 5.0f);
     }
 }

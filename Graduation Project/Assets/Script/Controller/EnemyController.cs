@@ -43,7 +43,7 @@ public class EnemyController : MonoBehaviour
                 }
             }
             enemys.Add(i, addEnemys);
-        }
+        }        
     }
 
     public int HowManyEnemysDie(int enemysIndex)

@@ -12,7 +12,7 @@ public class EnemyRangedWeapon : RangedWeapon
         base.Fire();
 
         flash.Play();
-        Bullets.Fire(dirObject);
+        Bullets.Fire(dirObject, "Enemy");
     }
 
     //재장전

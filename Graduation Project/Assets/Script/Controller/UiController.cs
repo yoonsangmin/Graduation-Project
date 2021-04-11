@@ -15,27 +15,16 @@ public class UiController : MonoBehaviour
         }
     }
 
-    private delegate void ControllGame();
-    ControllGame StopGame;
-    ControllGame PlayGame;
-
     //Ui 관련
     [SerializeField] private BulletHud bulletHud = null;
     [SerializeField] private CriticalTexts criticalText = null;
     [SerializeField] public Option option = null;
 
-    void Start()
-    {
-        StopGame += Player.instance.StopPlayer;
-        StopGame += MainCamera.instance.StopCamera;
-
-        PlayGame += Player.instance.PlayPlayer;
-        PlayGame += MainCamera.instance.PlayCamera;
-    }
+    private bool canOptionOpen = true;
 
     void Update()
     {
-        WeaponUi();        
+        WeaponUi();
         OpenOptionWindow();
     }
 
@@ -46,16 +35,19 @@ public class UiController : MonoBehaviour
 
     private void OpenOptionWindow()
     {
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.P) && canOptionOpen == true)
         {
             option.gameObject.SetActive(!option.gameObject.activeSelf);
             if (option.gameObject.activeSelf == true)
-                StopGame();
+                GameController.instance.StopController();
             else
-                PlayGame();
+                GameController.instance.PlayController();
         }
     }
 
     public void HitCritical() { criticalText.HitCritical(); }
     public void ChangeWeaponImage(string name) { bulletHud.ChangeWeapon(name); }
+
+    public void StopUiController() { canOptionOpen = false; }
+    public void PlayUiController() { canOptionOpen = true; }
 }

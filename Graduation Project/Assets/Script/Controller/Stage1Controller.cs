@@ -30,7 +30,6 @@ public class Stage1Controller : StageController
     void Start()
     {
         nextSceneName = "Begin Stage 2";
-        miniMap.SetEnemysCount(EnemyController.instance._enemys[enemySummonIndex].Count);
         goalText.text = enemyKillText;
         GoNextStep();
     }

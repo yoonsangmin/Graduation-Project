@@ -5,20 +5,20 @@ using UnityEngine.AI;
 
 public class Enemy : CharacterBase
 {
-    private NavMeshAgent enemyAi = null;
+    protected NavMeshAgent enemyAi = null;
     public NavMeshAgent _enemyAi { get { return enemyAi; } }
-    private List<Rigidbody> rigidBodys = new List<Rigidbody>();
+    protected List<Rigidbody> rigidBodys = new List<Rigidbody>();
 
     [SerializeField] private ParticleSystem summonParticle = null;
-    [SerializeField] private BulletItem dropItem = null;
+    [SerializeField] protected BulletItem dropItem = null;
 
     void Start()
     {
         enemyAi = GetComponent<NavMeshAgent>();
-        ani = GetComponent<Animator>();        
+        ani = GetComponent<Animator>();
         col = GetComponent<CapsuleCollider>();
         enemyAi.speed = stat._walkSpeed;
-        enemyAi.isStopped = false;
+        rb = GetComponent<Rigidbody>();
 
         dropItem.gameObject.SetActive(false);
     }
@@ -26,33 +26,29 @@ public class Enemy : CharacterBase
     void FixedUpdate()
     {
         AnimatorSetting();
-        HpBarLookAtCamera();
+        if (hpBar != null) HpBarLookAtCamera();
     }
 
     protected virtual void AnimatorSetting()
     {
         ani.SetFloat("Horizontal", enemyAi.velocity.normalized.x);
-        ani.SetFloat("Vertical", -enemyAi.velocity.normalized.z);
-        ani.SetBool("HaveDamaged", haveDamagedByBarrel || haveDamagedByBullet);
+        ani.SetFloat("Vertical", -enemyAi.velocity.normalized.z);        
     }
 
-    private void DieToVanish() { gameObject.SetActive(false); }
+    protected void DieToVanish() { gameObject.SetActive(false); }
 
     override protected void Dead()
-    {        
-        GetComponent<BehaviorExecutor>().enabled = false;
-        RandomDropItem();
+    {
+        GetComponent<BehaviorExecutor>().enabled = false;        
 
         base.Dead();
 
-        enemyAi.enabled = false;
-        hpBar.gameObject.SetActive(false);
+        Die();
+        RandomDropItem();
+    }
 
-        foreach (Rigidbody rb in rigidBodys)
-            rb.isKinematic = false;
-        ani.enabled = false;
-        
-        Invoke("DieToVanish", 5.0f);
+    virtual protected void Die()
+    {
     }
 
     public void AddRigidBody(Rigidbody rb) { rigidBodys.Add(rb); }
@@ -66,6 +62,30 @@ public class Enemy : CharacterBase
         {
             dropItem.gameObject.SetActive(true);
             dropItem.SetDropBulletsNum(Random.Range(5, 20));
+        }
+    }
+
+    public override void ExplosionAction(float force, Vector3 explosionPosition, float explosionRadius)
+    {
+        if (isDead == true) return;
+        enemyAi.updatePosition = false;
+        enemyAi.updateRotation = false;
+        enemyAi.isStopped = true;
+        base.ExplosionAction(force, explosionPosition, explosionRadius);
+        enemyAi.velocity = rb.velocity;
+        StartCoroutine(PushBackCoroutine());
+    }
+
+    private IEnumerator PushBackCoroutine()
+    {
+        enemyAi.velocity = rb.velocity;
+        yield return new WaitForSeconds(1.0f);
+
+        if (isDead == false)
+        {
+            enemyAi.isStopped = false;
+            enemyAi.updatePosition = true;
+            enemyAi.updateRotation = true;
         }
     }
 }

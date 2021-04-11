@@ -20,11 +20,11 @@ public class BulletController : MonoBehaviour
     }
 
     //사격
-    public void Fire(GameObject dirObject)
+    public void Fire(GameObject dirObject, string owner)
     {
         GameObject obj = GetUnusedBullet();
         obj.SetActive(true);
-        obj.GetComponent<Bullet>().Fire(dirObject);
+        obj.GetComponent<Bullet>().Fire(dirObject, owner);
     }
 
     //사용할 수 있는 총알 찾기

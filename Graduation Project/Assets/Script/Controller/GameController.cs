@@ -15,5 +15,28 @@ public class GameController : MonoBehaviour
         }
     }
 
+    public delegate void ControllGame();
+    public ControllGame StopGame;
+    public ControllGame PlayGame;
+
+    public ControllGame StopController;
+    public ControllGame PlayController;
+
     public bool Stage1Clear = false;
+    public bool Stage2Clear = false;
+
+    void Start()
+    {
+        StopController += Player.instance.StopPlayer;
+        StopController += MainCamera.instance.StopCamera;
+
+        PlayController += Player.instance.PlayPlayer;
+        PlayController += MainCamera.instance.PlayCamera;
+
+        StopGame += UiController.instance.StopUiController;
+        StopGame += StopController;
+
+        PlayGame += UiController.instance.PlayUiController;
+        PlayGame += PlayController;
+    }
 }
