@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Stage 2.unity
     guid: c1d3f6d8fe7ecee4eafd268b216894dd
+  - enabled: 1
+    path: Assets/Scenes/Begin Boos Stage.unity
+    guid: 0629fe69d9d33ee4aab4270f439cabed
   m_configObjects: {}

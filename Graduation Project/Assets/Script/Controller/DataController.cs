@@ -60,7 +60,7 @@ public class DataController : MonoBehaviour
 
         string toJsonData = JsonUtility.ToJson(gameData);
         string path = Application.persistentDataPath + gameDataFileName;
-        File.WriteAllText(path, toJsonData);
+        File.WriteAllText(path, toJsonData);        
     }
 
     private void OnApplicationQuit()

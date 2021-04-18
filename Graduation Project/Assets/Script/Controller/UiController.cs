@@ -18,7 +18,9 @@ public class UiController : MonoBehaviour
     //Ui 관련
     [SerializeField] private BulletHud bulletHud = null;
     [SerializeField] private CriticalTexts criticalText = null;
-    [SerializeField] public Option option = null;
+    [SerializeField] private Option option = null;
+    [SerializeField] private PlayerStateUi playerStateUi = null;
+    public PlayerStateUi _playerStateUi { get { return playerStateUi; } }
 
     private bool canOptionOpen = true;
 

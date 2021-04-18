@@ -5,11 +5,13 @@ using UnityEngine;
 public class BoomerEnemy : Enemy
 {
     [SerializeField] private ParticleSystem explosion = null;
+    [SerializeField] private ParticleSystem poison = null;
+
     [SerializeField] private SkinnedMeshRenderer shape = null;
     [SerializeField] private GameObject hitCol = null;
-    [SerializeField] private float readyToBoomTime = 1.0f;    
+    private float readyToBoomTime = 0.5f;
     private float explosionRange = 6.0f;
-    
+
     override protected void AnimatorSetting()
     {
         base.AnimatorSetting();
@@ -23,14 +25,15 @@ public class BoomerEnemy : Enemy
     private IEnumerator BoomCoroutine()
     {
         enemyAi.enabled = false;
-        ani.SetTrigger("BoomTrigger");
+        if (readyToBoomTime > 0)
+            ani.SetTrigger("BoomTrigger");
 
         yield return new WaitForSeconds(readyToBoomTime);
         hitCol.GetComponent<CapsuleCollider>().enabled = false;
-        ani.enabled = false;        
+        ani.enabled = false;
 
         Boom();
-        Invoke("DieToVanish", 5.0f);        
+        Invoke("DieToVanish", 15.0f);
     }
 
     private void Boom()
@@ -47,10 +50,20 @@ public class BoomerEnemy : Enemy
         }
         shape.enabled = false;
         explosion.Play();
+
+        poison.GetComponent<PoisonFog>().StartPoisioning();
+        poison.Play();
     }
 
-    public void BoomAction()
+    public void StartRunState()
     {
+        ani.SetBool("Closed", true);
+        enemyAi.speed = stat._walkSpeed * 5.0f;
+    }
+    
+    public void ImmediateBoom()
+    {
+        readyToBoomTime = 0;
         Dead();
     }
 }

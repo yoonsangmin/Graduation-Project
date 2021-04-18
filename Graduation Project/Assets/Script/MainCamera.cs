@@ -16,6 +16,7 @@ public class MainCamera : MonoBehaviour
     }
 
     [SerializeField] private Transform playerPos;
+    [SerializeField] private MouseSensitivity mouseSensitivityUi = null;
 
     //민감도
     private float sensitivity = 2.0f;
@@ -98,6 +99,16 @@ public class MainCamera : MonoBehaviour
     public void StartCameraZoom() { GetComponent<Camera>().fieldOfView = 30; }
     public void StopCameraZoom() { GetComponent<Camera>().fieldOfView = 90; }
 
-    public void UpMouseSensitivity() { sensitivity++; }
-    public void DownMouseSensitivity() { sensitivity--; }
+    public void UpMouseSensitivity()
+    {
+        if (sensitivity > 3.0f) return;
+        sensitivity += 0.1f;
+        mouseSensitivityUi.ControlMouseSensitivity(sensitivity * 10.0f);
+    }
+    public void DownMouseSensitivity()
+    {
+        if (sensitivity < 0.2f) return;
+        sensitivity -= 0.1f;
+        mouseSensitivityUi.ControlMouseSensitivity(sensitivity * 10.0f);
+    }
 }

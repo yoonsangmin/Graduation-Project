@@ -33,7 +33,29 @@ public class CharacterBase : MonoBehaviour
 
     protected void HpBarLookAtCamera()
     {
-        hpBar.transform.LookAt(MainCamera.instance.transform);
+        if (haveDamagedByBarrel || haveDamagedByBullet)
+        {
+            CancelInvoke("HideHpBar");
+            if (isDead == false)
+            {
+                hpBar.gameObject.SetActive(true);
+                Invoke("HideHpBar", 5.0f);
+            }
+            else
+            {
+                hpBar.gameObject.SetActive(false);
+            }
+        }
+        else
+        {
+            if (hpBar.gameObject.activeSelf == true)
+                hpBar.transform.LookAt(MainCamera.instance.transform);
+        }
+    }
+
+    private void HideHpBar()
+    {
+        hpBar.gameObject.SetActive(false);
     }
 
     protected void HpReset()
@@ -58,21 +80,21 @@ public class CharacterBase : MonoBehaviour
         bloodSpit.transform.rotation = Quaternion.Euler(0, Random.Range(-90.0f, 90.0f), 90.0f);
         bloodSpit.Play();
 
-        DownLife(damage);
-
         haveDamagedByBullet = true;
         if (IsInvoking("HaveDamagedByBulletInit") == true) CancelInvoke("HaveDamagedByBulletInit");
         else Invoke("HaveDamagedByBulletInit", 0.1f);
+
+        DownLife(damage);
     }
 
     //베럴 데미지
     public void ReceiveDamage(float damage)
     {
-        DownLife(damage);
-
         haveDamagedByBarrel = true;
         if (IsInvoking("HaveDamagedByBarrelInit") == true) CancelInvoke("HaveDamagedByBarrelInit");
         else Invoke("HaveDamagedByBarrelInit", 0.1f);
+
+        DownLife(damage);
     }
 
     private void DownLife(float damage)
@@ -83,12 +105,16 @@ public class CharacterBase : MonoBehaviour
         if (hpBar != null)
             hpBar.value = curLife / stat._maxLife;
 
+        LifeFiguresCheck();
+
         if (curLife <= 0)
         {
             Dead();
             return;
         }
     }
+
+    virtual protected void LifeFiguresCheck() { }
 
     virtual public void ExplosionAction(float force, Vector3 explosionPosition, float explosionRadius)
     {

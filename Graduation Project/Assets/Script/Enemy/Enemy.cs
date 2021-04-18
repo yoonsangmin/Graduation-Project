@@ -21,6 +21,8 @@ public class Enemy : CharacterBase
         rb = GetComponent<Rigidbody>();
 
         dropItem.gameObject.SetActive(false);
+        if (hpBar != null)
+            hpBar.gameObject.SetActive(false);
     }
 
     void FixedUpdate()
@@ -32,14 +34,14 @@ public class Enemy : CharacterBase
     protected virtual void AnimatorSetting()
     {
         ani.SetFloat("Horizontal", enemyAi.velocity.normalized.x);
-        ani.SetFloat("Vertical", -enemyAi.velocity.normalized.z);        
+        ani.SetFloat("Vertical", -enemyAi.velocity.normalized.z);
     }
 
     protected void DieToVanish() { gameObject.SetActive(false); }
 
     override protected void Dead()
     {
-        GetComponent<BehaviorExecutor>().enabled = false;        
+        GetComponent<BehaviorExecutor>().enabled = false;
 
         base.Dead();
 

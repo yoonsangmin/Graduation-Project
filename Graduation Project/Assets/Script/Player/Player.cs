@@ -39,7 +39,7 @@ public class Player : CharacterBase
 
     private bool playerStop = false;
     public void StopPlayer() { playerStop = true; CrossHair.instance.gameObject.SetActive(false); }
-    public void PlayPlayer() { playerStop = false; CrossHair.instance.gameObject.SetActive(true); }
+    public void PlayPlayer() { playerStop = false; CrossHair.instance.gameObject.SetActive(true); }    
 
     void Start()
     {
@@ -226,7 +226,19 @@ public class Player : CharacterBase
 
     private void ControlMouseSensitivity()
     {
-        if (Input.GetKeyDown(KeyCode.LeftBracket)) MainCamera.instance.GetComponent<MainCamera>().UpMouseSensitivity();
-        if (Input.GetKeyDown(KeyCode.RightBracket)) MainCamera.instance.GetComponent<MainCamera>().DownMouseSensitivity();
+        if (Input.GetKeyDown(KeyCode.RightBracket)) MainCamera.instance.GetComponent<MainCamera>().UpMouseSensitivity();
+        if (Input.GetKeyDown(KeyCode.LeftBracket)) MainCamera.instance.GetComponent<MainCamera>().DownMouseSensitivity();
+    }
+
+    override protected void LifeFiguresCheck()
+    {
+        if(curLife/stat._maxLife <= 0.2f)
+        {
+            UiController.instance._playerStateUi.StartConditionState(Condition.Moribund);
+        }
+        else
+        {
+            UiController.instance._playerStateUi.EndConditionState(Condition.Moribund);
+        }
     }
 }

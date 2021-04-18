@@ -31,7 +31,7 @@ public class Stage2Controller : StageController
 
     void Start()
     {
-        nextSceneName = "Begin Stage 3";
+        nextSceneName = "Begin Boos Stage";
         GoNextStep();
         for (int i = 0; i < EnemyController.instance._enemys.Count; i++)
             allEnemys += EnemyController.instance._enemys[i].Count;

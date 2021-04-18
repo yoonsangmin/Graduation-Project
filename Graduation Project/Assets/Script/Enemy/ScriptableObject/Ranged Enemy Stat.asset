@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Ranged Enemy Stat
   m_EditorClassIdentifier: 
   maxLife: 100
-  walkSpeed: 2
+  walkSpeed: 2.5

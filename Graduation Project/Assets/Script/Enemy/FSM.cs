@@ -67,7 +67,7 @@ public class FSM : CharacterBase
         enemyAi.isStopped = false;
 
         dropItem.gameObject.SetActive(false);
-        // StartCoroutine(FsmMain());
+        //StartCoroutine(FsmMain());
     }
 
     void Update()

@@ -16,10 +16,14 @@ public class PlayerWeaponController : WeaponController
     [SerializeField] private PlayerRangedWeapon AK = null;
     [SerializeField] private PlayerRangedWeapon Sniper = null;
 
+    [SerializeField] private GameObject gunEntry = null;
+    private Vector3 gunEntryPos;
+
     private bool doWeaponChange = false;
 
     void Awake()
     {
+        gunEntryPos = gunEntry.transform.localPosition;
         curRangedWeapon = AK;    
     }
 
@@ -57,6 +61,7 @@ public class PlayerWeaponController : WeaponController
             curRangedWeapon.gameObject.SetActive(false);
             curRangedWeapon = AK;
             curRangedWeapon.GetComponent<SkinnedMeshRenderer>().enabled = true;
+            gunEntry.transform.localPosition = gunEntryPos;
         }
 
         UiController.instance.ChangeWeaponImage(curRangedWeapon._weaponStat._weaponName);
