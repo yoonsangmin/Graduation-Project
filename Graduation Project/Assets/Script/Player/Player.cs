@@ -19,6 +19,8 @@ public class Player : CharacterBase
     public PlayerWeaponController _weaponController { get { return weaponController; } }
     [SerializeField] private GameObject arm = null;
 
+    [SerializeField] private GameObject deadCam = null;
+
     //이동
     private float curSpeed;
     private float runSpeed;
@@ -39,7 +41,7 @@ public class Player : CharacterBase
 
     private bool playerStop = false;
     public void StopPlayer() { playerStop = true; CrossHair.instance.gameObject.SetActive(false); }
-    public void PlayPlayer() { playerStop = false; CrossHair.instance.gameObject.SetActive(true); }    
+    public void PlayPlayer() { playerStop = false; CrossHair.instance.gameObject.SetActive(true); }
 
     void Start()
     {
@@ -52,11 +54,13 @@ public class Player : CharacterBase
         runSpeed = stat._walkSpeed * 1.5f;
         crouchSpeed = stat._walkSpeed * 0.6f;
         curSpeed = stat._walkSpeed;
+
+        deadCam.SetActive(false);
     }
 
     void Update()
     {
-        if (playerStop) return;
+        if (playerStop == true || isDead == true) return;
 
         //플레이어 이동      
         PlayerRotation();
@@ -232,7 +236,7 @@ public class Player : CharacterBase
 
     override protected void LifeFiguresCheck()
     {
-        if(curLife/stat._maxLife <= 0.2f)
+        if (curLife / stat._maxLife <= 0.2f)
         {
             UiController.instance._playerStateUi.StartConditionState(Condition.Moribund);
         }
@@ -240,5 +244,27 @@ public class Player : CharacterBase
         {
             UiController.instance._playerStateUi.EndConditionState(Condition.Moribund);
         }
+    }
+
+    override protected void Dead()
+    {
+        base.Dead();
+
+        StartCoroutine(PlayerDieCameraMotionCoroutine());
+    }
+
+    private IEnumerator PlayerDieCameraMotionCoroutine()
+    {
+        deadCam.SetActive(true);
+        deadCam.transform.position = gameObject.transform.position + new Vector3(0.0f, 2.0f, -0.5f);
+        deadCam.transform.rotation = gameObject.transform.rotation * Quaternion.Euler(new Vector3(60.0f, 0.0f, 0.0f));
+
+        while (deadCam.transform.position.y < 3.0f)
+        {
+            deadCam.transform.position += new Vector3(0.0f, 0.01f, 0.0f);
+            yield return null;
+        }
+
+        UiController.instance._playerDeadUi.PlayerDeadUiOn();
     }
 }

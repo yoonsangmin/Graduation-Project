@@ -38,7 +38,7 @@ public class MainCamera : MonoBehaviour
 
     void Update()
     {
-        if (cameraStop == true) return;
+        if (cameraStop == true || Player.instance._isDead == true) return;
         CameraMove();
     }
 

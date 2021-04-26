@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UiController : MonoBehaviour
 {
@@ -21,6 +22,8 @@ public class UiController : MonoBehaviour
     [SerializeField] private Option option = null;
     [SerializeField] private PlayerStateUi playerStateUi = null;
     public PlayerStateUi _playerStateUi { get { return playerStateUi; } }
+    [SerializeField] private PlayerDead playerDeadUi = null;
+    public PlayerDead _playerDeadUi { get { return playerDeadUi; } }
 
     private bool canOptionOpen = true;
 
@@ -52,4 +55,32 @@ public class UiController : MonoBehaviour
 
     public void StopUiController() { canOptionOpen = false; }
     public void PlayUiController() { canOptionOpen = true; }
+
+    public IEnumerator ImageAlphaColorChangeCoroutine(Image changeImage, float goalValue, float changeValue)
+    {
+        Color temp = changeImage.color;
+        temp.a = 0.0f;
+        changeImage.color = temp;
+
+        while (temp.a < goalValue)
+        {            
+            temp.a += changeValue;
+            changeImage.color = temp;
+            yield return null;
+        }        
+    }
+
+    public IEnumerator TextAlphaColorChangeCoroutine(Text changeText, float goalValue, float changeValue)
+    {
+        Color temp = changeText.color;
+        temp.a = 0.0f;
+        changeText.color = temp;
+
+        while (temp.a < goalValue)
+        {
+            temp.a += changeValue;
+            changeText.color = temp;
+            yield return null;
+        }
+    }
 }

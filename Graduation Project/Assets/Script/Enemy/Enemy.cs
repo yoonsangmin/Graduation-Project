@@ -28,13 +28,18 @@ public class Enemy : CharacterBase
     void FixedUpdate()
     {
         AnimatorSetting();
-        if (hpBar != null) HpBarLookAtCamera();
+        HpBarSetting();
     }
 
     protected virtual void AnimatorSetting()
     {
         ani.SetFloat("Horizontal", enemyAi.velocity.normalized.x);
         ani.SetFloat("Vertical", -enemyAi.velocity.normalized.z);
+    }
+
+    virtual protected void HpBarSetting()
+    {
+        if (hpBar != null) HpBarLookAtCamera();
     }
 
     protected void DieToVanish() { gameObject.SetActive(false); }

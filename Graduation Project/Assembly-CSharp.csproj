@@ -128,12 +128,19 @@
     <Compile Include="Assets\Script\Enemy\BlackBoard\BB_SetObjectPos.cs" />
     <Compile Include="Assets\Script\Enemy\BlackBoard\Boom\BB_ImmediateBoom.cs" />
     <Compile Include="Assets\Script\Enemy\BlackBoard\Boom\BB_StartRunState.cs" />
+    <Compile Include="Assets\Script\Enemy\BlackBoard\Boss\BB_AcidSpit.cs" />
+    <Compile Include="Assets\Script\Enemy\BlackBoard\Boss\BB_CanNewPatternSelect.cs" />
+    <Compile Include="Assets\Script\Enemy\BlackBoard\Boss\BB_DashAttack.cs" />
+    <Compile Include="Assets\Script\Enemy\BlackBoard\Boss\BB_JumpAttack.cs" />
+    <Compile Include="Assets\Script\Enemy\BlackBoard\Boss\BB_SelectPattern.cs" />
+    <Compile Include="Assets\Script\Enemy\BlackBoard\Boss\BB_WhatPattern.cs" />
     <Compile Include="Assets\Script\Enemy\BlackBoard\Melee\BB_CanMeleeAttack.cs" />
     <Compile Include="Assets\Script\Enemy\BlackBoard\Melee\BB_MeleeAttack.cs" />
     <Compile Include="Assets\Script\Enemy\BlackBoard\Range\BB_Avoid.cs" />
     <Compile Include="Assets\Script\Enemy\BlackBoard\Range\BB_CanFire.cs" />
     <Compile Include="Assets\Script\Enemy\BlackBoard\Range\BB_EnemyFiring.cs" />
     <Compile Include="Assets\Script\Enemy\BoomerEnemy.cs" />
+    <Compile Include="Assets\Script\Enemy\BossEnemy.cs" />
     <Compile Include="Assets\Script\Enemy\Enemy.cs" />
     <Compile Include="Assets\Script\Enemy\EnemyHit.cs" />
     <Compile Include="Assets\Script\Enemy\EnemyMeleeWeapon.cs" />
@@ -164,6 +171,7 @@
     <Compile Include="Assets\Script\Ui\MouseSensitivity.cs" />
     <Compile Include="Assets\Script\Ui\ObjectText.cs" />
     <Compile Include="Assets\Script\Ui\Option.cs" />
+    <Compile Include="Assets\Script\Ui\PlayerDead.cs" />
     <Compile Include="Assets\Script\Ui\PlayerStateUi.cs" />
     <Compile Include="Assets\Script\Ui\TitleUi.cs" />
     <Compile Include="Assets\Script\Weapon\Barrel.cs" />
