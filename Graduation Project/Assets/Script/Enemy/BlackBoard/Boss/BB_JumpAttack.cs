@@ -9,23 +9,25 @@ using BBUnity.Actions;
 
 public class BB_JumpAttack : GOAction
 {
-    //[InParam("Boss Enemy")]
-    //public BossE weapon;
-
     [InParam("target")]
     public GameObject target;
+
+    [InParam("Boss Enemy")]
+    public BossEnemy boss;
 
     private UnityEngine.AI.NavMeshAgent navAgent;
 
     public override void OnStart()
     {
         navAgent = gameObject.GetComponent<UnityEngine.AI.NavMeshAgent>();
+        boss.JumpAttackStart();
+        //navAgent.velocity = boss.aa(navAgent.transform.position, target.transform.position, 45.0f);
         base.OnStart();
     }
 
     public override TaskStatus OnUpdate()
     {
-        //공격 중
+
         return TaskStatus.RUNNING;
         //공격 끝
         return TaskStatus.COMPLETED;

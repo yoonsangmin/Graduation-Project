@@ -132,6 +132,7 @@
     <Compile Include="Assets\Script\Enemy\BlackBoard\Boss\BB_CanNewPatternSelect.cs" />
     <Compile Include="Assets\Script\Enemy\BlackBoard\Boss\BB_DashAttack.cs" />
     <Compile Include="Assets\Script\Enemy\BlackBoard\Boss\BB_JumpAttack.cs" />
+    <Compile Include="Assets\Script\Enemy\BlackBoard\Boss\BB_Rest.cs" />
     <Compile Include="Assets\Script\Enemy\BlackBoard\Boss\BB_SelectPattern.cs" />
     <Compile Include="Assets\Script\Enemy\BlackBoard\Boss\BB_WhatPattern.cs" />
     <Compile Include="Assets\Script\Enemy\BlackBoard\Melee\BB_CanMeleeAttack.cs" />
@@ -140,6 +141,7 @@
     <Compile Include="Assets\Script\Enemy\BlackBoard\Range\BB_CanFire.cs" />
     <Compile Include="Assets\Script\Enemy\BlackBoard\Range\BB_EnemyFiring.cs" />
     <Compile Include="Assets\Script\Enemy\BoomerEnemy.cs" />
+    <Compile Include="Assets\Script\Enemy\BossDamageCol.cs" />
     <Compile Include="Assets\Script\Enemy\BossEnemy.cs" />
     <Compile Include="Assets\Script\Enemy\Enemy.cs" />
     <Compile Include="Assets\Script\Enemy\EnemyHit.cs" />

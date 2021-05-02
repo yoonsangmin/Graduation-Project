@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Palyer_Sniper
   m_EditorClassIdentifier: 
   weaponName: Sniper
-  damage: 60
+  damage: 200
   range: 120
   speed: 150
   accuracy: 0.002

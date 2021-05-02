@@ -51,9 +51,9 @@ public class Player : CharacterBase
 
         colOriginHeight = col.height;
 
-        runSpeed = stat._walkSpeed * 1.5f;
-        crouchSpeed = stat._walkSpeed * 0.6f;
         curSpeed = stat._walkSpeed;
+        runSpeed = curSpeed * 1.5f;
+        crouchSpeed = curSpeed * 0.6f;
 
         deadCam.SetActive(false);
     }

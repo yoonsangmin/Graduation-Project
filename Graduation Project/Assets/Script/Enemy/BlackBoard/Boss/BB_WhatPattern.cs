@@ -8,14 +8,14 @@ using BBUnity.Conditions;
 
 public class BB_WhatPattern : GOCondition
 {
-    [InParam("Cur Pattern")]
-    public BossAttackPattern curPattern;
+    [InParam("Boss Enemy")]
+    public BossEnemy boss;
 
     [InParam("Goal Pattern")]
     public BossAttackPattern goalPattern;
 
     public override bool Check()
     {
-        return curPattern == goalPattern;
+        return boss.curPattern == goalPattern;
     }
 }

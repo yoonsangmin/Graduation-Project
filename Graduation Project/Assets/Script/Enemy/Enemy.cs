@@ -20,7 +20,8 @@ public class Enemy : CharacterBase
         enemyAi.speed = stat._walkSpeed;
         rb = GetComponent<Rigidbody>();
 
-        dropItem.gameObject.SetActive(false);
+        if (dropItem != null)
+            dropItem.gameObject.SetActive(false);
         if (hpBar != null)
             hpBar.gameObject.SetActive(false);
     }
@@ -51,7 +52,7 @@ public class Enemy : CharacterBase
         base.Dead();
 
         Die();
-        RandomDropItem();
+        if (dropItem != null) RandomDropItem();
     }
 
     virtual protected void Die()

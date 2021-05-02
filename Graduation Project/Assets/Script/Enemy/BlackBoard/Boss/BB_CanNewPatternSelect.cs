@@ -8,11 +8,11 @@ using BBUnity.Conditions;
 
 public class BB_CanNewPatternSelect : GOCondition
 {
-    [InParam("Is Pattern End")]
-    public bool isPatternEnd;
+    [InParam("Boss Enemy")]
+    public BossEnemy boss;
 
     public override bool Check()
     {
-        return isPatternEnd;
+        return boss._canPatternSelect;
     }
 }

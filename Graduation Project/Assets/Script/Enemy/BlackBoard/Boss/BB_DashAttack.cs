@@ -9,25 +9,40 @@ using BBUnity.Actions;
 
 public class BB_DashAttack : GOAction
 {
-    //[InParam("Boss Enemy")]
-    //public BossE weapon;
-
     [InParam("target")]
     public GameObject target;
 
+    [InParam("Boss Enemy")]
+    public BossEnemy boss;
+
     private UnityEngine.AI.NavMeshAgent navAgent;
+    private Vector3 goalPos;
 
     public override void OnStart()
     {
         navAgent = gameObject.GetComponent<UnityEngine.AI.NavMeshAgent>();
+        if (boss._isPatternEnd == true)
+        {
+            Vector3 dir = (target.transform.position - navAgent.transform.position).normalized;
+            goalPos = target.transform.position + dir * 1.2f;
+        }
         base.OnStart();
     }
 
     public override TaskStatus OnUpdate()
     {
-        //공격 중
+        if (boss._isPatternEnd == true)
+        {
+            boss.DashAttackStart();
+            navAgent.SetDestination(goalPos);
+        }
+
+        if (!navAgent.pathPending && navAgent.remainingDistance <= navAgent.stoppingDistance)
+        {
+            boss.DashAttackEnd();
+            return TaskStatus.COMPLETED;
+        }
+
         return TaskStatus.RUNNING;
-        //공격 끝
-        return TaskStatus.COMPLETED;
     }
 }
