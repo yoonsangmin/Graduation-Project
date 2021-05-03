@@ -188,9 +188,10 @@
     <None Include="Assets\Particle\JMO Assets\WarFX\Shaders\WFX_S Multiply Soft.shader" />
     <None Include="Assets\Particle\JMO Assets\WarFX\Shaders\WFX_S Multiply Soft Scroll.shader" />
     <None Include="Assets\Particle\JMO Assets\WarFX\Shaders\WFX_S Alpha-Specular TintColor.shader" />
-    <None Include="Assets\Weapon\AKM_rig\Credits.txt" />
+    <None Include="Assets\Player Weapon\AKM_rig\Credits.txt" />
     <None Include="Assets\Particle\EffectExamples\Misc Effects\Prefabs\Readme_Dissolve_Respawn_.txt" />
     <None Include="Assets\Particle\JMO Assets\WarFX\Shaders\WFX_S Add Scroll.shader" />
+    <None Include="Assets\Audio\ZombieHorrorPackageFree\Note.txt" />
     <None Include="Assets\Particle\JMO Assets\WarFX\Shaders\WFX_S Particle Add A8.shader" />
     <None Include="Assets\Particle\EffectExamples\Magic Effects\Shaders\Ice.shader" />
     <None Include="Assets\Particle\JMO Assets\WarFX\Shaders\WFX_S Smoke Scroll.shader" />
