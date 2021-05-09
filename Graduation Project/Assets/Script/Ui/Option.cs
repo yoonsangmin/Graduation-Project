@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Option : MonoBehaviour
 {
@@ -39,5 +40,15 @@ public class Option : MonoBehaviour
     public void SaveGame()
     {
         DataController.instance.SaveData();
+    }
+
+    public void BackToTitle()
+    {
+        SceneManager.LoadScene("Title");
+    }
+
+    public void StartGame()
+    {
+        SceneManager.LoadScene("Begin Stage 1");
     }
 }

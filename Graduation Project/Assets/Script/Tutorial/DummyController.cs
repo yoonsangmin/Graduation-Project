@@ -17,8 +17,8 @@ public class DummyController : MonoBehaviour
 
     IEnumerator RevivalCoroutine(GameObject dummy)
     {
-        dummy.SetActive(false);
         dummy.GetComponent<Dummy>().StartRevival();
+        dummy.SetActive(false);        
         yield return new WaitForSeconds(revivalTime);
 
         dummy.SetActive(true);

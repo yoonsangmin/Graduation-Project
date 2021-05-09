@@ -109,6 +109,7 @@ public class CharacterBase : MonoBehaviour
 
         if (curLife <= 0)
         {
+            curLife = 0;
             Dead();
             return;
         }

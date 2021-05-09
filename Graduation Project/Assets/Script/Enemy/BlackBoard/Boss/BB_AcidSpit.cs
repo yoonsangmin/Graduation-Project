@@ -16,21 +16,22 @@ public class BB_AcidSpit : GOAction
     public BossEnemy boss;
 
     private UnityEngine.AI.NavMeshAgent navAgent;
-    private float time;
+    private float dist;
 
     public override void OnStart()
     {
         navAgent = gameObject.GetComponent<UnityEngine.AI.NavMeshAgent>();
-        time = 7.0f;
-        boss.AcidAttackStart();
+        if (boss._isPatternEnd == true)
+        {
+            dist = 7.0f;
+            boss.AcidAttackStart();
+        }
         base.OnStart();
     }
 
     public override TaskStatus OnUpdate()
     {
-        time -= Time.deltaTime;
-
-        if (time > 0.0f)
+        if (dist >= Vector3.Distance(target.transform.position, navAgent.transform.position))
         {
             navAgent.transform.LookAt(target.transform);
             return TaskStatus.RUNNING;

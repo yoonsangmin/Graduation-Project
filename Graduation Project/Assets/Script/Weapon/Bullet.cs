@@ -30,7 +30,7 @@ public class Bullet : MonoBehaviour
 
     private void Vanish()
     {
-        gameObject.transform.SetParent(parent);        
+        gameObject.transform.SetParent(parent);
         gameObject.SetActive(false);
     }
 
@@ -45,14 +45,25 @@ public class Bullet : MonoBehaviour
                 hitInfo.collider.gameObject.GetComponent<CharacterBase>().ReceiveDamage(damage, hitInfo.point);
             }
 
+            else if (hitInfo.collider.gameObject.tag == "Boss" && owner != "Boss")
+            {
+                hitInfo.collider.gameObject.GetComponent<Enemy>().ReceiveDamage(damage, hitInfo.point);
+            }
+
             else if (hitInfo.collider.gameObject.tag == "Enemy" && owner != "Enemy")
             {
                 hitInfo.collider.gameObject.GetComponent<EnemyHit>().HitByBullet(damage, hitInfo.point);
             }
+
             else if (hitInfo.collider.gameObject.tag == "EnemyHead" && owner != "Enemy")
             {
                 UiController.instance.HitCritical();
                 hitInfo.collider.gameObject.GetComponent<EnemyHit>().HitByBullet(damage * 2, hitInfo.point);
+            }
+
+            else if (hitInfo.collider.gameObject.tag == "Dummy")
+            {
+                hitInfo.collider.gameObject.GetComponent<Dummy>().ReceiveDamage(damage, hitInfo.point);
             }
 
             else if (hitInfo.collider.gameObject.tag == "Barrel")

@@ -110,6 +110,7 @@
     <Compile Include="Assets\Script\Character Base\CharacterBase.cs" />
     <Compile Include="Assets\Script\Character Base\CharacterStat.cs" />
     <Compile Include="Assets\Script\Controller\AudioController.cs" />
+    <Compile Include="Assets\Script\Controller\BossStageController.cs" />
     <Compile Include="Assets\Script\Controller\DataController.cs" />
     <Compile Include="Assets\Script\Controller\EnemyController.cs" />
     <Compile Include="Assets\Script\Controller\GameController.cs" />
@@ -141,8 +142,8 @@
     <Compile Include="Assets\Script\Enemy\BlackBoard\Range\BB_CanFire.cs" />
     <Compile Include="Assets\Script\Enemy\BlackBoard\Range\BB_EnemyFiring.cs" />
     <Compile Include="Assets\Script\Enemy\BoomerEnemy.cs" />
-    <Compile Include="Assets\Script\Enemy\BossDamageCol.cs" />
     <Compile Include="Assets\Script\Enemy\BossEnemy.cs" />
+    <Compile Include="Assets\Script\Enemy\BossPhysicsDamageCol.cs" />
     <Compile Include="Assets\Script\Enemy\Enemy.cs" />
     <Compile Include="Assets\Script\Enemy\EnemyHit.cs" />
     <Compile Include="Assets\Script\Enemy\EnemyMeleeWeapon.cs" />
@@ -156,13 +157,14 @@
     <Compile Include="Assets\Script\Object\CheckObjectVisible.cs" />
     <Compile Include="Assets\Script\Object\ExperimentDocument.cs" />
     <Compile Include="Assets\Script\Object\Generator.cs" />
+    <Compile Include="Assets\Script\Object\LabRoom.cs" />
+    <Compile Include="Assets\Script\Object\OutDoor.cs" />
     <Compile Include="Assets\Script\Object\Stage1NextStepArea.cs" />
     <Compile Include="Assets\Script\Particle\PoisonFog.cs" />
     <Compile Include="Assets\Script\Player\CrossHair.cs" />
     <Compile Include="Assets\Script\Player\Player.cs" />
     <Compile Include="Assets\Script\Player\PlayerRangedWeapon.cs" />
     <Compile Include="Assets\Script\Player\PlayerWeaponController.cs" />
-    <Compile Include="Assets\Script\Tutorial\BarrelController.cs" />
     <Compile Include="Assets\Script\Tutorial\Dummy.cs" />
     <Compile Include="Assets\Script\Tutorial\DummyController.cs" />
     <Compile Include="Assets\Script\Ui\BeginStageUi.cs" />

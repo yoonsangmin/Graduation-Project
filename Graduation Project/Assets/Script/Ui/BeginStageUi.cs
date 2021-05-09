@@ -14,6 +14,8 @@ public class BeginStageUi : MonoBehaviour
 
     void Start()
     {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         explainText.text = text[textIndex];
     }
 

@@ -98,11 +98,11 @@ public class RangedWeapon : MonoBehaviour
     public bool IsTargerPointOfSight(GameObject startPoint, string targetTagName)
     {
         RaycastHit hitInfo;
-        
-        if (Physics.Raycast(startPoint.transform.position, startPoint.transform.forward + new Vector3(Random.Range(-weaponStat._accuracy, weaponStat._accuracy), Random.Range(-weaponStat._accuracy, weaponStat._accuracy), 0), out hitInfo, weaponStat._range))
+
+        if (Physics.Raycast(startPoint.transform.position, startPoint.transform.forward, out hitInfo, weaponStat._range))
         {
             if (hitInfo.collider.gameObject.tag.Contains(targetTagName))
-                return true;            
+                return true;
         }
         return false;
     }

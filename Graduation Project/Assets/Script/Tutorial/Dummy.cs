@@ -1,14 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Dummy : CharacterBase
 {
     private bool isRevivaling = false;
 
-    void Update()
+    private void Update()
     {
-        HpBarLookAtCamera();
+        hpBar.transform.LookAt(MainCamera.instance.transform);
     }
 
     public bool NeedRevivaling() { return (curLife <= 0) && isRevivaling == false; }

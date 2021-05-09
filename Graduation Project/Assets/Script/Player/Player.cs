@@ -72,6 +72,7 @@ public class Player : CharacterBase
 
         //사격
         CrossHair.instance.IsEnemyLocateCrosshair(weaponController._curRangedWeapon.IsTargerPointOfSight(MainCamera.instance.gameObject, "Enemy"));
+        CrossHair.instance.IsEnemyLocateCrosshair(weaponController._curRangedWeapon.IsTargerPointOfSight(MainCamera.instance.gameObject, "Dummy"));
         WeaponChange();
         Fire();
         Reload();
@@ -255,13 +256,15 @@ public class Player : CharacterBase
 
     private IEnumerator PlayerDieCameraMotionCoroutine()
     {
+        GameController.instance.StopGame();
+        arm.SetActive(false);
         deadCam.SetActive(true);
         deadCam.transform.position = gameObject.transform.position + new Vector3(0.0f, 2.0f, -0.5f);
         deadCam.transform.rotation = gameObject.transform.rotation * Quaternion.Euler(new Vector3(60.0f, 0.0f, 0.0f));
 
         while (deadCam.transform.position.y < 3.0f)
         {
-            deadCam.transform.position += new Vector3(0.0f, 0.01f, 0.0f);
+            deadCam.transform.position += new Vector3(0.0f, 0.001f, 0.0f);
             yield return null;
         }
 

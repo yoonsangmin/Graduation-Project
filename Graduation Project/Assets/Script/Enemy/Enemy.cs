@@ -22,7 +22,7 @@ public class Enemy : CharacterBase
 
         if (dropItem != null)
             dropItem.gameObject.SetActive(false);
-        if (hpBar != null)
+        if (hpBar != null && gameObject.tag != "Boss")
             hpBar.gameObject.SetActive(false);
     }
 

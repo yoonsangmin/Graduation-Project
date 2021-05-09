@@ -12,6 +12,8 @@ TagManager:
   - FxTemporaire
   - Effect
   - EnemyHead
+  - Boss
+  - Dummy
   layers:
   - Default
   - TransparentFX

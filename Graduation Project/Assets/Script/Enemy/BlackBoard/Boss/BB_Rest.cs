@@ -24,7 +24,7 @@ public class BB_Rest : GOAction
         if (boss._isPatternEnd == true)
         {
             boss.PatternStart();
-            time = 5.0f;
+            time = 2.0f;
         }
 
         base.OnStart();
