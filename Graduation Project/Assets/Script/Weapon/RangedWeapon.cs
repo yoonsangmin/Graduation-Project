@@ -8,7 +8,6 @@ public class RangedWeapon : MonoBehaviour
     public RangedWeaponStat _weaponStat { get { return weaponStat; } }
 
     [SerializeField] protected ParticleSystem flash;
-    protected AudioClip attackSound;
 
     //사격 속도    
     protected float curFireCooltime;
@@ -59,29 +58,26 @@ public class RangedWeapon : MonoBehaviour
     //재장전 코루틴
     protected IEnumerator ReloadCoroutine()
     {
-        if (curBulletInBag > 0)
+        isReload = true;
+
+        yield return new WaitForSeconds(weaponStat._reloadTime);
+
+        //총알이있을때 장전
+        curBulletInBag += curBulletInMagazine;
+
+        if (curBulletInBag >= weaponStat._maxBulletInMagazine)
         {
-            isReload = true;
-
-            yield return new WaitForSeconds(weaponStat._reloadTime);
-
-            //총알이있을때 장전
-            curBulletInBag += curBulletInMagazine;
-
-            if (curBulletInBag >= weaponStat._maxBulletInMagazine)
-            {
-                curBulletInMagazine = weaponStat._maxBulletInMagazine;
-                curBulletInBag -= weaponStat._maxBulletInMagazine;
-            }
-            //현재 가지고 있는 총알의 개수가 탄창을 가득 채울수 없다면
-            else
-            {
-                curBulletInMagazine = curBulletInBag;
-                curBulletInBag = 0;
-            }
-
-            isReload = false;
+            curBulletInMagazine = weaponStat._maxBulletInMagazine;
+            curBulletInBag -= weaponStat._maxBulletInMagazine;
         }
+        //현재 가지고 있는 총알의 개수가 탄창을 가득 채울수 없다면
+        else
+        {
+            curBulletInMagazine = curBulletInBag;
+            curBulletInBag = 0;
+        }
+
+        isReload = false;
     }
 
     //사격 가능여부
@@ -95,14 +91,15 @@ public class RangedWeapon : MonoBehaviour
             curBulletInBag = weaponStat._maxBulletInBag;
     }
 
-    public bool IsTargerPointOfSight(GameObject startPoint, string targetTagName)
+    public bool IsTargerPointOfSight(GameObject startPoint, List<string> targetTagNames)
     {
         RaycastHit hitInfo;
 
         if (Physics.Raycast(startPoint.transform.position, startPoint.transform.forward, out hitInfo, weaponStat._range))
         {
-            if (hitInfo.collider.gameObject.tag.Contains(targetTagName))
-                return true;
+            foreach (var targetTagName in targetTagNames)
+                if (hitInfo.collider.gameObject.tag.Contains(targetTagName))
+                    return true;
         }
         return false;
     }

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BoomerEnemy : Enemy
 {
+    [SerializeField] private AudioClip explosionAudio = null;
+
     [SerializeField] private ParticleSystem explosion = null;
     [SerializeField] private ParticleSystem poison = null;
 
@@ -50,6 +52,7 @@ public class BoomerEnemy : Enemy
         }
         shape.enabled = false;
         explosion.Play();
+        audioSource.PlayOneShot(explosionAudio);
 
         poison.GetComponent<PoisonFog>().StartPoisioning();
         poison.Play();

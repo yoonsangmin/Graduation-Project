@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class MeleeWeapon : MonoBehaviour
 {
+    protected AudioSource audioSource = null;
+    [SerializeField] protected AudioClip attackAudio = null;
+
     [SerializeField] protected MeleeWeaponStat weaponStat = null;
     public MeleeWeaponStat _weaponStat { get { return weaponStat; } }
 
@@ -35,6 +38,7 @@ public class MeleeWeapon : MonoBehaviour
         yield return new WaitForSeconds(weaponStat._attackStartTime);
         isSwing = true;
         Hit();
+        audioSource.PlayOneShot(attackAudio);
 
         yield return new WaitForSeconds(weaponStat._attackEndTime);
         isSwing = false;

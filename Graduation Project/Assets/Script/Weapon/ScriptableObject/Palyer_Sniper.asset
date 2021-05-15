@@ -16,7 +16,7 @@ MonoBehaviour:
   damage: 200
   range: 120
   speed: 150
-  accuracy: 0.002
+  accuracy: 0
   fireCooltime: 1
   reloadTime: 3
   recoilActionForce: 10

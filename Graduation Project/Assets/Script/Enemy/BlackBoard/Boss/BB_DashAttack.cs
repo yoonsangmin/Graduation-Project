@@ -24,7 +24,7 @@ public class BB_DashAttack : GOAction
         if (boss._isPatternEnd == true)
         {
             Vector3 dir = (target.transform.position - navAgent.transform.position).normalized;
-            goalPos = target.transform.position + dir * 10.0f;
+            goalPos = target.transform.position + dir * 5.0f;
         }
         base.OnStart();
     }

@@ -12,7 +12,7 @@ public class Option : MonoBehaviour
 
     void Start()
     {
-        soundSlider.value = DataController.instance.gameDataInstance.soundVol;
+        soundSlider.value = 0.5f;
         soundSlider.onValueChanged.AddListener(OnSoundVolumeChange);
         gameObject.SetActive(false);
     }
@@ -30,6 +30,7 @@ public class Option : MonoBehaviour
     public void GetBack()
     {
         gameObject.SetActive(false);
+        GameController.instance.PlayController();
     }
 
     public void GameOver()

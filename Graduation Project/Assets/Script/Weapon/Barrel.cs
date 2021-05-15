@@ -10,6 +10,14 @@ public class Barrel : MonoBehaviour
 
     [SerializeField] private ParticleSystem explosion = null;
 
+    private AudioSource audioSource = null;
+    [SerializeField] private AudioClip explsionAudio = null;
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
     public void Explosion()
     {
         gameObject.GetComponent<MeshRenderer>().enabled = false;
@@ -22,7 +30,7 @@ public class Barrel : MonoBehaviour
             if (col.gameObject.tag == "Player")
             {
                 col.gameObject.GetComponent<CharacterBase>().ReceiveDamage(50);
-                col.gameObject.GetComponent<CharacterBase>().ExplosionAction(300.0f, gameObject.transform.position, explosionRange*5.0f);
+                col.gameObject.GetComponent<CharacterBase>().ExplosionAction(300.0f, gameObject.transform.position, explosionRange * 5.0f);
             }
             if (col.gameObject.tag == "Enemy")
             {
@@ -31,6 +39,7 @@ public class Barrel : MonoBehaviour
             }
         }
 
+        audioSource.PlayOneShot(explsionAudio);
         explosion.Play();
         isExplosion = true;
     }

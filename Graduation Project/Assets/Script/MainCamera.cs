@@ -28,6 +28,8 @@ public class MainCamera : MonoBehaviour
     private float originRotX = 0.0f;
     private float curRotY = 0.0f;
 
+    private float shakeForce = 10.0f;
+
     private bool cameraStop = false;
 
     void Start()
@@ -96,15 +98,34 @@ public class MainCamera : MonoBehaviour
         else curRotY -= curRotY / 30;
     }
 
+    //카메라 쉐이킹
+    public void ShakeCam()
+    {
+        StopCoroutine(ShakeCouroutine());
+        StartCoroutine(ShakeCouroutine());
+    }
+
+    private IEnumerator ShakeCouroutine()
+    {
+        float startTime = Time.time;
+        while (Time.time - startTime < 0.7f)
+        {
+            curRotY += Random.Range(-shakeForce, shakeForce);
+            yield return new WaitForSecondsRealtime(0.05f);
+        }
+    }
+
     public void StartCameraZoom() { GetComponent<Camera>().fieldOfView = 30; }
     public void StopCameraZoom() { GetComponent<Camera>().fieldOfView = 90; }
 
+    //마우스 민감도
     public void UpMouseSensitivity()
     {
         if (sensitivity > 3.0f) return;
         sensitivity += 0.1f;
         mouseSensitivityUi.ControlMouseSensitivity(sensitivity * 10.0f);
     }
+
     public void DownMouseSensitivity()
     {
         if (sensitivity < 0.2f) return;

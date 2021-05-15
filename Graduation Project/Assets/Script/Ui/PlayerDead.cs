@@ -66,11 +66,11 @@ public class PlayerDead : MonoBehaviour
 
     public void PlayerDeadAndRestart()
     {
-
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void PlayerDeadAndGoTitle()
     {
-
+        SceneManager.LoadScene("Title");
     }
 }

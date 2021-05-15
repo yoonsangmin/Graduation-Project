@@ -9,6 +9,10 @@ public class BossEnemy : Enemy
 {
     public BossAttackPattern curPattern = BossAttackPattern.NONE;
 
+    [SerializeField] private AudioClip jumpAttackAudio = null;
+    [SerializeField] private AudioClip dashAttackAudio = null;
+    [SerializeField] private AudioClip spitAttackAudio = null;
+
     [SerializeField] private Text hpVal = null;
     [SerializeField] private GameObject deadCam = null;
 
@@ -52,6 +56,13 @@ public class BossEnemy : Enemy
         ani.SetBool("IsDashAttackOn", true);
         enemyAi.speed = stat._walkSpeed * 100.0f;
         dashAttackCol.SetActive(true);
+
+        if (audioSource.clip != dashAttackAudio)
+        {
+            audioSource.clip = dashAttackAudio;
+            audioSource.loop = true;
+            audioSource.Play();
+        }
     }
 
     public void DashAttackEnd()
@@ -59,8 +70,12 @@ public class BossEnemy : Enemy
         ani.SetBool("IsDashAttackOn", false);
         enemyAi.speed = stat._walkSpeed;
 
+        audioSource.clip = null;
+        audioSource.loop = false;
+        audioSource.Stop();
+
         dashAttackCol.SetActive(false);
-        PatternEnd();
+        PatternEnd();       
     }
 
     //점프 어택
@@ -84,6 +99,8 @@ public class BossEnemy : Enemy
         col.enabled = true;
 
         PatternEnd();
+
+        audioSource.PlayOneShot(jumpAttackAudio);
     }
 
     //산성 침
@@ -93,6 +110,10 @@ public class BossEnemy : Enemy
 
         acidParticle.SetActive(true);
         acidAttackCol.GetComponent<BoxCollider>().enabled = true;
+
+        audioSource.clip = spitAttackAudio;
+        audioSource.loop = true;
+        audioSource.Play();
     }
 
     public void AcidAttackEnd()
@@ -101,6 +122,10 @@ public class BossEnemy : Enemy
 
         acidParticle.SetActive(false);
         acidAttackCol.GetComponent<BoxCollider>().enabled = false;
+
+        audioSource.clip = null;
+        audioSource.loop = false;
+        audioSource.Stop();
 
         PatternEnd();
     }
@@ -111,7 +136,10 @@ public class BossEnemy : Enemy
 
     override protected void Die()
     {
-        StartCoroutine(DeadCouroutine());        
+        DashAttackEnd();
+        JumpAttackEnd();
+        AcidAttackEnd();
+        StartCoroutine(DeadCouroutine());
     }
 
     private IEnumerator DeadCouroutine()

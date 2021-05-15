@@ -31,10 +31,14 @@ public class Stage2Controller : StageController
 
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
+        AudioController.instance.AddAudioSource(audioSource);
         nextSceneName = "Begin Boos Stage";
         GoNextStep();
         for (int i = 0; i < EnemyController.instance._enemys.Count; i++)
             allEnemys += EnemyController.instance._enemys[i].Count;
+
+        miniMap.SetEnemysCount(allEnemys);
         SummonEnemy();
     }
 

@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    [SerializeField] private ParticleSystem trace = null;
+    [SerializeField] private ParticleSystem wallTrace = null;
+    [SerializeField] private ParticleSystem enemyTrace = null;
+
+    private AudioSource audioSource = null;
+    [SerializeField] private AudioClip hitWall = null;
+    [SerializeField] private AudioClip hitHumanObject = null;
 
     private Transform parent;
 
@@ -24,6 +29,8 @@ public class Bullet : MonoBehaviour
 
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
+        AudioController.instance.AddAudioSource(audioSource);
         parent = gameObject.transform.parent;
         gameObject.SetActive(false);
     }
@@ -43,41 +50,57 @@ public class Bullet : MonoBehaviour
             if (hitInfo.collider.gameObject.tag == "Player" && owner != "Player")
             {
                 hitInfo.collider.gameObject.GetComponent<CharacterBase>().ReceiveDamage(damage, hitInfo.point);
+                audioSource.PlayOneShot(hitHumanObject);
             }
 
             else if (hitInfo.collider.gameObject.tag == "Boss" && owner != "Boss")
             {
                 hitInfo.collider.gameObject.GetComponent<Enemy>().ReceiveDamage(damage, hitInfo.point);
+                CreateTrace(enemyTrace, hitInfo);
+                audioSource.PlayOneShot(hitHumanObject);
             }
 
             else if (hitInfo.collider.gameObject.tag == "Enemy" && owner != "Enemy")
             {
                 hitInfo.collider.gameObject.GetComponent<EnemyHit>().HitByBullet(damage, hitInfo.point);
+                CreateTrace(enemyTrace, hitInfo);
+                audioSource.PlayOneShot(hitHumanObject);
             }
 
             else if (hitInfo.collider.gameObject.tag == "EnemyHead" && owner != "Enemy")
             {
                 UiController.instance.HitCritical();
                 hitInfo.collider.gameObject.GetComponent<EnemyHit>().HitByBullet(damage * 2, hitInfo.point);
+                CreateTrace(enemyTrace, hitInfo);
+                audioSource.PlayOneShot(hitHumanObject);
             }
 
             else if (hitInfo.collider.gameObject.tag == "Dummy")
             {
                 hitInfo.collider.gameObject.GetComponent<Dummy>().ReceiveDamage(damage, hitInfo.point);
+                CreateTrace(enemyTrace, hitInfo);
+                audioSource.PlayOneShot(hitHumanObject);
             }
 
             else if (hitInfo.collider.gameObject.tag == "Barrel")
             {
                 hitInfo.collider.gameObject.GetComponent<Barrel>().Explosion();
+                audioSource.PlayOneShot(hitWall);
             }
 
             else if (hitInfo.collider.gameObject.tag == "Wall")
             {
-                gameObject.transform.SetParent(hitInfo.collider.gameObject.transform);
-                trace.transform.position = hitInfo.point;
-                trace.Play();
+                CreateTrace(wallTrace, hitInfo);
+                audioSource.PlayOneShot(hitWall);
             }
         }
         Invoke("Vanish", 1.0f);
+    }
+
+    private void CreateTrace(ParticleSystem trace, RaycastHit hitInfo)
+    {
+        gameObject.transform.SetParent(hitInfo.collider.gameObject.transform);
+        trace.transform.position = hitInfo.point;
+        trace.Play();
     }
 }

@@ -10,6 +10,8 @@ public class ExperimentDocument : MonoBehaviour
 
     private bool canGet = false;
 
+    private bool isCouroutineActive = false;
+
     void Start()
     {
         progressBar.value = 0.0f;
@@ -26,8 +28,11 @@ public class ExperimentDocument : MonoBehaviour
     {
         if (other.gameObject.tag != "Player" && canGet == true) return;
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKey(KeyCode.E) && isCouroutineActive == false)
+        {
+            isCouroutineActive = true;
             StartCoroutine(GetCouroutine());
+        }
     }
 
     private void OnTriggerExit(Collider other)

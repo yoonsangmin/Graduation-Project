@@ -26,6 +26,8 @@ public class BossStageController : StageController
 
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
+        AudioController.instance.AddAudioSource(audioSource);
         nextSceneName = "End";
 
         allEnemys = 1;        

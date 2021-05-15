@@ -15,12 +15,17 @@ public class AudioController : MonoBehaviour
         }
     }
 
-    private float volume;
+    private float volume = 0.5f;
     public float _volume { get { return volume; } }
 
     private List<AudioSource> allAudioSource = new List<AudioSource>();
 
-    public void AddAudioSource(AudioSource audioSource) { allAudioSource.Add(audioSource); }
+    public void AddAudioSource(AudioSource audioSource)
+    {
+        audioSource.volume = volume;
+        allAudioSource.Add(audioSource);
+    }
+
     public void SetVolume(float value)
     {
         volume = value;

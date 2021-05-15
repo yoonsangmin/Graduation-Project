@@ -14,10 +14,7 @@ public class TitleUi : MonoBehaviour
 
     public void StartButton()
     {
-        if (DataController.instance.gameDataInstance.Stage1Clear == false)
-            SceneManager.LoadScene("Begin Stage 1");
-        else
-            SceneManager.LoadScene("Begin Stage 2");
+        SceneManager.LoadScene("Begin Stage 1");
     }
 
     public void TraniningButton()

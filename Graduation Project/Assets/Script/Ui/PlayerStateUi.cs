@@ -41,8 +41,7 @@ public class PlayerStateUi : MonoBehaviour
     public void EndConditionState(Condition condition)
     {
         if (conditionInfos[(int)condition].isStartCouroutineOn == false) return;
-        conditionInfos[(int)condition].isStartCouroutineOn = false;        
-        StopCoroutine(HighlightCoroutine(conditionInfos[(int)condition]));
+        conditionInfos[(int)condition].isStartCouroutineOn = false;
         StartCoroutine(StopHighLightCoroutine(conditionInfos[(int)condition]));
     }
 
@@ -53,7 +52,7 @@ public class PlayerStateUi : MonoBehaviour
         Color alpha = conditionInfo.image.color;
         alpha.a = conditionInfo.startVal;
 
-        while (true)
+        while (conditionInfo.isStartCouroutineOn)
         {
             while (alpha.a >= conditionInfo.endVal)
             {
@@ -68,6 +67,8 @@ public class PlayerStateUi : MonoBehaviour
                 alpha.a += conditionInfo.changeVal;
                 yield return null;
             }
+
+            yield return null;
         }
     }
 

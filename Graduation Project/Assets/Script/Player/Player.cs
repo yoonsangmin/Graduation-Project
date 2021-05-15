@@ -20,6 +20,7 @@ public class Player : CharacterBase
     [SerializeField] private GameObject arm = null;
 
     [SerializeField] private GameObject deadCam = null;
+    [SerializeField] private GameObject deadCharacter = null;
 
     //이동
     private float curSpeed;
@@ -56,7 +57,8 @@ public class Player : CharacterBase
         crouchSpeed = curSpeed * 0.6f;
 
         deadCam.SetActive(false);
-    }
+        deadCharacter.SetActive(false);
+}
 
     void Update()
     {
@@ -71,8 +73,7 @@ public class Player : CharacterBase
         PlayerCrouch();
 
         //사격
-        CrossHair.instance.IsEnemyLocateCrosshair(weaponController._curRangedWeapon.IsTargerPointOfSight(MainCamera.instance.gameObject, "Enemy"));
-        CrossHair.instance.IsEnemyLocateCrosshair(weaponController._curRangedWeapon.IsTargerPointOfSight(MainCamera.instance.gameObject, "Dummy"));
+        IsTargetInCrossHair();
         WeaponChange();
         Fire();
         Reload();
@@ -92,7 +93,7 @@ public class Player : CharacterBase
 
         Vector3 velocity = (horizontal + vertical).normalized * curSpeed;
 
-        rb.MovePosition(transform.position + velocity * Time.deltaTime);
+        rb.MovePosition(transform.position + velocity * Time.fixedDeltaTime);
 
         if (velocity.magnitude == 0) isWalk = false;
         else isWalk = true;
@@ -198,7 +199,7 @@ public class Player : CharacterBase
             CrossHair.instance.StartFireAnimation();
             ani.SetBool("IsFire", true);
         }
-        if (Input.GetMouseButtonUp(0) || weaponController._curRangedWeapon._isReload == true || isRun == true)
+        if (Input.GetMouseButtonUp(0) || weaponController._curRangedWeapon._isReload == true || isRun == true || playerStop == true)
         {
             CrossHair.instance.StopFireAnimation();
             ani.SetBool("IsFire", false);
@@ -235,6 +236,11 @@ public class Player : CharacterBase
         if (Input.GetKeyDown(KeyCode.LeftBracket)) MainCamera.instance.GetComponent<MainCamera>().DownMouseSensitivity();
     }
 
+    private void IsTargetInCrossHair()
+    {
+        CrossHair.instance.IsEnemyLocateCrosshair(weaponController._curRangedWeapon.IsTargerPointOfSight(MainCamera.instance.gameObject, new List<string> { "Enemy", "Dummy", "Boss"}));
+    }
+
     override protected void LifeFiguresCheck()
     {
         if (curLife / stat._maxLife <= 0.2f)
@@ -259,12 +265,13 @@ public class Player : CharacterBase
         GameController.instance.StopGame();
         arm.SetActive(false);
         deadCam.SetActive(true);
+        deadCharacter.SetActive(true);
         deadCam.transform.position = gameObject.transform.position + new Vector3(0.0f, 2.0f, -0.5f);
         deadCam.transform.rotation = gameObject.transform.rotation * Quaternion.Euler(new Vector3(60.0f, 0.0f, 0.0f));
 
         while (deadCam.transform.position.y < 3.0f)
         {
-            deadCam.transform.position += new Vector3(0.0f, 0.001f, 0.0f);
+            deadCam.transform.position += new Vector3(0.0f, 0.002f, 0.0f);
             yield return null;
         }
 

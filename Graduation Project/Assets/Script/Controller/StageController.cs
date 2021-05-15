@@ -27,6 +27,8 @@ public class StageController : MonoBehaviour
     [SerializeField] protected Text nextShowProgressTitleText = null;
     [SerializeField] protected Image nextShowBackground = null;
 
+    protected AudioSource audioSource = null;
+
     protected virtual void CheckEnemyDie()
     {        
     }

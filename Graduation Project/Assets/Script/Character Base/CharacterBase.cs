@@ -12,6 +12,9 @@ public class CharacterBase : MonoBehaviour
     protected CapsuleCollider col;
     protected Animator ani;
 
+    protected AudioSource audioSource;
+    [SerializeField] private AudioClip damagedAudio = null;
+
     [SerializeField] protected ParticleSystem bloodSpit;
     [SerializeField] protected Slider hpBar;
 
@@ -26,6 +29,8 @@ public class CharacterBase : MonoBehaviour
 
     void Awake()
     {
+        audioSource = GetComponent<AudioSource>();
+        AudioController.instance.AddAudioSource(audioSource);
         curLife = stat._maxLife;
         if (hpBar != null)
             hpBar.value = curLife / stat._maxLife;
@@ -100,6 +105,8 @@ public class CharacterBase : MonoBehaviour
     private void DownLife(float damage)
     {
         if (curLife <= 0) return;
+
+        audioSource.PlayOneShot(damagedAudio);
 
         curLife -= damage;
         if (hpBar != null)

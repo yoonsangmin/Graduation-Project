@@ -13,6 +13,8 @@ public class Generator : MonoBehaviour
     private bool operateDone = false;
     public bool _operateDone { get { return operateDone; } }
 
+    private bool isCouroutineActive = false;
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag != "Player" && operateDone == false && generatorStart == true) return;
@@ -23,8 +25,9 @@ public class Generator : MonoBehaviour
     {
         if (collision.gameObject.tag != "Player" && operateDone == false && generatorStart == true) return;
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKey(KeyCode.E)&& isCouroutineActive == false)
         {
+            isCouroutineActive = true;
             cam.gameObject.SetActive(true);
             StartCoroutine(OpenDoorCouroutine());
         }
