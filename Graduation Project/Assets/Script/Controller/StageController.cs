@@ -29,6 +29,14 @@ public class StageController : MonoBehaviour
 
     protected AudioSource audioSource = null;
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.F1))
+            GoNextStep();
+        if (Input.GetKeyDown(KeyCode.F2))
+            EndStage();
+    }
+
     protected virtual void CheckEnemyDie()
     {        
     }

@@ -22,9 +22,6 @@ public class GameController : MonoBehaviour
     public ControllGame StopController;
     public ControllGame PlayController;
 
-    public bool Stage1Clear = false;
-    public bool Stage2Clear = false;
-
     void Start()
     {
         StopController += Player.instance.StopPlayer;

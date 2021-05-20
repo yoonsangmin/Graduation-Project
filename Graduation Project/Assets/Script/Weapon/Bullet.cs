@@ -77,6 +77,7 @@ public class Bullet : MonoBehaviour
 
             else if (hitInfo.collider.gameObject.tag == "Dummy")
             {
+                UiController.instance.HitCritical();
                 hitInfo.collider.gameObject.GetComponent<Dummy>().ReceiveDamage(damage, hitInfo.point);
                 CreateTrace(enemyTrace, hitInfo);
                 audioSource.PlayOneShot(hitHumanObject);

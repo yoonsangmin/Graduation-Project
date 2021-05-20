@@ -7,12 +7,17 @@ public class Dummy : CharacterBase
 {
     private bool isRevivaling = false;
 
-    private void Update()
+    void Start()
     {
-        hpBar.transform.LookAt(MainCamera.instance.transform);
+        hpBar.gameObject.SetActive(false);
     }
 
-    public bool NeedRevivaling() { return (curLife <= 0) && isRevivaling == false; }
+    private void FixedUpdate()
+    {
+        HpBarLookAtCamera();
+    }
+
+    public bool NeedRevivaling() { return isDead == true && isRevivaling == false; }
     public void StartRevival() { isRevivaling = true; }
     public void Revival()
     {

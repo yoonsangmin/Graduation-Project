@@ -20,6 +20,12 @@ public class AudioController : MonoBehaviour
 
     private List<AudioSource> allAudioSource = new List<AudioSource>();
 
+    void Awake()
+    {
+        if (DataController.instance != null)
+            volume = DataController.instance.gameDataInstance.soundVol;
+    }
+
     public void AddAudioSource(AudioSource audioSource)
     {
         audioSource.volume = volume;
@@ -31,5 +37,8 @@ public class AudioController : MonoBehaviour
         volume = value;
         foreach (AudioSource audioSource in allAudioSource)
             audioSource.volume = volume;
+
+        if (DataController.instance != null)
+            DataController.instance.gameDataInstance.soundVol = volume;
     }
 }

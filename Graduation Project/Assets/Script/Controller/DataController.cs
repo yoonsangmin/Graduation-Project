@@ -34,8 +34,7 @@ public class DataController : MonoBehaviour
 
     void Awake()
     {
-        LoadData();
-        SaveData();
+        DontDestroyOnLoad(this.gameObject);
     }
 
     public void LoadData()

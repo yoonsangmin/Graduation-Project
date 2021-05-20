@@ -65,6 +65,7 @@ public class CharacterBase : MonoBehaviour
 
     protected void HpReset()
     {
+        isDead = false;
         curLife = stat._maxLife;
         if (hpBar != null)
             hpBar.value = curLife / stat._maxLife;

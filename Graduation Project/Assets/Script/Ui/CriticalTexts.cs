@@ -14,7 +14,7 @@ public class CriticalTexts : MonoBehaviour
     private int maxNum = 30;
 
     void Start()
-    {
+    {        
         for (int i = 0; i < maxNum; i++)
         {
             CriticalText text = Instantiate(criticalText) as CriticalText;

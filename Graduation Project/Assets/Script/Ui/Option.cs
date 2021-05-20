@@ -12,14 +12,18 @@ public class Option : MonoBehaviour
 
     void Start()
     {
-        soundSlider.value = 0.5f;
-        soundSlider.onValueChanged.AddListener(OnSoundVolumeChange);
+        if (soundSlider != null)
+        {
+            soundSlider.value = AudioController.instance._volume;
+            soundSlider.onValueChanged.AddListener(OnSoundVolumeChange);
+        }
         gameObject.SetActive(false);
     }
 
     private void Update()
     {
-        figure.text = string.Format("{0:N1}", soundSlider.value * 100) + "%";
+        if (soundSlider != null)
+            figure.text = string.Format("{0:N1}", soundSlider.value * 100) + "%";
     }
 
     public void OnSoundVolumeChange(float value)
@@ -30,7 +34,8 @@ public class Option : MonoBehaviour
     public void GetBack()
     {
         gameObject.SetActive(false);
-        GameController.instance.PlayController();
+        if (SceneManager.GetActiveScene().name != "Title")
+            GameController.instance.PlayController();
     }
 
     public void GameOver()

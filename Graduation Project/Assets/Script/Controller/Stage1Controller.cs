@@ -94,7 +94,6 @@ public class Stage1Controller : StageController
 
     protected override void EndStage()
     {
-        GameController.instance.Stage1Clear = true;
         base.EndStage();
     }    
 

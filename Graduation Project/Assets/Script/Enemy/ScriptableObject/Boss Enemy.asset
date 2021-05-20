@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c1eee2b4aad02f42802cb7f848f5d37, type: 3}
   m_Name: Boss Enemy
   m_EditorClassIdentifier: 
-  maxLife: 1000
+  maxLife: 3000
   walkSpeed: 3

@@ -26,4 +26,9 @@ public class BeginStageUi : MonoBehaviour
             SceneManager.LoadScene(nextScene);
         else explainText.text = text[textIndex];
     }
+
+    public void SkipButton()
+    {
+        SceneManager.LoadScene(nextScene);
+    }
 }
